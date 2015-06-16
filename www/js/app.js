@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'homeCtrl'
       }      
     }
   })
@@ -181,21 +181,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $scope.login = function() {
     console.log('Login');
     if (!window.cordova) {
-      facebookConnectPlugin.browserInit('822633664497878');
+      facebookConnectPlugin.browserInit('813128998755561');
     }
     facebookConnectPlugin.login(['email','user_birthday', 'user_likes',
 'user_hometown',
-'user_location'],fbLoginSuccess, fbLoginError);
+'user_location'], fbLoginSuccess, fbLoginError);
   
     fbLogged.then( function(authData) {
       console.log('Promised');
       return Parse.FacebookUtils.logIn(authData);
     })
     .then( function(userObject) {
-      facebookConnectPlugin.api('/me',
+      facebookConnectPlugin.api('/me', null, 
         function(response) {
           console.log(response);
-          userObject.set('name', response.name);
+      userObject.set('name', response.name);
           userObject.set('email', response.email);
           userObject.set('birthday', response.birthday);
           userObject.set('likes', response.likes);
@@ -213,3 +213,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
   };
 }])
+
+
