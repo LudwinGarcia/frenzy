@@ -5,7 +5,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 function check() {
-    setInterval(function(){ 
+    setTimeout(function(){ 
        document.getElementById("intervaloFrenzy").click(); 
     }, 5000);
 };
