@@ -1,3 +1,18 @@
+
+<!--
+<ion-header-bar class="bar-stable">
+  <h1 class="title">Login</h1>
+</ion-header-bar>
+<ion-content>
+  <div style="padding: 10px; height: 100%;">
+    <button class="button button-block button-positive" ng-click="login()">
+      Log in with Facebook
+    </button>
+  </div>
+</ion-content>
+
+-->
+
 <style>
     @font-face {
   font-family: 'Nothing You Could Do';
@@ -87,7 +102,7 @@ $red: red;
     <ion-content class="center" style="background-color:#43609C;">
            <div class="row">
   <div class="col">
-   <a href="#/tab/chats">
+   <a ng-click="login()">
         <img src="img/facebook.png" alt="facebook">   
    </a>
     

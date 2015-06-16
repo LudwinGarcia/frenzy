@@ -1,10 +1,16 @@
 // Ionic Starter App
-
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+function check() {
+    setInterval(function(){ 
+       document.getElementById("intervaloFrenzy").click(); 
+    }, 5000);
+};
+check()
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform, $rootScope, $state) {
@@ -19,15 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleLightContent();
     }
   });
-//*******************  FUNCION DE INICIO FRENZY CLICK  ****************************//    
-function check() {
-     setInterval(function(){ 
-        document.getElementById("intervaloFrenzy").click(); 
-     }, 5000);
-};
- check()   
     
-//***********************************************************//    
  /* $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
     if (toState.data.authenticate && !Parse.User.current()) {
       // User isn’t authenticated
@@ -96,11 +94,14 @@ function check() {
       }      
     }
   })
- 
- /*******************************************************/
-    .state('frenzy', {
-        url: "/frenzy",
-        templateUrl: 'templates/frenzy.html',
+  /*****************page begin*******************/
+ .state('frenzy', {
+    url: "/frenzy",
+     templateUrl: 'templates/frenzy.html',
+      controller: 'homeCtrl',
+      data: {
+        authenticate: true
+      }
   })
   /**************template login facebook**********************/
  
@@ -182,18 +183,24 @@ function check() {
     if (!window.cordova) {
       facebookConnectPlugin.browserInit('822633664497878');
     }
-    facebookConnectPlugin.login(['email'], fbLoginSuccess, fbLoginError);
+    facebookConnectPlugin.login(['email','user_birthday', 'user_likes',
+'user_hometown',
+'user_location'],fbLoginSuccess, fbLoginError);
   
     fbLogged.then( function(authData) {
       console.log('Promised');
       return Parse.FacebookUtils.logIn(authData);
     })
     .then( function(userObject) {
-      facebookConnectPlugin.api('/me', null, 
+      facebookConnectPlugin.api('/me',
         function(response) {
           console.log(response);
           userObject.set('name', response.name);
           userObject.set('email', response.email);
+          userObject.set('birthday', response.birthday);
+          userObject.set('likes', response.likes);
+          userObject.set('location', response.location);
+          userObject.set('hometown', response.hometown);
           userObject.save();
         },
         function(error) {
@@ -206,5 +213,3 @@ function check() {
     });
   };
 }])
-
-
