@@ -1,3 +1,5 @@
+
+
 @font-face {
 font-family:Iconos;
 src: url(BariolFrenzyIcons.ttf);
@@ -72,6 +74,36 @@ p {
     -ms-flex-align: center;
     align-items: center;
 }
+
+.border_icon {
+    border-radius:25px; 
+    height:55px;
+   
+}
+
+.icon_supermercado{
+    background-color:#00BAB9 ; 
+}
+.icon_restaurante{
+    background-color:#FF5252; 
+}
+.icon_moda{
+    background-color:#FFD922; 
+}
+.icon_entretenimiento{
+    background-color:#9C28B0;
+
+}
+.icon_electronico{
+    background-color:#3F51B5; 
+}
+.icon_otro{
+    background-color:#00DDC1; 
+}
+
+
+
+
 /*
 .super{
     background-color: green;

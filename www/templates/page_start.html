@@ -2,20 +2,23 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in categorys" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+         <div class = "list">
+           <div class = "row">
+            <div class="center border_icon col col-20 {{chat.color}}" style="margin-left: -60px;">
+                <div class="home center" style="font-size:40px; color:white; margin-top:18px; ">{{chat.face}}</div>
 
-       
-               <div class="center col col-20" style="background-color:#3F51B5; border-radius:27px; height:60px;">
-                
-                <div class="home center" style="font-size:40px; color:white; margin-top:15px;">{{chat.face}}</div>
-        
             </div>
-            <div class="col">
+            <div class="col" style = "margin-left: 20px;">
               <h4>{{chat.name}}</h4>
             <div>
                     <spam style="font-size:10px;">cupones:(0)..</spam><spam style="font-size:10px;">promociones:(0)</spam>
                 </div>
-                <br>
-            </div>
+            </div>   
+           </div>
+            
+         </div>
+       
+               
       </ion-item>
     </ion-list>
   </ion-content>

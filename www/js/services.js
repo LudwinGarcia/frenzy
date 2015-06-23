@@ -103,37 +103,43 @@ for (a in promociones) {
     name: List_name[0],
     lastText: C,
     super: supermercados[0],
-    face: 'E'
+    face: 'E',
+      color : "icon_supermercado"
   }, {
     id: 1,
     name:  List_name[1],
     lastText: 'Hey, it\'s me',
        super: supermercados[1],
-    face: 'F'
+    face: 'F',
+      color : "icon_restaurante"
   },{
     id: 2,
     name: List_name[2],
     lastText: 'I should buy a boat',
       super: "supermercados",
-    face: 'G'
+    face: 'G',
+      color : "icon_moda"
   }, {
     id: 3,
     name:  List_name[3],
     lastText: 'Look at my mukluks!',
       super: "supermercados",
-    face: 'H'
+    face: 'H',
+      color : "icon_entretenimiento"
   }, {
     id: 4,
     name:  List_name[4],
     lastText: 'This is wicked good ice cream.',
       super: "supermercados",
-    face: 'I'
+    face: 'I',
+      color : "icon_electronico"
   }, {
     id: 5,
     name:  List_name[5],
     lastText: 'Look at my mukluks!',
       super: "supermercados",
-    face: 'J'
+    face: 'J',
+      color : "icon_otro"
   }];
 
   return {
