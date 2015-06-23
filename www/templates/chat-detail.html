@@ -3,12 +3,42 @@
   'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
+  
+  
+  
+       <ion-view view-title="Supermercado">
+      <ion-content >            
+            <ion-item class="listas" ng-repeat="super in chat" href="#/app/Descuento">
+         <div class = "cuadro-super">
+       <div><img class = "super-img" ng-src="{{chat.face}}"></div>
+       
+     <div class = "super">    
+     
+     <p style= "margin-left: -90px; padding-top:8px;">Ofertas ( {{chat.lastText}} )</p>
+     <p style="margin-top:-40px; margin-left: -69px;">Promedio ( {{chat.lastText}} )</p>
+     <p class = "home" style="margin-top:-65px;  margin-right:-130px; font-size:30px;">B</p>
+    </div>
+   
+   </div>
+          </ion-item>   
+      </ion-content>
+</ion-view>
 -->
-<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
-  </ion-content>
+
+<ion-view view-title="Supermercado">
+    <ion-content >            
+        <ion-item class="" ng-repeat="super in chat" href="#/app/Descuento">
+            <div class = "cuadro">
+                <div><img ng-src="{{chat.face}}"></div>
+
+                <div>    
+
+                    <p>Ofertas ( {{chat.lastText}} )</p>
+                    <p >Promedio ( {{chat.lastText}} )</p>
+                    <p class = "home" style="margin-top:-65px;  margin-right:-130px; font-size:30px;">B</p>
+                </div>
+
+            </div>
+        </ion-item>   
+    </ion-content>
 </ion-view>

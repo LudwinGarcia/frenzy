@@ -4,6 +4,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
+
 function check() {
     setTimeout(function(){ 
        document.getElementById("intervaloFrenzy").click(); 
@@ -60,8 +62,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/dash',
     views: {
       'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        templateUrl: 'templates/page_start.html',
+        controller: 'CategoryCtrl'
       }
     }
   })
@@ -70,8 +72,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/chats',
       views: {
         'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+          templateUrl: 'templates/tab-dash.html',
+          controller: 'DashCtrl'
         }
       }
     })
@@ -183,7 +185,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     if (!window.cordova) {
       facebookConnectPlugin.browserInit('813128998755561');
     }
-    facebookConnectPlugin.login(['email','user_birthday', 'user_likes',
+    facebookConnectPlugin.login(['email','user_birthday',
 'user_hometown',
 'user_location'], fbLoginSuccess, fbLoginError);
   
@@ -195,10 +197,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       facebookConnectPlugin.api('/me', null, 
         function(response) {
           console.log(response);
-      userObject.set('name', response.name);
+          userObject.set('name', response.name);
           userObject.set('email', response.email);
           userObject.set('birthday', response.birthday);
-          userObject.set('likes', response.likes);
           userObject.set('location', response.location);
           userObject.set('hometown', response.hometown);
           userObject.save();
