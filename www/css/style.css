@@ -1,4 +1,13 @@
-
+@font-face {
+font-family:letra;
+src: url(Bariol_Bold.otf);
+}
+*{
+font-family:letra;
+}
+spam{
+font-family:letra;
+}
 
 /* Empty. Add your own CSS if you like */
 /* Empty. Add your own CSS if you like */
