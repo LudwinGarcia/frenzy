@@ -31,7 +31,7 @@ query.find({
 
          name  = results[x].attributes.CategoryName
          //console.log(name)
-         //console.log(List_name)
+        //console.log(List_name)
         // print out the results
         //console.log( results[x].attributes.BasePrice + ' - ' + results[x].attributes.CategoryApp + ' - ' + results[x].attributes.CategoryProduct + ' - ' + results[x].attributes.Costumer+ ' - ' + results[x].attributes.EndDate+ ' - ' + results[x].attributes.PhoneNumber);
         //$(".Data").append('<li>' + results[x].attributes.Name + '  -  ' + results[x].attributes.project_type +  '  -  ' + results[x].attributes.Date + '</li>');
@@ -64,52 +64,89 @@ promotion.find({
   }
 });
 
-/***********************************************************/
 
 angular.module('starter.services', [])
+
+.factory('Chats', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var chats = [{
+    id: 0,
+    icon:'A',
+    name: 'La Torre',
+    face: 'http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/EAN13.svg/220px-EAN13.svg.png',
+    producto: "https://quesaber.files.wordpress.com/2013/11/pollo.jpg",
+    oferta: "2x1",
+      
+      terminos: "Terminos y condiciones"
+  }, {
+    id: 1,
+    icon:'B',  
+    name: 'La Torre',
+      oferta: "-20%",
+    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+  },{
+    id: 2,
+    icon:'C',  
+    name: 'La Torre',
+
+    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+  ,
+oferta: "Segundo Plato 1/2"
+  
+  },
+    {
+    id: 3,
+    name: 'La Torre',
+       oferta: "gratis en compra de",
+    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
+  }, {
+    id: 4,
+    name: 'La Torre',
+   oferta: "-10%",
+    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+  }];
+
+  return {
+    all: function() {
+      return chats;
+    },
+    remove: function(chat) {
+      chats.splice(chats.indexOf(chat), 1);
+    },
+    get: function(chatId) {
+      for (var i = 0; i < chats.length; i++) {
+        if (chats[i].id === parseInt(chatId)) {
+          return chats[i];
+        }
+      }
+      return null;
+    }
+  };
+})
+
+
 .factory('Categorys', function() {
   // Might use a resource here that returns a JSON array
     
 for (a in promociones) {
     console.log(promociones.length)
     var C = promociones.length
+     console.log(name)
     
 }
-    var supermercados = [{
-    id: 0,
-    name: "Wallmark",
-    lastText: C,
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 1,
-    name:  "Paiz",
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  },{
-    id: 2,
-    name: "Hiper paiz",
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 3,
-    name:  "La Torre",
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
-  }];
-
-  // Some fake testing data
+ // Some fake testing data
   var categorys = [{
     id: 0,
     name: List_name[0],
     lastText: C,
-    super: supermercados[0],
     face: 'E',
       color : "icon_supermercado"
   }, {
     id: 1,
     name:  List_name[1],
-    lastText: 'Hey, it\'s me',
-       super: supermercados[1],
+    lastText: 'Hey, it\'s me....',
     face: 'F',
       color : "icon_restaurante"
   },{

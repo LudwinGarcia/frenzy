@@ -1,10 +1,11 @@
 // Ionic Starter App
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-
+/******************************************************/
 
 function check() {
     setTimeout(function(){ 
@@ -12,10 +13,14 @@ function check() {
     }, 5000);
 };
 check()
-
+/******************************************************/
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
-
-.run(function($ionicPlatform, $rootScope, $state) {
+//****************************************************
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+$ionicConfigProvider.tabs.position('bottom');
+})
+//****************************************************
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -27,116 +32,84 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleLightContent();
     }
   });
-    
- /* $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
-    if (toState.data.authenticate && !Parse.User.current()) {
-      // User isn’t authenticated
-      $state.transitionTo("login");
-      event.preventDefault(); 
-    }
-  });
-    
-*/
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
-
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
+//********************************************************************************
+  .state('app', {
+    url: "/app",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/menu.html",
+    controller: 'AppCtrl'
   })
-  
-  
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/page_start.html',
-        controller: 'CategoryCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'homeCtrl'
-      }      
-    }
-  })
-  /*****************page begin*******************/
- .state('frenzy', {
+//******** FRENZY *****
+  .state('frenzy', {
     url: "/frenzy",
-     templateUrl: 'templates/frenzy.html',
-      controller: 'homeCtrl',
-      data: {
-        authenticate: true
-      }
+    templateUrl: "templates/frenzy.html",
   })
-  /**************template login facebook**********************/
- 
-    .state('home', {
-      url: '/home',
-      templateUrl: 'templates/home.html',
-      controller: 'homeCtrl',
-      data: {
-        authenticate: true
+//******** FACEBOOK *****
+  .state('login', {
+    url: "/login",
+    templateUrl: "templates/login.html",
+      controller: 'loginCtrl',
+    
+  })     
+//********************************************************************************
+  .state('app.browse', {
+    url: "/Descuento",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/categorias.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })
+  
+//********************************************************************************
+    .state('app.playlists', {
+      url: "/playlists",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/playlists.html",
+          controller: 'CategoryCtrl'
+        }
       }
     })
-    .state('login', {
-      url: '/login',
-      templateUrl: 'templates/login.html',
-      controller: 'loginCtrl',
-      
-      data: {
-        authenticate: false
+//********************************************************************************
+  .state('app.single', {
+    url: "/playlists/:playlistId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/playlist.html",
+        controller: 'Supermercado'
+      }
+    }
+  })
+    
+//********************RUTA Y CONTROLADOR DESCUENTOS.HTML*************************
+    .state('app.descuentos', {
+      url: "/canjear",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/descuentos.html",
+          controller: 'ChatsCtrl'
+        }
       }
     });
-
+//********************************************************************************
   // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/frenzy');
-  //$urlRouterProvider.otherwise('/tab/dash');
-
+  $urlRouterProvider.otherwise('/frenzy');
 })
+
+
+
 // ############## //
 //                //
 //  Controllers   //
 //                //
 // ############## //
 .controller('rootCtrl', ['$state', function($state) {
-  $state.go('home');
+  $state.go('app.playlists');
 }])
 
 .controller('homeCtrl', ['$scope', '$state', function($scope, $state) {
@@ -208,11 +181,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           console.log(error);
         }
       );
-      $state.go('home');
+      $state.go('app.playlists');
     }, function(error) {
       console.log(error);
     });
   };
-}])
-
-
+}]);

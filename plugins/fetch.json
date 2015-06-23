@@ -1,32 +1,16 @@
 {
-    "cordova-plugin-device": {
+    "org.apache.cordova.device": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-device"
+            "id": "org.apache.cordova.device"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-console": {
+    "org.apache.cordova.console": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-console"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-whitelist": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-whitelist"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-splashscreen": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-splashscreen"
+            "id": "org.apache.cordova.console"
         },
         "is_top_level": true,
         "variables": {}

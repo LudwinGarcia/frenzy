@@ -1,5 +1,8 @@
 
 
+/* Empty. Add your own CSS if you like */
+/* Empty. Add your own CSS if you like */
+/******************* TIPOGRAFIA  *************************/
 @font-face {
 font-family:Iconos;
 src: url(BariolFrenzyIcons.ttf);
@@ -7,40 +10,114 @@ src: url(BariolFrenzyIcons.ttf);
 .home {
 font-family: Iconos;
 }
-
-/*
-@font-face {
-font-family: A;
-src: url(BariolFrenzyIcons.ttf);
-}*/
-
-/* Empty. Add your own CSS if you like */
-
-/***************************************************/
-/***************  TITULO FRENZY  *******************/
-.tituloFrenzy
+/********* Estilo de cuadros menu principal *************/
+.listas{
+     display:inline-block;
+     height: 160px;
+     width: 160px;
+       box-shadow: 2px 1px 5px #888888;
+     font-size:17px;
+     border-style: hidden;
+    margin-left: 10px;
+    border:none;
+    
+    
+}
+.color{
+   border: 1px solid #d0d0d0 ;
+   
+    height: 135px;
+    width: 145px;
+    border-radius: 5px;   
+    padding-top: 50px;
+    margin-left:-10px;
+    margin-top: -5px;
+   
+  
+    
+}
+/*********************************************************/
+/****************** DESCUEDNTOS **************************/
+.descuentos
 {
-    color:white;
-    font-family:fantasy;
-    font-size: 60px;
+    background-color:  #E6E6E6;
+    border-radius: 5px;
+    height:145px;
+    width: 360px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight:700; 
+}
+.imagenDescuentos
+{
+    background-color: white;
+    width: 130px;
+    height:100px;
+    margin-top: 10px;
+    padding-top:25px;
+    padding-left: 15px;
+    font-weight:200; 
+    display:inline-block;
+    border-radius: 5px;
+    color:darkgrey;
+}
+.tituloDescuentos
+{
+    color:black;
+    margin-left: 190px;
+    margin-top: -85px;
+    
+}
+.botonCanjear
+{
+    height: 30px;
+    width: 110px;
+    border-radius: 4px;
+    margin-left: 175px;
+    margin-top: 20px;    
+}
+.tituloCanjear
+{
+    margin-top: -10px;
+    margin-left: 10px;
+    text-align: center;
+    color:black;
+    font-size:15px; 
+    
+}
+.compartir
+{
+   
+    height: 25px;
+    width: 100px;
+    margin-left: 235px;
+    margin-top: -120px;
+    
+    text-align: center;
+    
+}
+.CodigoBarras{
+margin-left: 90px;
+}
+.CajaCanjear{
+background-color: #BDBDBD;
+width: 399px;
+}
+.TituloCanjear{
     text-align: center;
 }
-/***************************************************/  
-/********  EFECTO DE CARGA TITULO FRENZY  **********/
-p {
-  text-align: center;
-  margin-bottom: 40px !important;
+.compartir2
+{
+   height: 200px;
+    width: 50px;
+    margin-left: 340px;
+    margin-top: -190px;
 }
-.spinner svg {
-  width: 19% !important;
-  height: 85px !important;
-}
+/*********************************************************/
 
-
-
-.cuadro {
-    
-    border: 1px solid #d0d0d0;
+.button-icon
+{   
+    color:black;
 }
 
 
@@ -101,57 +178,3 @@ p {
     background-color:#00DDC1; 
 }
 
-
-
-
-/*
-.super{
-    background-color: green;
-    color:black;
-    height: 135px;
-    width: 145px;
-    border-radius: 10px;   
-    padding-top: 50px;
-    margin-left:-10px;
-    margin-top: -5px;
-   
-  
-    
-}
-
-
-
-.super-img{
-    background-color: green;
-    color:black;
-    height: 40px;
-    width: 180px; 
-    margin-top: 40px;
-}
-
-.super{
-    background-color: #00BAB9 ;
-    color:black;
-    height: 60px;
-    width: 184px;
-    margin-top: 45px;
-   
-}
-
-.cuadro-super{
-
-     height: 170px;
-    width: 185px; 
-
-}
-
-.listas{
-     display:inline-block;
-     height: 160px;
-     width: 160px;
-     text-align: center;
-     font-size:17px;
-     border-style: hidden;
-    
-    
-}*/
