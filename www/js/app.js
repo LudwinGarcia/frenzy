@@ -5,15 +5,6 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-/******************************************************/
-
-function check() {
-    setTimeout(function(){ 
-       document.getElementById("intervaloFrenzy").click(); 
-    }, 5000);
-};
-check()
-/******************************************************/
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 //****************************************************
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
