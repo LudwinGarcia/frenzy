@@ -5,6 +5,37 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+/*********  FUNCIONES CAMBIO DE COLOR ICONOS  ******************/
+//********  HOME
+function functionHome() {
+        document.getElementById("home").style.color = "#00BAB9";
+        document.getElementById("heart").style.color = "";
+        document.getElementById("star").style.color = "";
+        document.getElementById("tool").style.color = "";
+        }
+//********  HEART
+function functionHeart() {
+        document.getElementById("home").style.color = "";
+        document.getElementById("heart").style.color = "#FF5252";
+        document.getElementById("star").style.color = "";
+        document.getElementById("tool").style.color = "";
+        }
+//********  HOME
+function functionStar() {
+        document.getElementById("home").style.color = "";
+        document.getElementById("heart").style.color = "";
+        document.getElementById("star").style.color = "#FFD922";
+        document.getElementById("tool").style.color = "";
+        }
+//********  HOME
+function functionTool() {
+        document.getElementById("home").style.color = "";
+        document.getElementById("heart").style.color = "";
+        document.getElementById("star").style.color = "";
+        document.getElementById("tool").style.color = "#263147 ";
+        }
+
+/******************************************************/
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 //****************************************************
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -61,7 +92,7 @@ $ionicConfigProvider.tabs.position('bottom');
       url: "/playlists",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
+          templateUrl: "templates/page_start.html",
           controller: 'CategoryCtrl'
         }
       }
@@ -71,8 +102,8 @@ $ionicConfigProvider.tabs.position('bottom');
     url: "/playlists/:playlistId",
     views: {
       'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'Supermercado'
+        templateUrl: "templates/category.html",
+        controller: 'SupermercadoCtrl'
       }
     }
   })

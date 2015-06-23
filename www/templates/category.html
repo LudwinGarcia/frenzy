@@ -1,0 +1,18 @@
+<!--***** segunda parte del contenido principal *****-->
+     <ion-view view-title="Supermercado">
+      <ion-content >            
+            <ion-item class="listas" ng-repeat="super in chats" href="#/app/Descuento" style = "display:inline-block; margin-left: 15px; margin-top:18px;">
+           
+            
+                {{super.name}}
+                ...
+                <div style="background-color:#00BAB9; color:white;  height:70px; margin-top:60px; width: 190px; margin-left:-20px;">
+                    <p style="margin-left:15px;color:white; font-size:12px;">ofertas</p>
+                    <p style="margin-left:15px; color:white;font-size:12px;">promociones {{super.promo}}</p>
+                    <p class = "home" style="margin-left:130px;margin-top:-20px;font-size:22px;">B</p>
+                </div>
+
+            
+          </ion-item>   
+      </ion-content>
+</ion-view>

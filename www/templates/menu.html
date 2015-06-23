@@ -1,6 +1,6 @@
 <style>
     .barraMenu{ background-color: #00BAB9; color:white;}
-    
+    .row{font-size:30px;}
 </style>
 <ion-side-menus  enable-menu-with-back-views="false">
   <ion-side-menu-content >
@@ -18,24 +18,20 @@
 <!--**********************************************************************-->
 <!--**********************************************************************-->
 <!--***** style colors buttons  *****-->
-<style>
-    .custom-icon-home{color:#00BAB9;}
-    .custom-icon-heart{color:red}
-    .custom-icon-star{color:#FFD922 }
-    .custom-icon-gear{color:black}
-</style>
+
 <!--*********************************-->
 <ion-footer-bar align-title="left" class="bar-stable">
-  <div class="buttons">
-    <ion-tabs>
-        <ion-tab icon-on="ion-home custom-icon-home" icon-off="ion-home"></ion-tab>
-        <ion-tab icon-on="ion-heart custom-icon-heart" icon-off="ion-heart"></ion-tab>
-        <ion-tab icon-on="ion-star custom-icon-star" icon-off="ion-star"></ion-tab>
-        <ion-tab icon-on="ion-gear-b custom-icon-gear" icon-off="ion-gear-b"></ion-tab>
-    </ion-tabs>
-  </div>
+ <div class="row home">
+     <div class="col col-10"></div>
+     <div id="home" onclick="functionHome()" class="col col-25">A</div>
+     <div id="heart" onclick="functionHeart()" class="col col-25" >B</div>
+     <div id="star" onclick="functionStar()" class="col col-25" >C</div>
+     <div id="tool" onclick="functionTool()" class="col col-20" >D</div>
+    
+ </div>
   
 </ion-footer-bar>
 <!--**********************************************************************-->
+
 <!--**********************************************************************-->   
 </ion-side-menus>

@@ -28,11 +28,12 @@ font-family: Iconos;
      font-size:17px;
      border-style: hidden;
     margin-left: 10px;
-    border:none;
+    border:none; 
     
     
 }
 .color{
+    
    border: 1px solid #d0d0d0 ;
    
     height: 135px;

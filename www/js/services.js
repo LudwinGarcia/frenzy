@@ -140,42 +140,42 @@ for (a in promociones) {
   var categorys = [{
     id: 0,
     name: List_name[0],
-    lastText: C,
-    face: 'E',
+    cont_promo: C,
+    icon: 'E',
       color : "icon_supermercado"
   }, {
     id: 1,
     name:  List_name[1],
-    lastText: 'Hey, it\'s me....',
-    face: 'F',
+    cont_promo: 'Hey, it\'s me....',
+    icon: 'F',
       color : "icon_restaurante"
   },{
     id: 2,
     name: List_name[2],
-    lastText: 'I should buy a boat',
+    cont_promo: 'I should buy a boat',
       super: "supermercados",
-    face: 'G',
+    icon: 'G',
       color : "icon_moda"
   }, {
     id: 3,
     name:  List_name[3],
-    lastText: 'Look at my mukluks!',
+    cont_promo: 'Look at my mukluks!',
       super: "supermercados",
-    face: 'H',
+    icon: 'H',
       color : "icon_entretenimiento"
   }, {
     id: 4,
     name:  List_name[4],
-    lastText: 'This is wicked good ice cream.',
+    cont_promo: 'This is wicked good ice cream.',
       super: "supermercados",
-    face: 'I',
+    icon: 'I',
       color : "icon_electronico"
   }, {
     id: 5,
     name:  List_name[5],
-    lastText: 'Look at my mukluks!',
+    cont_promo: 'Look at my mukluks!',
       super: "supermercados",
-    face: 'J',
+    icon: 'J',
       color : "icon_otro"
   }];
 
@@ -195,12 +195,19 @@ for (a in promociones) {
 })
 
 .factory('Supermercados', function() {
+    for (a in promociones) {
+    console.log(promociones.length)
+    var C = promociones.length
+     console.log(name)
+    
+}
   // Might use a resource here that returns a JSON array
     
   // Some fake testing data
   var supermercados = [{
     id: 0,
     name: "Wallmark",
+    promo: C,
     lastText: "s",
     face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
   }, {

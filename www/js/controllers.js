@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
 
 .controller('Supermercado', function($scope) {
   $scope.playlists = [
-    { title: 'La Torre', id: 'supermer' },
+    { title: 'La TorreL', id: 'supermer' },
     { title: 'wallmart', id: 'restaurantes' },
     { title: 'paiz', id: 'centro' }
   ];
@@ -72,6 +72,12 @@ angular.module('starter.controllers', [])
   $scope.chats = Chats.all();
 
 })
+
+.controller('SupermercadoCtrl', function($scope, Supermercados) {
+  $scope.chats = Supermercados.all();
+
+})
+
 
 .controller('CategoryCtrl', function($scope, Categorys) {
   // With the new view caching in Ionic, Controllers are only called
