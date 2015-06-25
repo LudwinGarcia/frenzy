@@ -1,26 +1,32 @@
-<ion-view view-title="Frenzy">
- <ion-nav-title>
-     <p class="center home" style="color:white; font-size:70px; margin-top:8px; text-aling:center;">Z</p>
-   </ion-nav-title>
+<ion-view>
+ <!--*********  TITULO FRENZY  *************-->
+    <ion-nav-title>
+        <p class="center home" style="color:white; font-size:70px; margin-top:8px; text-aling:center;">Z</p>
+    </ion-nav-title>
+ <!--***************************************-->
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="category in categorys" type="item-text-wrap"  href="#/app/playlists/{{playlist.id}}">
-         <div class = "list">
-           <div class = "row">
-            <div class="center border_icon col col-20 {{category.color}}" style="margin-left: -60px;">
-                <div class="home center" style="font-size:40px; color:white; margin-top:18px; ">{{category.icon}}</div>
-
-            </div>
-            <div class="col" style = "margin-left: 20px;">
-              <p>{{category.name}}</p>
-            <div>
-                <spam style="font-size:10px;">{{category.cont_promo}} Promociones</spam>
-            </div>
-            </div>   
-           </div>
-         </div>
-      </ion-item>
-    </ion-list>
+        <ion-list>
+            <ion-item href="#/app/playlists/{{playlist.id}}" ng-repeat="category in categorys" style="height:65px; border:none; border:dislplay;">
+                <div class="row">
+                   <div class="col col-10">
+                        <!--*****************************************-->
+                        <div  class="home {{category.color}}" style="margin-top:-30px;">
+                            <div class=" home iconoMenu">{{category.icon}}</div>
+                        </div>
+                        <!--*****************************************-->
+                   </div>
+                   <div class="col col-90" style="margin-left:45px;">
+                        <!--*****************************************-->
+                        <p style="color:black; font-size:16px;font-weight: 600; margin-top:-15px;"> {{category.name}} </p>
+                        <div style="margin-top:-11px;">
+                            <spam style="font-size:10px;">( 0 ) {{category.cont_promo}}</spam>
+                            <spam style="font-size:10px;">( 0 ) {{category.cont_cupones}}</spam> 
+                        <!--*****************************************-->    
+                       </div>
+                       <div><hr style="margin-top:12px; height:0.1px; color:#E6E6E6;border-style:solid;"></hr></div>
+                   </div>
+            </ion-item>
+        </ion-list>
   </ion-content>
 </ion-view>
 

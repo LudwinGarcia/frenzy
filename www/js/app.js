@@ -35,6 +35,50 @@ function functionTool() {
         document.getElementById("tool").style.color = "#263147 ";
         }
 
+//function favoritos
+var contador = 0;
+function hola(){
+
+    $("#favorite1").click(function(){
+	contador=contador+1;
+	if (contador % 2==0){
+		document.getElementById("favorite1").style.color="red";
+	}
+	else{
+		document.getElementById("favorite1").style.color="";
+	}
+    });
+      $("#favorite2").click(function(){
+	contador=contador+1;
+	if (contador % 2==0){
+		document.getElementById("favorite2").style.color="red";
+	}
+	else{
+		document.getElementById("favorite2").style.color="";
+	}
+    });
+    
+       $("#favorite3").click(function(){
+	contador=contador+1;
+	if (contador % 2==0){
+		document.getElementById("favorite3").style.color="red";
+	}
+	else{
+		document.getElementById("favorite3").style.color="";
+	}
+    });
+       $("#favorite4").click(function(){
+	contador=contador+1;
+	if (contador % 2==0){
+		document.getElementById("favorite4").style.color="red";
+	}
+	else{
+		document.getElementById("favorite4").style.color="";
+	}
+    });
+};
+
+
 /******************************************************/
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 //****************************************************

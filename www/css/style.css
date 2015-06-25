@@ -22,8 +22,8 @@ font-family: Iconos;
 /********* Estilo de cuadros menu principal *************/
 .listas{
      display:inline-block;
-     height: 160px;
-     width: 160px;
+     height: 185px;
+     width: 185px;
        box-shadow: 2px 1px 5px #888888;
      font-size:17px;
      border-style: hidden;
@@ -188,9 +188,78 @@ width: 399px;
     background-color:#00DDC1; 
 }
 
+.imagen{
+   height: 175px;
+   width: 175px;
+}
 
-     .imagen
-       {
-           height: 175px;
-           width: 175px;
-       }
+/*********************************************/
+/************* DISEÑO MENU PRICIPAL  *********/
+.iconoMenu{ 
+    color:white;
+    text-align: center;
+    margin-top: 13px;
+    font-size: 27px;
+    padding-top: 13px;
+}
+
+.icon_supermercado{
+    background-color:#00BAB9 ;
+    height: 40px;
+    width: 40px;
+    margin-top: -15px;
+    border-radius: 17px;
+}
+.icon_restaurante{
+    background-color:#FF5252;
+    height: 40px;
+    width: 40px;
+    margin-top: -15px;
+    border-radius: 17px;
+}
+.icon_moda{
+    background-color:#FFD922;
+    height: 40px;
+    width: 40px;
+    margin-top: -15px;
+    border-radius: 17px;
+}
+.icon_entretenimiento{
+    background-color:#9C28B0;
+    height: 40px;
+    width: 40px;
+    margin-top: -15px;
+    border-radius: 17px;
+
+}
+.icon_electronico{
+    background-color:#3F51B5;
+    height: 40px;
+    width: 40px;
+    margin-top: -15px;
+    border-radius: 17px;
+}
+.icon_otro{
+    background-color:#00DDC1;
+    height: 40px;
+    width: 40px;
+    margin-top: -15px;
+    border-radius: 17px;
+}
+
+.super-img{
+    margin-top: -5px;
+    margin-left: 25px;
+    height: 60%;
+   width:60%;
+}
+
+.wallmart{
+    margin-left: -15px;
+    height: 60%;
+    width: 180px;
+}
+.torre{
+    height: 60%;
+    width: 150px;
+}

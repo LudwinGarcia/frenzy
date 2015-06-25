@@ -1,6 +1,7 @@
 /*******************************************************/
 var List_name = []; /* list name category*/ 
 var promociones = [];
+var listSupermercado = [];
 var Code_Review = Parse.Object.extend("AppCategory");
 /***************Console log for check the json*************************************/
 var Code_Reviews = Parse.Collection.extend({
@@ -57,6 +58,26 @@ promotion.find({
          console.log(results[x].attributes.Costumer)
          console.log(results[x].attributes.CategoryProduct)
     }
+  },
+  error: function(myObject, error) {
+    // Error occured
+    console.log( error );
+  }
+});
+
+var customer = new Parse.Query('Customer');
+//query limit hace la llamada de mas elementos
+customer = customer.limit(600);
+customer.find({
+  success: function(results) {
+    // cycle through the results
+    for ( x in results) {
+        listSupermercado.push(results[x].attributes.Logo._url)
+        console.log("------------------------")
+        
+    }
+      console.log(listSupermercado)
+      console.log(listSupermercado[0])
   },
   error: function(myObject, error) {
     // Error occured
@@ -142,7 +163,7 @@ for (a in promociones) {
     name: List_name[0],
     cont_promo: C,
     icon: 'E',
-      color : "icon_supermercado"
+    color : "icon_supermercado",
   }, {
     id: 1,
     name:  List_name[1],
@@ -206,24 +227,28 @@ for (a in promociones) {
   // Some fake testing data
   var supermercados = [{
     id: 0,
-    name: "Wallmark",
+    name: listSupermercado[0],
     promo: C,
-    lastText: "s",
+    lastText: "favorite1",
+      img_class:"torre",
     face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
   }, {
     id: 1,
-    name:  "Paiz",
-    lastText: 'Hey, it\'s me',
+    name:  listSupermercado[1],
+    lastText: 'favorite2',
+      img_class:"super-img",
     face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
   },{
     id: 2,
-    name: "Hiper paiz",
-    lastText: 'I should buy a boat',
+    name:  listSupermercado[2],
+    lastText: 'favorite3',
+      img_class:"wallmart",
     face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
   }, {
     id: 3,
-    name:  "La Torre",
-    lastText: 'Look at my mukluks!',
+    name:  listSupermercado[3],
+    img_class:"wallmart",
+    lastText: 'favorite4',
     face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
   }];
 
