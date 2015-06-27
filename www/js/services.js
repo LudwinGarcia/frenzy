@@ -2,88 +2,11 @@
 var List_name = []; /* list name category*/ 
 var promociones = [];
 var listSupermercado = [];
-var Code_Review = Parse.Object.extend("AppCategory");
-/***************Console log for check the json*************************************/
-var Code_Reviews = Parse.Collection.extend({
-    model: Code_Review
-});
+var promedio = [];
+var listNameSupermercado = [];
+var Super = [];
 
-var code_review = new Code_Reviews();
-
-code_review.fetch({
-    success: function(code_review) {
-        console.log(code_review);
-    },
-    error: function(code_review, error) {
-        console.log(error);
-    }
-});
-/********************************************************/
-//i can call data the parse
-var query = new Parse.Query('AppCategory');
-//query limit hace la llamada de mas elementos
-query = query.limit(600);
-query.find({
-  success: function(results) {
-    // cycle through the results
-    for ( x in results) {
-        
-          List_name.push(results[x].attributes.CategoryName)
-
-         name  = results[x].attributes.CategoryName
-         //console.log(name)
-        //console.log(List_name)
-        // print out the results
-        //console.log( results[x].attributes.BasePrice + ' - ' + results[x].attributes.CategoryApp + ' - ' + results[x].attributes.CategoryProduct + ' - ' + results[x].attributes.Costumer+ ' - ' + results[x].attributes.EndDate+ ' - ' + results[x].attributes.PhoneNumber);
-        //$(".Data").append('<li>' + results[x].attributes.Name + '  -  ' + results[x].attributes.project_type +  '  -  ' + results[x].attributes.Date + '</li>');
-    }
-  },
-  error: function(myObject, error) {
-    // Error occured
-    console.log( error );
-  }
-});
-
-/***************call parse promotion*********************************/
-var promotion = new Parse.Query('Promotion');
-//query limit hace la llamada de mas elementos
-promotion = promotion.limit(600);
-promotion.find({
-  success: function(results) {
-    // cycle through the results
-    for ( x in results) {
-        promociones.push(results[x].attributes.TypeService)
-        // name  = results[x].attributes.CategoryName
-         console.log(results[x].attributes.CategoryApp)
-         console.log(results[x].attributes.Costumer)
-         console.log(results[x].attributes.CategoryProduct)
-    }
-  },
-  error: function(myObject, error) {
-    // Error occured
-    console.log( error );
-  }
-});
-
-var customer = new Parse.Query('Customer');
-//query limit hace la llamada de mas elementos
-customer = customer.limit(600);
-customer.find({
-  success: function(results) {
-    // cycle through the results
-    for ( x in results) {
-        listSupermercado.push(results[x].attributes.Logo._url)
-        console.log("------------------------")
-        
-    }
-      console.log(listSupermercado)
-      console.log(listSupermercado[0])
-  },
-  error: function(myObject, error) {
-    // Error occured
-    console.log( error );
-  }
-});
+var total = 0;
 
 
 angular.module('starter.services', [])
@@ -154,7 +77,8 @@ oferta: "Segundo Plato 1/2"
 for (a in promociones) {
     console.log(promociones.length)
     var C = promociones.length
-     console.log(name)
+     
+    
     
 }
  // Some fake testing data
@@ -163,7 +87,7 @@ for (a in promociones) {
     name: List_name[0],
     cont_promo: C,
     icon: 'E',
-    color : "icon_supermercado",
+    color : "icon_supermercado"
   }, {
     id: 1,
     name:  List_name[1],
@@ -225,32 +149,7 @@ for (a in promociones) {
   // Might use a resource here that returns a JSON array
     
   // Some fake testing data
-  var supermercados = [{
-    id: 0,
-    name: listSupermercado[0],
-    promo: C,
-    lastText: "favorite1",
-      img_class:"torre",
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 1,
-    name:  listSupermercado[1],
-    lastText: 'favorite2',
-      img_class:"super-img",
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  },{
-    id: 2,
-    name:  listSupermercado[2],
-    lastText: 'favorite3',
-      img_class:"wallmart",
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 3,
-    name:  listSupermercado[3],
-    img_class:"wallmart",
-    lastText: 'favorite4',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
-  }];
+  var supermercados = Super;
 
   return {
     all: function() {
@@ -266,3 +165,120 @@ for (a in promociones) {
     }
   };
 });
+
+ 
+var Code_Review = Parse.Object.extend("AppCategory");
+/***************Console log for check the json*************************************/
+var Code_Reviews = Parse.Collection.extend({
+    model: Code_Review
+});
+
+var code_review = new Code_Reviews();
+
+code_review.fetch({
+    success: function(code_review) {
+        console.log(code_review);
+    },
+    error: function(code_review, error) {
+        console.log(error);
+    }
+});
+/********************************************************/
+//i can call data the parse
+var query = new Parse.Query('AppCategory');
+//query limit hace la llamada de mas elementos
+query = query.limit(600);
+query.find({
+  success: function(results) {
+    // cycle through the results
+    for ( x in results) {
+        
+          List_name.push(results[x].attributes.CategoryName)
+
+         name  = results[x].attributes.CategoryName
+         //console.log(name)
+        //console.log(List_name)
+        // print out the results
+        //console.log( results[x].attributes.BasePrice + ' - ' + results[x].attributes.CategoryApp + ' - ' + results[x].attributes.CategoryProduct + ' - ' + results[x].attributes.Costumer+ ' - ' + results[x].attributes.EndDate+ ' - ' + results[x].attributes.PhoneNumber);
+        //$(".Data").append('<li>' + results[x].attributes.Name + '  -  ' + results[x].attributes.project_type +  '  -  ' + results[x].attributes.Date + '</li>');
+    }
+  },
+  error: function(myObject, error) {
+    // Error occured
+    console.log( error );
+  }
+});
+
+/***************call parse promotion*********************************/
+var promotion = new Parse.Query('Promotion');
+//query limit hace la llamada de mas elementos
+promotion = promotion.limit(600);
+promotion.find({
+  success: function(results) {
+    // cycle through the results
+      var sumaPrecioBase = 0;
+      var sumaPrecioPromo = 0;
+
+    for ( x in results) {
+        promociones.push(results[x].attributes.TypeService)
+        sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
+        sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
+      
+       
+        // name  = results[x].attributes.CategoryName
+         console.log(results[x].attributes.CategoryApp)
+         console.log(results[x].attributes.Costumer)
+         console.log(results[x].attributes.CategoryProduct)
+    }
+      
+        resta = sumaPrecioBase-sumaPrecioPromo
+        total = resta / promociones.length
+        total = total.toFixed(2)
+        console.log("--total-----")
+        console.log("--total-----")
+        console.log(total)
+        promedio.push(total)
+  },
+  error: function(myObject, error) {
+    // Error occured
+    console.log( error );
+  }
+});
+
+var customer = new Parse.Query('Customer');
+//query limit hace la llamada de mas elementos
+customer = customer.limit(600);
+customer.find({
+  success: function(results) {
+    // cycle through the results
+    for ( x in results) {
+        var C = 0;
+        var name = results[x].attributes.Name;
+        listSupermercado.push(results[x].attributes.Logo._url)
+        listNameSupermercado.push(name.split(" ").join("_"))
+       
+            for (a in promociones) {
+
+            C = promociones.length
+            }
+
+            Super.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
+    lastText: "favorite"+x,img_class:listNameSupermercado[x],})
+            console.log(Super)
+
+        console.log("-----------*****-------------")
+     
+        
+    }
+    
+  },
+  error: function(myObject, error) {
+    // Error occured
+    console.log( error );
+  }
+});
+
+
+
+
+

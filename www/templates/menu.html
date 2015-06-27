@@ -1,59 +1,65 @@
 <style>
-    .barraMenu{ 
-        background-color: #00BAB9; 
-        color:white; 
-        border-bottom-color:red;
-        border-style:none;
-        box-shadow: 0 0 5px #888888;
-    }
-    .row{font-size:30px;}
+  .row{font-size:30px;}
+  
+.bar.bar-positive {
+  border-color: #00BAB9  ;
+  background-color: #00BAB9  ;
+            border-style:none;
+      box-shadow: 0 0 5px #888888  ;
+  background-image: linear-gradient(0deg, #0c63ee  , #0c63ee   50%, transparent 50%);
+  color: #fff; }
+  .bar.bar-positive .title {
+    color: #fff; }
+  .bar.bar-positive.bar-footer {
+    background-image: linear-gradient(180deg, #0c63ee  , #0c63ee   50%, transparent 50%); }
+
 </style>
 <ion-side-menus  enable-menu-with-back-views="false">
-  <ion-side-menu-content >
-    <!--***** barra de contenido principal *****-->
-     <ion-nav-bar  class="barraMenu" class="bar-stable">
-      <!--***** boton retorno menu principal *****-->
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-      <!--***** boton simbolo persona menu items *****-->
-     
-    </ion-nav-bar>
-    <!--***** visualizacion contenido menu principal *****-->
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+<ion-side-menu-content >
+  <!--***** barra de contenido principal class="barraMenu" *****-->
+   <ion-nav-bar   class="bar-positive">
+    <!--***** boton retorno menu principal *****-->
+    <ion-nav-back-button >
+    </ion-nav-back-button>
+    <!--***** boton simbolo persona menu items *****-->
+   
+  </ion-nav-bar>
+  <!--***** visualizacion contenido menu principal *****-->
+  <ion-nav-view name="menuContent"></ion-nav-view>
+</ion-side-menu-content>
 <!--**********************************************************************-->
 <!--**********************************************************************-->
 
-<ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8;border-style:none;">
-    <div class="row home">
-        <div class="col col-10"></div>
-        <!--************  ICONO FOOTER HOME  ******************-->
-        <div class="col col-25">
-            <a href="#/app/playlists" style="color:#00BAB9; text-decoration:none;">
-                <div id="home" onclick="functionHome()">A</div>
-            </a>
-        </div>
-        <!--************  ICONO FOOTER HEART  ******************-->
-        <div class="col col-25">
-            <a href="" style="color:#A7A9AC; text-decoration:none;">
-                <div id="heart" onclick="functionHeart()">B</div>
-            </a>
-        </div>
-        <!--************  ICONO FOOTER STAR  ******************-->
-        <div class="col col-25">
-            <a href="" style="color:#A7A9AC; text-decoration:none;">
-                <div id="star" onclick="functionStar()">C</div>
-            </a>
-        </div>
-        <!--************  ICONO FOOTER TOOL  ******************-->
-        <div class="col col-25">
-            <a href="" style="color:#A7A9AC; text-decoration:none;">
-                <div id="tool" onclick="functionTool()">D</div>
-            </a>
-        </div>
-        <!--*************************************************-->
-    </div>
-  
+<ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
+  <div class="row home">
+      <div class="col col-10"></div>
+      <!--************  ICONO FOOTER HOME  ******************-->
+      <div class="col col-25">
+          <a href="#/app/playlists" style="color:#00BAB9  ; text-decoration:none;">
+              <div id="home" onclick="functionHome()">A</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER HEART  ******************-->
+      <div class="col col-25">
+          <a href="" style="color:#A7A9AC  ; text-decoration:none;">
+              <div id="heart" onclick="functionHeart()">B</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER STAR  ******************-->
+      <div class="col col-25">
+          <a href="" style="color:#A7A9AC  ; text-decoration:none;">
+              <div id="star" onclick="functionStar()">C</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER TOOL  ******************-->
+      <div class="col col-25">
+          <a href="" style="color:#A7A9AC  ; text-decoration:none;">
+              <div id="tool" onclick="functionTool()">D</div>
+          </a>
+      </div>
+      <!--*************************************************-->
+  </div>
+
 </ion-footer-bar>
 <!--**********************************************************************-->
 

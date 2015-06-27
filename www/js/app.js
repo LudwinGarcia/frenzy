@@ -7,75 +7,46 @@
 // 'starter.controllers' is found in controllers.js
 /*********  FUNCIONES CAMBIO DE COLOR ICONOS  ******************/
 //********  HOME
+/*********  FUNCIONES CAMBIO DE COLOR ICONOS  ******************/
+//********  HOME
 function functionHome() {
-        document.getElementById("home").style.color = "#00BAB9";
-        document.getElementById("heart").style.color = "";
-        document.getElementById("star").style.color = "";
-        document.getElementById("tool").style.color = "";
-        }
+       document.getElementById("home").style.color = "#00BAB9 ";
+       document.getElementById("heart").style.color = "#A7A9AC ";
+       document.getElementById("star").style.color = "#A7A9AC ";
+       document.getElementById("tool").style.color = "#A7A9AC ";
+       }
 //********  HEART
 function functionHeart() {
-        document.getElementById("home").style.color = "";
-        document.getElementById("heart").style.color = "#FF5252";
-        document.getElementById("star").style.color = "";
-        document.getElementById("tool").style.color = "";
-        }
-//********  HOME
+       document.getElementById("home").style.color = "#A7A9AC ";
+       document.getElementById("heart").style.color = "#FF5252 ";
+       document.getElementById("star").style.color = "#A7A9AC ";
+       document.getElementById("tool").style.color = "#A7A9AC ";
+       }
+
+//********  STAR
 function functionStar() {
-        document.getElementById("home").style.color = "";
-        document.getElementById("heart").style.color = "";
-        document.getElementById("star").style.color = "#FFD922";
-        document.getElementById("tool").style.color = "";
-        }
-//********  HOME
+       document.getElementById("home").style.color = "#A7A9AC ";
+       document.getElementById("heart").style.color = "#A7A9AC ";
+       document.getElementById("star").style.color = "#9C28B0 ";
+       document.getElementById("tool").style.color = "#A7A9AC ";
+       }
+//********  TOOL
 function functionTool() {
-        document.getElementById("home").style.color = "";
-        document.getElementById("heart").style.color = "";
-        document.getElementById("star").style.color = "";
-        document.getElementById("tool").style.color = "#263147 ";
-        }
+       document.getElementById("home").style.color = "#A7A9AC ";
+       document.getElementById("heart").style.color = "#A7A9AC ";
+       document.getElementById("star").style.color = "#A7A9AC ";
+       document.getElementById("tool").style.color = "#3F51B5 ";
+       }
 
 //function favoritos
-var contador = 0;
-function hola(){
-
-    $("#favorite1").click(function(){
-	contador=contador+1;
-	if (contador % 2==0){
-		document.getElementById("favorite1").style.color="red";
-	}
-	else{
-		document.getElementById("favorite1").style.color="";
-	}
-    });
-      $("#favorite2").click(function(){
-	contador=contador+1;
-	if (contador % 2==0){
-		document.getElementById("favorite2").style.color="red";
-	}
-	else{
-		document.getElementById("favorite2").style.color="";
-	}
-    });
-    
-       $("#favorite3").click(function(){
-	contador=contador+1;
-	if (contador % 2==0){
-		document.getElementById("favorite3").style.color="red";
-	}
-	else{
-		document.getElementById("favorite3").style.color="";
-	}
-    });
-       $("#favorite4").click(function(){
-	contador=contador+1;
-	if (contador % 2==0){
-		document.getElementById("favorite4").style.color="red";
-	}
-	else{
-		document.getElementById("favorite4").style.color="";
-	}
-    });
+var contador = 1;
+function hola(parametro){
+       contador=contador+1;
+	   if (contador % 2 == 0){
+           document.getElementById(parametro).style.color="red";
+	   }
+	   else{document.getElementById(parametro).style.color="";}
+          
 };
 
 
