@@ -5,8 +5,11 @@ var listSupermercado = [];
 var promedio = [];
 var listNameSupermercado = [];
 var Super = [];
-
+var listPromoSuper = [];
+var name = "";
+var listaNameSuperComparar = [];
 var total = 0;
+
 
 
 angular.module('starter.services', [])
@@ -216,28 +219,33 @@ promotion = promotion.limit(600);
 promotion.find({
   success: function(results) {
     // cycle through the results
+      var obj1 = new Object()
       var sumaPrecioBase = 0;
       var sumaPrecioPromo = 0;
-
+    var cont = 0;
+      var sum = [];
     for ( x in results) {
+        
+    cont = cont +1
         promociones.push(results[x].attributes.TypeService)
         sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
         sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
+        listPromoSuper.push(results[x].attributes.Costumer)
       
-       
-        // name  = results[x].attributes.CategoryName
-         console.log(results[x].attributes.CategoryApp)
-         console.log(results[x].attributes.Costumer)
-         console.log(results[x].attributes.CategoryProduct)
+      obj1.super= listPromoSuper
+
     }
+
+       
       
         resta = sumaPrecioBase-sumaPrecioPromo
         total = resta / promociones.length
         total = total.toFixed(2)
-        console.log("--total-----")
-        console.log("--total-----")
-        console.log(total)
+        //console.log("--total-----")
+        //console.log("--total-----")
+        //console.log(total)
         promedio.push(total)
+       
   },
   error: function(myObject, error) {
     // Error occured
@@ -253,7 +261,8 @@ customer.find({
     // cycle through the results
     for ( x in results) {
         var C = 0;
-        var name = results[x].attributes.Name;
+         name = results[x].attributes.Name;
+        listaNameSuperComparar.push(results[x].attributes.Name)
         listSupermercado.push(results[x].attributes.Logo._url)
         listNameSupermercado.push(name.split(" ").join("_"))
        
@@ -264,9 +273,9 @@ customer.find({
 
             Super.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
     lastText: "favorite"+x,img_class:listNameSupermercado[x],})
-            console.log(Super)
+            //console.log(Super)
 
-        console.log("-----------*****-------------")
+        //console.log("-----------*****-------------")
      
         
     }
