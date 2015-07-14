@@ -78,6 +78,25 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('RestaurantesCtrl', function($scope, Restaurantes) {
+  $scope.chats = Restaurantes.all();
+
+})
+
+.controller('ModaCtrl', function($scope, Moda) {
+  $scope.chats = Moda.all();
+
+})
+
+.controller('EntretenimientoCtrl', function($scope, Entretenimiento) {
+  $scope.chats = Entretenimiento.all();
+
+})
+
+.controller('ElectronicosCtrl', function($scope, Electronicos) {
+  $scope.chats = Electronicos.all();
+
+})
 
 .controller('CategoryCtrl', function($scope, Categorys) {
   // With the new view caching in Ionic, Controllers are only called
@@ -94,6 +113,8 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Categorys) {
   $scope.chat = Categorys.get($stateParams.chatId);
 })
+
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

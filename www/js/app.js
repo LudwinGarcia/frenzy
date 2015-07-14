@@ -114,7 +114,7 @@ $ionicConfigProvider.tabs.position('bottom');
     })
 //********************************************************************************
   .state('app.single', {
-    url: "/playlists/:playlistId",
+    url: "/playlists/Supermercado",
     views: {
       'menuContent': {
         templateUrl: "templates/category.html",
@@ -122,6 +122,51 @@ $ionicConfigProvider.tabs.position('bottom');
       }
     }
   })
+  
+    .state('app.singles', {
+    url: "/playlists/Restaurantes",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/restaurantes.html",
+        controller: 'RestaurantesCtrl'
+      }
+    }
+  })
+  
+    .state('app.singless', {
+    url: "/playlists/Moda",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/moda.html",
+        controller: 'ModaCtrl'
+      }
+    }
+  })
+  
+      .state('app.singlesss', {
+    url: "/playlists/Entretenimiento",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/entretenimiento.html",
+        controller: 'EntretenimientoCtrl'
+      }
+    }
+  })
+        .state('app.singlessss', {
+    url: "/playlists/Electrónicos",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/electronicos.html",
+        controller: 'ElectronicosCtrl'
+      }
+    }
+  })
+  
+  
+  
+  
+  
+
     
 //********************RUTA Y CONTROLADOR DESCUENTOS.HTML*************************
     .state('app.descuentos', {
