@@ -331,24 +331,20 @@ var customer = new Parse.Query('Customer');
 //////////////////////////////////////////////////////////////////////////promotion
 promotion = promotion.limit(100);
 customer = customer.limit(100);
-
-
-
-
      
 ///////////////////////////////////////////////////////////////////////////////////////////costumer
 //query limit hace la llamada de mas elementos
 
     
 promotion.find({
+    
+    
   success: function(results) {
     // cycle through the results query
       var sumaPrecioBase = 0;
       var sumaPrecioPromo = 0;
       var cont = 0;
       var sum = [];
-     
-      var conte = 0
     for ( x in results) {
                 cont = cont +1
                 promociones.push(results[x].attributes.TypeService)
@@ -356,28 +352,10 @@ promotion.find({
                 sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
                 //listPromoSuper.push(results[x].attributes.Costumer)
                 var tienda = "";
-                for (z in results[x].attributes.Costumer){     
+        for (z in results[x].attributes.Costumer){     
          listPromoSuper.push(results[x].attributes.Costumer[z])
                 }
     }
-    for(i in listaNameSuperConteo){
-            conte = 0
-            for(z in listPromoSuper){
-                if (listaNameSuperConteo[i] == listPromoSuper[z]) {
-                    conte++
-                }
-            }
-            if (conte != 0){
-                    conteoPromo[listaNameSuperConteo[i]] = conte
-		    
-            }
-      }
-        console.log(conteoPromo)
-        conteoPromociones.push(conteoPromo)
-       console.log(conteoPromociones)
-
-        
-
         resta = sumaPrecioBase-sumaPrecioPromo
         total = resta / promociones.length
         total = total.toFixed(2)
@@ -392,48 +370,85 @@ promotion.find({
     console.log( error );
   }
 });
-    
 
+/*
+var ClienteConteo = []
 
-    
-customer.find({
-  success: function(results) {
-    // cycle through the results
-        
+function contador(client){
+       query.equalTo("Costumer", client);
+        query.count({
+          success: function(count) {
+            // The count request succeeded. Show the count
+            //console.log(client +" "+ count);
+              if (count > 0){
+                    ClienteConteo.push({
+                          key: client,
+                          value: count
+                      });
+              }
+          },
+          error: function(error) {
+            // The request failed
+          }
+        });
+}*/
 
-  console.log("fuera de la funcion ",conteoPromo)
+var GameScore = Parse.Object.extend("Promotion");
+var query = new Parse.Query(GameScore);
+var ClienteConteo = []
+
+function addClienCount (client,count) {
+    //console.log(JSON.stringify(count))
+    ClienteConteo.push({
+        key: client,
+        value: count
+    });
+ 
+}
+
+customer.find().then(function(results) {
+    for (x in results) {
+      
+        client = results[x].attributes.Name;
         
-    for ( x in results) {
-        
+        addClienCount(client,query.equalTo("Costumer", client).count());
+
+    }
+    return results;
+
+}).then(function(results) {
+    console.log(ClienteConteo)
+  for (x in results) {
         var C = 0;
         listaNameSuperConteo.push(results[x].attributes.Name)
        
-        if ("Supermercado" ==  results[x].attributes.CategoryApp){
+   if ("Supermercado" ==  results[x].attributes.CategoryApp){
+         name = results[x].attributes.Name;
+        listaNameSuperComparar.push(results[x].attributes.Name)
+        listSupermercado.push(results[x].attributes.Logo._url)
+        listNameSupermercado.push(name.split(" ").join("_"))
        
-                 name = results[x].attributes.Name;
-                listaNameSuperComparar.push(results[x].attributes.Name)
-                listSupermercado.push(results[x].attributes.Logo._url)
-                listNameSupermercado.push(name.split(" ").join("_"))
-
-                    //for (a in promociones) {
-                      //  C = promociones.length
-                    //}
+            //for (a in promociones) {
+              //  C = promociones.length
+            //}
+        
 
 
-
-                    Super.push({id:x, name: listSupermercado[x], promo: C,promedio:total,
-                                lastText: "favorite"+x,img_class:listNameSupermercado[x],})
-                    //console.log(Super)
+            Super.push({id:x, name: listSupermercado[x], promo: C,promedio:total,
+    lastText: "favorite"+x,img_class:listNameSupermercado[x],})
+            //console.log(Super)
             
         //console.log("-----------*****-------------")
    
             }else if("Restaurante" == results[x].attributes.CategoryApp){
             
+                
                     name = results[x].attributes.Name;
                     listSupermercado.push(results[x].attributes.Logo._url)
                     listNameSupermercado.push(name.split(" ").join("_"))
-                    Restaurantes.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
-                    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
+			
+                Restaurantes.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
+    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
 
             }else if ("Moda" == results[x].attributes.CategoryApp){
             
@@ -441,38 +456,28 @@ customer.find({
                     name = results[x].attributes.Name;
                     listSupermercado.push(results[x].attributes.Logo._url)
                     listNameSupermercado.push(name.split(" ").join("_"))
-                    Modas.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
-                    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
+                Modas.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
+    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
             }else if ("Entretenimiento" == results[x].attributes.CategoryApp){
             
                                    
                     name = results[x].attributes.Name;
                     listSupermercado.push(results[x].attributes.Logo._url)
                     listNameSupermercado.push(name.split(" ").join("_"))
-                    Entretenimientos.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
-                    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
+                Entretenimientos.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
+    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
             }else if ("Electronico" == results[x].attributes.CategoryApp){
                                    
                     name = results[x].attributes.Name;
                     listSupermercado.push(results[x].attributes.Logo._url)
                     listNameSupermercado.push(name.split(" ").join("_"))
-                    Electronico.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
-                    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
+                Electronico.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
+    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
             }
    
    
      
         
     }
-    
-  },
-  error: function(myObject, error) {
-    // Error occured
-    console.log( error );
-  }
+
 });
-    
-
-
-
-
