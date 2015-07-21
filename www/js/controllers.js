@@ -1,7 +1,8 @@
-angular.module('starter.controllers', [])
+//****************************************************
+angular.module('starter.controllers', ['ionic'])
 
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -33,7 +34,27 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+//**************************************************************
+//*********************  POPOVER  ******************************
 
+.controller('AppCtrl', function($scope, $ionicPopover) {
+
+  $ionicPopover.fromTemplateUrl('templates/popover.html', {
+    scope: $scope,
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+  $scope.demo = 'ios';
+  $scope.setPlatform = function(p) {
+    document.body.classList.remove('platform-ios');
+    document.body.classList.remove('platform-android');
+    document.body.classList.add('platform-' + p);
+    $scope.demo = p;
+  }
+
+})
+//**************************************************************
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Supermercado',icon:'E', id: 'supermercado' },

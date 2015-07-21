@@ -1,0 +1,197 @@
+<style>
+.bar.bar-positive    {
+    box-shadow: 0 0 0px white;
+}
+.pageOffertsSecondRo    {
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+hr     {
+    margin-bottom:-10px;
+    font-weight:lighter;
+    height: 3px;
+    background-color: white;
+}
+.popoverIcon    {
+    color:white;
+    background-color:#3F51B5;
+    border-radius: 22px;
+    height: 50px;
+    width: 50px;
+    margin-left: 40px;
+    box-shadow: 0px 3px 10px 1px grey;    
+}
+</style>
+<ion-view  view-title="Walmart">
+    <!--************  HEADER AND BACK BUTTON  ***************-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <i class="icon ion-chevron-left" onclick="goBack()" style="margin-top:10px; font-size:25px; margin-left:10px;"></i>
+        <h1 class="title">Supermercados</h1>
+    </ion-header-bar>
+    <!--*****************************************************-->
+    <ion-content ng-controller="AppCtrl">
+        <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row pageOffertsSecondRo">
+            <div class="col col-33">
+                <!--*****  LINK OFFERTS  *****-->
+                <a class="pageOffertsLinkOfferts" nav-transition="none" href="#/app/ofertas">
+                    <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
+                    <p class="pageOffertsTitleOferts" id="offertsFunction" onclick="offerts()" >Ofertas(0)
+                    </p>
+                    <hr class="pageOffertsHrLine" id="lineOffertsFunction">
+                </a>
+            </div>
+            <!--*****  SECOND COL CUPONS  *****-->
+            <div class="col col-33">
+                <!--*****  LINK CUPONS  *****-->
+                <!--a nav-transition="none" href="#/app/cupones" style="color:white; text-decoration:none;">
+                    <!--*****  TITLE AND FUNCTION CUPONS  *****>
+                    <p id="cuponsFunction" onclick="cupons()" style="margin-left:23px; margin-top:23px; color:#D8D8D8;">Cupones(0)</p>
+                    <hr id="lineCuponsFunction" style="margin-top:-5px; color:#D8D8D8; background-color:#D8D8D8; border-style:none;">
+                </a-->
+            </div>
+        </div>
+        <!--**********  ICON POPOVER  *********-->
+        <div class="row" style="margin-top:-35px;">
+            <div class="col col-66"></div>
+            <div class="col col-33">
+                <button class="button button-icon  popoverIcon home" ng-click="popover.show($event)" style="margin-left:20px;">
+                    <p class="pageOffertsPopoverSimbol">
+                        N
+                    </p>
+                </button>
+            </div>
+        </div>        
+        <!--************  OFFERTS BODY WITH IMAGE **************-->
+        <div class="boxResponsiveWithImage">
+            <!--*****  IMAGE LABEL OFFERTS  *****-->
+            <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+            <!--*****  PRICE LABEL OFFERTS  *****-->
+            <div class="row" style="position:absolute;">
+                <div class="col col-25">
+                    <spam class="pageOffertsNameLabel">
+                        Ahorra
+                    </spam>
+                    <spam class="pageOffertsPriceLabel">
+                        Q.23.00
+                    </spam>
+                </div>
+            </div>            
+            <!--*****  IMAGE OFFERTS  *****-->
+            <img class="imageOffertsAndCupons relacion4-3" src="img/pollo.jpg" alt="pollo">
+            <!--*****  NAME OF OFFERTS  *****-->
+            <p class="open_sans overFlowText pageOffertsTitleWithImage">
+                Pollo Rey - Pollo sin menudos lb
+            </p>
+            
+            <!--*****  OFFERTS DESCRIPTION  *****-->
+            <p class="open_sans pageOffertsDescription">
+                15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.
+            </p>
+            <!--*****  DIVIDER LINE  *****-->
+            <hr class="pageOffertsHrBox">
+            <!--*****  DIV TO PRICE AND ICONS  *****-->
+            <div class="row" style="margin-top:10px;">
+            <!--*****  ACTUAL PRICE  *****-->
+                <div class="col col-25">
+                       <spam class="pageOffertsActualPrice">Q.30.00</spam>
+                </div>
+                <!--*****   BEFORE PRICE  *****-->
+                <div class="col col-50">
+                      <spam class="pageOffertsBeforePrice">Antes Q.53.00</spam>
+                </div>
+                <!--*****  ICONS  *****-->
+                <div class="col col-25">
+                   <spam class="home pageOffertsIconWithoutImage">
+                         O  W
+                    </spam>
+                </div>   
+            </div>
+        </div>
+        <!--*******************************************************-->
+        <!--************  OFFERTS BODY WITHOUT IMAGE **************-->
+        <div class="boxResponsiveWithoutImage">
+            <!--*****  NAME OF OFFERTS  *****-->
+            <div class="row">
+                <div class="col col-25">
+                    <!--*****  LABEL WITHOUT IMAGE  *****-->
+                    <div class="row" style="position:absolute;">
+                        <div class="col col-20" style="margin-top:5px;">
+                            <spam class="pageOffertsTitleLabelWithoutImage">
+                                Ahorra
+                            </spam>
+                            <spam class="pageOffertsPriceLabelWithoutImage">
+                                Q.23.00
+                            </spam>
+                        </div>
+                    </div> 
+                    <img clas="offersLogo" src="img/logoOfertas.png" alt="image" style="height:75px; width:75px;">
+                </div>
+                <!--*****  DESCRIPTION BOX WITHOUT IMAGE  *****-->
+                <div class="col col-75">
+                    <p class="open_sans pageOffertsTitleDescriptionWithoutImage overFlowText">
+                        Pollo Rey - Pollo sin menudos lb
+                    </p>
+            <!--*****  OFFERTS DESCRIPTION  *****-->
+                    <p class="open_sans pageOffertsDescriptionWithoutImage">
+                        15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.
+                    </p>
+                </div>
+            </div>
+            <!--*****  DIVIDER LINE  *****-->
+            <hr class="pageOffertsHrBox">
+            <!--*****  DIV TO PRICE AND ICONS  *****-->
+            <div class="row" style="margin-top:10px;">
+                <!--*****  ACTUAL PRICE  *****-->
+                <div class="col col-25">
+                    <spam class="pageOffertsActualPriceWithoutImage">
+                        Q.30.00
+                    </spam>
+                </div>
+                <!--*****   BEFORE PRICE  *****-->
+                <div class="col col-50">
+                    <spam class="pageOffertsBeforePriceWithoutImage">
+                        Antes Q.53.00
+                    </spam>
+                </div>
+                <!--*****  ICONS  *****-->
+                <div class="col col-25">
+                    <spam class="home pageOffertsIconWithoutImage">
+                         O  W
+                    </spam>
+                </div>   
+            </div>
+        </div>
+        <!--*************  POPOVER CONTENT  ******************-->
+        <script id="templates/popover.html" type="text/ng-template" >
+            <ion-popover-view  style="height:170px; width:180px; margin-top:20px;">
+                <ion-content >
+                    <div class="list">
+                        <a class="item" href="http://learn.ionicframework.com/" target="_blank" style="text-align:right; color:#A2A2A5;">
+                            Seguir  
+                            <spam class="home pageOffertsPopoverIconsDescrpition">
+                                B  
+                            </spam>
+                        </a>
+                        <a class="item" href="http://ionicframework.com/docs/" target="_blank" style="text-align:right; color:#A2A2A5;">
+                            Llamar
+                            <spam class="home pageOffertsPopoverIconsDescrpition">
+                                Q
+                            </spam>
+                        </a>
+                        <a class="item" href="http://showcase.ionicframework.com/" target="_blank" style="text-align:right; color:#A2A2A5;">
+                          Ir a pagina Web
+                            <spam class="home pageOffertsPopoverIconsDescrpition">
+                                R
+                            </spam>
+                        </a>
+                      </div>
+                </ion-content>
+            </ion-popover-view>
+        </script>
+        <!--**********************************************************-->          
+   </ion-content>
+</ion-view>

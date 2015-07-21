@@ -1,143 +1,46 @@
-/* */
+/**********  TIPOGRAFY **********/
 @font-face {
 font-family:opensans;
 src: url(OpenSans-Regular.ttf);
 }
-
 /* */
 @font-face {
 font-family:letra;
 src: url(Bariol_Bold.otf);
 }
+/* */
 .open_sans{
 font-family:letra;
 }
-
-/* Empty. Add your own CSS if you like */
-/* Empty. Add your own CSS if you like */
-/******************* TIPOGRAFIA  *************************/
+/* */
 @font-face {
 font-family:Iconos;
-src: url(BariolFrenzyIcons2.ttf);
+src: url(BariolFrenzyIcons3.ttf);
+/* */
 }
 .home {
 font-family: Iconos;
 }
-/********* Estilo de cuadros menu principal *************/
+/*******************************************************/
+/***************  STYLE BUTTON BACK  *******************/
+.iconButtonBackStyle    {
+    font-size:25px;
+    color:white;
+    margin-left:10px;
+}
+/*******************************************************/
+/***************  TEXT CSS OVER FLOW  ******************/
 
-.listas{
-     display:inline-block;
-     height: 185px;
-     width: 185px;
-       box-shadow: 2px 1px 5px #888888;
-     font-size:17px;
-     border-style: hidden;
-    margin-left: 10px;
-    border:none; 
-    
-    
+.overFlowText {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
-.color{
-    
-   border: 1px solid #d0d0d0 ;
-   
-    height: 135px;
-    width: 145px;
-    border-radius: 5px;   
-    padding-top: 50px;
-    margin-left:-10px;
-    margin-top: -5px;
-   
-  
-    
-}
+
 /*********************************************************/
-/****************** DESCUEDNTOS **************************/
-.descuentos
-{
-    background-color:  #E6E6E6;
-    border-radius: 5px;
-    height:145px;
-    width: 360px;
-    padding-top: 10px;
-    padding-left: 10px;
-    font-weight:700; 
-}
-.imagenDescuentos
-{
-    background-color: white;
-    width: 130px;
-    height:100px;
-    margin-top: 10px;
-    padding-top:25px;
-    padding-left: 15px;
-    font-weight:200; 
-    display:inline-block;
-    border-radius: 5px;
-    color:darkgrey;
-}
-.tituloDescuentos
-{
-    color:black;
-    margin-left: 190px;
-    margin-top: -85px;
-    
-}
-.botonCanjear
-{
-    height: 30px;
-    width: 110px;
-    border-radius: 4px;
-    margin-left: 175px;
-    margin-top: 20px;    
-}
-.tituloCanjear
-{
-    margin-top: -10px;
-    margin-left: 10px;
-    text-align: center;
-    color:black;
-    font-size:15px; 
-    
-}
-.compartir
-{
-   
-    height: 25px;
-    width: 100px;
-    margin-left: 235px;
-    margin-top: -120px;
-    
-    text-align: center;
-    
-}
-.CodigoBarras{
-margin-left: 90px;
-}
-.CajaCanjear{
-background-color: #BDBDBD;
-width: 399px;
-}
-.TituloCanjear{
-    text-align: center;
-}
-.compartir2
-{
-   height: 200px;
-    width: 50px;
-    margin-left: 340px;
-    margin-top: -190px;
-}
-/*********************************************************/
-
-.button-icon
-{   
-    color:black;
-}
-
-
-.center{
-  display: -webkit-box;
+/*****  CLASS FOR VERTICAL AND HORIZONTAL CENTER  ********/
+.center    {
+    display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -166,13 +69,49 @@ width: 399px;
     -ms-flex-align: center;
     align-items: center;
 }
-
-.border_icon {
-    border-radius:25px; 
-    height:55px;
-   
+/*********************************************************/
+/****************  MAIN BAR COLOR   **********************/
+.bar.bar-positive {
+  border-color: #00BAB9  ;
+  background-color: #00BAB9  ;
+  border-style:none;
+  box-shadow: 0 0 5px #888888  ;
+  background-image: linear-gradient(0deg, #00BAB9  , #00BAB9   50%, transparent 50%);
+  color: #fff; }
+  .bar.bar-positive .title {
+  color: white;
+  margin-top:3px;
 }
-
+  .bar.bar-positive.bar-footer {
+    background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); }
+/*********************************************************/
+/***********  INTRODUCTION PAGE FRENZY  ******************/
+.pageFrenzyColor    {
+    background-color:#00BAB9;
+}
+.pageFrenzyLogoImage    {
+    text-align: center;
+}
+.pageFrenzySubtitle {
+    border-style:none;
+}
+/*********************************************************/
+/***********  PAGE LOGIN FACEBOOK  ***********************/
+.pageLoginFacebookColor {
+    background-color:#3F51B5;
+}
+.pageLoginFacebookButtonStyle   {
+    height:10px;
+    width:200px;
+    box-shadow: 0.1px 0.1px 0.1px 0.3px #848484;
+}
+.pageLoginFacebookImage {
+    height:50px;
+    width:120px;
+    margin-top:-3px;
+}
+/*********************************************************/
+/***********  PAGE START DESING  *************************/
 .icon_supermercado{
     background-color:#00BAB9 ; 
 }
@@ -192,12 +131,10 @@ width: 399px;
 .icon_otro{
     background-color:#00DDC1; 
 }
-
 .imagen{
    height: 175px;
    width: 175px;
 }
-
 .iconoMenu{ 
    color:white;
    text-align: center;
@@ -205,7 +142,6 @@ width: 399px;
    font-size: 35px;
    padding-top: 19px;
 }
-
 .icon_supermercado{
    background-color:#00BAB9  ;
    height: 50px;
@@ -248,4 +184,273 @@ width: 399px;
    width: 50px;
    margin-top: -15px;
    border-radius: 23px;
+}
+/***********************************************/
+/****  DESIGN OF BOXES OF ESTABLISHMENTS  ******/
+.backgroundCategories    {
+    background-color: #F1F2F2;
+}
+.categoriesBoxes    {
+    background-size: auto auto;
+    color: #212121 ;
+    width: 100%;
+    height: 185px;
+    box-shadow: 3px 3px 2px #BDBDBD ;    
+}
+.categoriesBoxesSupermarket {
+    background: linear-gradient(white 70%, #00BAB9 25%);
+    background: -webkit-linear-gradient(white 65%, #00BAB9 35%);
+    background: -o-linear-gradient(white 65%, #00BAB9 35%);
+}
+
+.categoriesBoxesRestaurant {
+    background: linear-gradient(white 70%, #FF5252 25%);
+    background: -webkit-linear-gradient(white 65%, #FF5252 35%);
+    background: -o-linear-gradient(white 65%, #FF5252 35%);
+}
+.categoriesBoxesFashion {
+    background: linear-gradient(white 70%, #FFD922 25%);
+    background: -webkit-linear-gradient(white 65%, #FFD922 35%);
+    background: -o-linear-gradient(white 65%, #FFD922 35%);
+}
+.categoriesBoxesEntertaiment {
+    background: linear-gradient(white 70%, #9C28B0 25%);
+    background: -webkit-linear-gradient(white 65%, #9C28B0 35%);
+    background: -o-linear-gradient(white 65%, #9C28B0 35%);
+}
+.categoriesBoxesElectronic {
+    background: linear-gradient(white 70%, #3F51B5 25%);
+    background: -webkit-linear-gradient(white 65%, #3F51B5 35%);
+    background: -o-linear-gradient(white 65%, #3F51B5 35%);
+}
+.imageCategoryBoxes   {
+    width: 100%;
+    height: 110px;;
+}
+
+/*************************************************/
+/**************  RESPONSIVE DIVS  **************/
+[class*='relacion'] {
+}
+.relacion4-3 {height: calc(28vh *  1.33); }
+/************************************************/
+/******* DEGINS OFERTS WITH IMAGE BOX  **********/
+
+/************************************************/
+/******  DESING OFERTS WITHOUT IMAGE BOX  *******/
+
+/***********************************************/
+/***********  FAVORITES ICON HEART  ************/
+
+.boxResponsiveFavorites {
+    height: calc(53vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    box-shadow: 3px 3px 2px #BDBDBD;   
+}
+
+.imagePageFavorites   {
+    width: 100%;
+}
+
+[class*='relacion'] {
+}
+.relacionImagePageFavorites {height: calc(38vh *  1.33); }
+
+.logoEstablishment  {
+    height: 50px;
+    width: 50px;
+    margin-top:-65px;
+    margin-left: 10px;
+}
+/***********************************************/
+/************  YOUR FAVORITES STYLE  ***********/
+
+.yourFavoritesStyle {
+   color:red;
+}
+/***********************************************/
+/************  PAGE SALVADOS DESING  ***********/
+.savedPageBoxStyle  {
+    border-style:solid;
+    border-color:#E6E6E6;
+    border-bottom-width: 1px;
+    height: 100px;
+}
+.savedPageImage  {
+    height: 50px;
+    width: 55px;
+    margin-left:5px;
+    margin-top:13px;
+    border-style: solid;
+    border-color:#F1F2F2;
+    border-width: 1px;
+    border-radius:4px;
+}
+.savedPageIcon  {
+    font-size:30px;
+    color:#9C28B0;
+    margin-top:50px;
+    margin-left:-35px;
+}
+.savedPageTitleDescription  {
+    font-size:17px;
+    font-weight: bold;
+    width: 95%;
+    margin-top:12px;
+}
+.savedPageOffert    {
+    font-size:14px;
+    margin-top:-10px;
+}
+.savedPageDescription   {
+    font-size:12px;
+    color:#848484;
+    margin-top:-10px;
+    width: 85%;
+}
+/***********************************************/
+/***********  PAGE OFFERTS STYLE  **************/
+[class*='relacion'] {
+}
+.boxResponsiveWithImage {
+    height: calc(44vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
+    box-shadow: 3px 3px 2px #BDBDBD;    
+}
+
+.imageOffertsAndCupons   {
+    width: 100%;
+}
+
+[class*='relacion'] {
+}
+.relacion4-3 {height: calc(28vh *  1.33); }
+.pageOffertsLinkOfferts {
+    color:white;
+    text-decoration:none;
+}
+[class*='relacion'] {
+}
+.boxResponsiveWithoutImage {
+    height: calc(21vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    
+}
+.imageOffertsAndCupons   {
+    width: 100%;
+}
+
+[class*='relacion'] {
+}
+.relacion4-3    {
+    height: calc(28vh *  1.33);
+}
+.labelOfferts   {
+    height: 75px;
+    width: 100px;
+    position:absolute;
+}
+.pageOffertsTitleOferts {
+    margin-left:22px;
+    margin-top:23px;
+}
+.pageOffertsHrLine  {
+    margin-top:-7px;
+    border-radius:3px;
+    border-color:#E6E6E6;
+}
+.pageOffertsPopoverSimbol   {
+    font-size:35px;
+    padding-top:4px;
+}
+.pageOffertsNameLabel   {
+    font-size:13px;
+    color:white
+}
+.pageOffertsPriceLabel  {
+    font-size:17px;
+    color:white;
+    font-weight:bold;
+}
+.pageOffertsTitleWithImage  {
+    font-size:20px;
+    margin-top:10px;
+    margin-left:10px;
+}
+.pageOffertsDescription {
+    font-size:14px;
+    margin-left:10px;
+    margin-top:-5px;
+    color:#BDBDBD;
+}
+.pageOffertsHrBox   {
+    border:none;
+    background-color:#F2F2F2;
+    height:1px;
+    margin-top:-5px;
+}
+.pageOffertsActualPrice {
+    font-size:15px;
+    margin-left:5px;
+}
+.pageOffertsBeforePrice {
+    font-size:13px;
+    margin-left:10px;
+    color:#A7A9AC;
+}
+.pageOffertsShareIcon  {
+    color:#A7A9AC;
+    margin-left:-5px;
+}
+.pageOffertsLikeIcon  {
+    color:#A7A9AC;
+    margin-left:15px;
+}
+.pageOffertsTitleLabelWithoutImage   {
+    font-size:12px;
+    color:white;
+    margin-left:9px;
+}
+.pageOffertsPriceLabelWithoutImage  {
+    font-size:14px;
+    color:white;
+    font-weight:bold;
+}
+.pageOffertsTitleDescriptionWithoutImage {
+    font-size:20px;
+    margin-top:5px;
+    margin-left:10px;
+}
+.pageOffertsDescriptionWithoutImage {
+    font-size:13px;
+    margin-left:10px;
+    margin-top:-5px;
+    color:#BDBDBD;
+}
+.pageOffertsActualPriceWithoutImage {
+    font-size:15px;
+    margin-left:5px;
+}
+.pageOffertsBeforePriceWithoutImage {
+    font-size:13px;
+    margin-left:10px;
+    color:#A7A9AC ;
+}
+.pageOffertsIconWithoutImage    {
+    color:#A7A9AC;
+}
+.pageOffertsPopoverIconsDescrpition {
+    font-size:30px;
 }

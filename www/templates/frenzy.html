@@ -1,43 +1,28 @@
- <html ng-app="ionicApp">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    
-    <title>frenzy</title>
-
-    <link href="//code.ionicframework.com/nightly/css/ionic.min.css" rel="stylesheet">
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.min.js"></script>
-  </head>
-  <body ng-controller="MyCtrl">
-   
-    <a href="#/login">
-        <ion-content class="center" style="background-color:#00BAB9;">
-            <div class="row">
-                <div class="col">
-        <!--************************************************************************-->   
-                    <div class="row">
-                        <div class="col col-10"></div>
-                            <div class="col">
-                                <p style="text-align: center;">
-                                    <img class="imagen" src="img/frenzy.png" alt="frenzy">
-                                </p>
-                            </div>
-                        <div class="col col-10"></div>  
-                    </div>
-        <!--************************************************************************-->
+<a href="#/login" nav-transition="none">
+    <ion-content class="center pageFrenzyColor" >
+        <div class="row">
+            <!--*****  BODY INTRODUCTION PAGE FRENZY  *****-->
+            <div class="col">
+                <div class="row">
+                    <div class="col col-10"></div>
+                        <div class="col">
+                            <p class="pageFrenzyLogoImage">
+                                <img class="imagen" src="img/frenzy.png" alt="frenzy">
+                            </p>
+                        </div>
+                    <div class="col col-10"></div>  
                 </div>
             </div>
+        </div>
+    </ion-content>
+    <!--*******  REDIRECT BUTTON  ************-->     
+    <button  id="intervaloFrenzy"></button>
+    <!--*************  FOOTER WHIT LEGEND  *****************-->    
+    <ion-tabs  class="pageFrenzySubtitle">
+        <ion-content class="centrar pageFrenzyBarSubtitle" style="background-color:#00BAB9; height:50px;">
+            <!--*****  LEGEND  *****-->
+            <p class="center" style="color:white; font-size:10px;">Diseñado en Guatemala por Cognits!</p>
         </ion-content>
-    <!--******* BOTON PARA REDIRECCIONAR  ************-->     
-                <!--button  id="intervaloFrenzy"></button>
-    <!--**********************************************-->          
-    <!--*************  PIE DE PAGINA ****************-->    
-        <ion-tabs  style="border-style:none;">
-            <ion-content class="centrar" style="background-color:#00BAB9; height:50px;px;">
-                <h6 class="center" style="color:white;">Diseñado en Guatemala por Cognits!</h6>
-            </ion-content>
-        </ion-tabs>
-    </a>
- </body>
-</html>
+    </ion-tabs>
+</a>
 

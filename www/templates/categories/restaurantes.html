@@ -1,0 +1,45 @@
+<!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
+<ion-view  view-title="Restaurantes">
+   <!--************  HEADER AND BACK BUTTON  ***************-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <a href="#/app/playlists" style="margin-top:5px;">
+            <i class="icon ion-chevron-left iconButtonBackStyle"></i>
+        </a>
+        <h1 class="title">Supermercados</h1>
+    </ion-header-bar>
+    <!--*****************************************************-->
+    
+    <ion-content class="backgroundCategories"> 
+            <div class="col"> 
+                <div class="col col-50" ng-repeat="super in chats" style="display: inline-block; width: 100%;
+height: auto;">
+                    <div style="float:left;" class="categoriesBoxes categoriesBoxesRestaurant col col-100">
+                        <!--*****  IMAGE CATEGORY SUPERMARKETS  *****-->
+                        <!--*****  LINK ONLY FOR THE IMAGE  *****-->             
+                        <a href="#/app/ofertas">                
+                            <img class="imageCategoryBoxes" ng-src="{{super.name}}" alt="image">
+                        </a>
+                        <div class="row">
+                            <!--*****  GREEN BOX FOR PROMOTIONS AND OFFERTS  *****-->   
+                            <div class="col col-75" style="margin-top:5px;">
+                                <!--*****  OFFERTS COUNT  *****-->
+                                <spam style="color:white; font-size:15px;"> {{super.promo}} </spam>
+                                <!--***** OFFERTS NAME  *****-->
+                                <spam style="font-size:13px; color:#D8D8D8 ;"> ofertas</spam>
+                                <br>
+                                <!--*****  PROMOTIONS COUNT  *****-->
+                                <spam style="color:white; font-size:13px;">Q{{super.promedio}} </spam>
+                                <!--*****  PROMOTIONS NAME  *****-->
+                                <spam style="font-size:11px; color:#D8D8D8 ;"> promo</spam>
+                            </div>
+                            <!--*****  SECOND ROW TO HEART ICON  *****-->    
+                            <div class="col col-25" style="margin-top:25px; color:white;">
+                                <!--*****  HEART ICON  *****-->
+                                <div class="home" id="{{super.lastText}}" onclick="hola(id)">B</div>                       
+                            </div>
+                        </div>                             
+                    </div> 
+                </div>                 
+           </div>    
+    </ion-content>
+</ion-view>

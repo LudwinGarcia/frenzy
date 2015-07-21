@@ -1,0 +1,77 @@
+<style>
+.bar.bar-positive    {
+    box-shadow: 0 0 0px white;
+}
+.secondRow    {
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+
+.row-border {
+    border-width:thin;
+    border-color: #E6E7E8;
+    border-bottom-style: solid;
+}
+</style>
+<!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
+ <!--************  HEADER AND BACK BUTTON  ***************-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title home"  style="font-size:65px;">Z</h1>
+    </ion-header-bar>
+    <!--*****************************************************-->
+    <ion-content ng-controller="AppCtrl">
+        <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row secondRow">
+            <div class="col col-50">
+                <!--*****  LINK OFFERTS  *****-->
+                <a nav-transition="none" href="#/app/favoritos" style="color:white; text-decoration:none;">
+                    <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
+                    <p id="offertsFunction" onclick="offerts()" style="margin-left:20px; margin-top:23px; color:#D8D8D8;font-size:13px;">Nuestros Favoritos</p>
+                             <hr id="lineCuponsFunction" style="margin-top:-5px; color:#D8D8D8; background-color:#D8D8D8; border-style:none;">
+                </a>
+            </div>
+            <!--*****  SECOND COL CUPONS  *****-->
+            <div class="col col-50">
+                <!--*****  LINK CUPONS  *****-->
+                <a nav-transition="none" href="#/app/tusFavoritos" style="color:white; text-decoration:none;">
+                    <!--*****  TITLE AND FUNCTION CUPONS  *****-->
+                    <p id="cuponsFunction" onclick="cupons()" style="margin-left:30px; margin-top:23px;  font-size:13px;">Tus Favoritos</p>
+          
+                     <hr id="lineOffertsFunction" style="margin-top:-5px; border-radius:3px; border-style:none; weigth:10px;">
+                </a>
+            </div>
+        </div>
+           
+        <!--************  YOUT FAVORITES BODY  *******************-->
+        <div class="row" style="background-color:#E6E7E8; height:35px; margin-top:1px;">
+            <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
+            <!--*****  ICON HEART COLOR RED  *****-->
+            <div class="col col-10" style="margin-top:5px;">
+                <spam class="home" style="margin-left:10px; font-size:25px;color:#FF5252;">B</spam>    
+            </div>
+            <!--*****  NAME'S STABLISHMENT  *****-->
+            <div class="col col-75" style="margin-top:2px;">
+                <spam class="open_sans" style="margin-left:15px; font-size:15px;">Domino's Pizza</spam>    
+            </div>
+            <!--*****  ICON ARROW RIGHT  *****-->
+            <div class="col col-10" style="margin-top:5px;">
+                <spam class="home" style="margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;"> > </spam>    
+            </div>
+        </div>
+        <!--*****  SECOND ROW DESCRIPTION OF YOUR FAVORITE STABLISHMENT  *****-->
+        <div class="row row-border" style="height:100px;">
+            <div class="col col-80" style="margin-top:15px;">
+                <p style="font-size:13px;font-weight: bold;">2X1 En pizzas grandes de un ingrediente</p>
+                <p style="font-size:11px;margin-top:-8px;">Oferta - Q.99.00</p>
+                <p style="font-size:11px; color:#A4A4A4; margin-top:-8px; ">15% de descuento en pollos piolindo de dos lb...</p>
+            </div>
+            <div class="col col-20">
+                <p class="home" style="color:#A7A9AC; margin-top:45px; margin-left:25px; font-size:30px;">C</p>
+            </div>
+        </div>
+        <!--*******************************************************-->          
+   </ion-content>
+</ion-view>

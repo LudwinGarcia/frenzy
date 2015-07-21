@@ -1,0 +1,203 @@
+<style>
+.bar.bar-positive    {
+    box-shadow: 0 0 0px white;
+}
+.secondRow    {
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+hr     {
+    margin-bottom:-10px;
+    font-weight:lighter;
+    height: 3px;
+    background-color: white;
+}
+.popoverIcon    {
+    color:white;
+    background-color:#3F51B5;
+    border-radius: 22px;
+    height: 50px;
+    width: 50px;
+    margin-left: 40px;
+    box-shadow: 0px 3px 10px 1px grey;    
+}
+</style>
+<!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
+<ion-view>
+     <!--************  HEADER AND BACK BUTTON  ***************-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title home"  style="font-size:65px;">Z</h1>
+    </ion-header-bar>
+    <!--*****************************************************-->
+    <ion-content ng-controller="AppCtrl" style="background-color:#F1F2F2;"  ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="SlideController">
+        <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row secondRow">
+            <div class="col col-50">
+                <!--*****  LINK OFFERTS  *****-->
+                <a nav-transition="none" href="#/app/favoritos" style="color:white; text-decoration:none;">
+                    <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
+                    <p id="offertsFunction" onclick="offerts()" style="margin-left:20px; margin-top:23px; font-size:13px;">Nuestros Favoritos</p>
+                    <hr id="lineOffertsFunction" style="margin-top:-5px; border-radius:3px; border-style:none; weigth:10px;">
+                </a>
+            </div>
+            <!--*****  SECOND COL CUPONS  *****-->
+            <div class="col col-50">
+                <!--*****  LINK CUPONS  *****-->
+                <a nav-transition="none" href="#/app/tusFavoritos" style="color:white; text-decoration:none;">
+                    <!--*****  TITLE AND FUNCTION YOUR FAVORITES  *****-->
+                    <p id="cuponsFunction" onclick="cupons()" style="margin-left:30px; margin-top:23px; color:#D8D8D8; font-size:13px;">Tus Favoritos</p>
+                    <hr id="lineCuponsFunction" style="margin-top:-5px; color:#D8D8D8; background-color:#D8D8D8; border-style:none;">
+                </a>
+            </div>
+        </div>
+           
+        <!--************  OFFERTS BODY WITH IMAGE **************-->
+        
+        <ion-slide-box>
+            <!--*****************************************************************-->
+            <!--******************  FIRTS SLIDE IMAGE  **************************-->
+            <ion-slide>
+                 <div class="boxResponsiveFavorites">
+            <!--*****  IMAGE LABEL OFFERTS  *****-->
+            <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+            <!--*****  PRICE LABEL OFFERTS  *****-->
+            <div class="row" style="position:absolute;">
+                <div class="col col-25">
+                    <spam style="font-size:17px; color:white; margin-left:5px;">Ahorra </spam>
+                    <spam style="font-size:15px; color:white; font-weight:bold;">Q.21.600</spam>
+                </div>
+            </div>            
+            <!--*****  IMAGE OFFERTS  *****-->
+            <img class="imagePageFavorites relacionImagePageFavorites" src="img/nissan.jpg" alt="pollo">
+            <!--***** NISSAN LOGO  *****-->
+            <div style="margin-top:-25px;">
+                <img class="logoEstablishment" src="img/logoNissan.png" alt="label">
+                <spam style=" font-size:14px; color:black;font-weight:bolder; color:white; margin-top:-5px;">+32 </spam>
+                <spam style=" font-size:13px; color:#BDBDBD; ">ofertas</spam>
+            </div>
+            <!--*****  NAME OF OFFERTS  *****-->
+            <p class="open_sans overFlowText" style="font-size:20px; margin-top:15px; margin-left:10px;">Nissan March 1.6SV</p>
+            <!--*****  OFFERTS DESCRIPTION  *****-->
+            <p class="open_sans" style="font-size:13px; margin-left:10px;margin-top:-5px; color:#BDBDBD;">15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.</p>
+            <!--*****  DIVIDER LINE  *****-->
+            <hr style="border:none;background-color:#F2F2F2; height:1px;margin-top:-5px;">
+                <!--*****  DIV TO PRICE AND ICONS  *****-->
+                <div class="row" style="margin-top:10px;">
+                    <!--*****  ACTUAL PRICE  *****-->
+                    <div class="col col-33">
+                           <spam style="font-size:14px;">Q.93.900.00</spam>
+                    </div>
+                    <!--*****   BEFORE PRICE  *****-->
+                    <div class="col col-50">
+                          <spam style="font-size:14px; margin-left:30px; color:#A7A9AC ;"> Q.115.500.00</spam>
+                    </div>
+                    <!--*****  ICONS  *****-->
+                    <div class="col col-25">
+                        <spam class="home" style="color:#A7A9AC; margin-left:-20px;"> O </spam>
+                        <spam class="home" style="color:#A7A9AC; margin-left:5px;"> W </spam>
+                    </div>   
+                </div>
+        </div>
+            </ion-slide>
+            
+            <!--*****************************************************************-->
+            <!--******************  SECOND SLIDE IMAGE  **************************-->
+
+            <ion-slide>
+                 <div class="boxResponsiveFavorites">
+            <!--*****  IMAGE LABEL OFFERTS  *****-->
+            <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+            <!--*****  PRICE LABEL OFFERTS  *****-->
+            <div class="row" style="position:absolute;">
+                <div class="col col-25">
+                    <spam style="font-size:17px; color:white; margin-left:5px;">Ahorra </spam>
+                    <spam style="font-size:15px; color:white; font-weight:bold;">Q.21.600</spam>
+                </div>
+            </div>            
+            <!--*****  IMAGE OFFERTS  *****-->
+            <img class="imagePageFavorites relacionImagePageFavorites" src="img/pizza.jpg" alt="pollo">
+            <!--***** NISSAN LOGO  *****-->
+            <div style="margin-top:-25px;">
+                <img class="logoEstablishment" src="img/logopizza.png" alt="label">
+                <spam style=" font-size:14px; color:black;font-weight:bolder; color:white; margin-top:-5px;">+32 </spam>
+                <spam style=" font-size:13px; color:#BDBDBD; ">ofertas</spam>
+            </div>
+            <!--*****  NAME OF OFFERTS  *****-->
+            <p class="open_sans overFlowText" style="font-size:20px; margin-top:15px; margin-left:10px;">Nissan March 1.6SV</p>
+            <!--*****  OFFERTS DESCRIPTION  *****-->
+            <p class="open_sans" style="font-size:13px; margin-left:10px;margin-top:-5px; color:#BDBDBD;">15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.</p>
+            <!--*****  DIVIDER LINE  *****-->
+            <hr style="border:none;background-color:#F2F2F2; height:1px;margin-top:-5px;">
+                <!--*****  DIV TO PRICE AND ICONS  *****-->
+                <div class="row" style="margin-top:10px;">
+                    <!--*****  ACTUAL PRICE  *****-->
+                    <div class="col col-33">
+                           <spam style="font-size:14px;">Q.93.900.00</spam>
+                    </div>
+                    <!--*****   BEFORE PRICE  *****-->
+                    <div class="col col-50">
+                          <spam style="font-size:14px; margin-left:30px; color:#A7A9AC ;"> Q.115.500.00</spam>
+                    </div>
+                    <!--*****  ICONS  *****-->
+                    <div class="col col-25">
+                        <spam class="home" style="color:#A7A9AC; margin-left:-20px;"> O </spam>
+                        <spam class="home" style="color:#A7A9AC; margin-left:5px;"> W </spam>
+                    </div>   
+                </div>
+        </div>
+            </ion-slide>
+            
+            <!--*****************************************************************-->
+            <!--******************  THIRD SLIDE IMAGE  **************************-->
+   
+            <ion-slide>
+                 <div class="boxResponsiveFavorites">
+            <!--*****  IMAGE LABEL OFFERTS  *****-->
+            <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+            <!--*****  PRICE LABEL OFFERTS  *****-->
+            <div class="row" style="position:absolute;">
+                <div class="col col-25">
+                    <spam style="font-size:17px; color:white; margin-left:5px;">Ahorra </spam>
+                    <spam style="font-size:15px; color:white; font-weight:bold;">Q.21.600</spam>
+                </div>
+            </div>            
+            <!--*****  IMAGE OFFERTS  *****-->
+            <img class="imagePageFavorites relacionImagePageFavorites" src="img/mac.jpg" alt="pollo">
+            <!--***** NISSAN LOGO  *****-->
+            <div style="margin-top:-25px;">
+                <img class="logoEstablishment" src="img/logomac.jpg" alt="label">
+                <spam style=" font-size:14px; color:black;font-weight:bolder; color:white; margin-top:-5px;">+32 </spam>
+                <spam style=" font-size:13px; color:#BDBDBD; ">ofertas</spam>
+            </div>
+            <!--*****  NAME OF OFFERTS  *****-->
+            <p class="open_sans overFlowText" style="font-size:20px; margin-top:15px; margin-left:10px;">Nissan March 1.6SV</p>
+            <!--*****  OFFERTS DESCRIPTION  *****-->
+            <p class="open_sans" style="font-size:13px; margin-left:10px;margin-top:-5px; color:#BDBDBD;">15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.</p>
+            <!--*****  DIVIDER LINE  *****-->
+            <hr style="border:none;background-color:#F2F2F2; height:1px;margin-top:-5px;">
+                <!--*****  DIV TO PRICE AND ICONS  *****-->
+                <div class="row" style="margin-top:10px;">
+                    <!--*****  ACTUAL PRICE  *****-->
+                    <div class="col col-33">
+                           <spam style="font-size:14px;">Q.93.900.00</spam>
+                    </div>
+                    <!--*****   BEFORE PRICE  *****-->
+                    <div class="col col-50">
+                          <spam style="font-size:14px; margin-left:30px; color:#A7A9AC ;"> Q.115.500.00</spam>
+                    </div>
+                    <!--*****  ICONS  *****-->
+                    <div class="col col-25">
+                        <spam class="home" style="color:#A7A9AC; margin-left:-20px;"> O </spam>
+                        <spam class="home" style="color:#A7A9AC; margin-left:5px;"> W </spam>
+                    </div>   
+                </div>
+        </div>
+            </ion-slide>
+        </ion-slide-box>
+       
+        <!--*******************************************************-->          
+   </ion-content>
+</ion-view>

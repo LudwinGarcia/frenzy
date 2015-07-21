@@ -15,12 +15,6 @@ var listPromoSuper = [];
 var name = "";
 var nameRestaurantes = "";
 var listaNameSuperComparar = [];
-var listaNameSuperConteo = [];
-/************************************************/
-var conteoPromociones = [];
- var conteoPromo = {};
-
-
 var total = 0;
 
 
@@ -65,7 +59,7 @@ oferta: "Segundo Plato 1/2"
     id: 4,
     name: 'La Torre',
    oferta: "-10%",
-    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+    face: 'http://www.logorium.com/sites/default/files/images/1357/logos/logo_silmar_1.jpg'
   }];
 
   return {
@@ -163,7 +157,12 @@ for (a in promociones) {
 })
 
 .factory('Supermercados', function() {
-
+    for (a in promociones) {
+    console.log(promociones.length)
+    var C = promociones.length
+     console.log(name)
+    
+}
   // Might use a resource here that returns a JSON array
     
   // Some fake testing data
@@ -185,7 +184,12 @@ for (a in promociones) {
 })
 
 .factory('Entretenimiento', function() {
-
+    for (a in promociones) {
+    console.log(promociones.length)
+    var C = promociones.length
+     console.log(name)
+    
+}
   // Might use a resource here that returns a JSON array
     
   // Some fake testing data
@@ -234,7 +238,12 @@ for (a in promociones) {
 })
 
 .factory('Electronicos', function() {
-
+    for (a in promociones) {
+    console.log(promociones.length)
+    var C = promociones.length
+     console.log(name)
+    
+}
   // Might use a resource here that returns a JSON array
     
   // Some fake testing data
@@ -257,12 +266,12 @@ for (a in promociones) {
 
 
 .factory('Restaurantes', function() {
-/*    for (a in promociones) {
+    for (a in promociones) {
     console.log(promociones.length)
     var C = promociones.length
      console.log(name)
     
-}*/
+}
   // Might use a resource here that returns a JSON array
     
   // Some fake testing data
@@ -283,10 +292,10 @@ for (a in promociones) {
   };
 });
 
-/*
+
  
 var Code_Review = Parse.Object.extend("AppCategory");
-
+/***************Console log for check the json*************************************/
 var Code_Reviews = Parse.Collection.extend({
     model: Code_Review
 });
@@ -300,22 +309,25 @@ code_review.fetch({
     error: function(code_review, error) {
         console.log(error);
     }
-});*/
+});
 /********************************************************/
 //i can call data the parse
 var query = new Parse.Query('AppCategory');
 //query limit hace la llamada de mas elementos
-query = query.limit(100);
+query = query.limit(600);
 query.find({
   success: function(results) {
     // cycle through the results
-      
     for ( x in results) {
         
           List_name.push(results[x].attributes.CategoryName)
 
          name  = results[x].attributes.CategoryName
-
+         //console.log(name)
+        //console.log(List_name)
+        // print out the results
+        //console.log( results[x].attributes.BasePrice + ' - ' + results[x].attributes.CategoryApp + ' - ' + results[x].attributes.CategoryProduct + ' - ' + results[x].attributes.Costumer+ ' - ' + results[x].attributes.EndDate+ ' - ' + results[x].attributes.PhoneNumber);
+        //$(".Data").append('<li>' + results[x].attributes.Name + '  -  ' + results[x].attributes.project_type +  '  -  ' + results[x].attributes.Date + '</li>');
     }
   },
   error: function(myObject, error) {
@@ -326,36 +338,31 @@ query.find({
 
 /***************call parse promotion*********************************/
 var promotion = new Parse.Query('Promotion');
-var customer = new Parse.Query('Customer');
 //query limit hace la llamada de mas elementos
-//////////////////////////////////////////////////////////////////////////promotion
-promotion = promotion.limit(100);
-customer = customer.limit(100);
-     
-///////////////////////////////////////////////////////////////////////////////////////////costumer
-//query limit hace la llamada de mas elementos
-
-    
+promotion = promotion.limit(600);
 promotion.find({
-    
-    
   success: function(results) {
-    // cycle through the results query
+    // cycle through the results
+      var obj1 = new Object()
       var sumaPrecioBase = 0;
       var sumaPrecioPromo = 0;
-      var cont = 0;
+    var cont = 0;
       var sum = [];
     for ( x in results) {
-                cont = cont +1
-                promociones.push(results[x].attributes.TypeService)
-                sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
-                sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
-                //listPromoSuper.push(results[x].attributes.Costumer)
-                var tienda = "";
-        for (z in results[x].attributes.Costumer){     
-         listPromoSuper.push(results[x].attributes.Costumer[z])
-                }
+        
+    cont = cont +1
+        promociones.push(results[x].attributes.TypeService)
+        sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
+        sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
+        listPromoSuper.push(results[x].attributes.Costumer)
+      
+      obj1.super= listPromoSuper
+    
+
     }
+
+       
+      
         resta = sumaPrecioBase-sumaPrecioPromo
         total = resta / promociones.length
         total = total.toFixed(2)
@@ -371,68 +378,25 @@ promotion.find({
   }
 });
 
-/*
-var ClienteConteo = []
-
-function contador(client){
-       query.equalTo("Costumer", client);
-        query.count({
-          success: function(count) {
-            // The count request succeeded. Show the count
-            //console.log(client +" "+ count);
-              if (count > 0){
-                    ClienteConteo.push({
-                          key: client,
-                          value: count
-                      });
-              }
-          },
-          error: function(error) {
-            // The request failed
-          }
-        });
-}*/
-
-var GameScore = Parse.Object.extend("Promotion");
-var query = new Parse.Query(GameScore);
-var ClienteConteo = []
-
-function addClienCount (client,count) {
-    //console.log(JSON.stringify(count))
-    ClienteConteo.push({
-        key: client,
-        value: count
-    });
- 
-}
-
-customer.find().then(function(results) {
-    for (x in results) {
-      
-        client = results[x].attributes.Name;
-        
-        addClienCount(client,query.equalTo("Costumer", client).count());
-
-    }
-    return results;
-
-}).then(function(results) {
-    console.log(ClienteConteo)
-  for (x in results) {
+var customer = new Parse.Query('Customer');
+//query limit hace la llamada de mas elementos
+customer = customer.limit(600);
+customer.find({
+  success: function(results) {
+    // cycle through the results
+    for ( x in results) {
         var C = 0;
-        listaNameSuperConteo.push(results[x].attributes.Name)
-       
+        
    if ("Supermercado" ==  results[x].attributes.CategoryApp){
          name = results[x].attributes.Name;
         listaNameSuperComparar.push(results[x].attributes.Name)
         listSupermercado.push(results[x].attributes.Logo._url)
         listNameSupermercado.push(name.split(" ").join("_"))
        
-            //for (a in promociones) {
-              //  C = promociones.length
-            //}
-        
+            for (a in promociones) {
 
+            C = promociones.length
+            }
 
             Super.push({id:x, name: listSupermercado[x], promo: C,promedio:total,
     lastText: "favorite"+x,img_class:listNameSupermercado[x],})
@@ -446,10 +410,14 @@ customer.find().then(function(results) {
                     name = results[x].attributes.Name;
                     listSupermercado.push(results[x].attributes.Logo._url)
                     listNameSupermercado.push(name.split(" ").join("_"))
-			
                 Restaurantes.push({id:x,name: listSupermercado[x], promo: C,promedio:total,
     lastText: "favorite"+x,img_class:listNameSupermercado[x]})
+                   console.log(listSupermercado[8])
 
+                
+
+                
+                
             }else if ("Moda" == results[x].attributes.CategoryApp){
             
                                    
@@ -479,5 +447,15 @@ customer.find().then(function(results) {
      
         
     }
-
+    
+  },
+  error: function(myObject, error) {
+    // Error occured
+    console.log( error );
+  }
 });
+
+
+
+
+

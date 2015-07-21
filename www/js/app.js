@@ -5,8 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-/*********  FUNCIONES CAMBIO DE COLOR ICONOS  ******************/
-//********  HOME
+
 /*********  FUNCIONES CAMBIO DE COLOR ICONOS  ******************/
 //********  HOME
 function functionHome() {
@@ -38,6 +37,12 @@ function functionTool() {
        document.getElementById("tool").style.color = "#3F51B5 ";
        }
 
+//*************************************************
+//***********  FUNCTION BACK
+function goBack() {
+    window.history.back();
+}
+//*************************************************
 //function favoritos
 var contador = 1;
 function hola(parametro){
@@ -48,6 +53,20 @@ function hola(parametro){
 	   else{document.getElementById(parametro).style.color="";}
           
 };
+/******************************************************/
+function check() {
+    setTimeout(function(){ 
+       document.getElementById("intervaloFrenzy").click(); 
+    }, 1000);
+};
+check()
+/******************************************************/
+var myApp = angular.module('reallyCoolApp', ['ionic']);
+myApp.config(function($ionicConfigProvider) {
+  // note that you can also chain configs
+  $ionicConfigProvider.navBar.alignTitle('center');
+});
+//*****************************************************
 
 
 /******************************************************/
@@ -92,11 +111,41 @@ $ionicConfigProvider.tabs.position('bottom');
     
   })     
 //********************************************************************************
-  .state('app.browse', {
-    url: "/Descuento",
+  .state('app.favoritos', {
+    url: "/favoritos",
     views: {
       'menuContent': {
-        templateUrl: "templates/categorias.html",
+        templateUrl: "templates/favoritos.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })
+//********************************************************************************
+  .state('app.tusFavoritos', {
+    url: "/tusFavoritos",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/tusFavoritos.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })
+//********************************************************************************
+  .state('app.salvados', {
+    url: "/salvados",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/salvados.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })  
+//********************************************************************************
+  .state('app.browse', {
+    url: "/ofertas",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/ofertas.html",
         controller: 'ChatsCtrl'
       }
     }
@@ -112,12 +161,23 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
+  
+//*********  CUPONES  ************************************************************
+  .state('app.cupones', {
+    url: "/cupones",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/cupones.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })  
 //********************************************************************************
   .state('app.single', {
     url: "/playlists/Supermercado",
     views: {
       'menuContent': {
-        templateUrl: "templates/category.html",
+        templateUrl: "templates/categories/supermarkets.html",
         controller: 'SupermercadoCtrl'
       }
     }
@@ -127,7 +187,7 @@ $ionicConfigProvider.tabs.position('bottom');
     url: "/playlists/Restaurantes",
     views: {
       'menuContent': {
-        templateUrl: "templates/restaurantes.html",
+        templateUrl: "templates/categories/restaurantes.html",
         controller: 'RestaurantesCtrl'
       }
     }
@@ -137,7 +197,7 @@ $ionicConfigProvider.tabs.position('bottom');
     url: "/playlists/Moda",
     views: {
       'menuContent': {
-        templateUrl: "templates/moda.html",
+        templateUrl: "templates/categories/moda.html",
         controller: 'ModaCtrl'
       }
     }
@@ -147,7 +207,7 @@ $ionicConfigProvider.tabs.position('bottom');
     url: "/playlists/Entretenimiento",
     views: {
       'menuContent': {
-        templateUrl: "templates/entretenimiento.html",
+        templateUrl: "templates/categories/entretenimiento.html",
         controller: 'EntretenimientoCtrl'
       }
     }
@@ -156,16 +216,18 @@ $ionicConfigProvider.tabs.position('bottom');
     url: "/playlists/Electrónicos",
     views: {
       'menuContent': {
-        templateUrl: "templates/electronicos.html",
+        templateUrl: "templates/categories/electronicos.html",
         controller: 'ElectronicosCtrl'
       }
     }
   })
-  
-  
-  
-  
-  
+//****************  OFFERTS  *************
+  .state('ofertas', {
+    url: "/ofertas",
+    templateUrl: "templates/ofertas.html",
+  })  
+//****************  FAVORITOS  ************
+
 
     
 //********************RUTA Y CONTROLADOR DESCUENTOS.HTML*************************
