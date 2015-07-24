@@ -118,9 +118,6 @@ angular.module('starter.controllers', ['ionic'])
   $scope.chats = Electronicos.all();
 
 })
-.controller('PaizCtrl', function($scope, $stateParams, Paiz) {
-   $scope.chats = Paiz.all();
-})
 
 .controller('CategoryCtrl', function($scope, Categorys) {
   // With the new view caching in Ionic, Controllers are only called
@@ -133,6 +130,9 @@ angular.module('starter.controllers', ['ionic'])
 
 })
 
+.controller('PaizCtrl', function($scope, $stateParams, Paiz) {
+   $scope.chats = Paiz.all();
+})
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Categorys) {
   $scope.chat = Categorys.get($stateParams.chatId);
