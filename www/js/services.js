@@ -3,7 +3,7 @@ var List_name = []; /* list name category*/
 var promociones = [];
 var listSupermercado = [];
 var listRestaurantes = [];
-var promedio = [];
+//var promedio = [];
 var listNameSupermercado = [];
 var listNameRestaurantes = [];
 var Super = [];
@@ -16,7 +16,8 @@ var name = "";
 var nameRestaurantes = "";
 var listaNameSuperComparar = [];
 var total = 0;
-
+///////Photos
+var PhotoPaiz = [];
 
 
 angular.module('starter.services', [])
@@ -290,44 +291,42 @@ for (a in promociones) {
       return null;
     }
   };
+})
+
+
+
+.factory('Paiz', function() {
+
+  var paiz = PhotoPaiz;
+
+  return {
+    all: function() {
+      return paiz;
+    },
+    get: function(chatId) {
+      for (var i = 0; i < paiz.length; i++) {
+        if (paiz[i].id === parseInt(chatId)) {
+          return paiz[i];
+        }
+      }
+      return null;
+    }
+  };
 });
 
 
  
-var Code_Review = Parse.Object.extend("AppCategory");
-/***************Console log for check the json*************************************/
-var Code_Reviews = Parse.Collection.extend({
-    model: Code_Review
-});
-
-var code_review = new Code_Reviews();
-
-code_review.fetch({
-    success: function(code_review) {
-        console.log(code_review);
-    },
-    error: function(code_review, error) {
-        console.log(error);
-    }
-});
 /********************************************************/
 //i can call data the parse
-var query = new Parse.Query('AppCategory');
+var querys = new Parse.Query('AppCategory');
 //query limit hace la llamada de mas elementos
-query = query.limit(600);
-query.find({
+querys = querys.limit(600);
+querys.find({
   success: function(results) {
     // cycle through the results
     for ( x in results) {
-        
           List_name.push(results[x].attributes.CategoryName)
-
          name  = results[x].attributes.CategoryName
-         //console.log(name)
-        //console.log(List_name)
-        // print out the results
-        //console.log( results[x].attributes.BasePrice + ' - ' + results[x].attributes.CategoryApp + ' - ' + results[x].attributes.CategoryProduct + ' - ' + results[x].attributes.Costumer+ ' - ' + results[x].attributes.EndDate+ ' - ' + results[x].attributes.PhoneNumber);
-        //$(".Data").append('<li>' + results[x].attributes.Name + '  -  ' + results[x].attributes.project_type +  '  -  ' + results[x].attributes.Date + '</li>');
     }
   },
   error: function(myObject, error) {
@@ -343,24 +342,25 @@ promotion = promotion.limit(600);
 promotion.find({
   success: function(results) {
     // cycle through the results
-      var obj1 = new Object()
       var sumaPrecioBase = 0;
       var sumaPrecioPromo = 0;
-    var cont = 0;
+      var cont = 0;
       var sum = [];
     for ( x in results) {
         
-    cont = cont +1
-        promociones.push(results[x].attributes.TypeService)
-        sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
-        sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
-        listPromoSuper.push(results[x].attributes.Costumer)
-      
-      obj1.super= listPromoSuper
+            cont = cont +1
+            promociones.push(results[x].attributes.TypeService)
+            sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
+            sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
+            listPromoSuper.push(results[x].attributes.Costumer)
+            
+                PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,presentation:results[x].attributes.Presentation,description:results[x].attributes.PromotionDescription,basePrice:results[x].attributes.BasePrice,promotionalPrice:results[x].attributes.PromotionalPrice,ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice})
+
+           
     
 
     }
-
+        console.log(PhotoPaiz)
        
       
         resta = sumaPrecioBase-sumaPrecioPromo
@@ -369,7 +369,7 @@ promotion.find({
         //console.log("--total-----")
         //console.log("--total-----")
         //console.log(total)
-        promedio.push(total)
+        //promedio.push(total)
        
   },
   error: function(myObject, error) {
@@ -380,6 +380,7 @@ promotion.find({
 
 var customer = new Parse.Query('Customer');
 //query limit hace la llamada de mas elementos
+
 customer = customer.limit(600);
 customer.find({
   success: function(results) {
@@ -399,7 +400,7 @@ customer.find({
             }
 
             Super.push({id:x, name: listSupermercado[x], promo: C,promedio:total,
-    lastText: "favorite"+x,img_class:listNameSupermercado[x],})
+    lastText: "favorite"+x,img_class:listNameSupermercado[x]})
             //console.log(Super)
             
         //console.log("-----------*****-------------")

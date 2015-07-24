@@ -118,6 +118,9 @@ angular.module('starter.controllers', ['ionic'])
   $scope.chats = Electronicos.all();
 
 })
+.controller('PaizCtrl', function($scope, $stateParams, Paiz) {
+   $scope.chats = Paiz.all();
+})
 
 .controller('CategoryCtrl', function($scope, Categorys) {
   // With the new view caching in Ionic, Controllers are only called

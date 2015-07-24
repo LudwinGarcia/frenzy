@@ -146,7 +146,7 @@ $ionicConfigProvider.tabs.position('bottom');
     views: {
       'menuContent': {
         templateUrl: "templates/ofertas.html",
-        controller: 'ChatsCtrl'
+        controller: 'PaizCtrl'
       }
     }
   })
@@ -225,6 +225,7 @@ $ionicConfigProvider.tabs.position('bottom');
   .state('ofertas', {
     url: "/ofertas",
     templateUrl: "templates/ofertas.html",
+      controller: 'PaizCtrl'
   })  
 //****************  FAVORITOS  ************
 

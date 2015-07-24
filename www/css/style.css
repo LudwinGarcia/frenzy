@@ -1,10 +1,11 @@
-/**********  TIPOGRAFY **********/
-@font-face {
+/****************************************************************************/
+/**************************  TIPOGRAFY **************************************/
+@font-face{
 font-family:opensans;
 src: url(OpenSans-Regular.ttf);
 }
 /* */
-@font-face {
+@font-face{
 font-family:letra;
 src: url(Bariol_Bold.otf);
 }
@@ -13,33 +14,24 @@ src: url(Bariol_Bold.otf);
 font-family:letra;
 }
 /* */
-@font-face {
+@font-face{
 font-family:Iconos;
 src: url(BariolFrenzyIcons3.ttf);
 /* */
 }
-.home {
+.home{
 font-family: Iconos;
 }
-/*******************************************************/
-/***************  STYLE BUTTON BACK  *******************/
+/****************************************************************************/
+/*****************************  GENERALY CSS STYLES  ************************/
+/*****  BACK BUTTON STYLE  *****/
 .iconButtonBackStyle    {
     font-size:25px;
     color:white;
     margin-left:10px;
 }
-/*******************************************************/
-/***************  TEXT CSS OVER FLOW  ******************/
-
-.overFlowText {
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; 
-}
-
-/*********************************************************/
-/*****  CLASS FOR VERTICAL AND HORIZONTAL CENTER  ********/
-.center    {
+/*****  CLASS TO CENTERED VERTICAL AND HORIZONTAL  *****/
+.center{
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -69,49 +61,57 @@ font-family: Iconos;
     -ms-flex-align: center;
     align-items: center;
 }
-/*********************************************************/
-/****************  MAIN BAR COLOR   **********************/
-.bar.bar-positive {
-  border-color: #00BAB9  ;
-  background-color: #00BAB9  ;
-  border-style:none;
-  box-shadow: 0 0 5px #888888  ;
-  background-image: linear-gradient(0deg, #00BAB9  , #00BAB9   50%, transparent 50%);
-  color: #fff; }
-  .bar.bar-positive .title {
-  color: white;
-  margin-top:3px;
+/*****  MAIN BAR COLOR STYLE  *****/
+.bar.bar-positive{
+    border-color: #00BAB9  ;
+    background-color: #00BAB9  ;
+    border-style:none;
+    box-shadow: 0 0 5px #888888  ;
+    background-image: linear-gradient(0deg, #00BAB9  , #00BAB9   50%, transparent 50%);
+    color: #fff; 
 }
-  .bar.bar-positive.bar-footer {
-    background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); }
-/*********************************************************/
-/***********  INTRODUCTION PAGE FRENZY  ******************/
-.pageFrenzyColor    {
+  .bar.bar-positive .title{
+    color: white;
+    margin-top:3px;
+}
+  .bar.bar-positive.bar-footer{
+    background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); 
+  }
+/****************************************************************************/
+/**************************  INTRODUCTION PAGE FRENZY  **********************/
+.pageFrenzyColor{
     background-color:#00BAB9;
 }
-.pageFrenzyLogoImage    {
+.pageFrenzyLogoImage{
     text-align: center;
 }
-.pageFrenzySubtitle {
+.pageFrenzySubtitle{
     border-style:none;
 }
-/*********************************************************/
-/***********  PAGE LOGIN FACEBOOK  ***********************/
-.pageLoginFacebookColor {
+.pageFrenzyTextLegend{
+    color:white;
+    font-size:10px;
+}
+/****************************************************************************/
+/************************  PAGE LOGIN FACEBOOK  *****************************/
+.pageLoginFacebookColor{
     background-color:#3F51B5;
 }
-.pageLoginFacebookButtonStyle   {
+.pageLoginFacebookButtonStyle{
     height:10px;
     width:200px;
     box-shadow: 0.1px 0.1px 0.1px 0.3px #848484;
 }
-.pageLoginFacebookImage {
+.pageLoginFacebookImage{
     height:50px;
     width:120px;
     margin-top:-3px;
 }
-/*********************************************************/
-/***********  PAGE START DESING  *************************/
+/****************************************************************************/
+/**************************  PAGE START DESING  *****************************/
+.pageStartFrenzyTitle{
+    font-size:65px;
+}
 .icon_supermercado{
     background-color:#00BAB9 ; 
 }
@@ -132,61 +132,61 @@ font-family: Iconos;
     background-color:#00DDC1; 
 }
 .imagen{
-   height: 175px;
-   width: 175px;
+    height: 175px;
+    width: 175px;
 }
 .iconoMenu{ 
-   color:white;
-   text-align: center;
-   margin-top: 11px;
-   font-size: 35px;
-   padding-top: 19px;
+    color:white;
+    text-align: center;
+    margin-top: 11px;
+    font-size: 35px;
+    padding-top: 19px;
 }
 .icon_supermercado{
-   background-color:#00BAB9  ;
-   height: 50px;
-   width: 50px;
-   margin-top: -15px;
-   border-radius: 23px;
+    background-color:#00BAB9  ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
 }
 .icon_restaurante{
-   background-color:#FF5252 ;
-   height: 50px;
-   width: 50px;
-   margin-top: -15px;
-   border-radius: 23px;
+    background-color:#FF5252 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
 }
 .icon_moda{
-   background-color:#FFD922 ;
-  height: 50px;
-   width: 50px;
-   margin-top: -15px;
-   border-radius: 23px;
+    background-color:#FFD922 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
 }
 .icon_entretenimiento{
-   background-color:#9C28B0 ;
-  height: 50px;
-   width: 50px;
-   margin-top: -15px;
-   border-radius: 23px;
-
+    background-color:#9C28B0 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
 }
 .icon_electronico{
-   background-color:#3F51B5 ;
-   height: 50px;
-   width: 50px;
-   margin-top: -15px;
-   border-radius: 23px;
+    background-color:#3F51B5 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
 }
 .icon_otro{
-   background-color:#00DDC1 ;
-   height: 50px;
-   width: 50px;
-   margin-top: -15px;
-   border-radius: 23px;
+    background-color:#00DDC1 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
 }
-/***********************************************/
-/****  DESIGN OF BOXES OF ESTABLISHMENTS  ******/
+
+/****************************************************************************/
+/*************************  DESIGN ESTABLISHMENTS  **************************/
 .backgroundCategories    {
     background-color: #F1F2F2;
 }
@@ -228,50 +228,194 @@ font-family: Iconos;
     height: 110px;;
 }
 
-/*************************************************/
-/**************  RESPONSIVE DIVS  **************/
-[class*='relacion'] {
+/****************************************************************************/
+/*********************  PAGE FAVORITES MEDIA QUERIES  ***********************/
+.imagePageFavoritesStyle{
+    width: 100%;
+    border-style:solid;
+    border-width: 4px;
 }
-.relacion4-3 {height: calc(28vh *  1.33); }
-/************************************************/
-/******* DEGINS OFERTS WITH IMAGE BOX  **********/
+@media only screen 
+    and (min-device-width : 100px) 
+    and (max-device-width : 200px) {
+        .imagePageFavoritesSizeQueries{
+            height: 50%;
+            border-color:red;
+        }
+}
+@media only screen 
+    and (min-device-width : 201px) 
+    and (max-device-width : 300px) {
+        .imagePageFavoritesSizeQueries{
+            height: 60%;
+            border-color:blue;
+        }
+}
+@media only screen 
+    and (min-device-width : 301px) 
+    and (max-device-width : 350px) {
+        .imagePageFavoritesSizeQueries{
+            height: 52%;
+            border-color:yellow;
+        }
+}
+@media only screen 
+    and (min-device-width : 401px) 
+    and (max-device-width : 500px) {
+        .imagePageFavoritesSizeQueries{
+            height: 50%;
+            border-color:orange;
+        }
+} 
+@media only screen 
+    and (min-device-width : 351px) 
+    and (max-device-width : 400px) {
+        .imagePageFavoritesSizeQueries{
+            height: 65%;
+            border-color:purple;
+        }
+        .pageFavoritesDescriptionTitle{
+            font-size:25px;
+            margin-top:15px;
+            margin-left:10px;
+            color:green;
+        }
+        
+        .pageFavoritesDivIcons{
+            margin-top:30px;
+        }
 
-/************************************************/
-/******  DESING OFERTS WITHOUT IMAGE BOX  *******/
+        .pageFavoritesDescriptionTitle{
+            font-size:20px;
+            margin-top:25px;
+            margin-left:10px;
+        }
+        .pageFavoritesDivIcons{
+            margin-top:40px;
+        }
+}  
 
-/***********************************************/
-/***********  FAVORITES ICON HEART  ************/
-
+/****************************************************************************/
+/*****************************  FAVORITES PAGE  *****************************/
+.pageFavoritesTitleFrenzy{
+    font-size:65px;
+}
+.pageFavoritesBodyColor{
+    background-color:#F1F2F2;
+}
+.pageFavoritesOurFavorites{
+    color:white;
+    text-decoration:none;
+}
+.pageFavoritesOurFavoritesTitle{
+    margin-left:20px;
+    margin-top:23px;
+    font-size:13px;
+}
+.pageFavoritesLineDecoration{
+    margin-top:-5px;
+    border-radius:3px;
+    border-style:none;
+    weigth:10px;
+}
+.pageFavoritesYourFavorites{
+    color:white;
+    text-decoration:none;
+}
+.pageFavoritesYourFavoritesTitle{
+    margin-left:40px;
+    margin-top:23px;
+    color:#D8D8D8;
+    font-size:13px;
+}
+.pageFavoritesLineDecorationYourFavorites{
+    margin-top:-5px;
+    color:#D8D8D8;
+    background-color:#D8D8D8;
+    border-style:none;
+}
 .boxResponsiveFavorites {
     height: calc(53vh *  1.33);
     width: 95%;
     margin-left:10px;
     margin-top:15px;
-    box-shadow: 3px 3px 2px #BDBDBD;   
+    box-shadow: 3px 3px 2px #BDBDBD;
+    background-color:white;
 }
-
-.imagePageFavorites   {
-    width: 100%;
+.pageFavoritesSavingTigle{
+    font-size:17px;
+    color:white;
+    margin-left:5px;
 }
-
+.pageFavoritesSavingPrice{
+    font-size:15px;
+    color:white;
+    font-weight:bold;
+}
 [class*='relacion'] {
 }
-.relacionImagePageFavorites {height: calc(38vh *  1.33); }
 
+.relacionImagePageFavorites{
+    height: calc(38vh *  1.33);
+}
 .logoEstablishment  {
     height: 50px;
     width: 50px;
     margin-top:-65px;
     margin-left: 10px;
 }
-/***********************************************/
-/************  YOUR FAVORITES STYLE  ***********/
+.pageFavoritesCountOfferts{
+    font-size:14px;
+    color:black;
+    font-weight:bolder;
+    color:white;
+    margin-top:-5px;
+}
+.pageFavoritesCountOffertsTitle{
+    font-size:13px;
+    color:#BDBDBD; 
+}
+
+.pageFavoritesSecondRow    {
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+.pageFavoritesDescriptionTitle{
+    font-size:20px;
+    margin-top:15px;
+    margin-left:10px;
+}
+.pageFavoritesDescription{
+    font-size:13px;
+    margin-left:10px;
+    margin-top:5px;
+    color:#BDBDBD;
+}
+.pageFavoritesFeforePrice{
+    font-size:13px;
+    margin-left:5px;
+    color:#A7A9AC;
+}
+.pageFavoritesIcons{
+    color:#A7A9AC;
+    margin-left:10px;
+    margin-top:5px;
+}
+.pageFavoritesDivIcons{
+    margin-top:10px;
+}
+/****************************************************************************/
+/****************************  YOUR FAVORITES STYLE  ************************/
 
 .yourFavoritesStyle {
    color:red;
 }
-/***********************************************/
-/************  PAGE SALVADOS DESING  ***********/
+
+/****************************************************************************/
+/*************************  PAGE SALVADOS DESING  ***************************/
 .savedPageBoxStyle  {
     border-style:solid;
     border-color:#E6E6E6;
@@ -310,6 +454,94 @@ font-family: Iconos;
     margin-top:-10px;
     width: 85%;
 }
+/*****************************************************************************/
+/***************  TEXT CSS OVER FLOW  ******************/
+
+.overFlowText {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+/*over flow whit two lines */
+.ellipsify {
+    line-height:18px;
+    height: 37px;       /* 3x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    background:white;
+}
+.ellipsifyOffertsTwoLines {
+    line-height:18px;
+    height: 33px;       /* 3x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    background:white;
+}
+.ellipsifyThreeLines {
+    line-height:18px;
+    height: 57px;       /* 3x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    background:white;
+}
+
+/* Used to push down .dots. Can't use absolute positioning, since that
+   would stop the floating. Can't use relative positioning, since that
+   would cause floating in the wrong (namely: original) place. Can't 
+   change height of #dots, since it would have the full width, and
+   thus cause early wrapping on all lines. */
+.pre-dots {
+    float: right;
+    height: 20px;  /* 2x line height (one less than visible lines) */
+}
+.pre-dots-threeLines {
+    float: right;
+    height: 30px;  /* 2x line height (one less than visible lines) */
+}
+.pre-dots-threeLines-offerts {
+    float: right;
+    height: 10px;  /* 2x line height (one less than visible lines) */
+}
+
+.dots {
+    float: right; /* to make the text wrap around the dots */
+    clear: right;
+    color:#BDBDBD;
+    margin-right: 20px;/* to push us below (not next to) .pre-dots */
+}
+.dots-threeLines {
+    float: right; /* to make the text wrap around the dots */
+    clear: right;
+    color:#BDBDBD;
+    margin-right: 5px;/* to push us below (not next to) .pre-dots */
+}
+
+
+/* hides the dots if the text has *exactly* 3 lines */
+.hidedots1 {
+    background: white;
+    width: 150px;
+    height: 18px;       /* line height */
+    position: absolute; /* otherwise, because of the width, it'll be wrapped */
+}
+
+/* hides the dots if the text has *less than* 3 lines */
+.hidedots2 {
+    background: white; 
+    width: 150px;
+    height: 54px;       /* 3x line height, to ensure hiding even if empty */
+    position: absolute; /* ensures we're above the dots */
+}
+
+/*************************************************/
+/**************  RESPONSIVE DIVS  **************/
+[class*='relacion'] {
+}
+.relacion4-3 {height: calc(28vh *  1.33); }
+
 /***********************************************/
 /***********  PAGE OFFERTS STYLE  **************/
 [class*='relacion'] {
@@ -436,7 +668,7 @@ font-family: Iconos;
 .pageOffertsDescriptionWithoutImage {
     font-size:13px;
     margin-left:10px;
-    margin-top:-5px;
+  
     color:#BDBDBD;
 }
 .pageOffertsActualPriceWithoutImage {
