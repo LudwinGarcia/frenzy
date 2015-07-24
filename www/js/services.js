@@ -392,7 +392,7 @@ promotion.find({
        
   },
   error: function(myObject, error) {
-    // Error occured
+    // Error occureds
     console.log( error );
   }
 });
@@ -418,7 +418,7 @@ var GameScore = Parse.Object.extend("Promotion");
 var query = new Parse.Query(GameScore);
 
 function AddPromotions(Array) {
-    customer.find().then(function(results) {
+        customer.find().then(function(results) {
         console.log(Array);
       for (x in results) {
             var CountPromotions = 0;
