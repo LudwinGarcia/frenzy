@@ -230,73 +230,23 @@ font-family: Iconos;
 
 /****************************************************************************/
 /*********************  PAGE FAVORITES MEDIA QUERIES  ***********************/
-.imagePageFavoritesStyle{
-    width: 100%;
-    border-style:solid;
-    border-width: 4px;
-}
-@media only screen 
-    and (min-device-width : 100px) 
-    and (max-device-width : 200px) {
-        .imagePageFavoritesSizeQueries{
-            height: 50%;
-            border-color:red;
-        }
-}
-@media only screen 
-    and (min-device-width : 201px) 
-    and (max-device-width : 300px) {
-        .imagePageFavoritesSizeQueries{
-            height: 60%;
-            border-color:blue;
-        }
-}
-@media only screen 
-    and (min-device-width : 301px) 
-    and (max-device-width : 350px) {
-        .imagePageFavoritesSizeQueries{
-            height: 52%;
-            border-color:yellow;
-        }
-}
-@media only screen 
-    and (min-device-width : 401px) 
-    and (max-device-width : 500px) {
-        .imagePageFavoritesSizeQueries{
-            height: 50%;
-            border-color:orange;
-        }
-} 
-@media only screen 
-    and (min-device-width : 351px) 
-    and (max-device-width : 400px) {
-        .imagePageFavoritesSizeQueries{
-            height: 65%;
-            border-color:purple;
-        }
-        .pageFavoritesDescriptionTitle{
-            font-size:25px;
-            margin-top:15px;
-            margin-left:10px;
-            color:green;
-        }
-        
-        .pageFavoritesDivIcons{
-            margin-top:30px;
-        }
-
-        .pageFavoritesDescriptionTitle{
-            font-size:20px;
-            margin-top:25px;
-            margin-left:10px;
-        }
-        .pageFavoritesDivIcons{
-            margin-top:40px;
-        }
-}  
 
 /****************************************************************************/
 /*****************************  FAVORITES PAGE  *****************************/
+.imagePageFavoritesStyle{
+    width:100%;
+}
+
+[class*='relacion'] {
+}
+.relacionFavoritesImage    {
+    height: calc(16vh *  3.1);
+}
+[class*='relacion'] {
+}
+.relacionFavorites    {
+    height: calc(7vh *  3.1);
+}
 .pageFavoritesTitleFrenzy{
     font-size:65px;
 }
@@ -335,7 +285,7 @@ font-family: Iconos;
     border-style:none;
 }
 .boxResponsiveFavorites {
-    height: calc(53vh *  1.33);
+    height: calc(52vh *  1.33);
     width: 95%;
     margin-left:10px;
     margin-top:15px;
@@ -351,6 +301,7 @@ font-family: Iconos;
     font-size:15px;
     color:white;
     font-weight:bold;
+    margin-top:-10px;
 }
 [class*='relacion'] {
 }
@@ -391,7 +342,6 @@ font-family: Iconos;
 .pageFavoritesDescription{
     font-size:13px;
     margin-left:10px;
-    margin-top:5px;
     color:#BDBDBD;
 }
 .pageFavoritesFeforePrice{
@@ -402,11 +352,13 @@ font-family: Iconos;
 .pageFavoritesIcons{
     color:#A7A9AC;
     margin-left:10px;
-    margin-top:5px;
-}
-.pageFavoritesDivIcons{
     margin-top:10px;
 }
+.pageFavoritesDivIcons{
+    background-color:white;
+    margin-top:10px;
+}
+
 /****************************************************************************/
 /****************************  YOUR FAVORITES STYLE  ************************/
 
@@ -553,7 +505,8 @@ font-family: Iconos;
     border-style:solid;
     border-width: 1px;
     border-color: #E6E6E6;
-    box-shadow: 3px 3px 2px #BDBDBD;    
+    box-shadow: 3px 3px 2px #BDBDBD;
+    margin-bottom:20px;
 }
 
 .imageOffertsAndCupons   {
@@ -608,13 +561,17 @@ font-family: Iconos;
     padding-top:4px;
 }
 .pageOffertsNameLabel   {
-    font-size:13px;
-    color:white
+    font-size:15px;
+    color:white;
+    margin-left:5px;
+    
 }
 .pageOffertsPriceLabel  {
     font-size:17px;
     color:white;
     font-weight:bold;
+    margin-left: 6px;
+    margin-top:-10px;
 }
 .pageOffertsTitleWithImage  {
     font-size:20px;

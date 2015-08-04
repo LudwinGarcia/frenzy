@@ -22,15 +22,15 @@ var conteoPromociones = [];
 
 
 var total = 0;
-
+/***************************************** tamayo  *****************************/
 ///////Photos
 var PhotoPaiz = [];
 
 
 
-angular.module('starter.services', [])
+var app = angular.module('starter.services', [])
 
-.factory('Chats', function() {
+app.factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -89,8 +89,7 @@ oferta: "Segundo Plato 1/2"
   };
 })
 
-
-.factory('Categorys', function() {
+app.factory('Categorys', function() {
   // Might use a resource here that returns a JSON array
     
 for (a in promociones) {
@@ -165,7 +164,7 @@ for (a in promociones) {
   };
 })
 
-.factory('Supermercados', function() {
+app.factory('Supermercados', function() {
 
   // Might use a resource here that returns a JSON array
     
@@ -187,7 +186,7 @@ for (a in promociones) {
   };
 })
 
-.factory('Entretenimiento', function() {
+app.factory('Entretenimiento', function() {
 
   // Might use a resource here that returns a JSON array
     
@@ -209,7 +208,7 @@ for (a in promociones) {
   };
 })
 
-.factory('Moda', function() {
+app.factory('Moda', function() {
     for (a in promociones) {
     console.log(promociones.length)
     var C = promociones.length
@@ -236,7 +235,7 @@ for (a in promociones) {
   };
 })
 
-.factory('Electronicos', function() {
+app.factory('Electronicos', function() {
 
   // Might use a resource here that returns a JSON array
     
@@ -259,7 +258,7 @@ for (a in promociones) {
 })
 
 
-.factory('Restaurantes', function() {
+app.factory('Restaurantes', function() {
 /*    for (a in promociones) {
     console.log(promociones.length)
     var C = promociones.length
@@ -284,9 +283,10 @@ for (a in promociones) {
       return null;
     }
   };
-})
+});
 
-.factory('Paiz', function() {
+
+app.factory('Paiz', function() {
 
   var paiz = PhotoPaiz;
 
@@ -304,25 +304,10 @@ for (a in promociones) {
     }
   };
 });
-
-/*
  
-var Code_Review = Parse.Object.extend("AppCategory");
+    
+/************************** final tamayo  **************************************************/
 
-var Code_Reviews = Parse.Collection.extend({
-    model: Code_Review
-});
-
-var code_review = new Code_Reviews();
-
-code_review.fetch({
-    success: function(code_review) {
-        console.log(code_review);
-    },
-    error: function(code_review, error) {
-        console.log(error);
-    }
-});*/
 /********************************************************/
 //i can call data the parse
 var query = new Parse.Query('AppCategory');
@@ -357,59 +342,99 @@ customer = customer.limit(100);
 ///////////////////////////////////////////////////////////////////////////////////////////costumer
 //query limit hace la llamada de mas elementos
 
+/**************************************** tamayo  ************************************/
+function primer(id){
+    PhotoPaiz = [];
+    promotion.find({
+        success: function(results) {
+            console.log(PhotoPaiz)
+            var sumaPrecioBase = 0;
+            var sumaPrecioPromo = 0;
+            var cont = 0;
+            var sum = [];
+            for ( x in results) {
+                cont = cont +1
+                promociones.push(results[x].attributes.TypeService)
+                sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
+                sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
+                listPromoSuper.push(results[x].attributes.Costumer)
+                
+                for (i in results[x].attributes.Costumer){
+                            //console.log(results[x].attributes.Costumer[i])
+                    if (id === results[x].attributes.Costumer[i]){
+                              console.log("lo encontro", results[x].attributes.Costumer[i])  
+                              PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
+                                              presentation:results[x].attributes.Presentation,
+                                              description:results[x].attributes.PromotionDescription,
+                                              basePrice:results[x].attributes.BasePrice,
+                                              promotionalPrice:results[x].attributes.PromotionalPrice,
+                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice})
+                    }else {
+                        console.log("no Encontro :(")
+                    }   
+                }
+            }
+            console.log(PhotoPaiz)
+            resta = sumaPrecioBase-sumaPrecioPromo
+            total = resta / promociones.length
+            total = total.toFixed(2)
+      },
+      error: function(myObject, error) {
+        // Error occureds
+        console.log( error );
+      }
+    });
+    alert(id)
     
-promotion.find({
-  success: function(results) {
-    // cycle through the results
-      var sumaPrecioBase = 0;
-      var sumaPrecioPromo = 0;
-      var cont = 0;
-      var sum = [];
-    for ( x in results) {
-        
-            cont = cont +1
-            promociones.push(results[x].attributes.TypeService)
-            sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
-            sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
-            listPromoSuper.push(results[x].attributes.Costumer)
-            
-                PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,presentation:results[x].attributes.Presentation,description:results[x].attributes.PromotionDescription,basePrice:results[x].attributes.BasePrice,promotionalPrice:results[x].attributes.PromotionalPrice,ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice})
+}
+/****************************** final tamayo  ****************************************/
 
-           
-    
+/*call my funtionc Promotions*/
+ /*
+Parse.Cloud.run('Promotions', {}, {
+    success: function(result) {
 
+        console.log(result)
+    },
+    error: function(error) {
+      console.log(error);
     }
-        console.log(PhotoPaiz)
-       
-      
-        resta = sumaPrecioBase-sumaPrecioPromo
-        total = resta / promociones.length
-        total = total.toFixed(2)
-        //console.log("--total-----")
-        //console.log("--total-----")
-        //console.log(total)
-        //promedio.push(total)
-       
-  },
-  error: function(myObject, error) {
-    // Error occureds
-    console.log( error );
-  }
 });
+    
 
+*/
+/* ------------------------------------------------------*/
+
+/* Call GetPromotions function in Parse Cloud Code */
 Parse.Cloud.run('GetPromotions', {}, {
     success: function(result) {
+        /* Call GetQuantityPromotions function in Parse Cloud Code and
+        send result like parameter */
         Parse.Cloud.run('GetQuantityPromotions', {"Array":result}, {
             success: function(result) {
-                AddPromotions(result);
+                /* Call GetAverageSavings function in Parse Cloud Code and
+                send result like parameter */
+                Parse.Cloud.run('GetAverageSavings', {"Array":result}, {
+                    success: function(result) {
+                        console.log(result);
+                        /* Call AddPromotions function and send result like parameter */
+                        AddPromotions(result);
+                    },
+                    error: function(error) {
+                        /* Show error if call failed */
+                        console.log(error);
+                    }
+                });
             },
             error: function(error) {
-              console.log(error);
+                /* Show error if call failed */
+                console.log(error);
             }
         });
     },
     error: function(error) {
-      console.log(error);
+        /* Show error if call failed */
+        console.log(error);
     }
 });
 
@@ -418,70 +443,64 @@ var GameScore = Parse.Object.extend("Promotion");
 var query = new Parse.Query(GameScore);
 
 function AddPromotions(Array) {
-        customer.find().then(function(results) {
-        console.log(Array);
-      for (x in results) {
+    customer.find().then(function(results) {
+        for (x in results) {
             var CountPromotions = 0;
             listaNameSuperConteo.push(results[x].attributes.Name)
             
-            if (results[x].attributes.Name in Array) {
-                CountPromotions = Array[results[x].attributes.Name];
+            if (results[x].attributes.Name in Array.Quantities[0]) {
+                CountPromotions =  Array.Quantities[0][results[x].attributes.Name];
+                average = Array.averageSavingsCostumer[results[x].attributes.Name];
             } else {
                 CountPromotions = 0;
-            }
+                average = 0;
+            };
             
-       if ("Supermercado" ==  results[x].attributes.CategoryApp){
-             name = results[x].attributes.Name;
-            listaNameSuperComparar.push(results[x].attributes.Name)
-            listSupermercado.push(results[x].attributes.Logo._url)
-            listNameSupermercado.push(name.split(" ").join("_"))
+            
+            if ("Supermercado" ==  results[x].attributes.CategoryApp){
+                name = results[x].attributes.Name;
+                listaNameSuperComparar.push(results[x].attributes.Name);
+                listSupermercado.push(results[x].attributes.Logo._url);
+                listNameSupermercado.push(name.split(" ").join("_"));
 
-                Super.push({id:x, name: listSupermercado[x], promo: CountPromotions,promedio:total,
-        lastText: "favorite"+x,img_class:listNameSupermercado[x],})
-                //console.log(Super)
+                Super.push({id:x, name: listSupermercado[x], promo: CountPromotions,promedio:average,
+                            lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
 
-            //console.log("-----------*****-------------")
+            }else if("Restaurante" == results[x].attributes.CategoryApp){
+                name = results[x].attributes.Name;
+                listSupermercado.push(results[x].attributes.Logo._url);
+                listNameSupermercado.push(name.split(" ").join("_"));
 
-                }else if("Restaurante" == results[x].attributes.CategoryApp){
+                Restaurantes.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
+                                    lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
 
+            }else if ("Moda" == results[x].attributes.CategoryApp){
+                name = results[x].attributes.Name;
+                listSupermercado.push(results[x].attributes.Logo._url);
+                listNameSupermercado.push(name.split(" ").join("_"));
+                
+                Modas.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
+                            lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
+                
+            }else if ("Entretenimiento" == results[x].attributes.CategoryApp){
+                name = results[x].attributes.Name;
+                listSupermercado.push(results[x].attributes.Logo._url);
+                listNameSupermercado.push(name.split(" ").join("_"));
+                
+                Entretenimientos.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
+                                       lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
+            
+            }else if ("Electronico" == results[x].attributes.CategoryApp){
+                name = results[x].attributes.Name;
+                listSupermercado.push(results[x].attributes.Logo._url);
+                listNameSupermercado.push(name.split(" ").join("_"));
 
-                        name = results[x].attributes.Name;
-                        listSupermercado.push(results[x].attributes.Logo._url)
-                        listNameSupermercado.push(name.split(" ").join("_"))
-
-                    Restaurantes.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:total,
-        lastText: "favorite"+x,img_class:listNameSupermercado[x]})
-
-                }else if ("Moda" == results[x].attributes.CategoryApp){
-
-
-                        name = results[x].attributes.Name;
-                        listSupermercado.push(results[x].attributes.Logo._url)
-                        listNameSupermercado.push(name.split(" ").join("_"))
-                    Modas.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:total,
-        lastText: "favorite"+x,img_class:listNameSupermercado[x]})
-                }else if ("Entretenimiento" == results[x].attributes.CategoryApp){
-
-
-                        name = results[x].attributes.Name;
-                        listSupermercado.push(results[x].attributes.Logo._url)
-                        listNameSupermercado.push(name.split(" ").join("_"))
-                    Entretenimientos.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:total,
-        lastText: "favorite"+x,img_class:listNameSupermercado[x]})
-                }else if ("Electronico" == results[x].attributes.CategoryApp){
-
-                        name = results[x].attributes.Name;
-                        listSupermercado.push(results[x].attributes.Logo._url)
-                        listNameSupermercado.push(name.split(" ").join("_"))
-                    Electronico.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:total,
-        lastText: "favorite"+x,img_class:listNameSupermercado[x]})
-                }
-
-
-
-
-        }
+                Electronico.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
+                                  lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
+            };
+        };
 
     });
 };
+
 

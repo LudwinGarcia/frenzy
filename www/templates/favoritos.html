@@ -9,9 +9,6 @@ hr     {
     height: 3px;
     background-color: white;
 }
-.slider {
-  height: 95%;
-}
 </style>
 <!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
 <ion-view>
@@ -25,7 +22,7 @@ hr     {
         </h1>
     </ion-header-bar>
     <!--**********  BODY PAGE FAVORITES  ***********-->
-    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" scroll="false">
+    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" >
         <!--**********  SECOND TAB HEADER  **********-->
         <div class="row pageFavoritesSecondRow">
             <!--**********  OUR FAVORITES  **********-->
@@ -54,6 +51,7 @@ hr     {
         <!--**********  BODY  **********-->
         <ion-slide-box>
         <!--**********  SLIDER CONTENT  **********-->
+<!--*******************************************************************************-->    
             <ion-slide>
                 <div class="boxResponsiveFavorites">
                     <!--*****  IMAGE LABEL OFFERTS  *****-->
@@ -61,16 +59,16 @@ hr     {
                     <!--*****  PRICE LABEL OFFERTS  *****-->
                     <div class="row" style="position:absolute;">
                         <div class="col col-25">
-                            <spam class="pageFavoritesSavingTigle">
+                            <p class="pageFavoritesSavingTigle">
                                 Ahorra
-                            </spam>
-                            <spam class="pageFavoritesSavingPrice">
+                            </p>
+                            <p class="pageFavoritesSavingPrice">
                                 Q.21.600
-                            </spam>
+                            </p>
                         </div>
-                    </div>            
+                    </div>
                     <!--*****  IMAGE  *****-->
-                    <img class="imagePageFavoritesStyle imagePageFavoritesSizeQueries" src="img/nissan.jpg" alt="nissan">
+                    <img class="imagePageFavoritesStyle relacionFavoritesImage" src="img/nissan.jpg" alt="nissan">
                     <!--***** NISSAN LOGO  *****-->
                     <div style="margin-top:-25px;">
                         <img class="logoEstablishment" src="img/logoNissan.png" alt="label">
@@ -87,7 +85,7 @@ hr     {
                             Nissan March 1.6SV
                         </p>
                         <!--**********  DESCRIPTION  **********-->
-                        <div class="ellipsify">
+                            <div class="ellipsify">
                             <div class="pre-dots"></div>
                             <div class="dots">&hellip;</div>
                             <p class="pageFavoritesDescription open_sans">
@@ -95,12 +93,14 @@ hr     {
                             </p>
                             <span class="hidedots1"></span>
                             <div class="hidedots2"></div>
-                        </div>
+                            </div>
+                        
+                        
                     </div>
                     <!--*****  DIVIDER LINE  *****-->
                     <hr style="border:none;background-color:#F2F2F2; height:1px;">
                     <!--*****  DIV TO PRICE AND ICONS  *****-->
-                    <div class="row pageFavoritesDivIcons">
+                    <div class="row pageFavoritesDivIcons" >
                         <!--*****  ACTUAL PRICE  *****-->
                         <div class="col col-33">
                             <spam style="font-size:15px;">
@@ -119,8 +119,151 @@ hr     {
                             <spam class="pageFavoritesIcons home"> W </spam>
                         </div>   
                     </div>
-                </div>
-            </ion-slide>           
+                </div>  
+            </ion-slide>
+<!--*******************************************************************************-->
+       <!--*******************************************************************************-->    
+            <ion-slide>
+                <div class="boxResponsiveFavorites">
+                    <!--*****  IMAGE LABEL OFFERTS  *****-->
+                    <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+                    <!--*****  PRICE LABEL OFFERTS  *****-->
+                    <div class="row" style="position:absolute;">
+                        <div class="col col-25">
+                            <spam class="pageFavoritesSavingTigle">
+                                Ahorra
+                            </spam>
+                            <spam class="pageFavoritesSavingPrice">
+                                Q.21.600
+                            </spam>
+                        </div>
+                    </div>
+                    <!--*****  IMAGE  *****-->
+                    <img class="imagePageFavoritesStyle relacionFavoritesImage" src="img/pizza.jpg" alt="nissan">
+                    <!--***** NISSAN LOGO  *****-->
+                    <div style="margin-top:-25px;">
+                        <img class="logoEstablishment" src="img/logopizza.png" alt="label">
+                        <spam class="pageFavoritesCountOfferts">
+                            +32
+                        </spam>
+                        <spam class="pageFavoritesCountOffertsTitle">
+                            ofertas
+                        </spam>
+                    </div>
+                    <!--**********  TITLE DESCRIPTION  **********-->
+                    <div>
+                        <p class="pageFavoritesDescriptionTitle open_sans">
+                            Nissan March 1.6SV
+                        </p>
+                        <!--**********  DESCRIPTION  **********-->
+                            <div class="ellipsify">
+                            <div class="pre-dots"></div>
+                            <div class="dots">&hellip;</div>
+                            <p class="pageFavoritesDescription open_sans">
+                                15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015tiene cuatro ruedas y es color gris con cuatro puertas y retrovisores y radio mp6
+                            </p>
+                            <span class="hidedots1"></span>
+                            <div class="hidedots2"></div>
+                            </div>
+                        
+                        
+                    </div>
+                    <!--*****  DIVIDER LINE  *****-->
+                    <hr style="border:none;background-color:#F2F2F2; height:1px;">
+                    <!--*****  DIV TO PRICE AND ICONS  *****-->
+                    <div class="row pageFavoritesDivIcons" >
+                        <!--*****  ACTUAL PRICE  *****-->
+                        <div class="col col-33">
+                            <spam style="font-size:15px;">
+                                Q.93.900.00
+                            </spam>
+                        </div>
+                        <!--*****   BEFORE PRICE  *****-->
+                        <div class="col col-33">
+                            <spam class="pageFavoritesFeforePrice">
+                                Q.115.500.00
+                            </spam>
+                        </div>
+                        <!--*****  ICONS  *****-->
+                        <div class="col col-33">
+                            <spam class="pageFavoritesIcons home"> O </spam>
+                            <spam class="pageFavoritesIcons home"> W </spam>
+                        </div>   
+                    </div>
+                </div>  
+            </ion-slide>
+<!--*******************************************************************************-->  
+       <!--*******************************************************************************-->    
+            <ion-slide>
+                <div class="boxResponsiveFavorites">
+                    <!--*****  IMAGE LABEL OFFERTS  *****-->
+                    <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+                    <!--*****  PRICE LABEL OFFERTS  *****-->
+                    <div class="row" style="position:absolute;">
+                        <div class="col col-25">
+                            <spam class="pageFavoritesSavingTigle">
+                                Ahorra
+                            </spam>
+                            <spam class="pageFavoritesSavingPrice">
+                                Q.21.600
+                            </spam>
+                        </div>
+                    </div>
+                    <!--*****  IMAGE  *****-->
+                    <img class="imagePageFavoritesStyle relacionFavoritesImage" src="img/mac.jpg" alt="nissan">
+                    <!--***** NISSAN LOGO  *****-->
+                    <div style="margin-top:-25px;">
+                        <img class="logoEstablishment" src="img/logomac.jpg" alt="label">
+                        <spam class="pageFavoritesCountOfferts">
+                            +32
+                        </spam>
+                        <spam class="pageFavoritesCountOffertsTitle">
+                            ofertas
+                        </spam>
+                    </div>
+                    <!--**********  TITLE DESCRIPTION  **********-->
+                    <div>
+                        <p class="pageFavoritesDescriptionTitle open_sans">
+                            Nissan March 1.6SV
+                        </p>
+                        <!--**********  DESCRIPTION  **********-->
+                            <div class="ellipsify">
+                            <div class="pre-dots"></div>
+                            <div class="dots">&hellip;</div>
+                            <p class="pageFavoritesDescription open_sans">
+                                15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015tiene cuatro ruedas y es color gris con cuatro puertas y retrovisores y radio mp6
+                            </p>
+                            <span class="hidedots1"></span>
+                            <div class="hidedots2"></div>
+                            </div>
+                        
+                        
+                    </div>
+                    <!--*****  DIVIDER LINE  *****-->
+                    <hr style="border:none;background-color:#F2F2F2; height:1px;">
+                    <!--*****  DIV TO PRICE AND ICONS  *****-->
+                    <div class="row pageFavoritesDivIcons" >
+                        <!--*****  ACTUAL PRICE  *****-->
+                        <div class="col col-33">
+                            <spam style="font-size:15px;">
+                                Q.93.900.00
+                            </spam>
+                        </div>
+                        <!--*****   BEFORE PRICE  *****-->
+                        <div class="col col-33">
+                            <spam class="pageFavoritesFeforePrice">
+                                Q.115.500.00
+                            </spam>
+                        </div>
+                        <!--*****  ICONS  *****-->
+                        <div class="col col-33">
+                            <spam class="pageFavoritesIcons home"> O </spam>
+                            <spam class="pageFavoritesIcons home"> W </spam>
+                        </div>   
+                    </div>
+                </div>  
+            </ion-slide>
+<!--*******************************************************************************-->      
         </ion-slide-box>
     </ion-content>
 </ion-view>

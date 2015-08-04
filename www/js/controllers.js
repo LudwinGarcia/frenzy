@@ -129,10 +129,13 @@ angular.module('starter.controllers', ['ionic'])
   $scope.categorys = Categorys.all();
 
 })
-
+/****************************  tamayo  *****************************************/
 .controller('PaizCtrl', function($scope, $stateParams, Paiz) {
-   $scope.chats = Paiz.all();
+
+    $scope.chats = Paiz.all();
+    
 })
+/****************************  tamayo  final*****************************************/
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Categorys) {
   $scope.chat = Categorys.get($stateParams.chatId);

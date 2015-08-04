@@ -15,16 +15,16 @@ height: auto;">
                     <div style="float:left;" class="categoriesBoxes categoriesBoxesSupermarket col col-100">
                         <!--*****  IMAGE CATEGORY SUPERMARKETS  *****-->
                         <!--*****  LINK ONLY FOR THE IMAGE  *****-->             
-                        <a href="#/app/ofertas">                
+                        <a href="#/app/ofertas" id = "{{super.NameCategory}}" onclick = "primer(id)">                
                             <img class="imageCategoryBoxes" ng-src="{{super.name}}" alt="image">
                         </a>
                         <div class="row">
                             <!--*****  GREEN BOX FOR PROMOTIONS AND OFFERTS  *****-->   
-                            <div class="col col-75" style="margin-top:5px;">
+                            <div class="col col-75" style="margin-top:-5px;">
                                 <!--*****  OFFERTS COUNT  *****-->
                                 <spam style="color:white; font-size:15px;"> {{super.promo}} </spam>
                                 <!--***** OFFERTS NAME  *****-->
-                                <spam style="font-size:13px; color:#78D9D8 ;"> ofertas</spam>
+                                <spam style="font-size:13px; color:#78D9D8;"> ofertas</spam>
                                 <br>
                                 <!--*****  PROMOTIONS COUNT  *****-->
                                 <spam style="color:white; font-size:15px;">Q{{super.promedio}} </spam>
@@ -32,7 +32,7 @@ height: auto;">
                                 <spam style="font-size:12px; color:#78D9D8 ;"> promo</spam>
                             </div>
                             <!--*****  SECOND ROW TO HEART ICON  *****-->    
-                            <div class="col col-25" style="margin-top:25px; color:white;">
+                            <div class="col col-25" style="margin-top:20px; color:white;">
                                 <!--*****  HEART ICON  *****-->
                                 <div class="home" id="{{super.lastText}}" onclick="hola(id)">B</div>                       
                             </div>
