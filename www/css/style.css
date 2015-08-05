@@ -499,7 +499,7 @@ font-family: Iconos;
 [class*='relacion'] {
 }
 .boxResponsiveWithImage {
-    height: calc(44vh *  1.33);
+    height: calc(43vh *  1.33);
     width: 95%;
     margin-left:10px;
     border-style:solid;
@@ -561,16 +561,16 @@ font-family: Iconos;
     padding-top:4px;
 }
 .pageOffertsNameLabel   {
-    font-size:15px;
-    color:white;
+    font-size:17px;
+    color:#D5D7DD;
     margin-left:5px;
     
 }
 .pageOffertsPriceLabel  {
-    font-size:17px;
+    font-size:22px;
     color:white;
     font-weight:bold;
-    margin-left: 6px;
+    margin-left: -5px;
     margin-top:-10px;
 }
 .pageOffertsTitleWithImage  {
@@ -591,21 +591,20 @@ font-family: Iconos;
     margin-top:-5px;
 }
 .pageOffertsActualPrice {
-    font-size:15px;
+    font-size:23px;
     margin-left:5px;
 }
 .pageOffertsBeforePrice {
-    font-size:13px;
-    margin-left:10px;
+    font-size:17px;
     color:#A7A9AC;
 }
 .pageOffertsShareIcon  {
     color:#A7A9AC;
-    margin-left:-5px;
+    margin-left:10px;
 }
 .pageOffertsLikeIcon  {
     color:#A7A9AC;
-    margin-left:15px;
+    margin-left:20px;
 }
 .pageOffertsTitleLabelWithoutImage   {
     font-size:12px;
