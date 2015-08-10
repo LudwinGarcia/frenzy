@@ -36,7 +36,13 @@ function functionTool() {
        document.getElementById("star").style.color = "#A7A9AC ";
        document.getElementById("tool").style.color = "#3F51B5 ";
        }
-
+/****************  AUTOCLICK FRENZY  ***********************/
+function check() {
+    setTimeout(function(){ 
+       document.getElementById("intervaloFrenzy").click(); 
+    }, 3000);
+};
+check()
 //*************************************************
 //***********  FUNCTION BACK
 function goBack() {
@@ -210,7 +216,7 @@ $ionicConfigProvider.tabs.position('bottom');
   })  
 //********************************************************************************
   .state('app.browse', {
-    url: "/ofertas",
+    url: "/ofertas/:superId",
     views: {
       'menuContent': {
         templateUrl: "templates/ofertas.html",
@@ -218,6 +224,7 @@ $ionicConfigProvider.tabs.position('bottom');
       }
     }
   })
+  
   
 //********************************************************************************
     .state('app.playlists', {

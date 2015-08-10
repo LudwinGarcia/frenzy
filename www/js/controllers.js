@@ -131,9 +131,10 @@ angular.module('starter.controllers', ['ionic'])
 })
 /****************************  tamayo  *****************************************/
 .controller('PaizCtrl', function($scope, $stateParams, Paiz) {
-
-    $scope.chats = Paiz.all();
+    console.log("calling PaizCtrl");
     
+    $scope.chats = Paiz.get($stateParams.superId);
+    console.log(Paiz);
 })
 /****************************  tamayo  final*****************************************/
 

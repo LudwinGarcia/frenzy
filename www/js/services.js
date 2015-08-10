@@ -26,7 +26,7 @@ var total = 0;
 ///////Photos
 var PhotoPaiz = [];
 
-
+var Category = [];
 
 var app = angular.module('starter.services', [])
 
@@ -287,19 +287,32 @@ app.factory('Restaurantes', function() {
 
 
 app.factory('Paiz', function() {
-
-  var paiz = PhotoPaiz;
-
+console.log("called Paiz");
+  var paiz = Category;
+    console.log(paiz);
   return {
     all: function() {
       return paiz;
     },
-    get: function(chatId) {
-      for (var i = 0; i < paiz.length; i++) {
-        if (paiz[i].id === parseInt(chatId)) {
-          return paiz[i];
-        }
-      }
+    get: function(superId) {
+    console.log("called Paiz.get()");
+//      for (var i = 0; i < paiz.length; i++) {
+//        if (paiz[i].id === parseInt(superId)) {
+//          return paiz[i];
+//        }
+//      }
+        //primer(superId);
+              Category = []
+              for (c in PhotoPaiz){
+                console.log(PhotoPaiz[c].Category)
+                if (superId === PhotoPaiz[c].Category){
+                    Category.push(PhotoPaiz[c])
+                }
+                
+            }
+       
+        if (PhotoPaiz) return Category;
+        
       return null;
     }
   };
@@ -329,7 +342,7 @@ query.find({
     // Error occured
     console.log( error );
   }
-});
+});PhotoPaiz = [];
 
 /***************call parse promotion*********************************/
 var promotion = new Parse.Query('Promotion');
@@ -341,68 +354,84 @@ customer = customer.limit(100);
      
 ///////////////////////////////////////////////////////////////////////////////////////////costumer
 //query limit hace la llamada de mas elementos
-
-/**************************************** tamayo  ************************************/
-function primer(id){
-    PhotoPaiz = [];
-    promotion.find({
+promotion.find({
         success: function(results) {
             console.log(PhotoPaiz)
-            var sumaPrecioBase = 0;
-            var sumaPrecioPromo = 0;
-            var cont = 0;
-            var sum = [];
+
             for ( x in results) {
-                cont = cont +1
-                promociones.push(results[x].attributes.TypeService)
-                sumaPrecioBase =  sumaPrecioBase + results[x].attributes.BasePrice
-                sumaPrecioPromo = sumaPrecioPromo + results[x].attributes.PromotionalPrice
+     
                 listPromoSuper.push(results[x].attributes.Costumer)
                 
                 for (i in results[x].attributes.Costumer){
-                            //console.log(results[x].attributes.Costumer[i])
-                    if (id === results[x].attributes.Costumer[i]){
-                              console.log("lo encontro", results[x].attributes.Costumer[i])  
+                            console.log(results[x].attributes.Costumer[i])
+
+                            
                               PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
                                               presentation:results[x].attributes.Presentation,
                                               description:results[x].attributes.PromotionDescription,
                                               basePrice:results[x].attributes.BasePrice,
                                               promotionalPrice:results[x].attributes.PromotionalPrice,
-                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice})
-                    }else {
-                        console.log("no Encontro :(")
-                    }   
+                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
+                                              , Category:results[x].attributes.Costumer[i]
+                                             
+                                             })
+
                 }
             }
-            console.log(PhotoPaiz)
-            resta = sumaPrecioBase-sumaPrecioPromo
-            total = resta / promociones.length
-            total = total.toFixed(2)
+            //console.log(PhotoPaiz)
+       
+            return PhotoPaiz;
+            
+ 
       },
       error: function(myObject, error) {
         // Error occureds
         console.log( error );
       }
     });
-    alert(id)
-    
-}
+
+/**************************************** tamayo  ************************************/
+/*primer.apply();*/
+//function primer(id){
+//    PhotoPaiz = [];
+//    promotion.find({
+//        success: function(results) {
+//            console.log(PhotoPaiz)
+//
+//            for ( x in results) {
+//     
+//                listPromoSuper.push(results[x].attributes.Costumer)
+//                
+//                for (i in results[x].attributes.Costumer){
+//                            //console.log(results[x].attributes.Costumer[i])
+//                    if (id === results[x].attributes.Costumer[i]){
+//                              console.log("lo encontro", results[x].attributes.Costumer[i])  
+//                            
+//                              PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
+//                                              presentation:results[x].attributes.Presentation,
+//                                              description:results[x].attributes.PromotionDescription,
+//                                              bas ePrice:results[x].attributes.BasePrice,
+//                                              promotionalPrice:results[x].attributes.PromotionalPrice,
+//                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice})
+//                    }else {
+//                        console.log("no Encontro :(")
+//                    }   
+//                }
+//            }
+//            return PhotoPaiz;
+//            console.log(PhotoPaiz)
+// 
+//      },
+//      error: function(myObject, error) {
+//        // Error occureds
+//        console.log( error );
+//      }
+//    });
+//    alert(id)
+//    
+//}
 /****************************** final tamayo  ****************************************/
 
-/*call my funtionc Promotions*/
- /*
-Parse.Cloud.run('Promotions', {}, {
-    success: function(result) {
-
-        console.log(result)
-    },
-    error: function(error) {
-      console.log(error);
-    }
-});
-    
-
-*/
 /* ------------------------------------------------------*/
 
 /* Call GetPromotions function in Parse Cloud Code */
