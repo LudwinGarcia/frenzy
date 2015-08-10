@@ -109,7 +109,7 @@ font-family: Iconos;
 }
 /****************************************************************************/
 /**************************  PAGE START DESING  *****************************/
-.pageStartFrenzyTitle{
+.mainFrenzyTitle{
     font-size:65px;
 }
 .icon_supermercado{
@@ -229,8 +229,14 @@ font-family: Iconos;
 }
 
 /****************************************************************************/
-/*********************  PAGE FAVORITES MEDIA QUERIES  ***********************/
+/**************************   MEDIA QUERIES  ********************************/
 
+@media (min-width: 351px) and (max-width: 400px) { 
+    .mainFrenzyTitle{
+        color:white;
+        margin-top:10px;
+    }
+}
 /****************************************************************************/
 /*****************************  FAVORITES PAGE  *****************************/
 .imagePageFavoritesStyle{
@@ -256,9 +262,10 @@ font-family: Iconos;
 .pageFavoritesOurFavorites{
     color:white;
     text-decoration:none;
+    text-align: center;
 }
 .pageFavoritesOurFavoritesTitle{
-    margin-left:20px;
+    
     margin-top:23px;
     font-size:13px;
 }
@@ -267,13 +274,14 @@ font-family: Iconos;
     border-radius:3px;
     border-style:none;
     weigth:10px;
+   
 }
 .pageFavoritesYourFavorites{
     color:white;
     text-decoration:none;
+    text-align: center;
 }
 .pageFavoritesYourFavoritesTitle{
-    margin-left:40px;
     margin-top:23px;
     color:#D8D8D8;
     font-size:13px;
@@ -283,6 +291,7 @@ font-family: Iconos;
     color:#D8D8D8;
     background-color:#D8D8D8;
     border-style:none;
+    
 }
 .boxResponsiveFavorites {
     height: calc(52vh *  1.33);
@@ -294,14 +303,13 @@ font-family: Iconos;
 }
 .pageFavoritesSavingTigle{
     font-size:17px;
-    color:white;
+    color:#E6E2E2;
     margin-left:5px;
 }
 .pageFavoritesSavingPrice{
-    font-size:15px;
+    font-size:16px;
     color:white;
     font-weight:bold;
-    margin-top:-10px;
 }
 [class*='relacion'] {
 }
@@ -425,7 +433,7 @@ font-family: Iconos;
 }
 .ellipsifyOffertsTwoLines {
     line-height:18px;
-    height: 33px;       /* 3x line height */
+    height: 33px;       /* 2x line height */
     width: 100%;
     overflow: hidden;
     position: relative; /* so we're a positioning parent for the dot hiders */
@@ -451,11 +459,11 @@ font-family: Iconos;
 }
 .pre-dots-threeLines {
     float: right;
-    height: 30px;  /* 2x line height (one less than visible lines) */
+    height: 20px;  /* 2x line height (one less than visible lines) */
 }
 .pre-dots-threeLines-offerts {
     float: right;
-    height: 10px;  /* 2x line height (one less than visible lines) */
+    height: 28px;  /* 2x line height (one less than visible lines) */
 }
 
 .dots {
@@ -523,7 +531,7 @@ font-family: Iconos;
 [class*='relacion'] {
 }
 .boxResponsiveWithoutImage {
-    height: calc(21vh *  1.33);
+    height: calc(17vh *  1.33);
     width: 95%;
     margin-left:10px;
     margin-top:15px;
@@ -595,26 +603,27 @@ font-family: Iconos;
     margin-left:5px;
 }
 .pageOffertsBeforePrice {
-    font-size:17px;
+    font-size:12px;
     color:#A7A9AC;
 }
 .pageOffertsShareIcon  {
     color:#A7A9AC;
-    margin-left:10px;
+    margin-left:5px;
 }
 .pageOffertsLikeIcon  {
     color:#A7A9AC;
-    margin-left:20px;
+    margin-left:10px;
 }
 .pageOffertsTitleLabelWithoutImage   {
-    font-size:12px;
-    color:white;
-    margin-left:9px;
+    font-size:16px;
+    color:#D5D7DD;
+    margin-left: 3px;
 }
 .pageOffertsPriceLabelWithoutImage  {
-    font-size:14px;
+    font-size:16px;
     color:white;
     font-weight:bold;
+    margin-top:-10px;
 }
 .pageOffertsTitleDescriptionWithoutImage {
     font-size:20px;
@@ -632,7 +641,7 @@ font-family: Iconos;
     margin-left:5px;
 }
 .pageOffertsBeforePriceWithoutImage {
-    font-size:13px;
+    font-size:12px;
     margin-left:10px;
     color:#A7A9AC ;
 }

@@ -18,33 +18,41 @@
 </style>
 <!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
  <!--************  HEADER AND BACK BUTTON  ***************-->
-    <ion-header-bar align-title="center" class="bar-positive">
-        <h1 class="title home"  style="font-size:65px;">Z</h1>
+   <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title home">
+            <!--**********  TITLE FRENZY  ***********-->
+            <p class="mainFrenzyTitle">
+                Z    
+            </p>
+        </h1>
     </ion-header-bar>
     <!--*****************************************************-->
     <ion-content ng-controller="AppCtrl">
         <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row secondRow">
+        <div class="row pageFavoritesSecondRow">
+            <!--**********  OUR FAVORITES  **********-->
             <div class="col col-50">
-                <!--*****  LINK OFFERTS  *****-->
-                <a nav-transition="none" href="#/app/favoritos" style="color:white; text-decoration:none;">
-                    <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
-                    <p id="offertsFunction" onclick="offerts()" style="margin-left:20px; margin-top:23px; color:#D8D8D8;font-size:13px;">Nuestros Favoritos</p>
-                             <hr id="lineCuponsFunction" style="margin-top:-5px; color:#D8D8D8; background-color:#D8D8D8; border-style:none;">
+                <a class="pageFavoritesOurFavorites" nav-transition="none" href="#/app/favoritos">
+                    <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()" style="color:#D8D8D8;">
+                        Nuestros Favoritos
+                    </p>
+                    <!--**********  OUR FAVORITES LINE DECORATION  **********-->
+                    <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction" style="background-color:#D8D8D8;">
                 </a>
             </div>
-            <!--*****  SECOND COL CUPONS  *****-->
+            <!--**********  YOUR FAVORITES  **********-->
             <div class="col col-50">
-                <!--*****  LINK CUPONS  *****-->
-                <a nav-transition="none" href="#/app/tusFavoritos" style="color:white; text-decoration:none;">
-                    <!--*****  TITLE AND FUNCTION CUPONS  *****-->
-                    <p id="cuponsFunction" onclick="cupons()" style="margin-left:30px; margin-top:23px;  font-size:13px;">Tus Favoritos</p>
-          
-                     <hr id="lineOffertsFunction" style="margin-top:-5px; border-radius:3px; border-style:none; weigth:10px;">
+                <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos">
+                    <!--**********  TITLE AND FUNCTION YOUR FAVORITES  **********-->
+                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction" onclick="cupons()" style="color:white">
+                        Tus Favoritos
+                    </p>
+                    <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
+                    <hr class="pageFavoritesLineDecoration" id="lineCuponsFunction" style="background-color:white;">
                 </a>
             </div>
-        </div>
-           
+        </div>   
         <!--************  YOUT FAVORITES BODY  *******************-->
         <div class="row" style="background-color:#E6E7E8; height:35px; margin-top:1px;">
             <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
@@ -58,7 +66,8 @@
             </div>
             <!--*****  ICON ARROW RIGHT  *****-->
             <div class="col col-10" style="margin-top:5px;">
-                <spam class="home" style="margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;"> > </spam>    
+                <spam class="home" style="margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;">
+                </spam>    
             </div>
         </div>
         <!--*****  SECOND ROW DESCRIPTION OF YOUR FAVORITE STABLISHMENT  *****-->
@@ -69,7 +78,7 @@
                 <p class="overFlowText" style="font-size:11px; color:#A4A4A4; margin-top:-8px; ">15% de descuento en pollos piolindo de dos lb...</p>
             </div>
             <div class="col col-20">
-                <p class="home" style="color:#A7A9AC; margin-top:45px; margin-left:25px; font-size:30px;">C</p>
+                <p class="home" style="color:silver; margin-top:45px; margin-left:25px; font-size:30px;" id="pinYourFavorites" onclick="changeColorPinYourFavorites()">W</p>
             </div>
         </div>
         <!--*******************************************************-->        

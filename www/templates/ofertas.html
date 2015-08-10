@@ -25,6 +25,9 @@ hr     {
     border-style:none;
     box-shadow: 0px 3px 10px 1px grey;    
 }
+    .icon {
+  font-size: 36px;
+}
 </style>
 <ion-view  view-title="Walmart">
     <!--************  HEADER AND BACK BUTTON  ***************-->
@@ -35,26 +38,19 @@ hr     {
     <!--*****************************************************-->
     <ion-content ng-controller="AppCtrl">
         <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageOffertsSecondRo">
-            <div class="col col-33">
-                <!--*****  LINK OFFERTS  *****-->
-                <a class="pageOffertsLinkOfferts" nav-transition="none" href="#/app/ofertas">
-                    <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
-                    <p class="pageOffertsTitleOferts" id="offertsFunction" onclick="offerts()" >Ofertas(0)
+     <div class="row pageFavoritesSecondRow">
+            <!--**********  OUR FAVORITES  **********-->
+            <div class="col col-50">
+                <a class="pageFavoritesOurFavorites"  >
+                    <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()" style="font-size:15px;">
+                        Ofertas (21)
                     </p>
-                    <hr class="pageOffertsHrLine" id="lineOffertsFunction">
+                    <!--**********  OUR FAVORITES LINE DECORATION  **********-->
+                    <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction">
                 </a>
             </div>
-            <!--*****  SECOND COL CUPONS  *****-->
-            <div class="col col-33">
-                <!--*****  LINK CUPONS  *****-->
-                <!--a nav-transition="none" href="#/app/cupones" style="color:white; text-decoration:none;">
-                    <!--*****  TITLE AND FUNCTION CUPONS  *****>
-                    <p id="cuponsFunction" onclick="cupons()" style="margin-left:23px; margin-top:23px; color:#D8D8D8;">Cupones(0)</p>
-                    <hr id="lineCuponsFunction" style="margin-top:-5px; color:#D8D8D8; background-color:#D8D8D8; border-style:none;">
-                </a-->
-            </div>
-        </div>
+        </div>   
         <!--**********  ICON POPOVER  *********-->
         <div class="row" style="margin-top:-32px;">
             <div class="col col-66"></div>
@@ -91,9 +87,15 @@ hr     {
                     </p>
 
                     <!--*****  OFFERTS DESCRIPTION  *****-->
-                    <p class="open_sans pageOffertsDescription">
-                        {{super.description}}
-                    </p>
+                    <div class="ellipsify">
+                        <div class="pre-dots"></div>
+                        <div class="dots">&hellip;</div>
+                        <p class="pageFavoritesDescription open_sans">
+                            {{super.description}}
+                        </p>
+                        <span class="hidedots1"></span>
+                        <div class="hidedots2"></div>
+                    </div>
                     <!--*****  DIVIDER LINE  *****-->
                     <hr class="pageOffertsHrBox">
                     <!--*****  DIV TO PRICE AND ICONS  *****-->
@@ -111,7 +113,7 @@ hr     {
                            <spam class="home pageOffertsShareIcon">
                                  O  
                             </spam>
-                            <spam class="home pageOffertsLikeIcon">
+                            <spam class="home pageOffertsLikeIcon" id="pinOfferts" onclick="changeColorPinOfferts()" style="color:silver">
                                    W
                             </spam>
                         </div>   
@@ -127,12 +129,12 @@ hr     {
                     <!--*****  LABEL WITHOUT IMAGE  *****-->
                     <div class="row" style="position:absolute;">
                         <div class="col col-20" style="margin-top:5px;">
-                            <spam class="pageOffertsTitleLabelWithoutImage">
+                            <p class="pageOffertsTitleLabelWithoutImage">
                                 Ahorra
-                            </spam>
-                            <spam class="pageOffertsPriceLabelWithoutImage">
+                            </p>
+                            <p class="pageOffertsPriceLabelWithoutImage">
                                 Q.23.00
-                            </spam>
+                            </p>
                         </div>
                     </div> 
                     <img clas="offersLogo" src="img/logoOfertas.png" alt="image" style="height:75px; width:75px;">
@@ -143,9 +145,15 @@ hr     {
                         Pollo Rey - Pollo sin menudos lb
                     </p>
             <!--*****  OFFERTS DESCRIPTION  *****-->
-                    <p class="open_sans pageOffertsDescriptionWithoutImage">
-                        15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.
-                    </p>
+                    <div class="ellipsifyThreeLines">
+                        <div class="pre-dots-threeLines-offerts"></div>
+                        <div class="dots-threeLines">&hellip;</div>
+                        <p class="pageFavoritesDescription open_sans">
+                            oferta de pollo rey con un 30% de descuento en la compra de 1000 pollos o mas de color amarillo con plumas y alas para la venta domestica
+                        </p>
+                        <span class="hidedots1"></span>
+                        <div class="hidedots2"></div>
+                    </div>
                 </div>
             </div>
             <!--*****  DIVIDER LINE  *****-->
@@ -172,25 +180,28 @@ hr     {
                     </div>
         </div>
             
-
         <!--*************  POPOVER CONTENT  ******************-->
         <script id="templates/popover.html" type="text/ng-template" >
             <ion-popover-view  style="height:170px; width:180px; margin-top:20px;">
                 <ion-content >
+                    
                     <div class="list">
-                        <a class="item" href="http://learn.ionicframework.com/" target="_blank" style="text-align:right; color:#A2A2A5;">
+                     
+                        <a class="item" target="_blank" style="text-align:right; color:#A2A2A5;">
                             Seguir  
-                            <spam class="home pageOffertsPopoverIconsDescrpition">
-                                B  
+                            <spam class="home pageOffertsPopoverIconsDescrpition" id="heartFollow" onclick="changeColorHeartFollow()" style="color:silver">
+                                  B  
                             </spam>
+                           
                         </a>
-                        <a class="item" href="http://ionicframework.com/docs/" target="_blank" style="text-align:right; color:#A2A2A5;">
+                      
+                        <a class="item" onclick="window.open('tel:1730');" target="_blank" style="text-align:right; color:silver;">
                             Llamar
                             <spam class="home pageOffertsPopoverIconsDescrpition">
                                 Q
                             </spam>
                         </a>
-                        <a class="item" href="http://showcase.ionicframework.com/" target="_blank" style="text-align:right; color:#A2A2A5;">
+                        <a class="item" onclick="window.open('https://www.dominos.com.gt/','_blank')" target="_blank" style="text-align:right; color:silver;">
                           Ir a pagina Web
                             <spam class="home pageOffertsPopoverIconsDescrpition">
                                 R
@@ -200,6 +211,6 @@ hr     {
                 </ion-content>
             </ion-popover-view>
         </script>
-        <!--**********************************************************-->          
-   </ion-content>
+        <!--**********************************************************--> 
+         </ion-content>
 </ion-view>

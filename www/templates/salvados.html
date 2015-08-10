@@ -1,10 +1,20 @@
-<ion-view>
+<style>
+    .bar.bar-positive    {
+    box-shadow: 0 0 0px white;
+}
+</style>
+ <ion-view>
   <!--************  HEADER AND BACK BUTTON  ***************-->
     <ion-header-bar align-title="center" class="bar-positive">
-        <h1 class="title home"  style="font-size:65px;">Z</h1>
+        <h1 class="title home">
+            <!--**********  TITLE FRENZY  ***********-->
+            <p class="mainFrenzyTitle">
+                Z    
+            </p>
+        </h1>
     </ion-header-bar>
     <!--*****************************************************-->
-    <ion-content >
+    <ion-content>  
         <div class="row savedPageBoxStyle">
             <div class="col col-20">
                 <img class="savedPageImage" alt="pizza" src="img/dominosPizza.jpeg">
@@ -21,7 +31,7 @@
                 </p>
             </div>
             <div class="col col-10 home">
-                <p class="savedPageIcon">W</p>
+                <p class="savedPageIcon" id="pinSaved" onclick="changeColorPinSaved()" style="color:silver">W</p>
             </div>
         </div>
     </ion-content>

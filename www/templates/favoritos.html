@@ -1,5 +1,8 @@
 <!--**********  STYLE FAVORITES PAGE  **********-->
 <style>
+.slider {
+  height: 95%;
+}
 .bar.bar-positive    {
     box-shadow: 0 0 0px white;
 }
@@ -16,13 +19,13 @@ hr     {
     <ion-header-bar align-title="center" class="bar-positive">
         <h1 class="title home">
             <!--**********  TITLE FRENZY  ***********-->
-            <p class="pageFavoritesTitleFrenzy">
+            <p class="mainFrenzyTitle">
                 Z    
             </p>
         </h1>
     </ion-header-bar>
     <!--**********  BODY PAGE FAVORITES  ***********-->
-    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" >
+    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" scroll="false">
         <!--**********  SECOND TAB HEADER  **********-->
         <div class="row pageFavoritesSecondRow">
             <!--**********  OUR FAVORITES  **********-->
@@ -44,7 +47,7 @@ hr     {
                         Tus Favoritos
                     </p>
                     <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
-                    <hr class="pageFavoritesLineDecorationYourFavorites" id="lineCuponsFunction">
+                    <hr class="pageFavoritesLineDecoration" id="lineCuponsFunction" style="background-color:#D8D8D8;">
                 </a>
             </div>
         </div>   
@@ -62,7 +65,7 @@ hr     {
                             <p class="pageFavoritesSavingTigle">
                                 Ahorra
                             </p>
-                            <p class="pageFavoritesSavingPrice">
+                            <p class="pageFavoritesSavingPrice" style="margin-top:-10px;">
                                 Q.21.600
                             </p>
                         </div>
@@ -116,7 +119,7 @@ hr     {
                         <!--*****  ICONS  *****-->
                         <div class="col col-33">
                             <spam class="pageFavoritesIcons home"> O </spam>
-                            <spam class="pageFavoritesIcons home"> W </spam>
+                            <spam class="pageFavoritesIcons home" id="pinFavorites" onclick="changeColorPinFavorites()" style="color:silver"> W </spam>
                         </div>   
                     </div>
                 </div>  
@@ -257,8 +260,8 @@ hr     {
                         </div>
                         <!--*****  ICONS  *****-->
                         <div class="col col-33">
-                            <spam class="pageFavoritesIcons home"> O </spam>
-                            <spam class="pageFavoritesIcons home"> W </spam>
+                            <a class="pageFavoritesIcons home"> O </a>
+                            <a class="pageFavoritesIcons home"> W </a>
                         </div>   
                     </div>
                 </div>  

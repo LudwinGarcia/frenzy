@@ -53,22 +53,90 @@ function hola(parametro){
 	   else{document.getElementById(parametro).style.color="";}
           
 };
-/******************************************************/
-function check() {
-    setTimeout(function(){ 
-       document.getElementById("intervaloFrenzy").click(); 
-    }, 1000);
+/************  TAMAYO FUNCTION CHANCE COLOR HEART  **********/
+function changeColorHeart (parametro){
+    var cssColor = document.getElementById(parametro).style.color;
+       if (cssColor=="white")
+       {
+           document.getElementById(parametro).style.color="red";
+	   }
+	   else
+       {
+           document.getElementById(parametro).style.color="white";
+       }
+          
 };
-check()
+
+/************  TAMAYO FUNCTION CHANCE COLOR HEART FOLLOW **********/
+function changeColorHeartFollow(parametro){
+    var cssColorHeartFollow = document.getElementById("heartFollow").style.color;
+       if (cssColorHeartFollow=="silver")
+       {
+           document.getElementById("heartFollow").style.color="red";
+	   }
+	   else
+       {
+           document.getElementById("heartFollow").style.color="silver";
+       }  
+};
+/************************************************************/
+/************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS **********/
+function changeColorPinOfferts(parametro){
+    var cssColorpinOfferts = document.getElementById("pinOfferts").style.color;
+       if (cssColorpinOfferts=="silver")
+       {
+           document.getElementById("pinOfferts").style.color="purple";
+	   }
+	   else
+       {
+           document.getElementById("pinOfferts").style.color="silver";
+       }  
+};
+
+/************  TAMAYO FUNCTION CHANCE COLOR PIN  SAVED**********/
+function changeColorPinSaved(parametro){
+    var cssColorpinSaved = document.getElementById("pinSaved").style.color;
+       if (cssColorpinSaved=="silver")
+       {
+           document.getElementById("pinSaved").style.color="purple";
+	   }
+	   else
+       {
+           document.getElementById("pinSaved").style.color="silver";
+       }  
+};
+
+/************  TAMAYO FUNCTION CHANCE COLOR PIN  FAVORITES  **********/
+function changeColorPinFavorites(parametro){
+    var cssColorpinFavorites = document.getElementById("pinFavorites").style.color;
+       if (cssColorpinFavorites=="silver")
+       {
+           document.getElementById("pinFavorites").style.color="purple";
+	   }
+	   else
+       {
+           document.getElementById("pinFavorites").style.color="silver";
+       }  
+};
+
+/************  TAMAYO FUNCTION CHANCE COLOR PIN  YOUR FAVORITES  **********/
+function changeColorPinYourFavorites(parametro){
+    var cssColorpinYourFavorites = document.getElementById("pinYourFavorites").style.color;
+       if (cssColorpinYourFavorites=="silver")
+       {
+           document.getElementById("pinYourFavorites").style.color="purple";
+	   }
+	   else
+       {
+           document.getElementById("pinYourFavorites").style.color="silver";
+       }  
+};
 /******************************************************/
 var myApp = angular.module('reallyCoolApp', ['ionic']);
 myApp.config(function($ionicConfigProvider) {
   // note that you can also chain configs
   $ionicConfigProvider.navBar.alignTitle('center');
 });
-//*****************************************************
-
-
 /******************************************************/
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 //****************************************************
