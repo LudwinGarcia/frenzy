@@ -8,6 +8,7 @@
 
 /*********  FUNCIONES CAMBIO DE COLOR ICONOS  ******************/
 //********  HOME
+var IdUsuario ;
 function functionHome() {
        document.getElementById("home").style.color = "#00BAB9 ";
        document.getElementById("heart").style.color = "#A7A9AC ";
@@ -60,11 +61,13 @@ function hola(parametro){
           
 };
 /************  TAMAYO FUNCTION CHANCE COLOR HEART  **********/
-function changeColorHeart (parametro){
+function changeColorHeart (parametro,category){
     var cssColor = document.getElementById(parametro).style.color;
        if (cssColor=="white")
        {
            document.getElementById(parametro).style.color="red";
+                 console.log("ID usario", IdUsuario);
+            console.log("ID category", category)
 	   }
 	   else
        {
@@ -390,6 +393,8 @@ $ionicConfigProvider.tabs.position('bottom');
       facebookConnectPlugin.api('/me', null, 
         function(response) {
           console.log(response);
+          IdUsuario = response.id
+    
           userObject.set('name', response.name);
           userObject.set('email', response.email);
           userObject.set('birthday', response.birthday);
