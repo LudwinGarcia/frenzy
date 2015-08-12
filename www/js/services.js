@@ -357,9 +357,9 @@ promotion.find({
                 listPromoSuper.push(results[x].attributes.Costumer)
                 for (i in results[x].attributes.Costumer){
                             //console.log(results[x].attributes.Costumer[i]);
-
-                            
-                              PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
+if (true === results[x].attributes.Status){
+    console.log("esta disponible",results[x].attributes.Status)
+    PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
                                               presentation:results[x].attributes.Presentation,
                                               description:results[x].attributes.PromotionDescription,
                                               basePrice:results[x].attributes.BasePrice,
@@ -368,6 +368,9 @@ promotion.find({
                                               , Category:results[x].attributes.Costumer[i]
                                              
                                              });
+}
+                            
+                              
                 }
             }
             //console.log(PhotoPaiz)
