@@ -359,7 +359,8 @@ promotion.find({
                             //console.log(results[x].attributes.Costumer[i]);
 if (true === results[x].attributes.Status){
     console.log("esta disponible",results[x].attributes.Status)
-    PhotoPaiz.push({photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
+    if (results[x].attributes.Photo === null){
+             PhotoPaiz.push({nul:"sin",name:results[x].attributes.CategoryProduct,
                                               presentation:results[x].attributes.Presentation,
                                               description:results[x].attributes.PromotionDescription,
                                               basePrice:results[x].attributes.BasePrice,
@@ -368,8 +369,23 @@ if (true === results[x].attributes.Status){
                                               , Category:results[x].attributes.Costumer[i]
                                              
                                              });
+        console.log("iamgen no dispobible")    
+    }else{
+           PhotoPaiz.push({nul:"con",photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
+                                              presentation:results[x].attributes.Presentation,
+                                              description:results[x].attributes.PromotionDescription,
+                                              basePrice:results[x].attributes.BasePrice,
+                                              promotionalPrice:results[x].attributes.PromotionalPrice,
+                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
+                                              , Category:results[x].attributes.Costumer[i]
+                                             
+                                             });
+    } 
+    
+    
+ 
 }
-                            
+            
                               
                 }
             }
