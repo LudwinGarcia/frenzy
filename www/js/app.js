@@ -65,9 +65,15 @@ function changeColorHeart (parametro,category){
     var cssColor = document.getElementById(parametro).style.color;
        if (cssColor=="white")
        {
+           var ct = category.split(" ");
+           console.log(ct)
+           ct = ct[1]
+           
+           console.log(ct)
+
            document.getElementById(parametro).style.color="red";
-                 console.log("ID usario", IdUsuario);
-            console.log("ID category", category)
+                // console.log("ID usario", IdUsuario);
+            //console.log("ID category", ct)
 	   }
 	   else
        {
