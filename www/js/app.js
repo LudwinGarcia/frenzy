@@ -222,7 +222,17 @@ $ionicConfigProvider.tabs.position('bottom');
         controller: 'ChatsCtrl'
       }
     }
-  })  
+  }) 
+  //********************************************************************
+  .state('app.herramientas', {
+    url: "/herramientas",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/herramientas.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })
 //********************************************************************************
   .state('app.browse', {
     url: "/ofertas/:superId",
