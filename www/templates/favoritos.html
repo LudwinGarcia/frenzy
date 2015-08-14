@@ -71,7 +71,7 @@ hr     {
                         </div>
                     </div>
                     <!--*****  IMAGE  *****-->
-                    <img class="imagePageFavoritesStyle relacionFavoritesImage" src="img/nissan.jpg" alt="nissan">
+                    <img class="imagePageFavoritesStyle relacionFavoritesImage bordeMediaQueri" src="img/nissan.jpg" alt="nissan">
                     <!--***** NISSAN LOGO  *****-->
                     <div style="margin-top:-25px;">
                         <img class="logoEstablishment" src="img/logoNissan.png" alt="label">
@@ -117,31 +117,15 @@ hr     {
                             </spam>
                         </div>
                         <!--*****  ICONS  *****-->
-                        <div class="col col-33">
-                            <spam class="pageFavoritesIcons home"> O </spam>
+                        <div class="col col-33" ng-controller="PopupCtrl">
+                            <spam class="pageFavoritesIcons home" ng-click="showConfirm()"> O </spam>
                             <spam class="pageFavoritesIcons home" id="pinFavorites" onclick="changeColorPinFavorites()" style="color:silver"> W </spam>
                         </div>   
                     </div>
                 </div>  
             </ion-slide>
 <!--*******************************************************************************-->
-       <!--*******************************************************************************-->    <ion-slide>
-           <script>
-        
-.controller('AppCtrl',function($scope, $ionicPopup) {
-
-   //*****  CONFIRM POP UP BUTTON
-   $scope.showConfirm = function() {
-     var confirmPopup = $ionicPopup.confirm({
-       title: 'Consume Ice Cream',
-       template: 'Are you sure you want to eat this ice cream?'
-     });
-   };
-});
-            </script>
-            <br><br><br><br>
-             <spam class="home" ng-click="showConfirm()" style="padding-left:50px; font-size:30px;"> O </spam>
-            </ion-slide>
+       <!--*******************************************************************************-->   
 <!--*******************************************************************************-->      
         </ion-slide-box>
     </ion-content>

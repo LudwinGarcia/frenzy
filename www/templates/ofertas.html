@@ -110,9 +110,37 @@ hr     {
                         </div>
                         <!--*****  ICONS  *****-->
                         <div class="col col-33">
-                           <spam class="home pageOffertsShareIcon">
-                                 O  
-                            </spam>
+                          <!--***********  POP UP ***************-->
+                            <a class="home pageOffertsShareIcon" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" style="text-decoration:none;">
+        O
+    </a>
+    <!--*******************************************-->
+    <!--**********  POP UP CONTENT  ***************-->
+    <div id="light" class="white_content">
+        <!--**********  FUNCTION CLOSE  **********-->
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" style="text-decoration:none;">
+            <p class="home popUpColseIcon">T</p>
+        </a>
+        <!--**********  POP UP CONTENT  **********-->
+        <div>
+            <p class="popUpTitle">Compartir cupón</p>    
+            <hr style="background-color:#FFFFFF; width:100%; height:1px; margin-bottom:5px;">
+        </div>
+        <!--**********  HR LINE  **********-->
+        <!--**********  ICON AND TEXT FACEBOOK  **********-->
+        <div style="padding-bottom:3px;">
+            <img class="popUpIconFacebook" src="img/facebookicon.png" alt="facebook">
+            <p class="popUpDescriptionFacebook">Amigos de facebook</p>
+        </div>
+        <!--**********  ICON AND TEXT MSJ  **********-->
+       <div onclick="window.open('sms:59470772?body=Frenzy', '_system');">
+            <p class="home popUpIconsMail">V</p>
+            <p class="popUpDescriptionMail">Enviar mensaje de texto</p>
+        </div>
+    </div>
+    <!--**********  FUNCTION TO OPACITY BACKGROUND  **********-->
+    <div id="fade" class="black_overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" > </div>
+                            <!--***********  END POP UP  **********-->
                             <spam class="home pageOffertsLikeIcon" id="pinOfferts" onclick="changeColorPinOfferts()" style="color:silver">
                                    W
                             </spam>
@@ -171,9 +199,37 @@ hr     {
                         </div>
                         <!--*****  ICONS  *****-->
                         <div class="col col-33">
-                           <spam class="home pageOffertsShareIcon">
-                                 O  
-                            </spam>
+                          <!--***********  POP UP ***************-->
+                            <a class="home pageOffertsShareIcon" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" style="text-decoration:none;">
+        O
+    </a>
+    <!--*******************************************-->
+    <!--**********  POP UP CONTENT  ***************-->
+    <div id="light" class="white_content">
+        <!--**********  FUNCTION CLOSE  **********-->
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" style="text-decoration:none;">
+            <p class="home popUpColseIcon">T</p>
+        </a>
+        <!--**********  POP UP CONTENT  **********-->
+        <div>
+            <p class="popUpTitle">Compartir cupón</p>    
+            <hr style="background-color:#FFFFFF; width:100%; height:1px; margin-bottom:5px;">
+        </div>
+        <!--**********  HR LINE  **********-->
+        <!--**********  ICON AND TEXT FACEBOOK  **********-->
+        <div style="padding-bottom:3px;">
+            <img class="popUpIconFacebook" src="img/facebookicon.png" alt="facebook">
+            <p class="popUpDescriptionFacebook">Amigos de facebook</p>
+        </div>
+        <!--**********  ICON AND TEXT MSJ  **********-->
+       <div onclick="window.open('sms:59470772?body=Frenzy', '_system');">
+            <p class="home popUpIconsMail">V</p>
+            <p class="popUpDescriptionMail">Enviar mensaje de texto</p>
+        </div>
+    </div>
+    <!--**********  FUNCTION TO OPACITY BACKGROUND  **********-->
+    <div id="fade" class="black_overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" > </div>
+                            <!--***********  END POP UP  **********-->
                             <spam class="home pageOffertsLikeIcon">
                                    W
                             </spam>
