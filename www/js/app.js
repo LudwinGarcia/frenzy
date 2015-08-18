@@ -425,7 +425,7 @@ $ionicConfigProvider.tabs.position('bottom');
           console.log(response);
           
           IdUsuario = response.id
-          Heart()
+          //Heart()
     
           userObject.set('name', response.name);
           userObject.set('email', response.email);
