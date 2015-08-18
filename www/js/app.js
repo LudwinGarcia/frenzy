@@ -41,7 +41,7 @@ function functionTool() {
 function check() {
     setTimeout(function(){ 
        document.getElementById("intervaloFrenzy").click(); 
-    }, 3000);
+    }, 1000);
 };
 check()
 //*************************************************
@@ -65,24 +65,15 @@ function changeColorHeart (parametro,category){
     var cssColor = document.getElementById(parametro).style.color;
        if (cssColor=="white")
        {
-           var categ = [];
            var ct = category.split(" ");
-           for (j in ct){
-               if(j > 0){
-                   console.log(ct[j],j)
-                   categ.push(ct[j])
-                   console.log(categ)
-               }
-               
-           }
            console.log(ct)
            ct = ct[1]
            
            console.log(ct)
 
            document.getElementById(parametro).style.color="red";
-            console.log("ID usario", IdUsuario);
-        console.log("ID category", ct)
+                // console.log("ID usario", IdUsuario);
+            //console.log("ID category", ct)
 	   }
 	   else
        {
@@ -231,7 +222,17 @@ $ionicConfigProvider.tabs.position('bottom');
         controller: 'ChatsCtrl'
       }
     }
-  })  
+  }) 
+  //********************************************************************
+  .state('app.herramientas', {
+    url: "/herramientas",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/herramientas.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })
 //********************************************************************************
   .state('app.browse', {
     url: "/ofertas/:superId",

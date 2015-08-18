@@ -37,22 +37,25 @@ angular.module('starter.controllers', ['ionic'])
 //**************************************************************
 //*********************  POPOVER  ******************************
 
-.controller('AppCtrl', function($scope, $ionicPopover) {
+
+.controller('PopoverCtrl', function($scope, $ionicPopover) {
 
   $ionicPopover.fromTemplateUrl('templates/popover.html', {
     scope: $scope,
   }).then(function(popover) {
     $scope.popover = popover;
+    $scope.message = 'hello';
   });
 
-  $scope.demo = 'ios';
-  $scope.setPlatform = function(p) {
-    document.body.classList.remove('platform-ios');
-    document.body.classList.remove('platform-android');
-    document.body.classList.add('platform-' + p);
-    $scope.demo = p;
-  }
+})
 
+.controller('PopoverNewCtrl', function($scope, $ionicPopover) {
+  $ionicPopover.fromTemplateUrl('templates/popoverNew.html', {
+    scope: $scope,
+  }).then(function(popover) {
+    $scope.popover = popover;
+    $scope.message = 'cheers';
+  });
 })
 //**************************************************************
 .controller('PlaylistsCtrl', function($scope) {
