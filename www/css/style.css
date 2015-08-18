@@ -1,467 +1,81 @@
-/****************************************************************************/
-/****************************  GENERALY CSS STYLE  **************************/
-/***** MAIN BAR COLOR STYLE *****/
-.bar.bar-positive{
-    border-color: #00BAB9  ;
-    background-color: #00BAB9  ;
-    border-style:none;
-    box-shadow: 0 0 5px #888888  ;
-    background-image: linear-gradient(0deg, #00BAB9  , #00BAB9   50%, transparent 50%);
-    color: #fff; 
-}
-.title{
-    color: white;
-    margin-top:3px;
-}
-  .bar.bar-positive.bar-footer{
-    background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); 
-}
-/****************************************************************************/
-/**************************  INTRODUCTION PAGE FRENZY  **********************/
-.pageFrenzyColor{
-    background-color:#00BAB9;
-}
-.pageFrenzyLogoImage{
-    text-align: center;
-}
-.pageFrenzySubtitle{
-    border-style:none;
-}
-.pageFrenzyTextLegend{
-    color:white;
-    font-size:10px;
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 800px;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+    opacity: 0.5
 }
 
-/****************************************************************************/
-/************************  PAGE LOGIN FACEBOOK  *****************************/
-.pageLoginFacebookColor{
-    background-color:#3F51B5;
+.white_content {
+    display: none;
+    position: absolute;
+    top: 45%;
+    margin-left: -55%;
+    width: 75%;
+    height: 170px;
+    padding: 16px;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
+    border-radius: 3px;
 }
-.pageLoginFacebookButtonStyle{
-    height:10px;
-    width:200px;
-    box-shadow: 0.1px 0.1px 0.1px 0.3px #848484;
-}
-.pageLoginFacebookImage{
-    height:50px;
-    width:120px;
-    margin-top:-3px;
-}
-/****************************************************************************/
-/**************************  PAGE START DESING  *****************************/
-.mainFrenzyTitle{
-    font-size:65px;
-}
-.iconoMenu{ 
-    color:white;
-    text-align: center;
-    margin-top: 11px;
-    font-size: 35px;
-    padding-top: 19px;
-}
-.pageStartColWithNameCuponsPromotions{
-    margin-left:45px;
-}
-.pageStartCategoriesName{
-    margin-top:-15px;
-}
-.pageStartCuponsPromotions{
-    margin-top:-1px;
-}
-.pageStartCuponsPromotionsTitle{
-    font-size:13px;
-}
-.pageStartSeparationLine{
-    margin-top:5px;
-    height:0.1px;
-    color:#F1F2F2;
-    border-style:solid;
-}
-.icon_supermercado{
-    background-color:#00BAB9 ; 
-}
-.icon_restaurante{
-    background-color:#FF5252; 
-}
-.icon_moda{
-    background-color:#FFD922; 
-}
-.icon_entretenimiento{
-    background-color:#9C28B0;
-}
-.icon_electronico{
-    background-color:#3F51B5; 
-}
-.icon_otro{
-    background-color:#00DDC1; 
-}
-.imagen{
-    height: 175px;
-    width: 175px;
-}
-.pageStartIconsStyleGeneraly{
-    height: 50px;
-    width: 50px;
-    margin-top: -15px;
-    border-radius: 23px;
-}
-.icon_supermercado{
-    background-color:#00BAB9  ;
-}
-.icon_restaurante{
-    background-color:#FF5252 ;
-}
-.icon_moda{
-    background-color:#FFD922 ;
-}
-.icon_entretenimiento{
-    background-color:#9C28B0 ;
-}
-.icon_electronico{
-    background-color:#3F51B5 ;
-}
-.icon_otro{
-    background-color:#00DDC1 ;
-}
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 12px 10px;
-    border-color: transparent transparent #9C28B0 transparent;
-}
-.arrow-up-left{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 14px 0 0 12px;
-    border-color: transparent transparent transparent #9c28b0;
-    margin-left: -5px;
-}
-.arrow-dow-left{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 14px 12px 0 0;
-    border-color: #9c28b0 transparent transparent transparent;
-    margin-left: -5px;
-}
-.arrow-dow{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 12px 10px 0 10px;
-    border-color: #9C28B0 transparent transparent transparent;
-}
-.pageStartBoxPurple{
-    background-color:#9C28B0;
-    height:200px;
-    width:100%;
-    margin-top: -27px;
-    margin-bottom: -5px;
-}
-.pageStartBoxPurpleIcon{
-    padding-top: 60px;
-    font-size: 50px;
-    text-align: center;
-    color:#00DDC1;
-}
-.pageStartBoxPurpleTitle{
-    color:white;
-    font-weight: bold;
-    text-align: center;
-    margin-top: -10px;    
-}
-
-/****************************************************************************/
-/*****************************  FAVORITES PAGE  *****************************/
-.imagePageFavoritesStyle{
-    width:100%;
-}
-
-[class*='relacion'] {
-}
-.relacionFavoritesImage    {
-    height: calc(16vh *  3.1);
-}
-[class*='relacion'] {
-}
-.relacionFavorites    {
-    height: calc(7vh *  3.1);
-}
-.pageFavoritesTitleFrenzy{
-    font-size:65px;
-}
-.pageFavoritesBodyColor{
-    background-color:#F1F2F2;
-}
-.pageFavoritesOurFavorites{
-    color:white;
-    text-decoration:none;
-    text-align: center;
-}
-.pageFavoritesOurFavoritesTitle{
-    
-    margin-top:23px;
-    font-size:13px;
-}
-.pageFavoritesLineDecoration{
-    margin-top:-5px;
-    border-radius:3px;
-    border-style:none;    
-}
-.pageFavoritesYourFavorites{
-    color:white;
-    text-decoration:none;
-    text-align: center;
-}
-.pageFavoritesYourFavoritesTitle{
-    margin-top:23px;
-    color:#D8D8D8;
-    font-size:13px;
-}
-.pageFavoritesLineDecorationYourFavorites{
-    margin-top:-5px;
-    color:#D8D8D8;
-    background-color:#D8D8D8;
-    border-style:none;
-}
-.boxResponsiveFavorites {
-    height: calc(52vh *  1.33);
-    width: 95%;
-    margin-left:10px;
-    margin-top:15px;
-    box-shadow: 3px 3px 2px #BDBDBD;
-    background-color:white;
-}
-.pageFavoritesBoxPriceLabel{
-    position:absolute;
-}
-.pageFavoritesEstablishmentLogo{
-    margin-top:-25px;
-}
-.pageFavoritesHrLineBox{
-    border:none;
-    background-color:#F2F2F2;
-    height:1px;
-}
-.pageFavoritesActualPrice{
-    font-size:15px;
-}
-.pageFavoritesSavingTitle{
-    font-size:17px;
-    color:#E6E2E2;
-    margin-left:5px;
-}
-.pageFavoritesSavingPrice{
-    font-size:16px;
-    color:white;
-    font-weight:bold;
-}
-[class*='relacion'] {
-}
-.relacionImagePageFavorites{
-    height: calc(38vh *  1.33);
-}
-.logoEstablishment  {
-    height: 50px;
-    width: 50px;
-    margin-top:-65px;
-    margin-left: 10px;
-}
-.pageFavoritesCountOfferts{
-    font-size:14px;
+.popUpIconShare{
     color:black;
-    font-weight:bolder;
-    color:white;
-    margin-top:-5px;
+    font-size:50px;
+    margin-left: 45%;
+    text-decoration: none;
 }
-.pageFavoritesCountOffertsTitle{
-    font-size:13px;
-    color:#BDBDBD; 
-}
-.pageFavoritesSecondRow{
-    background-color:#00BAB9;
-    color:white;
-    font-size: 12px;
+.popUpTitle{
+    color:black;
+    font-size: 17px;
     font-weight: bolder;
-    margin-top:-25px;
+    text-align: center;
+    margin-top: -25px;
 }
-.pageFavoritesDescriptionTitle{
-    font-size:20px;
+.popUpIconFacebook{
+    height: 25px;
+    width: 25px;
+    margin-left: 5%;
     margin-top:15px;
-    margin-left:10px;
 }
-.pageFavoritesDescription{
-    font-size:13px;
-    margin-left:10px;
-    color:#BDBDBD;
+.popUpDescriptionFacebook{
+    margin-left: 3%;
+    font-size: 15px;
+    margin-top: -26px;
+    margin-left: 20%;
+    color:grey;
 }
-.pageFavoritesBeforePrice{
-    font-size:13px;
-    margin-left:5px;
-    color:#A7A9AC;
+.popUpIconsMail{
+    font-size: 22px;
+    color:white;
+    padding-top:5px;
+    padding-left: 3px;
+    margin-left: 5%;
+    background-color: #FF5252;
+    height: 23px;
+    width: 25px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
-.pageFavoritesIcons{
-    color:#A7A9AC;
-    margin-left:10px;
-    margin-top:10px;
+.popUpDescriptionMail{
+    margin-left: 20%;
+    margin-top: -32px;
+    color:grey;
+    font-size: 15px;
 }
-.pageFavoritesDivIcons{
-    background-color:white;
-    margin-top:10px;
+.popUpColseIcon{
+    font-size: 45px;
+    color:grey;
+    margin-left: 90%;
+    text-decoration:none;
 }
-
-/****************************************************************************/
-/****************************  YOUR FAVORITES STYLE  ************************/
-
-.row-border {
-    border-width:thin;
-    border-color: #E6E7E8;
-    border-bottom-style: solid;
-}
-.pageOurFavoritesOurFavoritesTitle{
-    color:#D8D8D8;
-}
-.pageYourFavoritesLineDecoration{
-    background-color:#D8D8D8;
-}
-.pageYourFavoritesGreyLine{
-    background-color:#E6E7E8;
-    height:35px;
-    margin-top:1px;
-}
-.pageYourFavoritesIconHeart{
-    margin-top:5px;
-    margin-left:10px;
-    font-size:27px;
-    color:#FF5252;
-}
-.pageYourFavoritesStablishmentName{
-    margin-left:15px;
-    font-size:15px;
-}
-.pageYourFavoritesIconArrow{
-    margin-top:5px;
-    margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;
-}
-.pageYourFavoritesWhiteBox{
-    height:100px;
-}
-
-.pageYourFavoritesWhiteBoxTop{
-   margin-top:15px;
-}
-.pageYourFavoritesOffert{
-    font-size:13px;
-    font-weight: bold;
-}
-.pageYourFavoritesPriceOffert{
-    font-size:11px;
-    margin-top:-8px;
-}
-.pageYourFavoritesOffertDescription{  
-    font-size:11px;
-    color:#A4A4A4;
-    margin-top:-8px; 
-}
-.pageYourFavoritesIconPin{
-    color:silver;
-    margin-top:45px;
-    margin-left:25px;
-    font-size:30px;
-}
-
-/****************************************************************************/
-/*************************  PAGE SALVADOS DESING  ***************************/
-.savedPageBoxStyle  {
-    border-style:solid;
-    border-color:#E6E6E6;
-    border-bottom-width: 1px;
-    height: 100px;
-}
-.savedPageImage  {
-    height: 50px;
-    width: 55px;
-    margin-left:5px;
-    margin-top:13px;
-    border-style: solid;
-    border-color:#F1F2F2;
-    border-width: 1px;
-    border-radius:4px;
-}
-.savedPageIcon  {
-    font-size:30px;
-    color:silver;
-    margin-top:50px;
-    margin-left:-35px;
-}
-.savedPageTitleDescription  {
-    font-size:17px;
-    font-weight: bold;
-    width: 95%;
-    margin-top:12px;
-}
-.savedPageOffert    {
-    font-size:14px;
-    margin-top:-10px;
-}
-.savedPageDescription   {
-    font-size:12px;
-    color:#848484;
-    margin-top:-10px;
-    width: 85%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**************************************************************/
 /**************************************************************/
 @media only screen 
@@ -591,6 +205,178 @@ font-family: Iconos;
     -ms-flex-align: center;
     align-items: center;
 }
+/*****  MAIN BAR COLOR STYLE  *****/
+.bar.bar-positive{
+    border-color: #00BAB9  ;
+    background-color: #00BAB9  ;
+    border-style:none;
+    box-shadow: 0 0 5px #888888  ;
+    background-image: linear-gradient(0deg, #00BAB9  , #00BAB9   50%, transparent 50%);
+    color: #fff; 
+}
+  .bar.bar-positive .title{
+    color: white;
+    margin-top:3px;
+}
+  .bar.bar-positive.bar-footer{
+    background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); 
+  }
+/****************************************************************************/
+/**************************  INTRODUCTION PAGE FRENZY  **********************/
+.pageFrenzyColor{
+    background-color:#00BAB9;
+}
+.pageFrenzyLogoImage{
+    text-align: center;
+}
+.pageFrenzySubtitle{
+    border-style:none;
+}
+.pageFrenzyTextLegend{
+    color:white;
+    font-size:10px;
+}
+/****************************************************************************/
+/************************  PAGE LOGIN FACEBOOK  *****************************/
+.pageLoginFacebookColor{
+    background-color:#3F51B5;
+}
+.pageLoginFacebookButtonStyle{
+    height:10px;
+    width:200px;
+    box-shadow: 0.1px 0.1px 0.1px 0.3px #848484;
+}
+.pageLoginFacebookImage{
+    height:50px;
+    width:120px;
+    margin-top:-3px;
+}
+/****************************************************************************/
+/**************************  PAGE START DESING  *****************************/
+.mainFrenzyTitle{
+    font-size:65px;
+}
+.icon_supermercado{
+    background-color:#00BAB9 ; 
+}
+.icon_restaurante{
+    background-color:#FF5252; 
+}
+.icon_moda{
+    background-color:#FFD922; 
+}
+.icon_entretenimiento{
+    background-color:#9C28B0;
+
+}
+.icon_electronico{
+    background-color:#3F51B5; 
+}
+.icon_otro{
+    background-color:#00DDC1; 
+}
+.imagen{
+    height: 175px;
+    width: 175px;
+}
+.iconoMenu{ 
+    color:white;
+    text-align: center;
+    margin-top: 11px;
+    font-size: 35px;
+    padding-top: 19px;
+}
+.icon_supermercado{
+    background-color:#00BAB9  ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.icon_restaurante{
+    background-color:#FF5252 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.icon_moda{
+    background-color:#FFD922 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.icon_entretenimiento{
+    background-color:#9C28B0 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.icon_electronico{
+    background-color:#3F51B5 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.icon_otro{
+    background-color:#00DDC1 ;
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 12px 10px;
+    border-color: transparent transparent #9C28B0 transparent;
+}
+.arrow-up-left{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 0 12px;
+    border-color: transparent transparent transparent #9c28b0;
+    margin-left: -5px;
+}
+.arrow-dow-left{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 12px 0 0;
+    border-color: #9c28b0 transparent transparent transparent;
+    margin-left: -5px;
+}
+.arrow-dow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 10px 0 10px;
+    border-color: #9C28B0 transparent transparent transparent;
+}
+.pageStartBoxPurple{
+    background-color:#9C28B0;
+    height:200px;
+    width:100%;
+    margin-top: -27px;
+    margin-bottom: -5px;
+}
+.pageStartBoxPurpleIcon{
+    padding-top: 60px;
+    font-size: 50px;
+    text-align: center;
+    color:#00DDC1;
+}
+.pageStartBoxPurpleTitle{
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;    
+}
 /****************************************************************************/
 /*************************  DESIGN ESTABLISHMENTS  **************************/
 .backgroundCategories    {
@@ -643,7 +429,183 @@ font-family: Iconos;
         margin-top:10px;
     }
 }
+/****************************************************************************/
+/*****************************  FAVORITES PAGE  *****************************/
+.imagePageFavoritesStyle{
+    width:100%;
+}
 
+[class*='relacion'] {
+}
+.relacionFavoritesImage    {
+    height: calc(16vh *  3.1);
+}
+[class*='relacion'] {
+}
+.relacionFavorites    {
+    height: calc(7vh *  3.1);
+}
+.pageFavoritesTitleFrenzy{
+    font-size:65px;
+}
+.pageFavoritesBodyColor{
+    background-color:#F1F2F2;
+}
+.pageFavoritesOurFavorites{
+    color:white;
+    text-decoration:none;
+    text-align: center;
+}
+.pageFavoritesOurFavoritesTitle{
+    
+    margin-top:23px;
+    font-size:13px;
+}
+.pageFavoritesLineDecoration{
+    margin-top:-5px;
+    border-radius:3px;
+    border-style:none;
+    weigth:10px;
+   
+}
+.pageFavoritesYourFavorites{
+    color:white;
+    text-decoration:none;
+    text-align: center;
+}
+.pageFavoritesYourFavoritesTitle{
+    margin-top:23px;
+    color:#D8D8D8;
+    font-size:13px;
+}
+.pageFavoritesLineDecorationYourFavorites{
+    margin-top:-5px;
+    color:#D8D8D8;
+    background-color:#D8D8D8;
+    border-style:none;
+    
+}
+.boxResponsiveFavorites {
+    height: calc(52vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    background-color:white;
+}
+.pageFavoritesSavingTigle{
+    font-size:17px;
+    color:#E6E2E2;
+    margin-left:5px;
+}
+.pageFavoritesSavingPrice{
+    font-size:16px;
+    color:white;
+    font-weight:bold;
+}
+[class*='relacion'] {
+}
+
+.relacionImagePageFavorites{
+    height: calc(38vh *  1.33);
+}
+.logoEstablishment  {
+    height: 50px;
+    width: 50px;
+    margin-top:-65px;
+    margin-left: 10px;
+}
+.pageFavoritesCountOfferts{
+    font-size:14px;
+    color:black;
+    font-weight:bolder;
+    color:white;
+    margin-top:-5px;
+}
+.pageFavoritesCountOffertsTitle{
+    font-size:13px;
+    color:#BDBDBD; 
+}
+
+.pageFavoritesSecondRow    {
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+.pageFavoritesDescriptionTitle{
+    font-size:20px;
+    margin-top:15px;
+    margin-left:10px;
+}
+.pageFavoritesDescription{
+    font-size:13px;
+    margin-left:10px;
+    color:#BDBDBD;
+}
+.pageFavoritesFeforePrice{
+    font-size:13px;
+    margin-left:5px;
+    color:#A7A9AC;
+}
+.pageFavoritesIcons{
+    color:#A7A9AC;
+    margin-left:10px;
+    margin-top:10px;
+}
+.pageFavoritesDivIcons{
+    background-color:white;
+    margin-top:10px;
+}
+
+/****************************************************************************/
+/****************************  YOUR FAVORITES STYLE  ************************/
+
+.yourFavoritesStyle {
+   color:red;
+}
+
+/****************************************************************************/
+/*************************  PAGE SALVADOS DESING  ***************************/
+.savedPageBoxStyle  {
+    border-style:solid;
+    border-color:#E6E6E6;
+    border-bottom-width: 1px;
+    height: 100px;
+}
+.savedPageImage  {
+    height: 50px;
+    width: 55px;
+    margin-left:5px;
+    margin-top:13px;
+    border-style: solid;
+    border-color:#F1F2F2;
+    border-width: 1px;
+    border-radius:4px;
+}
+.savedPageIcon  {
+    font-size:30px;
+    color:#9C28B0;
+    margin-top:50px;
+    margin-left:-35px;
+}
+.savedPageTitleDescription  {
+    font-size:17px;
+    font-weight: bold;
+    width: 95%;
+    margin-top:12px;
+}
+.savedPageOffert    {
+    font-size:14px;
+    margin-top:-10px;
+}
+.savedPageDescription   {
+    font-size:12px;
+    color:#848484;
+    margin-top:-10px;
+    width: 85%;
+}
 /*****************************************************************************/
 /***************  TEXT CSS OVER FLOW  ******************/
 
@@ -735,11 +697,6 @@ font-family: Iconos;
 /***********************************************/
 /***********  PAGE OFFERTS STYLE  **************/
 [class*='relacion'] {
-}
-.pageOffertsOffertsTitle{
-    color:white;
-    text-decoration:none;
-    text-align: center;
 }
 .boxResponsiveWithImage {
     height: calc(43vh *  1.33);
@@ -841,7 +798,7 @@ font-family: Iconos;
     font-size:12px;
     color:#A7A9AC;
 }
-.pageOffertsShareIcon {
+.pageOffertsShareIcon  {
     color:#A7A9AC;
     margin-left:5px;
 }

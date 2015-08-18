@@ -343,6 +343,7 @@ query.find({
 /***************call parse promotion*********************************/
 var promotion = new Parse.Query('Promotion');
 var customer = new Parse.Query('Customer');
+var favorite = new Parse.Query('Favorite');
 //query limit hace la llamada de mas elementos
 //////////////////////////////////////////////////////////////////////////promotion
 promotion = promotion.limit(100);
@@ -353,38 +354,38 @@ customer = customer.limit(100);
 promotion.find({
         success: function(results) {
             console.log(PhotoPaiz)
-            for ( x in results) {
+            for (x in results) {
                 listPromoSuper.push(results[x].attributes.Costumer)
                 for (i in results[x].attributes.Costumer){
-                            //console.log(results[x].attributes.Costumer[i]);
-if (true === results[x].attributes.Status){
-    console.log("esta disponible",results[x].attributes.Status)
-    if (results[x].attributes.Photo === null){
-             PhotoPaiz.push({nul:"sin",name:results[x].attributes.CategoryProduct,
-                                              presentation:results[x].attributes.Presentation,
-                                              description:results[x].attributes.PromotionDescription,
-                                              basePrice:results[x].attributes.BasePrice,
-                                              promotionalPrice:results[x].attributes.PromotionalPrice,
-                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                              , Category:results[x].attributes.Costumer[i]
-                                             
-                                             });
-        console.log("iamgen no dispobible")    
-    }else{
-           PhotoPaiz.push({nul:"con",photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
-                                              presentation:results[x].attributes.Presentation,
-                                              description:results[x].attributes.PromotionDescription,
-                                              basePrice:results[x].attributes.BasePrice,
-                                              promotionalPrice:results[x].attributes.PromotionalPrice,
-                                              ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                              , Category:results[x].attributes.Costumer[i]
-                                             
-                                             });
-    } 
-    
-    
- 
-}
+                        //console.log(results[x].attributes.Costumer[i]);
+                        if (true === results[x].attributes.Status){
+                            //console.log("esta disponible",results[x].attributes.Status)
+                            if (results[x].attributes.Photo === null){
+                                     PhotoPaiz.push({nul:"sin",name:results[x].attributes.CategoryProduct,
+                                                                      presentation:results[x].attributes.Presentation,
+                                                                      description:results[x].attributes.PromotionDescription,
+                                                                      basePrice:results[x].attributes.BasePrice,
+                                                                      promotionalPrice:results[x].attributes.PromotionalPrice,
+                                                                      ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
+                                                                      ,Category:results[x].attributes.Costumer[i]
+
+                                                                     });
+                                //console.log("iamgen no dispobible")    
+                            }else{
+                                   PhotoPaiz.push({nul:"con",photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
+                                                                      presentation:results[x].attributes.Presentation,
+                                                                      description:results[x].attributes.PromotionDescription,
+                                                                      basePrice:results[x].attributes.BasePrice,
+                                                                      promotionalPrice:results[x].attributes.PromotionalPrice,
+                                                                      ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
+                                                                      , Category:results[x].attributes.Costumer[i]
+
+                                                                     });
+                            } 
+
+
+
+                        }
             
                               
                 }
@@ -497,6 +498,23 @@ function AddPromotions(Array) {
         };
 
     });
+};
+
+function SaveFavorite(UserId, CustomerId) {
+   result = {
+       'UserID':UserId,
+       'CustomerID':CustomerId
+   };
+   
+   Parse.Cloud.run('SaveFavorite', {"Array":result}, {
+       success: function(result) {
+           console.log(result);
+       },
+       error: function(error) {
+           /* Show error if call failed */
+           console.log(error);
+       }
+   });
 };
 
 

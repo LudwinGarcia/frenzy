@@ -1,0 +1,39 @@
+<!--***** categorias y descuentos de cada supermercado *****-->
+     <ion-view view-title="La Torre">
+      <ion-content >            
+            <!--***** controlador y link de retorno *****-->               
+            <ion-list ng-repeat="cupones in chats" >         
+               <!--***** Recuadro principal de productos y ofertas *****-->
+                <div class="descuentos">
+                    {{cupones.name}}
+                    
+                    <br>
+                    <!--***** Recuadro de imagen de productos y ofertas *****-->    
+                    <div class="imagenDescuentos">
+                           IMAGEN    
+                     </div>
+                     <!--***** Titulo de productos y ofertas *****-->
+                    <div class="tituloDescuentos">
+                        {{cupones.oferta}}
+                    
+              
+                    </div>
+                    <!--***** boton canjear *****-->
+                    <div>
+                        <ion-item class="botonCanjear" href="#/app/canjear">
+                            <div class="tituloCanjear">
+                                Canjear
+                            </div>
+                        </ion-item>   
+                    </div>
+                    <!--***** iconos compartir y favorito *****-->
+                    <div class="compartir">
+                        <button class="button button-icon button-clear ion-star" ng-click="login()" >
+                        </ion-nav-buttons>
+                         <button class="button button-icon button-clear ion-android-share-alt" ng-click="login()" >
+                        </ion-nav-buttons>
+                    </div>
+                </div>
+            </ion-list>   
+      </ion-content>
+</ion-view>

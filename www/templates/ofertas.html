@@ -25,27 +25,23 @@ hr     {
     border-style:none;
     box-shadow: 0px 3px 10px 1px grey;    
 }
- /**********************************************/
-    .backButtomStyle{
-        margin-top:10px;
-        font-size:25px;
-        margin-left:10px;
-    }
+    .icon {
+  font-size: 36px;
+}
 </style>
-<!--**********  **********-->
-<ion-view>
+<ion-view  view-title="Walmart">
     <!--************  HEADER AND BACK BUTTON  ***************-->
     <ion-header-bar align-title="center" class="bar-positive">
-        <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"></i>
+        <i class="icon ion-chevron-left" onclick="goBack()" style="margin-top:10px; font-size:25px; margin-left:10px;"></i>
         <h1 class="title">Supermercados</h1>
     </ion-header-bar>
-    <!--**********  CONTENT  **********-->
+    <!--*****************************************************-->
     <ion-content ng-controller="AppCtrl">
-    <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageFavoritesSecondRow">
-            <!--**********  OFFERTS  **********-->
+        <!--*****  SECOND TAB HEADER  *****-->
+     <div class="row pageFavoritesSecondRow">
+            <!--**********  OUR FAVORITES  **********-->
             <div class="col col-50">
-                <a class="pageOffertsOffertsTitle"  >
+                <a class="pageFavoritesOurFavorites"  >
                     <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
                     <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()" style="font-size:15px;">
                         Ofertas (21)
@@ -59,7 +55,7 @@ hr     {
         <div class="row" style="margin-top:-32px;">
             <div class="col col-66"></div>
             <div class="col col-33">
-                 <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl" style="margin-left:20px;">
+                <button class="popoverIcon home" ng-click="popover.show($event)" style="margin-left:20px;">
                     <p class="pageOffertsPopoverSimbol">
                         N
                     </p>
@@ -114,9 +110,37 @@ hr     {
                         </div>
                         <!--*****  ICONS  *****-->
                         <div class="col col-33">
-                           <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl" style="color:silver">
-                                   O
-                            </spam>
+                          <!--***********  POP UP ***************-->
+                            <a class="home pageOffertsShareIcon" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" style="text-decoration:none;">
+        O
+    </a>
+    <!--*******************************************-->
+    <!--**********  POP UP CONTENT  ***************-->
+    <div id="light" class="white_content">
+        <!--**********  FUNCTION CLOSE  **********-->
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" style="text-decoration:none;">
+            <p class="home popUpColseIcon">T</p>
+        </a>
+        <!--**********  POP UP CONTENT  **********-->
+        <div>
+            <p class="popUpTitle">Compartir cupón</p>    
+            <hr style="background-color:#FFFFFF; width:100%; height:1px; margin-bottom:5px;">
+        </div>
+        <!--**********  HR LINE  **********-->
+        <!--**********  ICON AND TEXT FACEBOOK  **********-->
+        <div style="padding-bottom:3px;">
+            <img class="popUpIconFacebook" src="img/facebookicon.png" alt="facebook">
+            <p class="popUpDescriptionFacebook">Amigos de facebook</p>
+        </div>
+        <!--**********  ICON AND TEXT MSJ  **********-->
+       <div onclick="window.open('sms:59470772?body=Frenzy', '_system');">
+            <p class="home popUpIconsMail">V</p>
+            <p class="popUpDescriptionMail">Enviar mensaje de texto</p>
+        </div>
+    </div>
+    <!--**********  FUNCTION TO OPACITY BACKGROUND  **********-->
+    <div id="fade" class="black_overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" > </div>
+                            <!--***********  END POP UP  **********-->
                             <spam class="home pageOffertsLikeIcon" id="pinOfferts" onclick="changeColorPinOfferts()" style="color:silver">
                                    W
                             </spam>
@@ -131,13 +155,7 @@ hr     {
             <!--*****  NAME OF OFFERTS  *****-->
             <div class="row">
                 <div class="col col-25">
-                    <!--*****  LABEL W.secondPopoverBox{
-    background-color: blue;
-    margin-left: -50px;
-}
-.secondPopoverTitle{
-    font-size: 20px;
-}ITHOUT IMAGE  *****-->
+                    <!--*****  LABEL WITHOUT IMAGE  *****-->
                     <div class="row" style="position:absolute;">
                         <div class="col col-20" style="margin-top:5px;">
                             <p class="pageOffertsTitleLabelWithoutImage">
@@ -181,9 +199,37 @@ hr     {
                         </div>
                         <!--*****  ICONS  *****-->
                         <div class="col col-33">
-                          <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl" style="color:silver">
-                                   O
-                            </spam>
+                          <!--***********  POP UP ***************-->
+                            <a class="home pageOffertsShareIcon" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" style="text-decoration:none;">
+        O
+    </a>
+    <!--*******************************************-->
+    <!--**********  POP UP CONTENT  ***************-->
+    <div id="light" class="white_content">
+        <!--**********  FUNCTION CLOSE  **********-->
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" style="text-decoration:none;">
+            <p class="home popUpColseIcon">T</p>
+        </a>
+        <!--**********  POP UP CONTENT  **********-->
+        <div>
+            <p class="popUpTitle">Compartir cupón</p>    
+            <hr style="background-color:#FFFFFF; width:100%; height:1px; margin-bottom:5px;">
+        </div>
+        <!--**********  HR LINE  **********-->
+        <!--**********  ICON AND TEXT FACEBOOK  **********-->
+        <div style="padding-bottom:3px;">
+            <img class="popUpIconFacebook" src="img/facebookicon.png" alt="facebook">
+            <p class="popUpDescriptionFacebook">Amigos de facebook</p>
+        </div>
+        <!--**********  ICON AND TEXT MSJ  **********-->
+       <div onclick="window.open('sms:59470772?body=Frenzy', '_system');">
+            <p class="home popUpIconsMail">V</p>
+            <p class="popUpDescriptionMail">Enviar mensaje de texto</p>
+        </div>
+    </div>
+    <!--**********  FUNCTION TO OPACITY BACKGROUND  **********-->
+    <div id="fade" class="black_overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" > </div>
+                            <!--***********  END POP UP  **********-->
                             <spam class="home pageOffertsLikeIcon">
                                    W
                             </spam>
@@ -198,7 +244,7 @@ hr     {
                     
                     <div class="list">
                      
-                        <a class="item" target="_blank" style="text-align:right; color:silver;" onclick="changeColorHeartFollow()">
+                        <a class="item" target="_blank" style="text-align:right; color:#A2A2A5;">
                             Seguir  
                             <spam class="home pageOffertsPopoverIconsDescrpition" id="heartFollow" onclick="changeColorHeartFollow()" style="color:silver">
                                   B  
@@ -222,34 +268,6 @@ hr     {
                 </ion-content>
             </ion-popover-view>
         </script>
-         <!--**********  SECOND POP OVER  **********-->
-           <script id="templates/popoverNew.html" type="text/ng-template">
-            <ion-popover-view style="height:150px; width:250px;">
-                <ion-content >
-                   
-                    <!--***** MAIN CONTENT  *****-->
-                    <div style="text-aling:center;">
-                        <spam style="font-size:17px; margin-left:55px;font-weight: 900; ">Compartir Oferta</spam>
-                    </div>
-                    <hr style="     border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
-                    <div>
-                       <div>
-                        <img  src="img/facebookicon.png" alt="label" style="height:30px; width:30px; margin-top:20px; margin-left:15px;"><p style="margin-left:60px;margin-top:-30px;color:#A7A9AC ; ">Amigos de facebook</p>
-                        </div>
-                        
-                         <div style="margin-top:25px;" onclick="window.open('sms:59470772?body=Frenzy', '_system');">
-                         
-                        <p class="home" style="height:22px; width:27px; background-color:#FF5252; margin-left:17px; border-radius:3px; font-size:19px; color:white; padding-top:3px; padding-left:5px; border-radius:3px;">V</p>
-                        <p style="margin-left:60px;margin-top:-30px;color:#A7A9AC ; "> Enviar mensajes de texto</p>
-                        </div>
-                    </div>
-                </ion-content>
-            </ion-popover-view>
-        </script>
-        <!--**********  SECOND POP OVER END **********-->
         <!--**********************************************************--> 
          </ion-content>
 </ion-view>

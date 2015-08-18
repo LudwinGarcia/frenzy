@@ -2,10 +2,23 @@
 .bar.bar-positive    {
     box-shadow: 0 0 0px white;
 }
+.secondRow    {
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+
+.row-border {
+    border-width:thin;
+    border-color: #E6E7E8;
+    border-bottom-style: solid;
+}
 </style>
-<!--************  HEADER  ***************-->
-<ion-view>
-    <ion-header-bar align-title="center" class="bar-positive">
+<!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
+ <!--************  HEADER AND BACK BUTTON  ***************-->
+   <ion-header-bar align-title="center" class="bar-positive">
         <h1 class="title home">
             <!--**********  TITLE FRENZY  ***********-->
             <p class="mainFrenzyTitle">
@@ -13,7 +26,7 @@
             </p>
         </h1>
     </ion-header-bar>
-    <!--**********  PAGE YOUR FAVORITES  **********-->
+    <!--*****************************************************-->
     <ion-content ng-controller="AppCtrl">
         <!--*****  SECOND TAB HEADER  *****-->
         <div class="row pageFavoritesSecondRow">
@@ -21,66 +34,53 @@
             <div class="col col-50">
                 <a class="pageFavoritesOurFavorites" nav-transition="none" href="#/app/favoritos">
                     <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
-                    <p class="pageFavoritesOurFavoritesTitle pageOurFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()">
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()" style="color:#D8D8D8;">
                         Nuestros Favoritos
                     </p>
                     <!--**********  OUR FAVORITES LINE DECORATION  **********-->
-                    <hr class="pageFavoritesLineDecoration pageYourFavoritesLineDecoration" id="lineOffertsFunction">
+                    <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction" style="background-color:#D8D8D8;">
                 </a>
             </div>
             <!--**********  YOUR FAVORITES  **********-->
             <div class="col col-50">
                 <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos">
                     <!--**********  TITLE AND FUNCTION YOUR FAVORITES  **********-->
-                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction" onclick="cupons()">
+                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction" onclick="cupons()" style="color:white">
                         Tus Favoritos
                     </p>
                     <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
-                    <hr class="pageFavoritesLineDecoration" id="lineCuponsFunction">
+                    <hr class="pageFavoritesLineDecoration" id="lineCuponsFunction" style="background-color:white;">
                 </a>
             </div>
-        </div>        
-        <!--************  YOUR FAVORITES BODY  *******************-->
-        <div class="row pageYourFavoritesGreyLine">
+        </div>   
+        <!--************  YOUT FAVORITES BODY  *******************-->
+        <div class="row" style="background-color:#E6E7E8; height:35px; margin-top:1px;">
             <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
             <!--*****  ICON HEART COLOR RED  *****-->
-            <div class="col col-10 pageYourFavoritesIconHeart">
-                <spam class="home">B</spam>    
+            <div class="col col-10" style="margin-top:5px;">
+                <spam class="home" style="margin-left:10px; font-size:25px;color:#FF5252;">B</spam>    
             </div>
             <!--*****  NAME'S STABLISHMENT  *****-->
-            <div class="col col-75">
-                <spam class="open_sans overFlowText pageYourFavoritesStablishmentName">Domino's Pizza</spam>    
-            </div>    
+            <div class="col col-75" style="margin-top:2px;">
+                <spam class="open_sans overFlowText" style="margin-left:15px; font-size:15px;">Domino's Pizza</spam>    
+            </div>
             <!--*****  ICON ARROW RIGHT  *****-->
-            <div class="col col-10 pageYourFavoritesIconArrow">
-                <spam class="home">
+            <div class="col col-10" style="margin-top:5px;">
+                <spam class="home" style="margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;">
                 </spam>    
             </div>
         </div>
-        
-        
         <!--*****  SECOND ROW DESCRIPTION OF YOUR FAVORITE STABLISHMENT  *****-->
-        <div class="row row-border pageYourFavoritesWhiteBox">
-            <div class="col col-80 pageYourFavoritesWhiteBoxTop">
-                <!--**********  OFFERT  **********-->
-                <p class="overFlowText pageYourFavoritesOffert">
-                    2X1 En pizzas grandes de un ingrediente
-                </p>
-                <!--**********  PRICE OFFERT  **********-->
-                <p class="pageYourFavoritesPriceOffert">
-                    Oferta - Q.99.00
-                </p>
-                <!--**********  OFFERT DESCRIPTION  **********-->
-                <p class="overFlowText pageYourFavoritesOffertDescription">
-                    15% de descuento en pollos piolindo de dos lb...
-                </p>
+        <div class="row row-border" style="height:100px;">
+            <div class="col col-80" style="margin-top:15px;">
+                <p class="overFlowText" style="font-size:13px;font-weight: bold;">2X1 En pizzas grandes de un ingrediente</p>
+                <p style="font-size:11px;margin-top:-8px;">Oferta - Q.99.00</p>
+                <p class="overFlowText" style="font-size:11px; color:#A4A4A4; margin-top:-8px; ">15% de descuento en pollos piolindo de dos lb...</p>
             </div>
-            <!--**********  PIN ICON**********-->
             <div class="col col-20">
-                <p class="home pageYourFavoritesIconPin" id="pinYourFavorites" onclick="changeColorPinYourFavorites()">
-                    W
-                </p>
+                <p class="home" style="color:silver; margin-top:45px; margin-left:25px; font-size:30px;" id="pinYourFavorites" onclick="changeColorPinYourFavorites()">W</p>
             </div>
-        </div>        
+        </div>
+        <!--*******************************************************-->        
    </ion-content>
 </ion-view>

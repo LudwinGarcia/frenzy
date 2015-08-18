@@ -1,19 +1,19 @@
 <!--**********  STYLE FAVORITES PAGE  **********-->
 <style>
-.slider{
-    height: 95%;
+.slider {
+  height: 95%;
 }
 .bar.bar-positive    {
     box-shadow: 0 0 0px white;
 }
-hr{
+hr     {
     margin-bottom:-10px;
     font-weight:lighter;
     height: 3px;
     background-color: white;
 }
 </style>
-<!--**********  FAVORITES PAGE  **********-->
+<!--***** segunda parte del contenido principal href="#/app/Descuento" *****-->
 <ion-view>
     <!--**********  HEADER  ***********-->
     <ion-header-bar align-title="center" class="bar-positive">
@@ -24,46 +24,45 @@ hr{
             </p>
         </h1>
     </ion-header-bar>
-    <!--**********  BODY FAVORITES PAGE  ***********-->
-    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" scroll="false">       
+    <!--**********  BODY PAGE FAVORITES  ***********-->
+    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" scroll="false">
         <!--**********  SECOND TAB HEADER  **********-->
         <div class="row pageFavoritesSecondRow">
-            <!--**********  OUR FAVORITES LINK  **********-->
+            <!--**********  OUR FAVORITES  **********-->
             <div class="col col-50">
                 <a class="pageFavoritesOurFavorites" nav-transition="none" href="#/app/favoritos">
                     <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
-                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction">
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()">
                         Nuestros Favoritos
                     </p>
                     <!--**********  OUR FAVORITES LINE DECORATION  **********-->
-                    <hr  class="pageFavoritesLineDecoration" id="lineOffertsFunction">
+                    <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction">
                 </a>
             </div>
             <!--**********  YOUR FAVORITES  **********-->
             <div class="col col-50">
                 <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos">
                     <!--**********  TITLE AND FUNCTION YOUR FAVORITES  **********-->
-                    <p class="pageFavoritesYourFavoritesTitle" id="cuponsFunction">
+                    <p class="pageFavoritesYourFavoritesTitle" id="cuponsFunction" onclick="cupons()">
                         Tus Favoritos
                     </p>
                     <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
-                    <hr class="pageFavoritesLineDecoration pageFavoritesLineDecorationYourFavorites" id="lineCuponsFunction">
+                    <hr class="pageFavoritesLineDecoration" id="lineCuponsFunction" style="background-color:#D8D8D8;">
                 </a>
             </div>
         </div>   
-        <!--**********  MAIN BODY  **********-->
-        <!--***********  SLIDER  ************-->
+        <!--**********  BODY  **********-->
         <ion-slide-box>
-        <!--**********  SLIDER CONTENT  **********-->    
+        <!--**********  SLIDER CONTENT  **********-->
+<!--*******************************************************************************-->    
             <ion-slide>
-               <!--**********  SLIDER BOXES  **********-->
                 <div class="boxResponsiveFavorites">
                     <!--*****  IMAGE LABEL OFFERTS  *****-->
                     <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
                     <!--*****  PRICE LABEL OFFERTS  *****-->
-                    <div class="row pageFavoritesBoxPriceLabel">
+                    <div class="row" style="position:absolute;">
                         <div class="col col-25">
-                            <p class="pageFavoritesSavingTitle">
+                            <p class="pageFavoritesSavingTigle">
                                 Ahorra
                             </p>
                             <p class="pageFavoritesSavingPrice" style="margin-top:-10px;">
@@ -71,10 +70,10 @@ hr{
                             </p>
                         </div>
                     </div>
-                    <!--*****  MAIN IMAGE FAVORITE PAGE  *****-->
+                    <!--*****  IMAGE  *****-->
                     <img class="imagePageFavoritesStyle relacionFavoritesImage bordeMediaQueri" src="img/nissan.jpg" alt="nissan">
-                    <!--***** ESTABLISHMENT LOGO  *****-->
-                    <div class="pageFavoritesEstablishmentLogo" style="">
+                    <!--***** NISSAN LOGO  *****-->
+                    <div style="margin-top:-25px;">
                         <img class="logoEstablishment" src="img/logoNissan.png" alt="label">
                         <spam class="pageFavoritesCountOfferts">
                             +32
@@ -89,7 +88,7 @@ hr{
                             Nissan March 1.6SV
                         </p>
                         <!--**********  DESCRIPTION  **********-->
-                        <div class="ellipsify">
+                            <div class="ellipsify">
                             <div class="pre-dots"></div>
                             <div class="dots">&hellip;</div>
                             <p class="pageFavoritesDescription open_sans">
@@ -97,32 +96,37 @@ hr{
                             </p>
                             <span class="hidedots1"></span>
                             <div class="hidedots2"></div>
-                        </div>                        
+                            </div>
+                        
+                        
                     </div>
-                    <!--*****  DIVIDER LINE MAIN BOX  *****-->
-                    <hr class="pageFavoritesHrLineBox">
+                    <!--*****  DIVIDER LINE  *****-->
+                    <hr style="border:none;background-color:#F2F2F2; height:1px;">
                     <!--*****  DIV TO PRICE AND ICONS  *****-->
                     <div class="row pageFavoritesDivIcons" >
                         <!--*****  ACTUAL PRICE  *****-->
                         <div class="col col-33">
-                            <spam class="pageFavoritesActualPrice">
+                            <spam style="font-size:15px;">
                                 Q.93.900.00
                             </spam>
                         </div>
                         <!--*****   BEFORE PRICE  *****-->
                         <div class="col col-33">
-                            <spam class="pageFavoritesBeforePrice">
+                            <spam class="pageFavoritesFeforePrice">
                                 Q.115.500.00
                             </spam>
                         </div>
                         <!--*****  ICONS  *****-->
                         <div class="col col-33" ng-controller="PopupCtrl">
-                            <spam class="pageFavoritesIcons home" onclick="window.open('sms:59470772?body=Frenzy', '_system');"> O </spam>
+                            <spam class="pageFavoritesIcons home" ng-click="showConfirm()"> O </spam>
                             <spam class="pageFavoritesIcons home" id="pinFavorites" onclick="changeColorPinFavorites()" style="color:silver"> W </spam>
                         </div>   
                     </div>
                 </div>  
-            </ion-slide>    
+            </ion-slide>
+<!--*******************************************************************************-->
+       <!--*******************************************************************************-->   
+<!--*******************************************************************************-->      
         </ion-slide-box>
     </ion-content>
 </ion-view>

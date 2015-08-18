@@ -41,7 +41,7 @@ function functionTool() {
 function check() {
     setTimeout(function(){ 
        document.getElementById("intervaloFrenzy").click(); 
-    }, 1000);
+    }, 3000);
 };
 check()
 //*************************************************
@@ -50,6 +50,23 @@ function goBack() {
     window.history.back();
 }
 //*************************************************
+function SaveFavorite(UserId, CustomerId) {
+   result = {
+       'UserID':UserId,
+       'CustomerID':CustomerId
+   };
+   
+   Parse.Cloud.run('SaveFavorite', {"Array":result}, {
+       success: function(result) {
+           console.log(result);
+       },
+       error: function(error) {
+           /* Show error if call failed */
+           console.log(error);
+       }
+   });
+};
+/////////////////////////////////////////////////////////
 //function favoritos
 var contador = 1;
 function hola(parametro){
@@ -63,23 +80,30 @@ function hola(parametro){
 /************  TAMAYO FUNCTION CHANCE COLOR HEART  **********/
 function changeColorHeart (parametro,category){
     var cssColor = document.getElementById(parametro).style.color;
-       if (cssColor=="white")
-       {
+       if (cssColor=="white"){
+           var categ;
+           var cont = 0;
            var ct = category.split(" ");
-           console.log(ct)
-           ct = ct[1]
-           
-           console.log(ct)
-
+           for (j in ct){
+               if(j > 0){
+                   cont = cont + 1
+                   if (cont === 1){
+                        //console.log("1",ct[j],j)
+                       categ = ct[j]
+                       //console.log("2",categ)
+                   }else{   
+                       categ = categ +" "+ct[j]
+                       //console.log("3",categ)
+                   }
+               }               
+           }
            document.getElementById(parametro).style.color="red";
-                // console.log("ID usario", IdUsuario);
-            //console.log("ID category", ct)
-	   }
-	   else
-       {
+           console.log("ID usario", IdUsuario);
+           console.log("ID category", categ)
+           SaveFavorite(IdUsuario,categ)
+	   }else{
            document.getElementById(parametro).style.color="white";
-       }
-          
+       }         
 };
 
 /************  TAMAYO FUNCTION CHANCE COLOR HEART FOLLOW **********/
@@ -222,17 +246,7 @@ $ionicConfigProvider.tabs.position('bottom');
         controller: 'ChatsCtrl'
       }
     }
-  }) 
-  //********************************************************************
-  .state('app.herramientas', {
-    url: "/herramientas",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/herramientas.html",
-        controller: 'ChatsCtrl'
-      }
-    }
-  })
+  })  
 //********************************************************************************
   .state('app.browse', {
     url: "/ofertas/:superId",
