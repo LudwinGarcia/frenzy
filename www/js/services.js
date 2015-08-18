@@ -451,7 +451,7 @@ function AddPromotions(Array) {
             } else {
                 CountPromotions = 0;
                 average = 0;
-            };
+ss};
             
             
             if ("Supermercado" ==  results[x].attributes.CategoryApp){
@@ -499,6 +499,31 @@ function AddPromotions(Array) {
 
     });
 };
+function Heart(){
+favorite.find({
+        success: function(results) {
+            
+            for (x in results) {
+                console.log(results[x].attributes.CustomerID)
+                console.log(results[x].attributes.UserID)
+                if (results[x].attributes.UserID===IdUsuario){
+                        console.log("find user")
+                }else{
+                
+                    console.log("the user no found")
+                }
+            }
+            //console.log(PhotoPaiz)
+
+      },
+      error: function(myObject, error) {
+        // Error occureds
+        console.log( error );
+      }
+    });
+
+}
+
 
 function SaveFavorite(UserId, CustomerId) {
    result = {

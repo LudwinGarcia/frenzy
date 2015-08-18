@@ -423,7 +423,9 @@ $ionicConfigProvider.tabs.position('bottom');
       facebookConnectPlugin.api('/me', null, 
         function(response) {
           console.log(response);
+          
           IdUsuario = response.id
+          Heart()
     
           userObject.set('name', response.name);
           userObject.set('email', response.email);
@@ -436,6 +438,7 @@ $ionicConfigProvider.tabs.position('bottom');
           console.log(error);
         }
       );
+        
       $state.go('app.playlists');
     }, function(error) {
       console.log(error);
