@@ -29,6 +29,8 @@ var PhotoPaiz = [];
 var Category = [];
 /***************************/
 var IdCategory;
+/*************************/
+var Categorys= [];
 
 var app = angular.module('starter.services', [])
 
@@ -451,7 +453,7 @@ function AddPromotions(Array) {
             } else {
                 CountPromotions = 0;
                 average = 0;
-ss};
+            };
             
             
             if ("Supermercado" ==  results[x].attributes.CategoryApp){
@@ -459,15 +461,18 @@ ss};
                 listaNameSuperComparar.push(results[x].attributes.Name);
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
+                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
 
                 Super.push({id:x, name: listSupermercado[x], promo: CountPromotions,promedio:average,
                             lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
+                
+              
 
             }else if("Restaurante" == results[x].attributes.CategoryApp){
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-
+Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 Restaurantes.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                     lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
 
@@ -475,7 +480,7 @@ ss};
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-                
+                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 Modas.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                             lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
                 
@@ -483,7 +488,7 @@ ss};
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-                
+                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 Entretenimientos.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                        lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             
@@ -491,11 +496,13 @@ ss};
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-
+Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 Electronico.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                   lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             };
         };
+        console.log(Categorys)
+        console.log(Super)
 
     });
 };
@@ -508,6 +515,20 @@ favorite.find({
                 console.log(results[x].attributes.UserID)
                 if (results[x].attributes.UserID===IdUsuario){
                         console.log("find user")
+                        for (a in Categorys){
+                            //console.log("a",Categorys[a].nameCategory)
+                            for(b in results[x].attributes.CustomerID){
+                                //console.log("s",results[x].attributes.CustomerID[b])
+                                if(Categorys[a].nameCategory ===results[x].attributes.CustomerID[b]){
+                                    console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory)
+                                    document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
+                                       
+                                }
+                                
+                            }
+                            
+                        }
+                        
                 }else{
                 
                     console.log("the user no found")
