@@ -32,6 +32,9 @@ var IdCategory;
 /*************************/
 var Categorys= [];
 
+/******************************/
+var contt = 0;
+
 var app = angular.module('starter.services', [])
 
 app.factory('Chats', function() {
@@ -461,7 +464,7 @@ function AddPromotions(Array) {
                 listaNameSuperComparar.push(results[x].attributes.Name);
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
+                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:results[x].attributes.CategoryApp})
 
                 Super.push({id:x, name: listSupermercado[x], promo: CountPromotions,promedio:average,
                             lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
@@ -472,7 +475,7 @@ function AddPromotions(Array) {
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
+Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:results[x].attributes.CategoryApp})
                 Restaurantes.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                     lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
 
@@ -480,7 +483,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
+                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:results[x].attributes.CategoryApp})
                 Modas.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                             lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
                 
@@ -488,7 +491,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
+                Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:results[x].attributes.CategoryApp})
                 Entretenimientos.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                        lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             
@@ -496,7 +499,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
-Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
+Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:results[x].attributes.CategoryApp})
                 Electronico.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                   lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             };
@@ -506,22 +509,33 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x})
 
     });
 };
-function Heart(){
+
+function Heart(id){
 favorite.find({
         success: function(results) {
             
             for (x in results) {
                 console.log(results[x].attributes.CustomerID)
                 console.log(results[x].attributes.UserID)
-                if (results[x].attributes.UserID===IdUsuario){
+    
+                    if (results[x].attributes.UserID===IdUsuario){
                         console.log("find user")
                         for (a in Categorys){
+                           //console.log(Categorys[a].names)
                             //console.log("a",Categorys[a].nameCategory)
                             for(b in results[x].attributes.CustomerID){
                                 //console.log("s",results[x].attributes.CustomerID[b])
                                 if(Categorys[a].nameCategory ===results[x].attributes.CustomerID[b]){
-                                    console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory)
-                                    document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
+                                    console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory, "--",Categorys[a].names)
+                                    if (id === Categorys[a].names){
+                                        
+                                         document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
+                                    }
+                                    
+      
+                             
+                              
+                                   
                                        
                                 }
                                 
@@ -533,6 +547,9 @@ favorite.find({
                 
                     console.log("the user no found")
                 }
+                    
+        
+
             }
             //console.log(PhotoPaiz)
 
