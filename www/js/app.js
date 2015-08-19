@@ -41,7 +41,7 @@ function functionTool() {
 function check() {
     setTimeout(function(){ 
        document.getElementById("intervaloFrenzy").click(); 
-    }, 3000);
+    }, 1000);
 };
 check()
 //*************************************************
@@ -136,6 +136,19 @@ function changeColorPinOfferts(parametro){
        }  
 };
 
+/************************************************************/
+/************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS WITHOUT IMAGE**********/
+function changeColorPinOffertsWithoutImage(parametro){
+    var cssColorpinOffertsWithoutImage = document.getElementById("pinOffertsWithoutImage").style.color;
+       if (cssColorpinOffertsWithoutImage=="silver")
+       {
+           document.getElementById("pinOffertsWithoutImage").style.color="purple";
+	   }
+	   else
+       {
+           document.getElementById("pinOffertsWithoutImage").style.color="silver";
+       }  
+};
 /************  TAMAYO FUNCTION CHANCE COLOR PIN  SAVED**********/
 function changeColorPinSaved(parametro){
     var cssColorpinSaved = document.getElementById("pinSaved").style.color;
@@ -247,6 +260,16 @@ $ionicConfigProvider.tabs.position('bottom');
     views: {
       'menuContent': {
         templateUrl: "templates/salvados.html",
+        controller: 'ChatsCtrl'
+      }
+    }
+  })  
+  //********************************************************************************
+  .state('app.herramientas', {
+    url: "/herramientas",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/herramientas.html",
         controller: 'ChatsCtrl'
       }
     }

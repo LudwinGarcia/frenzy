@@ -1,5 +1,16 @@
+<style>
+    .pageStartListStyle{
+    height:65px;
+    border:none;
+    border:dislplay;
+    margin-top:10px;
+}
+.pageStartIconCategories{
+    margin-top:-30px;
+}
+</style>
 <ion-view >
-   <!--**********  HEADER BAR PAGE START  **********-->
+    <!--**********  HEADER BAR PAGE START  **********-->
     <ion-header-bar align-title="center" class="bar-positive">
         <h1 class="title home">
             <!--**********  TITLE FRENZY PAGE START  **********-->
@@ -13,62 +24,68 @@
         <!--**********  LIST TO CREATE CATEGORIES FRENZY  **********-->
         <ion-list>
             <!--**********  LIST STYLE PAGE START  **********-->
-            <ion-item href="#/app/playlists/{{category.direc}}" ng-repeat="category in categorys" style="height:65px; border:none; border:dislplay;margin-top:10px;" id  = "{{category.direc}}" onclick = "Heart(id)">
+          <ion-item href="#/app/playlists/{{category.direc}}" ng-repeat="category in categorys" style="height:65px; border:none; border:dislplay;margin-top:10px;" id  = "{{category.direc}}" onclick = "Heart(id)">
+            
                 <div class="row">
-                    <!--**********  COL WITH THE ICON CATEGORIES  **********-->
+                    <!--**********  COL WITH CATEGORIE'S ICON  **********-->
                     <div class="col col-10">
                         <!--**********  ICON CATEGORIES  **********-->
-                        <div  class="home {{category.color}}" style="margin-top:-30px;">
-                            <div class=" home iconoMenu">{{category.icon}}</div>
+                        <div  class="pageStartIconsStyleGeneraly pageStartIconCategories home {{category.color}}">
+                            <div class="home iconoMenu">{{category.icon}}</div>
                         </div>
                     </div>
                     <!--**********  COL WITH NAME, CUPONS AND PROMOTIONS  **********-->
-                    <div class="col col-90" style="margin-left:45px;">
+                    <div class="col col-90 pageStartColWithNameCuponsPromotions">
                         <!--*****  NAME OF CATEGORIES  *****-->
-                        <p class = "open_sans" style="color:black; font-size:16px;font-weight: 600; margin-top:-15px;"> {{category.name}} </p>
+                        <p class = "pageStartCategoriesName open_sans" style="color:black;font-size:16px;font-weight:bolder;"> {{category.name}} </p>
                         <!--*****  COUPONS AND PROMOTIONS  *****-->
-                        <div style="margin-top:-1px;">
-                            <spam  style="font-size:13px;" >
+                        <div class="pageStartCuponsPromotions">
+                            <!--*****  CUPONS TITLE  *****-->
+                            <spam  class="pageStartCuponsPromotionsTitle">
                                 cupones {{category.cont_cupones}} 
                             </spam>
-                            <spam style="font-size:13px;" >
+                            <!--*****  PROMOTIONS TITLE  *****-->
+                            <spam class="pageStartCuponsPromotionsTitle">
                                 promociones {{category.cont_promo}}
                             </spam> 
                         </div>
-                        <!--**********  LINE OF SEPARATION  **********-->    
+                        <!--**********  SEPARATION LINE  **********-->    
                         <div>
-                            <hr style="margin-top:5px; height:0.1px; color:#F1F2F2 ;border-style:solid;"> 
+                            <hr class="pageStartSeparationLine"> 
                         </div>
                     </div>
                 </div>
             </ion-item>
         </ion-list>
-            <br>
-            <!--**************************************************************-->
-            <div class="row" style="width:100%;">
-                <p class="arrow-up-left"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-                <p class="arrow-up"></p><p class="arrow-up"></p>
-            </div>
-            <!--**************************************************************-->    
-        <div class="pageStartBoxPurple" style="">
+        <br>
+        <!--**********  TRIANGLES TOP  **********-->
+        <div class="row">
+            <p class="arrow-up-left"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+            <p class="arrow-up"></p><p class="arrow-up"></p>
+        </div>
+        <!--**********  PURPLE BOX  **********-->    
+        <div class="pageStartBoxPurple">
+            <!--**********  CLOCK ICON  **********-->
             <h4 class="home pageStartBoxPurpleIcon">
-                a
+                c
             </h4>
             <h4 class="open_sans pageStartBoxPurpleTitle">
                 Espera por nuevas promociones..!!
             </h4>
         </div>
-            <!--**************************************************************-->
-            <div class="row" style="width:100%;">
+            <!--**********  TRIANGLES DOWN  **********-->
+            <div class="row">
                 <p class="arrow-dow-left"></p><p class="arrow-dow"></p>
                 <p class="arrow-dow"></p><p class="arrow-dow"></p>
                 <p class="arrow-dow"></p><p class="arrow-dow"></p>
@@ -80,8 +97,10 @@
                 <p class="arrow-dow"></p><p class="arrow-dow"></p>
                 <p class="arrow-dow"></p><p class="arrow-dow"></p>
                 <p class="arrow-dow"></p><p class="arrow-dow"></p>
+                <p class="arrow-dow"></p><p class="arrow-dow"></p>
+                <p class="arrow-dow"></p><p class="arrow-dow"></p>
+                <p class="arrow-dow"></p><p class="arrow-dow"></p>
             </div>
-            <!--**************************************************************-->    
-        
+            <!--****************************************-->    
     </ion-content>
 </ion-view>
