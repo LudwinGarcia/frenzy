@@ -54,6 +54,13 @@ and (min-device-width : 451px) and (max-device-width : 500px) {
         font-size:65px;
         margin-top:5px;
     }
+    
+ .backButtomStyle{
+    margin-top:10px;
+    font-size:25px;
+    margin-left:10px;
+    color:green;
+}
 }
 /**********************/
 @media only screen 
@@ -235,14 +242,11 @@ font-family: Iconos;
     background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); 
 }
 /*****  BACK BUTTON STYLE  *****/
-.iconButtonBackStyle    {
-    font-size:27px;
-    color:white;
-    margin-left:13px;
-    margin-top: 30px;
-    background-color: yellow;
-    width: 50px;
-    padding-top: 20px;
+.backButtonStyle{
+    margin-top:25px;
+    background-color: red;
+    height: 30px;
+   
 }
 /****************************************************************************/
 /**************************  INTRODUCTION PAGE FRENZY  **********************/
@@ -725,6 +729,7 @@ font-family: Iconos;
     margin-top:10px;
     font-size:25px;
     margin-left:10px;
+    color:white;
 }
 .popoverIcon    {
     color:white;
