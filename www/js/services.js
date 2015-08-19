@@ -471,7 +471,7 @@ function AddPromotions(Array) {
                 
               
 
-            }else if("Restaurante" == results[x].attributes.CategoryApp){
+            }else if("Restaurantes" == results[x].attributes.CategoryApp){
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
@@ -495,7 +495,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:re
                 Entretenimientos.push({id:x,name: listSupermercado[x], promo: CountPromotions,promedio:average,
                                        lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             
-            }else if ("Electronico" == results[x].attributes.CategoryApp){
+            }else if ("Electrónicos" == results[x].attributes.CategoryApp){
                 name = results[x].attributes.Name;
                 listSupermercado.push(results[x].attributes.Logo._url);
                 listNameSupermercado.push(name.split(" ").join("_"));
@@ -526,17 +526,13 @@ favorite.find({
                             for(b in results[x].attributes.CustomerID){
                                 //console.log("s",results[x].attributes.CustomerID[b])
                                 if(Categorys[a].nameCategory ===results[x].attributes.CustomerID[b]){
-                                    console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory, "--",Categorys[a].names)
+                                    //console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory, "--",Categorys[a].names)
+                                     //console.log("s",id,"---",Categorys[a].names)
                                     if (id === Categorys[a].names){
-                                        
+                                        //console.log("se guardo",id,"---",Categorys[a].names)
                                          document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
                                     }
-                                    
-      
-                             
-                              
-                                   
-                                       
+          
                                 }
                                 
                             }
