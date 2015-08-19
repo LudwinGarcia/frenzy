@@ -561,7 +561,22 @@ favorite.find({
     });
 
 }
-
+function DeleteFavorite(UserId, CustomerId) {
+   result = {
+       'UserID':UserId,
+       'CustomerID':CustomerId
+   };
+   
+   Parse.Cloud.run('DeleteFavorite', {"Array":result}, {
+       success: function(result) {
+           console.log(result);
+       },
+       error: function(error) {
+           /* Show error if call failed */
+           console.log(error);
+       }
+   });
+};
 
 function SaveFavorite(UserId, CustomerId) {
    result = {

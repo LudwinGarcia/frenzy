@@ -80,29 +80,33 @@ function hola(parametro){
 /************  TAMAYO FUNCTION CHANCE COLOR HEART  **********/
 function changeColorHeart (parametro,category){
     var cssColor = document.getElementById(parametro).style.color;
-       if (cssColor=="white"){
-           var categ;
-           var cont = 0;
-           var ct = category.split(" ");
-           for (j in ct){
-               if(j > 0){
-                   cont = cont + 1
-                   if (cont === 1){
+    var categ;
+    var cont = 0;
+    var ct = category.split(" ");
+    for (j in ct){
+        if(j > 0){
+            cont = cont + 1
+            if (cont === 1){
                         //console.log("1",ct[j],j)
-                       categ = ct[j]
+                categ = ct[j]
                        //console.log("2",categ)
-                   }else{   
-                       categ = categ +" "+ct[j]
+            }else{   
+                categ = categ +" "+ct[j]
                        //console.log("3",categ)
                    }
                }               
            }
+       if (cssColor=="white"){
+
            document.getElementById(parametro).style.color="red";
            console.log("ID usario", IdUsuario);
            console.log("ID category", categ)
            SaveFavorite(IdUsuario,categ)
 	   }else{
+            console.log("ID usario en else ", IdUsuario);
+           console.log("ID category en else", categ)
            document.getElementById(parametro).style.color="white";
+           DeleteFavorite(IdUsuario,categ)
        }         
 };
 
