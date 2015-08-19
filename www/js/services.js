@@ -504,8 +504,8 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:re
                                   lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             };
         };
-        console.log(Categorys)
-        console.log(Super)
+       //console.log(Categorys)
+        //console.log(Super)
 
     });
 };
@@ -515,8 +515,8 @@ favorite.find({
         success: function(results) {
             
             for (x in results) {
-                console.log(results[x].attributes.CustomerID)
-                console.log(results[x].attributes.UserID)
+                //console.log(results[x].attributes.CustomerID)
+                //console.log(results[x].attributes.UserID)
     
                     if (results[x].attributes.UserID===IdUsuario){
                         console.log("find user")
