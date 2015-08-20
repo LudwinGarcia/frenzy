@@ -40,26 +40,27 @@
                 </a>
             </div>
         </div>        
-        <!--************  YOUR FAVORITES BODY GREY LINE *******************-->
-        <a href="#/app/herramientas" style="text-decoration:none;" nav-transition="none">
-            <div class="row pageYourFavoritesGreyLine" style="margin-top:1px;">
-                <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
-                <!--*****  ICON HEART COLOR RED  *****-->
-                <div class="col col-10 pageYourFavoritesIconHeart">
-                    <spam class="home">B</spam>    
-                </div>
-                <!--*****  NAME'S STABLISHMENT  *****-->
-                <div class="col col-75">
-                    <p class="open_sans overFlowText pageYourFavoritesStablishmentName">Domino's Pizza</p>    
-                </div>    
-                <!--*****  ICON ARROW RIGHT  *****-->
-                <div class="col col-10 pageYourFavoritesIconArrow">
-                    <spam class="home">
-                        >        
-                    </spam>    
-                </div>
+        
+        
+        
+        <div ng-repeat="favorite in chats">  
+        <!--************  YOUR FAVORITES BODY  *******************-->
+        <div class="row pageYourFavoritesGreyLine" style="margin-top:1px;" >
+            <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
+            <!--*****  ICON HEART COLOR RED  *****-->
+            <div class="col col-10 pageYourFavoritesIconHeart">
+                <spam class="home">B</spam>    
             </div>
-        </a>
+            <!--*****  NAME'S STABLISHMENT  *****-->
+            <div class="col col-75">
+                <spam class="open_sans overFlowText pageYourFavoritesStablishmentName">{{favorite.Category}}</spam>    
+            </div>    
+            <!--*****  ICON ARROW RIGHT  *****-->
+            <div class="col col-10 pageYourFavoritesIconArrow">
+                <spam class="home">
+                </spam>    
+            </div>
+        </div>
         
         
         <!--*****  SECOND ROW DESCRIPTION OF YOUR FAVORITE STABLISHMENT  *****-->
@@ -84,6 +85,8 @@
                     W
                 </p>
             </div>
-        </div>        
+        </div>  
+        </div>
+        
    </ion-content>
 </ion-view>

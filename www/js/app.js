@@ -21,6 +21,7 @@ function functionHeart() {
        document.getElementById("heart").style.color = "#FF5252 ";
        document.getElementById("star").style.color = "#A7A9AC ";
        document.getElementById("tool").style.color = "#A7A9AC ";
+    viewFavorite()
        }
 
 //********  STAR
@@ -99,12 +100,12 @@ function changeColorHeart (parametro,category){
        if (cssColor=="white"){
 
            document.getElementById(parametro).style.color="red";
-           console.log("ID usario", IdUsuario);
-           console.log("ID category", categ)
+           //console.log("ID usario", IdUsuario);
+           //console.log("ID category", categ)
            SaveFavorite(IdUsuario,categ)
 	   }else{
-            console.log("ID usario en else ", IdUsuario);
-           console.log("ID category en else", categ)
+            //console.log("ID usario en else ", IdUsuario);
+           //console.log("ID category en else", categ)
            document.getElementById(parametro).style.color="white";
            DeleteFavorite(IdUsuario,categ)
        }         
@@ -250,7 +251,7 @@ $ionicConfigProvider.tabs.position('bottom');
     views: {
       'menuContent': {
         templateUrl: "templates/tusFavoritos.html",
-        controller: 'ChatsCtrl'
+        controller: 'AllFavoriteCtrl'
       }
     }
   })

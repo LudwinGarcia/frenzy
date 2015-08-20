@@ -34,6 +34,8 @@ var Categorys= [];
 
 /******************************/
 var contt = 0;
+/********************************/
+var AllFavorite = [];
 
 var app = angular.module('starter.services', [])
 
@@ -318,6 +320,26 @@ app.factory('Paiz', function() {
     }
   };
 });
+
+app.factory('AllFavorite', function() {
+console.log("called Favorite");
+  var favorites = AllFavorite;
+    console.log("in favorite",favorites);
+  return {
+    all: function() {
+      return favorites;
+    },
+    get: function(chatId) {
+      for (var i = 0; i < favorites.length; i++) {
+        if (favorites[i].id === favorites(chatId)) {
+          return favorites[i];
+        }
+      }
+      return null;
+    }
+  };
+});
+ 
  
     
 /************************** final tamayo  **************************************************/
@@ -356,16 +378,19 @@ customer = customer.limit(100);
      
 ///////////////////////////////////////////////////////////////////////////////////////////costumer
 //query limit hace la llamada de mas elementos
+
 promotion.find({
         success: function(results) {
             console.log(PhotoPaiz)
             for (x in results) {
+               
                 listPromoSuper.push(results[x].attributes.Costumer)
                 for (i in results[x].attributes.Costumer){
                         //console.log(results[x].attributes.Costumer[i]);
                         if (true === results[x].attributes.Status){
                             //console.log("esta disponible",results[x].attributes.Status)
                             if (results[x].attributes.Photo === null){
+                                
                                      PhotoPaiz.push({nul:"sin",name:results[x].attributes.CategoryProduct,
                                                                       presentation:results[x].attributes.Presentation,
                                                                       description:results[x].attributes.PromotionDescription,
@@ -377,6 +402,7 @@ promotion.find({
                                                                      });
                                 //console.log("iamgen no dispobible")    
                             }else{
+                               
                                    PhotoPaiz.push({nul:"con",photo:results[x].attributes.Photo._url,name:results[x].attributes.CategoryProduct,
                                                                       presentation:results[x].attributes.Presentation,
                                                                       description:results[x].attributes.PromotionDescription,
@@ -504,8 +530,8 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:re
                                   lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             };
         };
-        console.log(Categorys)
-        console.log(Super)
+       //console.log(Categorys)
+        //console.log(Super)
 
     });
 };
@@ -515,8 +541,8 @@ favorite.find({
         success: function(results) {
             
             for (x in results) {
-                console.log(results[x].attributes.CustomerID)
-                console.log(results[x].attributes.UserID)
+                //console.log(results[x].attributes.CustomerID)
+                //console.log(results[x].attributes.UserID)
     
                     if (results[x].attributes.UserID===IdUsuario){
                         console.log("find user")
@@ -556,6 +582,38 @@ favorite.find({
       }
     });
 
+}
+
+
+function viewFavorite(){
+    
+  favorite.find({
+        success: function(results) {
+            AllFavorite = [];
+            for (x in results) {
+                for(b in results[x].attributes.CustomerID){
+                    if(results[x].attributes.UserID===IdUsuario){
+                        //console.log(results[x].attributes.CustomerID[b])
+                        for (c in PhotoPaiz){
+                            //console.log(PhotoPaiz[c])
+                            if (PhotoPaiz[c].Category === results[x].attributes.CustomerID[b]){
+                                console.log("find",results[x].attributes.CustomerID[b])
+                                AllFavorite.push(PhotoPaiz[c])
+                            }
+                        }
+                    }
+
+                }
+            }
+            //console.log(AllFavorite)
+
+      },
+      error: function(myObject, error) {
+        // Error occureds
+        console.log( error );
+      }
+    });  
+    
 }
 function DeleteFavorite(UserId, CustomerId) {
    result = {

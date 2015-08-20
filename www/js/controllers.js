@@ -134,7 +134,7 @@ angular.module('starter.controllers', ['ionic'])
 })
 /****************************  tamayo  *****************************************/
 .controller('PaizCtrl', function($scope, $stateParams, Paiz) {
-    console.log("calling PaizCtrl");
+    //console.log("calling PaizCtrl");
     
     $scope.chats = Paiz.get($stateParams.superId);
     console.log(Paiz);
@@ -143,6 +143,15 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Categorys) {
   $scope.chat = Categorys.get($stateParams.chatId);
+})
+
+.controller('AllFavoriteCtrl', function($scope, $stateParams, AllFavorite) {
+    //console.log("calling PaizCtrl");
+    
+    //$scope.chats = AllFavorite.get($stateParams.superId);
+    $scope.chats = AllFavorite.all();
+    console.log("------------------------------------ en controler")
+    console.log(AllFavorite);
 })
 
 
