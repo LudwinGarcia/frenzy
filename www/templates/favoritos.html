@@ -121,7 +121,7 @@ hr{
                               <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
                             O
                         </spam> 
-                            <spam class="pageFavoritesIcons home" id="pinFavoritesWithoutImage" onclick="changeColorPinFavoritesWithoutImage()" style="color:silver"> W </spam>
+                            <spam class="pageFavoritesIcons home" id="pinFavorites" onclick="changeColorPinFavorites()" style="color:silver"> W </spam>
                         </div>   
                     </div>
                 </div>  
@@ -172,13 +172,15 @@ hr{
                                 Amigos de facebook
                             </p>
                         </div>
-                        <div style="margin-top:25px;" onclick="window.open('sms:?body=Frenzy', '_system');"> 
+                        <div style="margin-top:25px;" onclick="window.open('sms:?body=www.Frenzy.com', '_system');"> 
                             <p class="home secondPopoverMailIcon">
                                 V
-                            </p>
-                            <p class="secondPopoverMailTitle">
-                                Enviar mensajes de texto
-                            </p>
+                            </p>                            
+                            <a href="sms:&body=www.frenzy.com" style="text-decoration:none;">           
+                                <p class="secondPopoverMailTitle">
+                                    Enviar mensajes de texto
+                                </p>
+                            </a>
                         </div>
                     </div>
                 </ion-content>

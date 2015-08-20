@@ -99,12 +99,12 @@ function changeColorHeart (parametro,category){
        if (cssColor=="white"){
 
            document.getElementById(parametro).style.color="red";
-           //console.log("ID usario", IdUsuario);
-           //console.log("ID category", categ)
+           console.log("ID usario", IdUsuario);
+           console.log("ID category", categ)
            SaveFavorite(IdUsuario,categ)
 	   }else{
-            //console.log("ID usario en else ", IdUsuario);
-           //console.log("ID category en else", categ)
+            console.log("ID usario en else ", IdUsuario);
+           console.log("ID category en else", categ)
            document.getElementById(parametro).style.color="white";
            DeleteFavorite(IdUsuario,categ)
        }         

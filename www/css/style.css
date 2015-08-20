@@ -55,7 +55,7 @@ and (min-device-width : 451px) and (max-device-width : 500px) {
         margin-top:5px;
     }
     
- .backButtomStyle{
+ .backButtomStyleorange{
     margin-top:10px;
     font-size:25px;
     margin-left:10px;
@@ -557,7 +557,7 @@ font-family: Iconos;
     height:35px;
 }
 .pageYourFavoritesIconHeart{
-    margin-top:5px;
+    margin-top:-2px;
     margin-left:10px;
     font-size:27px;
     color:#FF5252;
@@ -565,10 +565,13 @@ font-family: Iconos;
 .pageYourFavoritesStablishmentName{
     margin-left:15px;
     font-size:15px;
+    color:black;
 }
 .pageYourFavoritesIconArrow{
-    margin-top:5px;
-    margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;
+    margin-left:25px;
+    font-size:25px;
+    margin-top: -3px;
+    color:#A7A9AC;
 }
 .pageYourFavoritesWhiteBox{
     height:100px;
@@ -580,6 +583,7 @@ font-family: Iconos;
 .pageYourFavoritesOffert{
     font-size:13px;
     font-weight: bold;
+    margin-top: -5px;
 }
 .pageYourFavoritesPriceOffert{
     font-size:11px;
@@ -666,22 +670,54 @@ font-family: Iconos;
     height: 185px;
     box-shadow: 3px 3px 2px #BDBDBD ;    
 }
-.categoriesOffertsPrice{
-    color:white;
-    font-size:15px;
-}
-.categoriesOffertsTitle{
-    font-size:13px;
+.categoriesTitlesColorSupermarkets{
     color:#78D9D8;
 }
-.categoriesAveragePrice{
+.categoriesPriceColorSupermarkets{
     color:white;
+}
+.categoriesTitlesColorRestaurants{
+    color:#CFCDCD;
+}
+.categoriesPriceColorRestaurants{
+    color:white;
+}
+.categoriesTitlesColorFashions{
+    color:#13130A;
+}
+.categoriesPriceColorFashions{
+    color:black;
+}
+.categoriesTitlesColorEntertaiments{
+    color:#C8C8C6;
+}
+.categoriesPriceColorEntertaiments{
+    color:white;
+}
+.categoriesTitlesColorElectronics{
+    color:#CFCDCD;
+}
+.categoriesPriceColorElectronics{
+    color:white;
+}
+.categoriesTitlesColorOthers{
+    color:white;
+}
+.categoriesPriceColorOthers{
+    color:white;
+}
+.categoriesOffertsPrice{
+    font-size:14px;
+}
+.categoriesOffertsTitle{
+    font-size:14px;
+}
+.categoriesAveragePrice{
     font-size:13px;
     font-weight: bolder;
 }
 .categoriesAverageTitle{
     font-size:12px;
-    color:#78D9D8;
 }
 .categoriesHeartIcon{
     margin-top:20px;
@@ -693,9 +729,9 @@ font-family: Iconos;
 }
 
 .categoriesBoxesRestaurant {
-    background: linear-gradient(white 70%, #FF5252 25%);
-    background: -webkit-linear-gradient(white 65%, #FF5252 35%);
-    background: -o-linear-gradient(white 65%, #FF5252 35%);
+    background: linear-gradient(white 70%, #FC7D7D 25%);
+    background: -webkit-linear-gradient(white 65%, #FC7D7D 35%);
+    background: -o-linear-gradient(white 65%, #FC7D7D 35%);
 }
 .categoriesBoxesFashion {
     background: linear-gradient(white 70%, #FFD922 25%);
@@ -713,8 +749,10 @@ font-family: Iconos;
     background: -o-linear-gradient(white 65%, #3F51B5 35%);
 }
 .imageCategoryBoxes   {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 115px;
+    margin-left: 3%;
+    margin-top: -2%;
 }
 /**********************************************************************/
 /***********************  PAGE OFFERTS STYLE  *************************/
