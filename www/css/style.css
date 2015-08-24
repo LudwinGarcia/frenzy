@@ -237,6 +237,7 @@ font-family: Iconos;
 .title{
     color: white;
     margin-top:3px;
+	font-weight: bolder;
 }
   .bar.bar-positive.bar-footer{
     background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); 
@@ -513,7 +514,7 @@ font-family: Iconos;
     color:white;
     font-size: 12px;
     font-weight: bolder;
-    margin-top:25px;
+    margin-top:-25px;
 }
 .pageFavoritesDescriptionTitle{
     font-size:20px;
@@ -664,7 +665,7 @@ font-family: Iconos;
     color: #212121 ;
     width: 100%;
     height: 185px;
-    box-shadow: 3px 3px 2px #BDBDBD ;    
+    box-shadow: 3px 3px 2px #BDBDBD ; 
 }
 .categoriesOffertsPrice{
     color:white;
@@ -713,8 +714,9 @@ font-family: Iconos;
     background: -o-linear-gradient(white 65%, #3F51B5 35%);
 }
 .imageCategoryBoxes   {
-    width: 110px;
+    width: 130px;
     height: 110px;
+	margin-left: 3%;
 }
 /**********************************************************************/
 /***********************  PAGE OFFERTS STYLE  *************************/
@@ -726,10 +728,13 @@ font-family: Iconos;
     text-align: center;
 }
  .backButtomStyle{
-    margin-top:10px;
-    font-size:25px;
-    margin-left:10px;
+  	margin-left:-5px;
+	padding-top: 5px;
+	padding-left: 15px;
+    font-size:28px;
     color:white;
+	width: 50px;
+	background-color: black;
 }
 .popoverIcon    {
     color:white;

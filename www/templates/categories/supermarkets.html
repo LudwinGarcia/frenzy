@@ -8,11 +8,11 @@
 <ion-view  view-title="Supermercado">   
     <!--************  HEADER AND BACK BUTTON  <a href="#/app/playlists">***************-->
         <ion-header-bar align-title="center" class="bar-positive">
-        <i class="icon ion-chevron-left backButtomStyle backButtomStyleorange" onclick="goBack()"></i>
-        <h1 class="title">Supermercados</h1>
+        <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
+        <h1 class="title" style="font-weight: bolder;">Supermercados</h1>
     </ion-header-bar>
     <!--**********  ESTABLISHMENTS  **********-->
-    <ion-content class="backgroundCategories">             
+    <ion-content class="backgroundCategories"  nav-transition="none">             
             <div class="col"> 
                 <!--*****  BOXES ENLINE BLOCK  *****-->
                 <div class="col col-50 categoriesBoxesEnlineBlock" ng-repeat="super in chats">
@@ -54,35 +54,35 @@
                 </div>                 
            </div>    
     </ion-content>
-    <ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
+       <!--************************* FOOTHER  ******************************-->
+ <ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
   <div class="row home">
       <div class="col col-10"></div>
       <!--************  ICONO FOOTER HOME  ******************-->
       <div class="col col-25">
           <a href="#/app/playlists" style="color:#00BAB9  ; text-decoration:none;" nav-transition="none">
-              <div id="home" onclick="functionHome()">A</div>
+              <div>A</div>
           </a>
       </div>
       <!--************  ICONO FOOTER HEART  ******************-->
       <div class="col col-25">
           <a href="#/app/favoritos" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
-              <div id="heart" onclick="functionHeart()">B</div>
+              <div>B</div>
           </a>
       </div>
       <!--************  ICONO FOOTER STAR  ******************-->
       <div class="col col-25">
           <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
-              <div id="star" onclick="functionStar()">W</div>
+              <div>W</div>
           </a>
       </div>
       <!--************  ICONO FOOTER TOOL  ******************-->
       <div class="col col-25">
           <a href="#/app/herramientas" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
-              <div id="tool" onclick="functionTool()">D</div>
+              <div>D</div>
           </a>
       </div>
       <!--*************************************************-->
   </div>
-
 </ion-footer-bar>
 </ion-view>
