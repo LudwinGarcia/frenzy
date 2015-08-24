@@ -376,7 +376,7 @@ var favorite = new Parse.Query('Favorite');
 promotion = promotion.limit(100);
 customer = customer.limit(100);
      
-///////////////////////////////////////////////////////////////////////////////////////////costumer
+///////////////////////////////////////////////////////////////////////////////////////////Customer
 //query limit hace la llamada de mas elementos
 
 promotion.find({
@@ -384,9 +384,9 @@ promotion.find({
             console.log(PhotoPaiz)
             for (x in results) {
                
-                listPromoSuper.push(results[x].attributes.Costumer)
-                for (i in results[x].attributes.Costumer){
-                        //console.log(results[x].attributes.Costumer[i]);
+                listPromoSuper.push(results[x].attributes.Customer)
+                for (i in results[x].attributes.Customer){
+                        //console.log(results[x].attributes.Customer[i]);
                         if (true === results[x].attributes.Status){
                             //console.log("esta disponible",results[x].attributes.Status)
                             if (results[x].attributes.Photo === null){
@@ -397,7 +397,7 @@ promotion.find({
                                                                       basePrice:results[x].attributes.BasePrice,
                                                                       promotionalPrice:results[x].attributes.PromotionalPrice,
                                                                       ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                                                      ,Category:results[x].attributes.Costumer[i]
+                                                                      ,Category:results[x].attributes.Customer[i]
 
                                                                      });
                                 //console.log("iamgen no dispobible")    
@@ -409,7 +409,7 @@ promotion.find({
                                                                       basePrice:results[x].attributes.BasePrice,
                                                                       promotionalPrice:results[x].attributes.PromotionalPrice,
                                                                       ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                                                      , Category:results[x].attributes.Costumer[i]
+                                                                      , Category:results[x].attributes.Customer[i]
 
                                                                      });
                             } 
