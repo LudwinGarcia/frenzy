@@ -478,7 +478,7 @@ function AddPromotions(Array) {
             
             if (results[x].attributes.Name in Array.Quantities[0]) {
                 CountPromotions =  Array.Quantities[0][results[x].attributes.Name];
-                average = Array.averageSavingsCostumer[results[x].attributes.Name];
+                average = Array.averageSavingscustomer[results[x].attributes.Name];
             } else {
                 CountPromotions = 0;
                 average = 0;
@@ -649,4 +649,19 @@ function SaveFavorite(UserId, CustomerId) {
    });
 };
 
-
+function SavePromotion(UserId, PromotionId) {
+   result = {
+       'UserID':UserId,
+       'PromotionID': PromotionId
+   };
+   
+   Parse.Cloud.run('SavePromotion', {"Array":result}, {
+       success: function(result) {
+           console.log(result);
+       },
+       error: function(error) {
+           /* Show error if call failed */
+           console.log(error);
+       }
+   });
+};
