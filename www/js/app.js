@@ -297,17 +297,7 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-  
-//*********  CUPONES  ************************************************************
-  .state('app.cupones', {
-    url: "/cupones",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/cupones.html",
-        controller: 'ChatsCtrl'
-      }
-    }
-  })  
+    
 //********************************************************************************
   .state('app.single', {
     url: "/playlists/Supermercado",
@@ -362,21 +352,7 @@ $ionicConfigProvider.tabs.position('bottom');
     url: "/ofertas",
     templateUrl: "templates/ofertas.html",
       controller: 'PaizCtrl'
-  })  
-//****************  FAVORITOS  ************
-
-
-    
-//********************RUTA Y CONTROLADOR DESCUENTOS.HTML*************************
-    .state('app.descuentos', {
-      url: "/canjear",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/descuentos.html",
-          controller: 'ChatsCtrl'
-        }
-      }
-    });
+  });
 //********************************************************************************
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/frenzy');
