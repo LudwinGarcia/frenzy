@@ -12,15 +12,14 @@ hr     {
 <!--**********  **********-->
 <ion-view>
     <!--************  HEADER AND BACK BUTTON  ***************-->
-    <ion-header-bar align-title="center" class="bar-positive">
+    <ion-header-bar align-title="center" class="bar-positive" style="height:92px;">
         <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"></i>
-        <h1 class="title">Supermercados</h1>
-    </ion-header-bar>
-    <!--**********  CONTENT  **********-->
-    <ion-content ng-controller="AppCtrl">
-        <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageFavoritesSecondRow">
+        
+        <!--**********************************-->
+         <div class="row pageFavoritesSecondRow">
+           <h1 class="title" style="margin-left:-350px; font-weight:bolder;">Supermercados</h1>
             <!--**********  OFFERTS  **********-->
+              <!--*****  SECOND TAB HEADER  *****-->
             <div class="col col-50">
                 <a class="pageOffertsOffertsTitle"  >
                     <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
@@ -31,9 +30,8 @@ hr     {
                     <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction">
                 </a>
             </div>
-        </div>                                  
-        <!--**********  ICON POPOVER  *********-->
-        <div class="row" style="margin-top:-32px;">
+             <!--**********  ICON POPOVER  *********-->
+        <div class="row" style="margin-left:-185px; margin-top:15px;">
             <div class="col col-66"></div>
             <div class="col col-33">
                  <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl">
@@ -42,7 +40,15 @@ hr     {
                     </p>
                 </button>
             </div>
-        </div>        
+        </div>          
+        </div> 
+          
+    </ion-header-bar>
+    <!--**********  CONTENT  **********-->
+    <ion-content ng-controller="AppCtrl" style="margin-top:70px;">
+      
+                                      
+     
         <!--************  OFFERTS BODY WITH IMAGE **************-->
         <div ng-repeat="super in chats | filter: {nul : 'con'}" >
             <div class="boxResponsiveWithImage">
@@ -227,4 +233,35 @@ hr     {
             </ion-popover-view>
         </script>
     </ion-content>
+    <ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
+  <div class="row home">
+      <div class="col col-10"></div>
+      <!--************  ICONO FOOTER HOME  ******************-->
+      <div class="col col-25">
+          <a href="#/app/playlists" style="color:#00BAB9  ; text-decoration:none;" nav-transition="none">
+              <div id="home" onclick="functionHome()">A</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER HEART  ******************-->
+      <div class="col col-25">
+          <a href="#/app/favoritos" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div id="heart" onclick="functionHeart()">B</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER STAR  ******************-->
+      <div class="col col-25">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div id="star" onclick="functionStar()">W</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER TOOL  ******************-->
+      <div class="col col-25">
+          <a href="#/app/herramientas" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div id="tool" onclick="functionTool()">D</div>
+          </a>
+      </div>
+      <!--*************************************************-->
+  </div>
+
+</ion-footer-bar>
 </ion-view>
