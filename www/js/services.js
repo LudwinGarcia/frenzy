@@ -444,7 +444,6 @@ Parse.Cloud.run('GetPromotions', {}, {
                 send result like parameter */
                 Parse.Cloud.run('GetAverageSavings', {"Array":result}, {
                     success: function(result) {
-                        console.log(result);
                         /* Call AddPromotions function and send result like parameter */
                         AddPromotions(result);
                     },
@@ -615,53 +614,48 @@ function viewFavorite(){
     });  
     
 }
-function DeleteFavorite(UserId, CustomerId) {
-   result = {
-       'UserID':UserId,
-       'CustomerID':CustomerId
-   };
-   
-   Parse.Cloud.run('DeleteFavorite', {"Array":result}, {
-       success: function(result) {
-           console.log(result);
-       },
-       error: function(error) {
-           /* Show error if call failed */
-           console.log(error);
-       }
-   });
-};
+
 
 function SaveFavorite(UserId, CustomerId) {
+    /* This function save favorite customer selected by user in Favorite class
+    in parse */
    result = {
        'UserID':UserId,
        'CustomerID':CustomerId
    };
    
-   Parse.Cloud.run('SaveFavorite', {"Array":result}, {
-       success: function(result) {
-           console.log(result);
-       },
-       error: function(error) {
-           /* Show error if call failed */
-           console.log(error);
-       }
-   });
+   Parse.Cloud.run('SaveFavorite', {"Array":result});
+};
+
+function DeleteFavorite(UserId, CustomerId) {
+    /* This function delete favorite customer selected by user in Favorite class
+    in parse */
+   result = {
+       'UserID':UserId,
+       'CustomerID':CustomerId
+   };
+   
+   Parse.Cloud.run('DeleteFavorite', {"Array":result});
 };
 
 function SavePromotion(UserId, PromotionId) {
+    /* This function save favorite promotion selected by user in PromotionSaved class
+    in parse */
    result = {
        'UserID':UserId,
        'PromotionID': PromotionId
    };
    
-   Parse.Cloud.run('SavePromotion', {"Array":result}, {
-       success: function(result) {
-           console.log(result);
-       },
-       error: function(error) {
-           /* Show error if call failed */
-           console.log(error);
-       }
-   });
+   Parse.Cloud.run('SavePromotion', {"Array":result});
+};
+
+function DeletePromotion(UserId, PromotionId) {
+    /* This function delete favorite promotion selected by user in PromotionSaved class
+    in parse */
+   result = {
+       'UserID':UserId,
+       'PromotionId':PromotionId
+   };
+   
+   Parse.Cloud.run('DeletePromotion', {"Array":result});
 };
