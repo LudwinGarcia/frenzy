@@ -669,7 +669,8 @@ font-family: Iconos;
 }
 .categoriesOffertsPrice{
     color:white;
-    font-size:15px;
+    font-size:13px;
+	margin-left: -6px;
 }
 .categoriesOffertsTitle{
     font-size:13px;
@@ -679,6 +680,7 @@ font-family: Iconos;
     color:white;
     font-size:13px;
     font-weight: bolder;
+	margin-left: -6px;
 }
 .categoriesAverageTitle{
     font-size:12px;
