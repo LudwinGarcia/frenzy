@@ -600,9 +600,7 @@ function viewFavorite(){
                     }
 
                 }
-           
             //console.log(AllFavorite)
-
       }
     );  
     
