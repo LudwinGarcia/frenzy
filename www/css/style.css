@@ -819,7 +819,7 @@ font-family: Iconos;
     margin-left:5px;
 }
 .pageOffertsPriceLabel  {
-    font-size:22px;
+    font-size:18px;
     color:white;
     font-weight:bold;
     margin-left: -5px;
@@ -843,7 +843,7 @@ font-family: Iconos;
     margin-top:-5px;
 }
 .pageOffertsActualPrice {
-    font-size:23px;
+    font-size:21px;
     margin-left:5px;
 }
 .pageOffertsBeforePrice {
