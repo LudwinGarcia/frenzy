@@ -323,19 +323,17 @@ app.factory('Paiz', function() {
 
 app.factory('AllFavorite', function() {
 console.log("called Favorite");
-  var favorites = AllFavorite;
-    console.log("in favorite",favorites);
+var favorites = AllFavorite;
   return {
     all: function() {
-      return favorites;
+        favorites = AllFavorite;
+        console.log("in favorite",favorites);
+        return favorites;
     },
-    get: function(chatId) {
-      for (var i = 0; i < favorites.length; i++) {
-        if (favorites[i].id === favorites(chatId)) {
-          return favorites[i];
-        }
-      }
-      return null;
+    get: function() {
+
+          return favorites;
+     
     }
   };
 });
@@ -536,7 +534,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:re
 };
 
 function Heart(id){
-favorite.find({
+    favorite.find({
         success: function(results) {
             
             for (x in results) {
@@ -586,32 +584,27 @@ favorite.find({
 
 function viewFavorite(){
     
-  favorite.find({
-        success: function(results) {
+  favorite.each(function(results) {
             AllFavorite = [];
-            for (x in results) {
-                for(b in results[x].attributes.CustomerID){
-                    if(results[x].attributes.UserID===IdUsuario){
+           
+                for(b in results.attributes.CustomerID){
+                    if(results.attributes.UserID===IdUsuario){
                         //console.log(results[x].attributes.CustomerID[b])
                         for (c in PhotoPaiz){
                             //console.log(PhotoPaiz[c])
-                            if (PhotoPaiz[c].Category === results[x].attributes.CustomerID[b]){
-                                console.log("find",results[x].attributes.CustomerID[b])
+                            if (PhotoPaiz[c].Category === results.attributes.CustomerID[b]){
+                                console.log("find",results.attributes.CustomerID[b])
                                 AllFavorite.push(PhotoPaiz[c])
                             }
                         }
                     }
 
                 }
-            }
+           
             //console.log(AllFavorite)
 
-      },
-      error: function(myObject, error) {
-        // Error occureds
-        console.log( error );
       }
-    });  
+    );  
     
 }
 
