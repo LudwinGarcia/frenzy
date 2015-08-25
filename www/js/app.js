@@ -50,23 +50,7 @@ check()
 function goBack() {
     window.history.back();
 }
-//*************************************************
-function SaveFavorite(UserId, CustomerId) {
-   result = {
-       'UserID':UserId,
-       'CustomerID':CustomerId
-   };
-   
-   Parse.Cloud.run('SaveFavorite', {"Array":result}, {
-       success: function(result) {
-           console.log(result);
-       },
-       error: function(error) {
-           /* Show error if call failed */
-           console.log(error);
-       }
-   });
-};
+
 /////////////////////////////////////////////////////////
 //function favoritos
 var contador = 1;
@@ -111,6 +95,20 @@ function changeColorHeart (parametro,category){
        }         
 };
 
+/************************************************************/
+/************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS **********/
+function changeColorPinOfferts(parametro){
+    var cssColorpinOfferts = document.getElementById(parametro).style.color;
+       if (cssColorpinOfferts=="silver")
+       {
+           document.getElementById(parametro).style.color="purple";
+	   }
+	   else
+       {
+           document.getElementById(parametro).style.color="silver";
+       }  
+};
+
 /************  TAMAYO FUNCTION CHANCE COLOR HEART FOLLOW **********/
 function changeColorHeartFollow(parametro){
     var cssColorHeartFollow = document.getElementById("heartFollow").style.color;
@@ -123,31 +121,19 @@ function changeColorHeartFollow(parametro){
            document.getElementById("heartFollow").style.color="silver";
        }  
 };
-/************************************************************/
-/************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS **********/
-function changeColorPinOfferts(parametro){
-    var cssColorpinOfferts = document.getElementById("pinOfferts").style.color;
-       if (cssColorpinOfferts=="silver")
-       {
-           document.getElementById("pinOfferts").style.color="purple";
-	   }
-	   else
-       {
-           document.getElementById("pinOfferts").style.color="silver";
-       }  
-};
+
 
 /************************************************************/
 /************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS WITHOUT IMAGE**********/
 function changeColorPinOffertsWithoutImage(parametro){
-    var cssColorpinOffertsWithoutImage = document.getElementById("pinOffertsWithoutImage").style.color;
+    var cssColorpinOffertsWithoutImage = document.getElementById(parametro).style.color;
        if (cssColorpinOffertsWithoutImage=="silver")
        {
-           document.getElementById("pinOffertsWithoutImage").style.color="purple";
+           document.getElementById(parametro).style.color="purple";
 	   }
 	   else
        {
-           document.getElementById("pinOffertsWithoutImage").style.color="silver";
+           document.getElementById(parametro).style.color="silver";
        }  
 };
 /************  TAMAYO FUNCTION CHANCE COLOR PIN  SAVED**********/

@@ -387,7 +387,7 @@ promotion.find({
                         //console.log(results[x].attributes.Customer[i]);
                         if (true === results[x].attributes.Status){
                             //console.log("esta disponible",results[x].attributes.Status)
-                            if (results[x].attributes.Photo === null){
+                            if (results[x].attributes.Photo === null || results[x].attributes.Photo === undefined){
                                 
                                      PhotoPaiz.push({nul:"sin",name:results[x].attributes.CategoryProduct,
                                                                       presentation:results[x].attributes.Presentation,
@@ -395,7 +395,7 @@ promotion.find({
                                                                       basePrice:results[x].attributes.BasePrice,
                                                                       promotionalPrice:results[x].attributes.PromotionalPrice,
                                                                       ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                                                      ,Category:results[x].attributes.Customer[i]
+                                                                      ,Category:results[x].attributes.Customer[i],ID:"pinOffertsWithoutImage"+x
 
                                                                      });
                                 //console.log("iamgen no dispobible")    
@@ -407,7 +407,7 @@ promotion.find({
                                                                       basePrice:results[x].attributes.BasePrice,
                                                                       promotionalPrice:results[x].attributes.PromotionalPrice,
                                                                       ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                                                      , Category:results[x].attributes.Customer[i]
+                                                                      , Category:results[x].attributes.Customer[i],ID:"pinOfferts"+x
 
                                                                      });
                             } 
@@ -419,7 +419,7 @@ promotion.find({
                               
                 }
             }
-            //console.log(PhotoPaiz)
+            console.log(PhotoPaiz)
             return PhotoPaiz;
       },
       error: function(myObject, error) {

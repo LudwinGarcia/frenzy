@@ -96,7 +96,7 @@ hr     {
                         <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
                             O
                         </spam>
-                        <spam class="home pageOffertsLikeIcon" id="pinOfferts" onclick="changeColorPinOfferts()" style="color:silver">
+                        <spam class="home pageOffertsLikeIcon" id="{{super.ID}}" onclick="changeColorPinOfferts(id)" style="color:silver">
                             W
                         </spam>
                     </div>   
@@ -162,7 +162,7 @@ hr     {
                         <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
                             O
                         </spam>
-                       <spam class="home pageOffertsLikeIcon" id="pinOffertsWithoutImage" onclick="changeColorPinOffertsWithoutImage()" style="color:silver">
+                       <spam class="home pageOffertsLikeIcon" id="{{super.ID}}" onclick="changeColorPinOffertsWithoutImage(id)" style="color:silver">
                             W
                         </spam>
                     </div>   
