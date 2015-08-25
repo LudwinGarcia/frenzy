@@ -16,24 +16,25 @@ hr     {
         <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
         <h1 class="title"  style="font-weight: bolder;">Supermercados</h1>
     </ion-header-bar>
-    <!--**********  CONTENT  **********-->
-    <ion-content ng-controller="AppCtrl"  nav-transition="none">
-        <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageFavoritesSecondRow">
+    <!--*****  SECOND TAB HEADER  *****-->
+     
+    <ion-header-bar align-title="center" class="bar-positive" style="margin-top:40px; height:40px;">
+         <div class="row ">
             <!--**********  OFFERTS  **********-->
             <div class="col col-50">
-                <a class="pageOffertsOffertsTitle"  >
+                <a class="pageOffertsOffertsTitle">
                     <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
-                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()">
+                    <p class="pageFavoritesOurFavoritesTitle2" id="offertsFunction" onclick="offerts()">
                         Ofertas (21)
                     </p>
                     <!--**********  LINE DECORATION  **********-->
                     <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction">
                 </a>
             </div>
-        </div>                                  
-        <!--**********  ICON POPOVER  *********-->
-        <div class="row" style="margin-top:-32px;">
+            <!--**********  POPOVER  **********-->
+            <div class="col col-50">
+					  <!--**********  ICON POPOVER  *********-->
+        <div class="row" style="margin-top:-15px;">
             <div class="col col-66"></div>
             <div class="col col-33">
                  <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl">
@@ -43,6 +44,15 @@ hr     {
                 </button>
             </div>
         </div>        
+            </div>
+        </div>    
+        
+    </ion-header-bar>
+    
+    <!--**********  CONTENT  **********-->
+    <ion-content ng-controller="AppCtrl"  nav-transition="none">
+                                     
+      
         <!--************  OFFERTS BODY WITH IMAGE **************-->
         <div ng-repeat="super in chats | filter: {nul : 'con'}" >
             <div class="boxResponsiveWithImage">
@@ -96,7 +106,7 @@ hr     {
                         <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
                             O
                         </spam>
-                        <spam class="home pageOffertsLikeIcon" id="{{super.ID}}" onclick="changeColorPinOfferts(id)" style="color:silver">
+                        <spam class="home pageOffertsLikeIcon" id="pinOfferts" onclick="changeColorPinOfferts()" style="color:silver">
                             W
                         </spam>
                     </div>   
@@ -162,7 +172,7 @@ hr     {
                         <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
                             O
                         </spam>
-                       <spam class="home pageOffertsLikeIcon" id="{{super.ID}}" onclick="changeColorPinOffertsWithoutImage(id)" style="color:silver">
+                       <spam class="home pageOffertsLikeIcon" id="pinOffertsWithoutImage" onclick="changeColorPinOffertsWithoutImage()" style="color:silver">
                             W
                         </spam>
                     </div>   

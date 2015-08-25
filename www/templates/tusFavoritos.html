@@ -13,15 +13,14 @@
             </p>
         </h1>
     </ion-header-bar>
-    <!--**********  PAGE YOUR FAVORITES  **********-->
-    <ion-content ng-controller="AppCtrl">
-        <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageFavoritesSecondRow">
+      <!--*****  SECOND TAB HEADER  *****-->
+     <ion-header-bar align-title="center" class="bar-positive" style="margin-top:40px; height:40px;">
+      	 <div class="row " style="margin-top:-26px;">
             <!--**********  OUR FAVORITES  **********-->
             <div class="col col-50">
                 <a class="pageFavoritesOurFavorites" nav-transition="none" href="#/app/favoritos">
                     <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
-                    <p class="pageFavoritesOurFavoritesTitle pageOurFavoritesOurFavoritesTitle" id="offertsFunction">
+                    <p class="pageFavoritesOurFavoritesTitle pageOurFavoritesOurFavoritesTitle" style="font-weight: bolder; margin-left:-5px;" id="offertsFunction" onclick="offerts()">
                         Nuestros Favoritos
                     </p>
                     <!--**********  OUR FAVORITES LINE DECORATION  **********-->
@@ -30,9 +29,9 @@
             </div>
             <!--**********  YOUR FAVORITES  **********-->
             <div class="col col-50">
-                <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos" >
+                <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos">
                     <!--**********  TITLE AND FUNCTION YOUR FAVORITES  **********-->
-                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction">
+                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction" style="font-weight: bolder; margin-left:5px;" onclick="cupons()">
                         Tus Favoritos
                     </p>
                     <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
@@ -40,6 +39,11 @@
                 </a>
             </div>
         </div>        
+    </ion-header-bar>
+    <!--**********  PAGE YOUR FAVORITES  **********-->
+    <ion-content ng-controller="AppCtrl">
+      
+       
         
         
         
@@ -68,15 +72,15 @@
             <div class="col col-80 pageYourFavoritesWhiteBoxTop">
                 <!--**********  OFFERT  **********-->
                 <p class="overFlowText pageYourFavoritesOffert">
-                    {{favorite.name}} - {{favorite.presentation}}
+                    2X1 En pizzas grandes de un ingrediente
                 </p>
                 <!--**********  PRICE OFFERT  **********-->
                 <p class="pageYourFavoritesPriceOffert">
-                    Oferta - {{favorite.promotionalPrice | currency: 'Q'}}
+                    Oferta - Q.99.00
                 </p>
                 <!--**********  OFFERT DESCRIPTION  **********-->
                 <p class="overFlowText pageYourFavoritesOffertDescription">
-                    {{favorite.description}}
+                    15% de descuento en pollos piolindo de dos lb...
                 </p>
             </div>
             <!--**********  PIN ICON**********-->
