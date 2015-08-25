@@ -50,14 +50,7 @@ check()
 function goBack() {
     window.history.back();
 }
-//***************** share facebook ****************
-(function(d, s, id) {
- var js, fjs = d.getElementsByTagName(s)[0];
- if (d.getElementById(id)) return;
- js = d.createElement(s); js.id = id;
- js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=813128998755561";
- fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+
 /////////////////////////////////////////////////////////
 //function favoritos
 var contador = 1;
@@ -104,18 +97,69 @@ function changeColorHeart (parametro,category){
 
 /************************************************************/
 /************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS **********/
-function changeColorPinOfferts(parametro){
-    var cssColorpinOfferts = document.getElementById(parametro).style.color;
+function changeColorPinOfferts(id,IDPromotion){
+    var cssColorpinOfferts = document.getElementById(id).style.color;
+    var Promo;
+    var Conts = 0;
+    var Pr = IDPromotion.split(" ");
+    for (j in Pr){
+        if(j > 0){
+            Conts = Conts + 1
+            if (Conts === 1){
+                        //console.log("1",ct[j],j)
+                Promo = Pr[j]
+                       //console.log("2",categ)
+            }else{   
+                Promo = Promo +" "+Pr[j]
+                       //console.log("3",categ)
+                   }
+               }               
+           }
+      
        if (cssColorpinOfferts=="silver")
        {
-           document.getElementById(parametro).style.color="purple";
+           document.getElementById(id).style.color="purple";
+           SavePromotion(IdUsuario,Promo)
 	   }
 	   else
        {
-           document.getElementById(parametro).style.color="silver";
+           document.getElementById(id).style.color="silver";
+           DeletePromotion(IdUsuario,Promo)
        }  
 };
 
+/************************************************************/
+/************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS WITHOUT IMAGE**********/
+function changeColorPinOffertsWithoutImage(id,IDPromotion){
+    var cssColorpinOffertsWithoutImage = document.getElementById(id).style.color;
+    var promo;
+    var conts = 0;
+    var pr = IDPromotion.split(" ");
+    for (j in pr){
+        if(j > 0){
+            conts = conts + 1
+            if (conts === 1){
+                        //console.log("1",ct[j],j)
+                promo = pr[j]
+                       //console.log("2",categ)
+            }else{   
+                promo = promo +" "+pr[j]
+                       //console.log("3",categ)
+                   }
+               }               
+           }
+       if (cssColorpinOffertsWithoutImage=="silver")
+       {
+     
+           document.getElementById(id).style.color="purple";
+           SavePromotion(IdUsuario,promo)
+	   }
+	   else
+       {
+           document.getElementById(id).style.color="silver";
+           DeletePromotion(IdUsuario,promo)
+       }  
+};
 /************  TAMAYO FUNCTION CHANCE COLOR HEART FOLLOW **********/
 function changeColorHeartFollow(parametro){
     var cssColorHeartFollow = document.getElementById("heartFollow").style.color;
@@ -130,19 +174,7 @@ function changeColorHeartFollow(parametro){
 };
 
 
-/************************************************************/
-/************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS WITHOUT IMAGE**********/
-function changeColorPinOffertsWithoutImage(parametro){
-    var cssColorpinOffertsWithoutImage = document.getElementById(parametro).style.color;
-       if (cssColorpinOffertsWithoutImage=="silver")
-       {
-           document.getElementById(parametro).style.color="purple";
-	   }
-	   else
-       {
-           document.getElementById(parametro).style.color="silver";
-       }  
-};
+
 /************  TAMAYO FUNCTION CHANCE COLOR PIN  SAVED**********/
 function changeColorPinSaved(parametro){
     var cssColorpinSaved = document.getElementById("pinSaved").style.color;
@@ -254,7 +286,7 @@ $ionicConfigProvider.tabs.position('bottom');
     views: {
       'menuContent': {
         templateUrl: "templates/salvados.html",
-        controller: 'ChatsCtrl'
+        controller: 'AllPromotionCtrl'
       }
     }
   })  

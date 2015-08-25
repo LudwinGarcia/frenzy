@@ -20,7 +20,7 @@
                     <div class="categoriesBoxes categoriesBoxesSupermarket col col-100">
                         <!--*****  IMAGE CATEGORY SUPERMARKETS  *****-->
                         <!--*****  LINK ONLY FOR THE IMAGE  *****-->            
-                        <a href="#/app/ofertas/{{super.NameCategory}}" id = "{{super.NameCategory}}" >                 
+                        <a href="#/app/ofertas/{{super.NameCategory}}" id = "{{super.NameCategory}}" onclick="Promotions(id)">                 
                             <img class="imageCategoryBoxes" ng-src="{{super.name}}" alt="image">
                         </a>
                         <div class="row">
@@ -72,7 +72,7 @@
       </div>
       <!--************  ICONO FOOTER STAR  ******************-->
       <div class="col col-25">
-          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewPromotion()">
               <div>W</div>
           </a>
       </div>
