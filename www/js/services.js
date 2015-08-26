@@ -38,6 +38,8 @@ var contt = 0;
 var AllFavorite = [];
 /**********************************/
 var AllPromotion = [];
+/*************************************/
+var InfoShop = [];
 
 var app = angular.module('starter.services', [])
 
@@ -296,33 +298,60 @@ app.factory('Restaurantes', function() {
   };
 });
 
-
+var dato = [];
 app.factory('Paiz', function() {
 //console.log("called Paiz");
   var paiz = Category;
     //console.log(paiz);
   return {
-    all: function() {
-      return paiz;
+    all: function(superId) {
+    
+ 
+    
+      
     },
     get: function(superId) {
-        
+        ALL = []
         Category = [];
+         dato = [];
         IdCategory = superId
         for (c in PhotoPaiz){
             // console.log(PhotoPaiz[c].Category)
             if (superId === PhotoPaiz[c].Category){
                 Category.push(PhotoPaiz[c])
+                
             }
         }
        
-        if (PhotoPaiz) return Category;
+        for (z in InfoShop){
+            if (superId === InfoShop[z].name){
+                dato.push(InfoShop[z])
+            }
+            
+        }
+     console.log(dato , "s")
+        console.log(Category,"dato")
+        if (PhotoPaiz){
+            ALL.push(Category)
+            ALL.push(dato)
+            console.log(ALL)
+            return ALL;
+        } 
         
       return null;
     }
   };
 });
-
+function llamar(cell){
+    a = cell.toString();
+    
+    b = 'tel:'
+    window.open(b+a);
+}
+function tiendaUrl(Url){
+    z = Url
+    window.open(z,'_blank')
+}
 app.factory('AllFavorite', function() {
 console.log("called Favorite");
 var favorites = AllFavorite;
@@ -493,6 +522,8 @@ function AddPromotions(Array) {
         for (x in results) {
             var CountPromotions = 0;
             listaNameSuperConteo.push(results[x].attributes.Name)
+            InfoShop.push({cel:results[x].attributes.PhoneNumber,name:results[x].attributes.Name,url:results[x].attributes.URL,id:"favorite"+x});
+            
             
             if (results[x].attributes.Name in Array.Quantities[0]) {
                 CountPromotions =  Array.Quantities[0][results[x].attributes.Name];
@@ -548,7 +579,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:re
                                   lastText: "favorite"+x,img_class:listNameSupermercado[x], NameCategory: results[x].attributes.Name});
             };
         };
-       //console.log(Categorys)
+       console.log(InfoShop)
         //console.log(Super)
 
     });

@@ -137,6 +137,7 @@ angular.module('starter.controllers', ['ionic'])
     //console.log("calling PaizCtrl");
     
     $scope.chats = Paiz.get($stateParams.superId);
+    $scope.popover = Paiz.all($stateParams.superId)
     console.log(Paiz);
 })
 /****************************  tamayo  final*****************************************/

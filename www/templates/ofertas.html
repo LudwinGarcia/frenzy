@@ -44,7 +44,7 @@ hr     {
             </div>
         </div>        
         <!--************  OFFERTS BODY WITH IMAGE **************-->
-        <div ng-repeat="super in chats | filter: {nul : 'con'}" >
+        <div ng-repeat="super in chats[0] | filter: {nul : 'con'}" >
             <div class="boxResponsiveWithImage">
                 <!--*****  IMAGE LABEL OFFERTS  *****-->
                 <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
@@ -104,7 +104,7 @@ hr     {
             </div>
         </div>
         <!--************  OFFERTS BODY WITHOUT IMAGE **************-->
-        <div class = "withoutImage" ng-repeat="super in chats | filter: {nul : 'sin'}">
+        <div class = "withoutImage" ng-repeat="super in chats[0] | filter: {nul : 'sin'}">
             <div class="boxResponsiveWithoutImage">
             <!--*****  NAME OF OFFERTS  *****-->
                 <div class="row">
@@ -174,7 +174,7 @@ hr     {
             <ion-popover-view  class="firstPopoverStyle" style="height:170px; width:180px; margin-top:20px;">
                 <!--*****  FIRST POPOVER CONTENT  *****-->
                 <ion-content >
-                    <div class="list">
+                    <div class="list" ng-repeat="s in chats[1]">
                         <a class="item " target="_blank" onclick="changeColorHeartFollow()" style="  text-align:right;
     color:silver;">
                             Seguir  
@@ -182,13 +182,13 @@ hr     {
                                 B  
                             </spam>
                         </a>
-                        <a class="item" onclick="window.open('tel:1730');" target="_blank" style="text-align:right; color:silver;">
+                        <a class="item" id = "{{s.cel}}" onclick="llamar(id)" target="_blank" style="text-align:right; color:silver;">
                             Llamar
                             <spam class="home pageOffertsPopoverIconsDescrpition">
                                 Q
                             </spam>
                         </a>
-                        <a class="item" onclick="window.open('https://www.dominos.com.gt/','_blank')" target="_blank" style="text-align:right; color:silver;">
+                        <a class="item" id ="{{s.url}}" onclick="tiendaUrl(id)" target="_blank" style="text-align:right; color:silver;">
                             Ir a pagina Web
                             <spam class="home pageOffertsPopoverIconsDescrpition">
                                 R
