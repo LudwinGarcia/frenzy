@@ -5,21 +5,23 @@
 </style>
 <!--************  HEADER  ***************-->
 <ion-view>
-    <ion-header-bar align-title="center" class="bar-positive" style="height:25px; position:relative;">
+    <ion-header-bar align-title="center" class="bar-positive">
         <h1 class="title home">
-            <!--**********  TITLE FRENZY PAGE START  **********-->
+            <!--**********  TITLE FRENZY  ***********-->
             <p class="mainFrenzyTitle">
-                Z
+                Z    
             </p>
         </h1>
     </ion-header-bar>
-    <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageFavoritesSecondRow" style="margin-top:0px;position:absolute; z-index:1;">
-             <!--**********  OUR FAVORITES  **********-->
+    <!--**********  PAGE YOUR FAVORITES  **********-->
+    <ion-content ng-controller="AppCtrl">
+        <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row pageFavoritesSecondRow">
+            <!--**********  OUR FAVORITES  **********-->
             <div class="col col-50">
                 <a class="pageFavoritesOurFavorites" nav-transition="none" href="#/app/favoritos">
                     <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
-                    <p class="pageFavoritesOurFavoritesTitle pageOurFavoritesOurFavoritesTitle" style="font-weight: bolder;" id="offertsFunction" onclick="offerts()">
+                    <p class="pageFavoritesOurFavoritesTitle pageOurFavoritesOurFavoritesTitle" id="offertsFunction">
                         Nuestros Favoritos
                     </p>
                     <!--**********  OUR FAVORITES LINE DECORATION  **********-->
@@ -28,53 +30,21 @@
             </div>
             <!--**********  YOUR FAVORITES  **********-->
             <div class="col col-50">
-                <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos">
+                <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos" >
                     <!--**********  TITLE AND FUNCTION YOUR FAVORITES  **********-->
-                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction" style="font-weight: bolder;" onclick="cupons()">
+                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction">
                         Tus Favoritos
                     </p>
                     <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
                     <hr class="pageFavoritesLineDecoration" id="lineCuponsFunction">
                 </a>
             </div>
-        </div>                                  
-       
-    
+        </div>        
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!--**********  PAGE YOUR FAVORITES  **********-->
-    <ion-content ng-controller="AppCtrl">   
-       <div style="margin-bottom:42px;"></div>    
-        <div >  
-        <!--*ng-repeat="favorite in chats"***********  YOUR FAVORITES BODY  *******************-->
+        
+        
+        <div ng-repeat="favorite in chats">  
+        <!--************  YOUR FAVORITES BODY  *******************-->
         <div class="row pageYourFavoritesGreyLine" style="margin-top:1px;" >
             <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
             <!--*****  ICON HEART COLOR RED  *****-->
@@ -98,15 +68,15 @@
             <div class="col col-80 pageYourFavoritesWhiteBoxTop">
                 <!--**********  OFFERT  **********-->
                 <p class="overFlowText pageYourFavoritesOffert">
-                    2X1 En pizzas grandes de un ingrediente
+                    {{favorite.name}} - {{favorite.presentation}}
                 </p>
                 <!--**********  PRICE OFFERT  **********-->
                 <p class="pageYourFavoritesPriceOffert">
-                    Oferta - Q.99.00
+                    Oferta - {{favorite.promotionalPrice | currency: 'Q'}}
                 </p>
                 <!--**********  OFFERT DESCRIPTION  **********-->
                 <p class="overFlowText pageYourFavoritesOffertDescription">
-                    15% de descuento en pollos piolindo de dos lb...
+                    {{favorite.description}}
                 </p>
             </div>
             <!--**********  PIN ICON**********-->

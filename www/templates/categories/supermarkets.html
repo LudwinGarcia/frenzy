@@ -5,14 +5,14 @@
     height: auto;
 }
 </style>
-<ion-view  view-title="Supermercado" nav-transition="none">   
+<ion-view  view-title="Supermercado">   
     <!--************  HEADER AND BACK BUTTON  <a href="#/app/playlists">***************-->
         <ion-header-bar align-title="center" class="bar-positive">
         <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
         <h1 class="title" style="font-weight: bolder;">Supermercados</h1>
     </ion-header-bar>
     <!--**********  ESTABLISHMENTS  **********-->
-    <ion-content class="backgroundCategories" nav-transition="none">             
+    <ion-content class="backgroundCategories"  nav-transition="none">             
             <div class="col"> 
                 <!--*****  BOXES ENLINE BLOCK  *****-->
                 <div class="col col-50 categoriesBoxesEnlineBlock" ng-repeat="super in chats">
@@ -20,7 +20,7 @@
                     <div class="categoriesBoxes categoriesBoxesSupermarket col col-100">
                         <!--*****  IMAGE CATEGORY SUPERMARKETS  *****-->
                         <!--*****  LINK ONLY FOR THE IMAGE  *****-->            
-                        <a href="#/app/ofertas/{{super.NameCategory}}" id = "{{super.NameCategory}}"  nav-transition="none">                 
+                        <a href="#/app/ofertas/{{super.NameCategory}}" id = "{{super.NameCategory}}" onclick="Promotions(id)" >                 
                             <img class="imageCategoryBoxes" ng-src="{{super.name}}" alt="image">
                         </a>
                         <div class="row">

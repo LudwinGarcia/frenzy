@@ -9,7 +9,7 @@
     margin-top:-30px;
 }
 </style>
-<ion-view nav-transition="none">
+<ion-view >
     <!--**********  HEADER BAR PAGE START  **********-->
     <ion-header-bar align-title="center" class="bar-positive">
         <h1 class="title home">
@@ -20,11 +20,11 @@
         </h1>
     </ion-header-bar>
     <!--**********  BODY OF PAGE START  **********-->            
-    <ion-content nav-transition="none">
+    <ion-content  nav-transition="none">
         <!--**********  LIST TO CREATE CATEGORIES FRENZY  **********-->
         <ion-list>
             <!--**********  LIST STYLE PAGE START  **********-->
-          <ion-item href="#/app/playlists/{{category.direc}}" nav-transition="none" ng-repeat="category in categorys" style="height:65px; border:none; border:dislplay;margin-top:10px;" id  = "{{category.direc}}" onclick = "Heart(id)">
+          <ion-item href="#/app/playlists/{{category.direc}}" ng-repeat="category in categorys" style="height:65px; border:none; border:dislplay;margin-top:10px;" id  = "{{category.direc}}" onclick = "Heart(id)">
             
                 <div class="row">
                     <!--**********  COL WITH CATEGORIE'S ICON  **********-->
@@ -121,7 +121,7 @@
       </div>
       <!--************  ICONO FOOTER STAR  ******************-->
       <div class="col col-25">
-          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewPromotion()">
               <div>W</div>
           </a>
       </div>
