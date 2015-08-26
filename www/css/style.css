@@ -741,9 +741,11 @@ font-family: Iconos;
     border-radius: 22px;
     height: 50px;
     width: 50px;
-    margin-left: -50px;
+    margin-left: 40px;
     border-style:none;
-    box-shadow: 0px 3px 10px 1px grey;    
+ -webkit-box-shadow: 2px 3px 26px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 26px -5px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 26px -5px rgba(0,0,0,0.75);
 }
 .pageOffertsPriceIcons{
     margin-top:10px;
@@ -752,12 +754,13 @@ font-family: Iconos;
     height: calc(43vh *  1.33);
     width: 95%;
     margin-left:10px;
-	margin-top: 60px;
+	margin-top: 15px;
     border-style:solid;
     border-width: 1px;
     border-color: #E6E6E6;
     box-shadow: 3px 3px 2px #BDBDBD;
     margin-bottom:20px;
+	background-color: white;
 }
 .imageOffertsAndCupons   {
     width: 10px;
@@ -781,6 +784,7 @@ font-family: Iconos;
     border-width: 1px;
     border-color: #E6E6E6;
     box-shadow: 3px 3px 2px #BDBDBD;
+	background-color: white;
     
 }
 .pageOffertsWithoutImageLabelTitle{
@@ -811,7 +815,7 @@ font-family: Iconos;
 }
 .pageOffertsPopoverSimbol   {
     font-size:35px;
-    padding-top:4px;
+	padding-top: 3px;
 }
 .pageOffertsNameLabel   {
     font-size:17px;
@@ -912,7 +916,7 @@ font-family: Iconos;
     margin-left:15px;
 }
 .secondPopoverFacebookTitle{
-    margin-left:60px;
+    margin-left:10px;
     margin-top:-30px;
     color:#A7A9AC; 
 }

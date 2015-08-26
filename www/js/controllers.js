@@ -155,15 +155,6 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 
-.controller('AllPromotionCtrl', function($scope, $stateParams, AllPromotion) {
-    //console.log("calling PaizCtrl");
-    
-    //$scope.chats = AllFavorite.get($stateParams.superId);
-    $scope.chats = AllPromotion.all();
-    console.log("------------------------------------ en controler")
-    console.log(AllPromotion);
-})
-
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

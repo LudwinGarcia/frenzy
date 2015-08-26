@@ -36,8 +36,6 @@ var Categorys= [];
 var contt = 0;
 /********************************/
 var AllFavorite = [];
-/**********************************/
-var AllPromotion = [];
 
 var app = angular.module('starter.services', [])
 
@@ -339,23 +337,6 @@ var favorites = AllFavorite;
     }
   };
 });
-
-app.factory('AllPromotion', function() {
-console.log("called promotion");
-var promotio = AllPromotion;
-  return {
-    all: function() {
-        promotio = AllPromotion;
-        console.log("in promotion",promotio);
-        return promotio;
-    },
-    get: function() {
-
-          return promotio;
-     
-    }
-  };
-});
  
  
     
@@ -388,8 +369,6 @@ query.find({
 var promotion = new Parse.Query('Promotion');
 var customer = new Parse.Query('Customer');
 var favorite = new Parse.Query('Favorite');
-var PromoSave = new Parse.Query('PromotionSaved')
-
 //query limit hace la llamada de mas elementos
 //////////////////////////////////////////////////////////////////////////promotion
 promotion = promotion.limit(100);
@@ -400,7 +379,7 @@ customer = customer.limit(100);
 
 promotion.find({
         success: function(results) {
-            console.log(results)
+            console.log(PhotoPaiz)
             for (x in results) {
                
                 listPromoSuper.push(results[x].attributes.Customer)
@@ -416,7 +395,7 @@ promotion.find({
                                                                       basePrice:results[x].attributes.BasePrice,
                                                                       promotionalPrice:results[x].attributes.PromotionalPrice,
                                                                       ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                                                      ,Category:results[x].attributes.Customer[i],ID:"pinOffertsWithoutImage"+x,IDpromotion: results[x].id
+                                                                      ,Category:results[x].attributes.Customer[i],ID:"pinOffertsWithoutImage"+x
 
                                                                      });
                                 //console.log("iamgen no dispobible")    
@@ -428,7 +407,7 @@ promotion.find({
                                                                       basePrice:results[x].attributes.BasePrice,
                                                                       promotionalPrice:results[x].attributes.PromotionalPrice,
                                                                       ahorro:results[x].attributes.BasePrice - results[x].attributes.PromotionalPrice
-                                                                      , Category:results[x].attributes.Customer[i],ID:"pinOfferts"+x,IDpromotion: results[x].id
+                                                                      , Category:results[x].attributes.Customer[i],ID:"pinOfferts"+x
 
                                                                      });
                             } 
@@ -553,42 +532,7 @@ Categorys.push({nameCategory:results[x].attributes.Name,ID:"favorite"+x,names:re
 
     });
 };
-function Promotions(id){
-    console.log(":DD",id)
-    console.log(PhotoPaiz)
-        PromoSave.find({
-        success: function(results) {
-          
-            for (x in results) {
-                  //console.log(results[x].attributes)
-                  if (results[x].attributes.UserID === IdUsuario){
-                      //console.log("user find",results[x].attributes.PromotionID)
-                      for (a in results[x].attributes.PromotionID){
-                            for (b in PhotoPaiz){
-                                if (results[x].attributes.PromotionID[a] === PhotoPaiz[b].IDpromotion && id === PhotoPaiz[b].Category){
-                                    console.log("Encontrado")
-                                     console.log(PhotoPaiz[b].ID)
-                                     console.log("-----------------")
-                                     console.log( results[x].attributes.PromotionID[a])
-                                     var cssColorpinOffer = document.getElementById(PhotoPaiz[b].ID+" "+results[x].attributes.PromotionID[a]).style.color;
-                                          if (cssColorpinOffer=="silver"){
-                                                  document.getElementById(PhotoPaiz[b].ID+" "+results[x].attributes.PromotionID[a]).style.color="purple";
-                                               }
-                                    }
-                            }
-                      }
-                    
-                  }
-            }
-            //console.log(PhotoPaiz)
 
-      },
-      error: function(myObject, error) {
-        // Error occureds
-        console.log( error );
-      }
-    });
-}
 function Heart(id){
     favorite.find({
         success: function(results) {
@@ -608,7 +552,7 @@ function Heart(id){
                                     //console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory, "--",Categorys[a].names)
                                      //console.log("s",id,"---",Categorys[a].names)
                                     if (id === Categorys[a].names){
-                                        //console.log("se guardo",id,"---",Categorys[a])
+                                        //console.log("se guardo",id,"---",Categorys[a].names)
                                          document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
                                     }
           
@@ -659,40 +603,6 @@ function viewFavorite(){
             //console.log(AllFavorite)
       }
     );  
-    
-}
-function viewPromotion(){
-            PromoSave.find({
-        success: function(results) {
-          AllPromotion = [];
-            for (x in results) {
-                  //console.log(results[x].attributes)
-                  if (results[x].attributes.UserID === IdUsuario){
-                      //console.log("user find",results[x].attributes.PromotionID)
-                      for (a in results[x].attributes.PromotionID){
-                            for (b in PhotoPaiz){
-                                if (results[x].attributes.PromotionID[a] === PhotoPaiz[b].IDpromotion){
-                                    AllPromotion.push(PhotoPaiz[b])
-                                   
-                                }
-                         
-                          
-                      }
-                          
-                          
-                      }
-                    
-                  }
-            }
-            console.log(AllPromotion)
-
-      },
-      error: function(myObject, error) {
-        // Error occureds
-        console.log( error );
-      }
-    });
-    
     
 }
 

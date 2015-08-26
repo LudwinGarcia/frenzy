@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+   
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Frenzy</title>
@@ -23,6 +24,9 @@
     <script>
      Parse.initialize("ykQ2udK5KrOjB7L7bphLAG4RjTlbDc48LyYpL9za", "V83UUWa3ZIyqxxau1X2lN5b45AKeDuVJZMqgv45W");
     </script>
+     <script>
+     FB.XFBML.parse();
+    </script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -32,12 +36,10 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
   </head>
-  <body class="platform-ios" ng-app="starter">
+  <body class="platform-ios" ng-app="starter" nav-transition="none">
   
-
-
     <!--*****************************************-->
-      <ion-nav-view></ion-nav-view>
+      <ion-nav-view nav-transition="none"></ion-nav-view>
    
    <div id="fb-root"></div>
     <!--******************************************-->

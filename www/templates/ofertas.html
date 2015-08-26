@@ -9,49 +9,49 @@ hr     {
     background-color: white;
 }
 </style>
+<!--**********  **********-->
 <ion-view>
     <!--************  HEADER AND BACK BUTTON  ***************-->
-    <ion-header-bar align-title="center" class="bar-positive">
+    <ion-header-bar align-title="center" class="bar-positive" style="height:25px; position:relative;">
         <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
         <h1 class="title"  style="font-weight: bolder;">Supermercados</h1>
     </ion-header-bar>
     <!--*****  SECOND TAB HEADER  *****-->
-     
-    <ion-header-bar align-title="center" class="bar-positive" style="margin-top:40px; height:40px;">
-         <div class="row ">
+        <div class="row pageFavoritesSecondRow" style="margin-top:0px;position:absolute;border-color:red; z-index:1;">
             <!--**********  OFFERTS  **********-->
             <div class="col col-50">
-                <a class="pageOffertsOffertsTitle">
+                <a class="pageOffertsOffertsTitle"  >
                     <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
-                    <p class="pageFavoritesOurFavoritesTitle2" id="offertsFunction" onclick="offerts()">
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()">
                         Ofertas (21)
                     </p>
                     <!--**********  LINE DECORATION  **********-->
                     <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction">
                 </a>
             </div>
-            <!--**********  POPOVER  **********-->
-            <div class="col col-50">
-					  <!--**********  ICON POPOVER  *********-->
-        <div class="row" style="margin-top:-15px;">
+        </div>                                  
+        <!--**********  ICON POPOVER  *********-->
+        <div class="row" style="margin-top:30px; position:absolute;  z-index:1;">
             <div class="col col-66"></div>
             <div class="col col-33">
                  <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl">
-                    <p class="pageOffertsPopoverSimbol">
+                    <p class="pageOffertsPopoverSimbol" style="vertical-aling:middle;">
                         N
                     </p>
                 </button>
             </div>
-        </div>        
+        </div>
+         <div class="row" style="margin-top:60px;position:absolute;border-color:red; z-index:1; height:45px;">
+            <!--**********  OFFERTS  **********-->
+            <div class="col col-50">
+                
             </div>
-        </div>    
-        
-    </ion-header-bar>
-    
+        </div>       
+	 
+		   
     <!--**********  CONTENT  **********-->
-    <ion-content ng-controller="AppCtrl"  nav-transition="none">
-                                     
-      
+    <ion-content ng-controller="AppCtrl"  nav-transition="none" style="background-color:#F1F2F2;">
+		<div style="margin-bottom:70px;"></div>
         <!--************  OFFERTS BODY WITH IMAGE **************-->
         <div ng-repeat="super in chats | filter: {nul : 'con'}" >
             <div class="boxResponsiveWithImage">
@@ -105,7 +105,7 @@ hr     {
                         <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
                             O
                         </spam>
-                        <spam class="home pageOffertsLikeIcon" id="{{super.ID}} {{super.IDpromotion}}" onclick="changeColorPinOfferts(id,id)" style="color:silver">
+                        <spam class="home pageOffertsLikeIcon" id="pinOfferts" onclick="changeColorPinOfferts()" style="color:silver">
                             W
                         </spam>
                     </div>   
@@ -185,18 +185,19 @@ hr     {
                 <ion-content >
                     <div class="list">
                         <a class="item " target="_blank" onclick="changeColorHeartFollow()" style="  text-align:right;
-    color:silver; margin-bottom:-7px;">
+    color:silver;">
                             Seguir  
-                            <spam class="home pageOffertsPopoverIconsDescrpition" id="heartFollow" onclick="changeColorHeartFollow()" style="color:silver">	                                B  
+                            <spam class="home pageOffertsPopoverIconsDescrpition" id="heartFollow" onclick="changeColorHeartFollow()" style="color:silver">
+                                B  
                             </spam>
                         </a>
-                        <a class="item" onclick="window.open('tel:1730');" target="_blank" style="text-align:right; color:silver;margin-bottom:-7px;">
+                        <a class="item" onclick="window.open('tel:1730');" target="_blank" style="text-align:right; color:silver;">
                             Llamar
                             <spam class="home pageOffertsPopoverIconsDescrpition">
                                 Q
                             </spam>
                         </a>
-                        <a class="item" onclick="window.open('https://www.dominos.com.gt/','_blank')" target="_blank" style="text-align:right; color:silver;margin-bottom:-7px;">
+                        <a class="item" onclick="window.open('https://www.dominos.com.gt/','_blank')" target="_blank" style="text-align:right; color:silver;">
                             Ir a pagina Web
                             <spam class="home pageOffertsPopoverIconsDescrpition">
                                 R
@@ -218,9 +219,10 @@ hr     {
                     <div>
                         <div>
                             <img  class="secondPopoverFacebookIcon" src="img/facebookicon.png" alt="label">
-                            <p class="secondPopoverFacebookTitle">
-                                Amigos de facebook
-                            </p>
+                           <a class="secondPopoverFacebookTitle" href="https://www.facebook.com/sharer/sharer.php?u=http://frenzy.com.gt/" target="_blank">
+   Amigos de facebook
+</a>
+                            
                         </div>
                        <div style="margin-top:25px;" onclick="window.open('sms:?body=www.Frenzy.com', '_system');"> 
                             <p class="home secondPopoverMailIcon">
@@ -249,13 +251,13 @@ hr     {
       </div>
       <!--************  ICONO FOOTER HEART  ******************-->
       <div class="col col-25">
-          <a href="#/app/favoritos" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewFavorite()">
+          <a href="#/app/favoritos" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
               <div>B</div>
           </a>
       </div>
       <!--************  ICONO FOOTER STAR  ******************-->
       <div class="col col-25">
-          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewPromotion()">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
               <div>W</div>
           </a>
       </div>
