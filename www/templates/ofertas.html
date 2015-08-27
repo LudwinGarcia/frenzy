@@ -31,7 +31,7 @@ hr     {
             </div>
         </div>                                  
         <!--**********  ICON POPOVER  *********-->
-        <div class="row" style="margin-top:0px; position:absolute;  z-index:1;" onclick="heartPopover()">
+        <div class="row" style="margin-top:0px; position:absolute;  z-index:1;">
             <div class="col col-66"></div>
             <div class="col col-33">
                  <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl">
@@ -217,11 +217,9 @@ hr     {
                     <div>
                         <div>
                             <img  class="secondPopoverFacebookIcon" src="img/facebookicon.png" alt="label">
-                            <p class="secondPopoverFacebookTitle">
-                                Amigos de facebook
-                            </p>
+                            <a class="secondPopoverFacebookTitle" href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir); window.open('http://www.facebook.com/share.php?u=http://frenzy.com.gt/','_blank');" style="text-decoration:none;">Amigos de facebook</a>
                         </div>
-                       <div style="margin-top:25px;" onclick="window.open('sms:?body=www.Frenzy.com', '_system');"> 
+                      <div style="margin-top:25px;" onclick="window.open('sms:?body=www.Frenzy.com', '_system');"> 
                             <p class="home secondPopoverMailIcon">
                                 V
                             </p>                            

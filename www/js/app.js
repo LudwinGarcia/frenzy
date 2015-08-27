@@ -50,7 +50,14 @@ check()
 function goBack() {
     window.history.back();
 }
-
+/**************** facebook **************************/
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=813128998755561";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 /////////////////////////////////////////////////////////
 //function favoritos
 var contador = 1;
@@ -380,7 +387,7 @@ $ionicConfigProvider.tabs.position('bottom');
   });
 //********************************************************************************
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/frenzy');
+  $urlRouterProvider.otherwise('/login');
 })
 
 
