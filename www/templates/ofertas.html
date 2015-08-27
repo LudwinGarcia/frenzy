@@ -12,14 +12,12 @@ hr     {
 <!--**********  **********-->
 <ion-view>
     <!--************  HEADER AND BACK BUTTON  ***************-->
-    <ion-header-bar align-title="center" class="bar-positive">
+    <ion-header-bar align-title="center" class="bar-positive" style=" position:relative;">
         <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
         <h1 class="title"  style="font-weight: bolder;">Supermercados</h1>
     </ion-header-bar>
-    <!--**********  CONTENT  **********-->
-    <ion-content ng-controller="AppCtrl"  nav-transition="none">
-        <!--*****  SECOND TAB HEADER  *****-->
-        <div class="row pageFavoritesSecondRow">
+    <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row pageFavoritesSecondRow" style="height:35px;margin-top:0px;position:absolute; z-index:1;">
             <!--**********  OFFERTS  **********-->
             <div class="col col-50">
                 <a class="pageOffertsOffertsTitle"  >
@@ -33,16 +31,25 @@ hr     {
             </div>
         </div>                                  
         <!--**********  ICON POPOVER  *********-->
-        <div class="row" style="margin-top:-32px;">
+        <div class="row" style="margin-top:0px; position:absolute;  z-index:1;">
             <div class="col col-66"></div>
             <div class="col col-33">
                  <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl">
-                    <p class="pageOffertsPopoverSimbol">
+                    <p class="pageOffertsPopoverSimbol" style="vertical-aling:middle;">
                         N
                     </p>
                 </button>
             </div>
-        </div>        
+        </div>
+         
+	   
+    <!--**********  CONTENT  **********-->
+     <ion-content ng-controller="AppCtrl"  nav-transition="none">
+		 <div style="height:50px;"></div>
+                              <!--*****  SECOND TAB HEADER  *****-->
+                            
+        <!--**********  ICON POPOVER  *********-->
+       
         <!--************  OFFERTS BODY WITH IMAGE **************-->
         <div ng-repeat="super in chats[0] | filter: {nul : 'con'}" >
             <div class="boxResponsiveWithImage">
