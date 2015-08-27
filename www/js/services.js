@@ -342,16 +342,7 @@ app.factory('Paiz', function() {
     }
   };
 });
-function llamar(cell){
-    a = cell.toString();
-    
-    b = 'tel:'
-    window.open(b+a);
-}
-function tiendaUrl(Url){
-    z = Url
-    window.open(z,'_blank')
-}
+
 app.factory('AllFavorite', function() {
 console.log("called Favorite");
 var favorites = AllFavorite;
@@ -620,6 +611,7 @@ function Promotions(id){
       }
     });
 }
+var HeartPopover = [];
 function Heart(id){
     favorite.find({
         success: function(results) {
@@ -629,7 +621,7 @@ function Heart(id){
                 //console.log(results[x].attributes.UserID)
     
                     if (results[x].attributes.UserID===IdUsuario){
-                        console.log("find user")
+                       // console.log("find user")
                         for (a in Categorys){
                            //console.log(Categorys[a].names)
                             //console.log("a",Categorys[a].nameCategory)
@@ -641,6 +633,9 @@ function Heart(id){
                                     if (id === Categorys[a].names){
                                         //console.log("se guardo",id,"---",Categorys[a])
                                          document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
+                                        console.log(Categorys[a].ID,Categorys[a].nameCategory)
+                                        HeartPopover.push(Categorys[a].nameCategory)
+                                        
                                     }
           
                                 }
@@ -725,6 +720,66 @@ function viewPromotion(){
     });
     
     
+}
+
+function llamar(cell){
+    a = cell.toString();
+    
+    b = 'tel:'
+    window.open(b+a);
+}
+function tiendaUrl(Url){
+    z = Url
+    window.open(z,'_blank')
+}
+function heartPopover(){
+    console.log("exitoso", HeartPopover)
+    
+    /*
+    favorite.find({
+        success: function(results) {
+            
+            for (x in results) {
+                //console.log(results[x].attributes.CustomerID)
+                //console.log(results[x].attributes.UserID)
+    
+                    if (results[x].attributes.UserID===IdUsuario){
+                        console.log("find user")
+                        for (a in Categorys){
+                           //console.log(Categorys[a].names)
+                            //console.log("a",Categorys[a].nameCategory)
+                            for(b in results[x].attributes.CustomerID){
+                                //console.log("s",results[x].attributes.CustomerID[b])
+                                if(Categorys[a].nameCategory ===results[x].attributes.CustomerID[b]){
+                                    //console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory, "--",Categorys[a].names)
+                                     //console.log("s",id,"---",Categorys[a].names)
+                                    if (id === Categorys[a].names){
+                                        //console.log("se guardo",id,"---",Categorys[a])
+                                         document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
+                                    }
+          
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                }else{
+                
+                    console.log("the user no found")
+                }
+                    
+        
+
+            }
+            //console.log(PhotoPaiz)
+
+      },
+      error: function(myObject, error) {
+        // Error occureds
+        console.log( error );
+      }
+    });*/
 }
 
 
