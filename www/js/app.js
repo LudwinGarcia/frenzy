@@ -50,6 +50,8 @@ check()
 function goBack() {
     window.history.back();
 }
+/************* sound ***********************/
+
 /**************** facebook **************************/
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -69,6 +71,10 @@ function hola(parametro){
 	   else{document.getElementById(parametro).style.color="";}
           
 };
+
+
+
+
 /************  TAMAYO FUNCTION CHANCE COLOR HEART  **********/
 function changeColorHeart (parametro,category){
     var cssColor = document.getElementById(parametro).style.color;
