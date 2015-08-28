@@ -634,7 +634,7 @@ function Heart(id){
                                         //console.log("se guardo",id,"---",Categorys[a])
                                          document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
                                         console.log(Categorys[a].ID,Categorys[a].nameCategory)
-                                        HeartPopover.push(Categorys[a].ID)
+                                        //HeartPopover.push({id:Categorys[a].ID,name:Categorys[a].nameCategory})
                                         
                                     }
           
@@ -665,9 +665,9 @@ function Heart(id){
 
 
 function viewFavorite(){
-    
+     AllFavorite = [];
   favorite.each(function(results) {
-            AllFavorite = [];
+           
            
                 for(b in results.attributes.CustomerID){
                     if(results.attributes.UserID===IdUsuario){
@@ -736,11 +736,12 @@ function tiendaUrl(Url){
 function heartPopover(id){
     console.log("exitoso", HeartPopover)
     console.log("id",id)
-    for (s in HeartPopover){
-        if (HeartPopover[s] === id){
+    console.log(dato)
+    for (s in dato){
+        if (dato[s].name === id){
             console.log("oli")
        
-             //document.getElementById(id).style.color="red";
+             document.getElementById(dato[s].id).style.color="red";
             //document.getElementById("favorite1").style.color="red";
             
         
