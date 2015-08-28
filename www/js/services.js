@@ -684,14 +684,17 @@ function viewFavorite(){
                         for (c in PhotoPaiz){
                             //console.log(PhotoPaiz[c])
                             if (PhotoPaiz[c].Category === results.attributes.CustomerID[b]){
-                                console.log("find",results.attributes.CustomerID[b])
+                                //console.log("find",results.attributes.CustomerID[b])
                                 AllFavorite.push(PhotoPaiz[c])
+                                //delete AllFavorite[c].Category
+                               
+                                 
                             }
                         }
                     }
 
                 }
-           console.log(AllFavorite)
+           console.log(AllFavorite, "aqui estoy 2")
       }
     );  
     
@@ -700,8 +703,9 @@ function viewPromotion(){
 			AllPromotion = [];
             PromoSave.find({
         success: function(results) {
-          
+            var cot = 0
             for (x in results) {
+                 cont = cont + 1
                   //console.log(results[x].attributes)
                   if (results[x].attributes.UserID === IdUsuario){
                       //console.log("user find",results[x].attributes.PromotionID)
@@ -709,6 +713,7 @@ function viewPromotion(){
                             for (b in PhotoPaiz){
                                 if (results[x].attributes.PromotionID[a] === PhotoPaiz[b].IDpromotion){
                                     AllPromotion.push(PhotoPaiz[b])
+                                  
                                    
                                 }
                          
