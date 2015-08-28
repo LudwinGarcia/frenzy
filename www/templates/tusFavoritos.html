@@ -71,6 +71,7 @@
         
         <div ng-repeat="favorite in chats">  
         <!--************  YOUR FAVORITES BODY  *******************-->
+		<a href="#/app/herramientas" style="text-decoration:none;" nav-transition="none">
         <div class="row pageYourFavoritesGreyLine" style="margin-top:1px;" >
             <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
             <!--*****  ICON HEART COLOR RED  *****-->
@@ -78,16 +79,17 @@
                 <spam class="home">B</spam>    
             </div>
             <!--*****  NAME'S STABLISHMENT  *****-->
-            <div class="col col-75">
+            <div class="col col-75" style="margin-top:-5px;">
                 <spam class="open_sans overFlowText pageYourFavoritesStablishmentName">{{favorite.Category}}</spam>    
             </div>    
             <!--*****  ICON ARROW RIGHT  *****-->
             <div class="col col-10 pageYourFavoritesIconArrow">
                 <spam class="home">
+                >
                 </spam>    
             </div>
         </div>
-        
+        </a>
         
         <!--*****  SECOND ROW DESCRIPTION OF YOUR FAVORITE STABLISHMENT  *****-->
         <div class="row row-border pageYourFavoritesWhiteBox">

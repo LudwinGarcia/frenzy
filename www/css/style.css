@@ -565,7 +565,7 @@ font-family: Iconos;
     height:35px;
 }
 .pageYourFavoritesIconHeart{
-    margin-top:5px;
+  
     margin-left:10px;
     font-size:27px;
     color:#FF5252;
@@ -573,10 +573,13 @@ font-family: Iconos;
 .pageYourFavoritesStablishmentName{
     margin-left:15px;
     font-size:15px;
+	color:black;
 }
 .pageYourFavoritesIconArrow{
-    margin-top:5px;
-    margin-left:25px; font-size:25px; padding-top:25px; color:#A7A9AC;
+    margin-left:20px;
+	font-size:25px;
+	padding-top:25px;
+	color:#A7A9AC;
 }
 .pageYourFavoritesWhiteBox{
     height:100px;

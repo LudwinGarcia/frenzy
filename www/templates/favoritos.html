@@ -79,9 +79,7 @@ hr{
 		   		background-color:white;
 				width: 90%;
 				height: 82%;
-			-webkit-box-shadow: 11px 17px 28px -11px rgba(182,182,184,1);
--moz-box-shadow: 11px 17px 28px -11px rgba(182,182,184,1);
-box-shadow: 11px 17px 28px -11px rgba(182,182,184,1);
+			 box-shadow: 3px 3px 2px #BDBDBD;
 		   		}
 		   .imagenEtiquetaMorada{
 		   		height: 75px;
@@ -181,38 +179,16 @@ box-shadow: 11px 17px 28px -11px rgba(182,182,184,1);
             </ion-slide>   
         </ion-slide-box>
         <!--************************************************************************************************************************************************************************-->
-        <!--*************  FIRST POPOVER CONTENT  ******************-->
-        <script id="templates/popover.html" type="text/ng-template" >
-            <ion-popover-view  class="firstPopoverStyle" style="height:170px; width:180px; margin-top:20px;">
-                <!--*****  FIRST POPOVER CONTENT  *****-->
-                <ion-content >
-                    <div class="list">
-                        <a class="item " target="_blank" onclick="changeColorHeartFollow()" style="  text-align:right;
-    color:silver;">
-                            Seguir  
-                            <spam class="home pageOffertsPopoverIconsDescrpition" id="heartFollow" onclick="changeColorHeartFollow()" style="color:silver">
-                                B  
-                            </spam>
-                        </a>
-                        <a class="item" onclick="window.open('tel:1730');" target="_blank" style="text-align:right; color:silver;">
-                            Llamar
-                            <spam class="home pageOffertsPopoverIconsDescrpition">
-                                Q
-                            </spam>
-                        </a>
-                        <a class="item" onclick="window.open('https://www.dominos.com.gt/','_blank')" target="_blank" style="text-align:right; color:silver;">
-                            Ir a pagina Web
-                            <spam class="home pageOffertsPopoverIconsDescrpition">
-                                R
-                            </spam>
-                        </a>
-                    </div>
-                </ion-content>
-            </ion-popover-view>
-        </script>
+       <style>
+		   .popover{
+		   		align-content: center;
+			  	margin-right: 100px;
+		   }
+		   
+		</style>
         <!--**********  SECOND POP OVER SHARE  **********-->
-        <script id="templates/popoverNew.html" type="text/ng-template" style="" side="left">
-            <ion-popover-view style="height:150px; width:250px;" style="" side="left">
+        <script id="templates/popoverNew.html" type="text/ng-template">
+            <ion-popover-view style="height:150px; width:250px;">
                 <ion-content style="" >
                     <!--***** MAIN CONTENT SECOND POPOVER *****-->
                     <div class="secondPopoverTextAling" style="text-aling:center;">
