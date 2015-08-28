@@ -1,7 +1,7 @@
 <!--**********  STYLE FAVORITES PAGE  **********-->
 <style>
 .slider{
-    height: 95%;
+    height: 94%;
 }
 .bar.bar-positive    {
     box-shadow: 0 0 0px white;
@@ -68,13 +68,34 @@ hr{
 		<div style="height:35px;"></div>
         <!--**********  MAIN BODY  **********-->
         <!--***********  SLIDER  ************-->
+  <!--************************************************************************************************************************************************************************-->
+       <style>
+			.nuevoDivContenedor{
+				margin-top:18px;
+				margin-left: 5%;
+		   		background-color:red;
+				width: 90%;
+				height: 85%;
+				-webkit-box-shadow: 2px 7px 12px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 7px 12px 1px rgba(0,0,0,0.75);
+box-shadow: 2px 7px 12px 1px rgba(0,0,0,0.75);
+		   		}
+		   .imagenEtiquetaMorada{
+		   		height: 75px;
+			   	width: 100px;
+			   	position:absolute;
+		   }
+		   .imagenCajaNueva{
+		   		width: 100%;
+			   	height:65%; 
+		   }
+		</style>
         <ion-slide-box>
         <!--**********  SLIDER CONTENT  **********-->    
             <ion-slide>
-               <!--**********  SLIDER BOXES  **********-->
-                <div class="boxResponsiveFavorites">
-                    <!--*****  IMAGE LABEL OFFERTS  *****-->
-                    <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+            <!--**********  SLIDER BOXES  **********-->
+               <div class="nuevoDivContenedor">
+				    <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
                     <!--*****  PRICE LABEL OFFERTS  *****-->
                     <div class="row pageFavoritesBoxPriceLabel">
                         <div class="col col-25">
@@ -87,8 +108,8 @@ hr{
                         </div>
                     </div>
                     <!--*****  MAIN IMAGE FAVORITE PAGE  *****-->
-                    <img class="imagePageFavoritesStyle relacionFavoritesImage bordeMediaQueri" src="img/nissan.jpg" alt="nissan">
-                    <!--***** ESTABLISHMENT LOGO  *****-->
+                    <img class="imagenCajaNueva" src="img/nissan.jpg" alt="nissan">
+                     <!--***** ESTABLISHMENT LOGO  *****-->
                     <div class="pageFavoritesEstablishmentLogo" style="">
                         <img class="logoEstablishment" src="img/logoNissan.png" alt="label">
                         <spam class="pageFavoritesCountOfferts">
@@ -139,9 +160,13 @@ hr{
                             <spam class="pageFavoritesIcons home" id="pinFavoritesWithoutImage" onclick="changeColorPinFavoritesWithoutImage()" style="color:silver"> W </spam>
                         </div>   
                     </div>
-                </div>  
+                 
+                    
+               </div>
+				
             </ion-slide>   
         </ion-slide-box>
+        <!--************************************************************************************************************************************************************************-->
         <!--*************  FIRST POPOVER CONTENT  ******************-->
         <script id="templates/popover.html" type="text/ng-template" >
             <ion-popover-view  class="firstPopoverStyle" style="height:170px; width:180px; margin-top:20px;">

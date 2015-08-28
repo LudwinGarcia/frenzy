@@ -682,15 +682,16 @@ function viewFavorite(){
                     }
 
                 }
-            //console.log(AllFavorite)
+           console.log(AllFavorite)
       }
     );  
     
 }
 function viewPromotion(){
+			AllPromotion = [];
             PromoSave.find({
         success: function(results) {
-          AllPromotion = [];
+          
             for (x in results) {
                   //console.log(results[x].attributes)
                   if (results[x].attributes.UserID === IdUsuario){

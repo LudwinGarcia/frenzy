@@ -69,6 +69,14 @@ and (min-device-width : 501px) and (max-device-width : 550px) {
                         border-color: black;
                         border-width: 3px;
     }
+	.boxResponsiveFavorites {
+  height: calc(51vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    background-color:white;
+}
 }
 /**********************/
 @media only screen 
@@ -118,10 +126,10 @@ font-family: Iconos;
     overflow: hidden;
     text-overflow: ellipsis; 
 }
-/*over flow whit two lines */
+/*over flow with two lines */
 .ellipsify{
     line-height:18px;
-    height: 37px;       /* 3x line height */
+    height: 32px;       /* 3x line height */
     width: 100%;
     overflow: hidden;
     position: relative; /* so we're a positioning parent for the dot hiders */
@@ -412,7 +420,7 @@ font-family: Iconos;
 [class*='relacion'] {
 }
 .relacionFavoritesImage    {
-    height: calc(16vh *  3.1);
+  height: calc(16vh *  3.1);
 }
 [class*='relacion'] {
 }
@@ -456,7 +464,7 @@ font-family: Iconos;
     border-style:none;
 }
 .boxResponsiveFavorites {
-    height: calc(52vh *  1.33);
+    height: calc(55vh *  1.33); /*height: calc(52vh *  1.33);*/
     width: 95%;
     margin-left:10px;
     margin-top:15px;
@@ -472,7 +480,7 @@ font-family: Iconos;
 .pageFavoritesHrLineBox{
     border:none;
     background-color:#F2F2F2;
-    height:1px;
+    height:1px;	
 }
 .pageFavoritesActualPrice{
     font-size:15px;
