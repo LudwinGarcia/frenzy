@@ -479,7 +479,7 @@ font-family: Iconos;
 }
 .pageFavoritesHrLineBox{
     border:none;
-    background-color:#F2F2F2;
+    background-color:black;
     height:1px;	
 }
 .pageFavoritesActualPrice{
@@ -526,8 +526,8 @@ font-family: Iconos;
 }
 .pageFavoritesDescriptionTitle{
     font-size:20px;
-    margin-top:15px;
     margin-left:10px;
+	padding-top:3%;
 }
 .pageFavoritesDescription{
     font-size:13px;
@@ -546,7 +546,6 @@ font-family: Iconos;
 }
 .pageFavoritesDivIcons{
     background-color:white;
-    margin-top:10px;
 }
 /****************************************************************************/
 /****************************  YOUR FAVORITES STYLE  ************************/

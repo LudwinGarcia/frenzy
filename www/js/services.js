@@ -634,7 +634,7 @@ function Heart(id){
                                         //console.log("se guardo",id,"---",Categorys[a])
                                          document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
                                         console.log(Categorys[a].ID,Categorys[a].nameCategory)
-                                        //HeartPopover.push({id:Categorys[a].ID,name:Categorys[a].nameCategory})
+                                        HeartPopover.push(Categorys[a].ID)
                                         
                                     }
           
@@ -736,12 +736,11 @@ function tiendaUrl(Url){
 function heartPopover(id){
     console.log("exitoso", HeartPopover)
     console.log("id",id)
-    console.log(dato)
-    for (s in dato){
-        if (dato[s].name === id){
+    for (s in HeartPopover){
+        if (HeartPopover[s] === id){
             console.log("oli")
        
-             document.getElementById(dato[s].id).style.color="red";
+             //document.getElementById(id).style.color="red";
             //document.getElementById("favorite1").style.color="red";
             
         

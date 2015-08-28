@@ -15,14 +15,7 @@
             </p>
         </h1>
                
-    </ion-header-bar>
-    
-    
-    
-    
-    
-    
-    
+    </ion-header-bar>  
     
     <!--*****  SECOND TAB HEADER  *****-->
         <div class="row pageFavoritesSecondRow" style="height:35px;margin-top:0px;position:absolute; z-index:1;">
@@ -72,11 +65,11 @@
                                                                                                         
     <!--*****  SECOND TAB HEADER  *****-->
       
-    <ion-content ng-controller="AppCtrl" ng-repeat="favorite in chats">
+    <ion-content ng-controller="AppCtrl" >
        
 		<div style="height:31px;"></div>
         
-        <div >  
+        <div ng-repeat="favorite in chats">  
         <!--************  YOUR FAVORITES BODY  *******************-->
         <div class="row pageYourFavoritesGreyLine" style="margin-top:1px;" >
             <!--*****  FIRST ROW NAME OF YOUR FAVORITE STABLISHMENT  *****-->
