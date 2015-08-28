@@ -53,7 +53,7 @@ hr     {
         <!--**********  ICON POPOVER  *********-->
        
         <!--************  OFFERTS BODY WITH IMAGE **************-->
-        <div ng-repeat="super in chats[0] | filter: {nul : 'con'}" >
+        <div ng-repeat="super in chats[0] | filter: {nul : 'con'}"  >
             <div class="boxResponsiveWithImage">
                 <!--*****  IMAGE LABEL OFFERTS  *****-->
                 <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
@@ -178,6 +178,21 @@ hr     {
                 </div>
             </div>
         </div> 
+         
+    <div ng-repeat="super in chats[0]  | filter: {oferta : 'noHay'}">
+          <div class="open_sans boxbox">
+            <p class="savedPageNoItemBlankSpace">
+                f
+            </p>
+              <p class="home savedPageNoItemsIcon">f</p>
+            <p class="savedPageNoItemsTitle">
+                Uh-uH
+            </p>
+            <p class="savedPageNoItemsDescription">No tienes ningun elemento agregado a</p>
+            <p class="savedPageNoItemsDescription">esta lista. Agrega ofertas y cupones</p>
+            <p class="savedPageNoItemsDescription">para usarlos despues.</p>      
+          </div>
+      </div>
         <!--*************  FIRST POPOVER CONTENT  ******************-->
         <script id="templates/popover.html" type="text/ng-template" >
             <ion-popover-view  class="firstPopoverStyle" style="height:170px; width:180px; margin-top:20px;">
@@ -187,7 +202,7 @@ hr     {
                         <a class="item " target="_blank" onclick="changeColorHeartFollow()" style="  text-align:right;
     color:silver;">
                             Seguir  
-                            <spam class="home pageOffertsPopoverIconsDescrpition" id="heartFollow" onclick="changeColorHeartFollow()" style="color:silver">
+                            <spam class="home pageOffertsPopoverIconsDescrpition" id="{{s.id}}" onclick="changeColorHeartFollow()" style="color:silver">
                                 B  
                             </spam>
                         </a>
