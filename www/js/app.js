@@ -287,7 +287,7 @@ $ionicConfigProvider.tabs.position('bottom');
   })
 //********************************************************************************
   .state('app.salvados', {
-    url: "/salvados",
+    url: "/salvados/:salvadosId",
     views: {
       'menuContent': {
         templateUrl: "templates/salvados.html",
@@ -380,8 +380,13 @@ $ionicConfigProvider.tabs.position('bottom');
 //****************  OFFERTS  *************
   .state('ofertas', {
     url: "/ofertas",
-    templateUrl: "templates/ofertas.html",
+    views: {
+      'menuContent': {
+       templateUrl: "templates/ofertas.html",
       controller: 'PaizCtrl'
+      }
+    }
+
   });
 //********************************************************************************
   // if none of the above states are matched, use this as the fallback

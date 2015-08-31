@@ -146,6 +146,12 @@ angular.module('starter.controllers', ['ionic'])
   $scope.chat = Categorys.get($stateParams.chatId);
 })
 
+
+
+.controller('BarraCtrl', function($scope, Barra) {
+    $scope.chats = Barra.get();
+})
+
 .controller('AllFavoriteCtrl', function($scope, $stateParams, AllFavorite) {
     //console.log("calling PaizCtrl");
     
@@ -160,7 +166,7 @@ angular.module('starter.controllers', ['ionic'])
     //console.log("calling PaizCtrl");
     
     //$scope.chats = AllFavorite.get($stateParams.superId);
-    $scope.chats = AllPromotion.all();
+    $scope.chats = AllPromotion.all($stateParams.salvadosId);
     console.log("------------------------------------ en controler")
     console.log(AllPromotion);
 })

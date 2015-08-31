@@ -120,9 +120,9 @@
           </a>
       </div>
       <!--************  ICONO FOOTER STAR  ******************-->
-      <div class="col col-25">
-          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewPromotion()">
-              <div>W</div>
+      <div class="col col-25" ng-controller= "BarraCtrl">
+          <a href="#/app/salvados/{{chats.id}}" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewPromotion()">
+              <div id = "{{chats}}">W</div>
           </a>
       </div>
       <!--************  ICONO FOOTER TOOL  ******************-->
