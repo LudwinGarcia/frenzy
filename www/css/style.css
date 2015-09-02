@@ -726,9 +726,11 @@ font-family: Iconos;
     background: -o-linear-gradient(white 65%, #3F51B5 35%);
 }
 .imageCategoryBoxes   {
-    width: 130px;
+    width: auto;
     height: 110px;
-	margin-left: 3%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto; 
 }
 /**********************************************************************/
 /***********************  PAGE OFFERTS STYLE  *************************/
@@ -943,4 +945,7 @@ font-family: Iconos;
     margin-left:60px;
     margin-top:-30px;
     color:#A7A9AC ;
+}
+.pageOffertsBlanckDiv {
+	height: 25px;
 }
