@@ -162,11 +162,14 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 
-.controller('AllPromotionCtrl', function($scope, $stateParams, AllPromotion) {
+.controller('AllPromotionCtrl', function($scope, $stateParams,$timeout, AllPromotion) {
     //console.log("calling PaizCtrl");
+      $timeout(function() {
+      $scope.chats = AllPromotion.all($stateParams.salvadosId);
+    }, 2000);
     
     //$scope.chats = AllFavorite.get($stateParams.superId);
-    $scope.chats = AllPromotion.all($stateParams.salvadosId);
+    //$scope.chats = AllPromotion.all($stateParams.salvadosId);
     console.log("------------------------------------ en controler")
     console.log(AllPromotion);
 })

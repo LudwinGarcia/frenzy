@@ -287,7 +287,7 @@ $ionicConfigProvider.tabs.position('bottom');
   })
 //********************************************************************************
   .state('app.salvados', {
-    url: "/salvados/:salvadosId",
+    url: "/salvados",
     views: {
       'menuContent': {
         templateUrl: "templates/salvados.html",

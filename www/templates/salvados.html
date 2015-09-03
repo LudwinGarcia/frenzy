@@ -24,15 +24,15 @@
             <div class="col col-80">
                 <!--**********  TITLE OFFERT  **********-->  
                 <p class="savedPageTitleDescription overFlowText">
-                    2X1 Pizzas Grandes de 1 ingrediente
+                    {{promotion.name}} 
                 </p>
                 <!--**********  PRICE OFFERT  **********-->  
                 <p class="savedPageOffert">
-                    oferta - Q.99.00
+                    oferta - {{promotion.promotionalPrice | currency: 'Q'}}
                 </p>
                 <!--**********  DESCRIPTION OFFERT  **********-->  
                 <p class="savedPageDescription overFlowText">
-                    15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015.
+                    {{promotion.description}}
                 </p>
             </div>
             <!--**********  PIN ICON  **********-->  
@@ -61,7 +61,7 @@
       </div>
       <!--************  ICONO FOOTER PIN  ******************-->
       <div class="col col-25">
-          <a href="#/app/salvados" style="color:#9C28B0  ; text-decoration:none;" nav-transition="none">
+          <a href="#/app/salvados" style="color:#9C28B0  ; text-decoration:none;" nav-transition="none" onclick="viewPromotion()">
               <div>W</div>
           </a>
       </div>

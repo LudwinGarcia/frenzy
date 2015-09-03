@@ -385,6 +385,7 @@ var promotio = AllPromotion;
     }
   };
 });
+
 var Barra = []
 app.factory('Barra', function() {
 console.log("called Barra");
@@ -399,60 +400,21 @@ console.log("called Barra");
         Barras = {id:98789456}
         console.log("in Barra",Barras);
         return Barras;
+    },get: function(){
+         Barras = {id:98789456}
+        console.log("in Barra",Barras);
+        return Barras;
+        
+        
     }
+      
   };
        
 
     
 
 });
-var Barra2 = []
-app.factory('Barra2', function() {
-console.log("called Barra2");
-        
 
-       
-       var Barras2 = {id:98789455};
-    console.log('asdasdasd',Barras2)
-  return {
-    all: function() {
-        
-        Barras2 = {id:98789455}
-        console.log("in Barra",Barras2);
-        return Barras2;
-    },
-    get: function() {
-
-          return Barras2;
-     
-    }
-  };
-       
-});
-
-var Barra3 = []
-app.factory('Barra3', function() {
-console.log("called Barra3");
-        
-
-       
-       var Barras3 = {id:987894558};
-    console.log('asdasdasd',Barras3)
-  return {
-    all: function() {
-        
-        Barras3 = {id:987894558}
-        console.log("in Barra",Barras3);
-        return Barras3;
-    },
-    get: function() {
-
-          return Barras3;
-     
-    }
-  };
-       
-});
  
  
     
@@ -715,22 +677,13 @@ function Heart(id){
                                          document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
                                         console.log(Categorys[a].ID,Categorys[a].nameCategory)
                                         //HeartPopover.push({id:Categorys[a].ID,name:Categorys[a].nameCategory})
-                                        
                                     }
-          
                                 }
-                                
                             }
-                            
                         }
-                        
                 }else{
-                
                     console.log("the user no found")
                 }
-                    
-        
-
             }
             //console.log(PhotoPaiz)
 
@@ -770,29 +723,59 @@ function viewFavorite(){
     );  
     
 }
+var con = 0;
+
 function viewPromotion(){
+  
 			AllPromotion = [];
             PromoSave.find({
                 
         success: function(results) {
             for (x in results) {
-               
+                 
+                
                   //console.log(results[x].attributes)
                   if (results[x].attributes.UserID === IdUsuario){
                       //console.log("user find",results[x].attributes.PromotionID)
                       for (a in results[x].attributes.PromotionID){
                             for (b in PhotoPaiz){
                                 if (results[x].attributes.PromotionID[a] === PhotoPaiz[b].IDpromotion){
-                                    AllPromotion.push(PhotoPaiz[b])
-                                                                    
+                                    con = con + 1  
+                                    
+                                        
+                                          
+                                          if (AllPromotion.length == 0){
+                                              console.log("no hay nada agrego el primero")
+                                              AllPromotion.push(PhotoPaiz[b])
+                                              console.log(AllPromotion)
+                                          }else{
+                                            for (q in AllPromotion){
+                                              if (AllPromotion[q].name == PhotoPaiz[b].name){
+                                                    console.log("ya existe")
+                                                    }else{
+                                                        console.log("no existe agrego")
+                                                        console.log(PhotoPaiz[b].name)
+                                                        AllPromotion.push(PhotoPaiz[b])
+                                                        
+                                                    }
+                                              
+                                                }
+                                              
+                                          }
+                                        
+                                          
+                                          
+                                   
+                                                                 
                                 }
-                          
+
                       }  
-                          
+
                       }
                     
                   }
             }
+
             console.log(AllPromotion)
 
       },
