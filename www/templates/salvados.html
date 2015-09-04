@@ -19,7 +19,7 @@
         <div class="row savedPageBoxStyle" ng-repeat="promotion in chats">
             <!--**********  IMAGE ESTABLISHMENT  **********-->  
             <div class="col col-20">
-                <img class="savedPageImage" alt="pizza" src="img/dominosPizza.jpeg">
+                <img class="savedPageImage" alt="pizza" src="{{promotion.Photo._url}}">
             </div>
             <div class="col col-80">
                 <!--**********  TITLE OFFERT  **********-->  
@@ -37,7 +37,7 @@
             </div>
             <!--**********  PIN ICON  **********-->  
             <div class="col col-10 home">
-                <p class="savedPageIcon" id="pinSaved" onclick="changeColorPinSaved()" style="color:silver">
+                <p class="savedPageIcon" id="{{promotion.PromotionId}}" onclick="changeColorPinSaved()" style="color:silver">
                     W
                 </p>
             </div>
