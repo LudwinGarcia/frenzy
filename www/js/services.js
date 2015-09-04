@@ -343,7 +343,7 @@ app.factory('Paiz', function() {
         if (PhotoPaiz){
             ALL.push(Category)
             ALL.push(dato)
-            console.log(ALL)
+            console.log(ALL,"all")
             return ALL;
         } 
         
@@ -371,6 +371,7 @@ var favorites = AllFavorite;
 
 app.factory('AllPromotion', function() {
 console.log("called promotion");
+console.log(AllPromotion);
 var promotio = AllPromotion;
   return {
     all: function(salvadosId) {
@@ -459,16 +460,16 @@ customer = customer.limit(100);
 
 promotion.find({
         success: function(results) {
-            console.log(results)
             for (x in results) {
-               
+               promociones.push(results[x])
                 listPromoSuper.push(results[x].attributes.Customer)
                 for (i in results[x].attributes.Customer){
                         //console.log(results[x].attributes.Customer[i]);
                         if (true === results[x].attributes.Status){
+                            
                             //console.log("esta disponible",results[x].attributes.Status)
                             if (results[x].attributes.Photo === null || results[x].attributes.Photo === undefined){
-                                
+                                    
                                      PhotoPaiz.push({nul:"sin",name:results[x].attributes.CategoryProduct,
                                                     presentation:results[x].attributes.Presentation,
                                                     description:results[x].attributes.PromotionDescription,
@@ -502,7 +503,7 @@ promotion.find({
                               
                 }
             }
-            console.log(PhotoPaiz)
+            console.log(promociones,"promocines")
             return PhotoPaiz;
       },
       error: function(myObject, error) {
@@ -699,8 +700,7 @@ function Heart(id){
 
 function viewFavorite(){
      AllFavorite = [];
-  favorite.each(function(results) {
-           
+  favorite.each(function(results) {z
            
                 for(b in results.attributes.CustomerID){
                     if(results.attributes.UserID===IdUsuario){
@@ -723,68 +723,33 @@ function viewFavorite(){
     );  
     
 }
-var con = 0;
+
 
 function viewPromotion(){
-  
-			AllPromotion = [];
-            PromoSave.find({
-                
-        success: function(results) {
-            for (x in results) {
-                 
-                
-                  //console.log(results[x].attributes)
-                  if (results[x].attributes.UserID === IdUsuario){
-                      //console.log("user find",results[x].attributes.PromotionID)
-                      for (a in results[x].attributes.PromotionID){
-                            for (b in PhotoPaiz){
-                                if (results[x].attributes.PromotionID[a] === PhotoPaiz[b].IDpromotion){
-                                    con = con + 1  
-                                    
-                                        
-                                          
-                                          if (AllPromotion.length == 0){
-                                              console.log("no hay nada agrego el primero")
-                                              AllPromotion.push(PhotoPaiz[b])
-                                              console.log(AllPromotion)
-                                          }else{
-                                            for (q in AllPromotion){
-                                              if (AllPromotion[q].name == PhotoPaiz[b].name){
-                                                    console.log("ya existe")
-                                                    }else{
-                                                        console.log("no existe agrego")
-                                                        console.log(PhotoPaiz[b].name)
-                                                        AllPromotion.push(PhotoPaiz[b])
-                                                        
-                                                    }
-                                              
-                                                }
-                                              
-                                          }
-                                        
-                                          
-                                          
-                                   
-                                                                 
-                                }
-
-                      }  
-
-                      }
-                    
-                  }
-            }
-
-            console.log(AllPromotion)
-
-      },
-      error: function(myObject, error) {
-        // Error occureds
-        console.log( error );
-      }
-    });
+    AllPromotion = [];
+    var con = 0;
+    var promotionSavedData = Parse.Object.extend("PromotionSaved");
+    var query = new Parse.Query(promotionSavedData);
     
+    query.equalTo("UserID", IdUsuario);
+
+    query.find({
+        success: function(results) {
+            for (var i = 0; i < results[0].attributes.PromotionID.length; i++){
+                for(x in promociones) {
+                    if (results[0].attributes.PromotionID[i] === promociones[x].id) {
+                        AllPromotion.push(promociones[x].attributes);
+                        AllPromotion[con]["PromotionId"] = promociones[x].id;
+                        con = con + 1;
+                    };
+                };
+            };
+        },
+        error: function(error) {
+            // Error occureds
+            console.log(error);
+        }
+    });
     
 }
 
@@ -802,59 +767,58 @@ function heartPopover(id){
     console.log("exitoso", HeartPopover)
     console.log("id",id)
     console.log(dato)
-    for (s in dato){
-        if (dato[s].name === id){
-            console.log("oli")
-            var cssHeart = document.getElementById(dato[s].id).style.color
-            if (cssHeart == "silver"){
-                document.getElementById(dato[s].id).style.color="red";
-            }
-
-             
-            //document.getElementById("favorite1").style.color="red";
-            
-        
-        }
-    }
+ 
     
-    /*
     favorite.find({
-        success: function(results) {
-            
+        success: function(results) {            
             for (x in results) {
                 //console.log(results[x].attributes.CustomerID)
-                //console.log(results[x].attributes.UserID)
-    
-                    if (results[x].attributes.UserID===IdUsuario){
-                        console.log("find user")
-                        for (a in Categorys){
-                           //console.log(Categorys[a].names)
-                            //console.log("a",Categorys[a].nameCategory)
-                            for(b in results[x].attributes.CustomerID){
-                                //console.log("s",results[x].attributes.CustomerID[b])
-                                if(Categorys[a].nameCategory ===results[x].attributes.CustomerID[b]){
-                                    //console.log(":D",Categorys[a].ID,":DD",Categorys[a].nameCategory, "--",Categorys[a].names)
-                                     //console.log("s",id,"---",Categorys[a].names)
-                                    if (id === Categorys[a].names){
-                                        //console.log("se guardo",id,"---",Categorys[a])
-                                         document.getElementById(Categorys[a].ID+" "+Categorys[a].nameCategory).style.color="red";
+                //console.log(results[x].attributes.UserID)    
+                if (results[x].attributes.UserID===IdUsuario){
+                        console.log("find user")   
+                        for (c in results[x].attributes.CustomerID){
+                               for (s in dato){
+                                        if (dato[s].name == results[x].attributes.CustomerID[c]){
+                                            console.log("oli","Dato",dato[s].name,"ID",id)
+                                              var cssHeart = document.getElementById(dato[s].id).style.color
+                                                    if (cssHeart == "silver"){
+                                                        document.getElementById(dato[s].id).style.color="red";
+                                                    }
+
+                                                
+
+                                        }
                                     }
-          
-                                }
-                                
-                            }
-                            
+
                         }
-                        
                 }else{
                 
                     console.log("the user no found")
-                }
-                    
-        
-
+                }                 
             }
-            //console.log(PhotoPaiz)
+
+
+      },
+      error: function(myObject, error) {
+        // Error occureds
+        console.log( error );
+      }
+    });
+    
+    /*
+    favorite.find({
+        success: function(results) {            
+            for (x in results) {
+                //console.log(results[x].attributes.CustomerID)
+                //console.log(results[x].attributes.UserID)    
+                    if (results[x].attributes.UserID===IdUsuario){
+                        console.log("find user")                        
+                }else{
+                
+                    console.log("the user no found")
+                }                 
+            }
+
 
       },
       error: function(myObject, error) {

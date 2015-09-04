@@ -27,7 +27,7 @@ angular.module('starter.controllers', ['ionic'])
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
-    // Simulate a login delay. Remove this and replace with your login
+    // Simulate a login delay. Removee this and replace with your login
     // code if using a login system
     $timeout(function() {
       $scope.closeLogin();
