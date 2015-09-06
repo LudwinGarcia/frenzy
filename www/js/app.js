@@ -124,6 +124,7 @@ function changeColorPinOfferts(id,IDPromotion){
        if (cssColorpinOfferts=="silver")
        {
            document.getElementById(id).style.color="purple";
+
            SavePromotion(IdUsuario,Promo)
 	   }
 	   else
@@ -133,6 +134,18 @@ function changeColorPinOfferts(id,IDPromotion){
        }  
 };
 
+function SalvadosSaveAndDelete(id){
+    console.log(id)
+     var pin = document.getElementById(id).style.color;
+      if (pin=="silver"){
+           document.getElementById(id).style.color="purple";
+           SavePromotion(IdUsuario,id)
+	   }
+	   else{
+           document.getElementById(id).style.color="silver";
+           DeletePromotion(IdUsuario,id)
+       }  
+}
 /************************************************************/
 /************  TAMAYO FUNCTION CHANCE COLOR PIN OFFERTS WITHOUT IMAGE**********/
 function changeColorPinOffertsWithoutImage(id,IDPromotion){
@@ -220,7 +233,7 @@ function changeColorPinYourFavorites(parametro){
 };
 /******************************************************/
 var myApp = angular.module('reallyCoolApp', ['ionic']);
-myApp.config(function($ionicConfigProvider) {
+    myApp.config(function($ionicConfigProvider) {
   // note that you can also chain configs
   $ionicConfigProvider.navBar.alignTitle('center');
 });

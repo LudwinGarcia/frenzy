@@ -377,7 +377,9 @@ var promotio = AllPromotion;
     all: function(salvadosId) {
         promotio = AllPromotion;
         console.log("in promotion",promotio);
+        
         return promotio;
+        
     },
     get: function() {
 
@@ -751,6 +753,36 @@ function viewPromotion(){
         }
     });
     
+    
+}
+
+function Colorpin(){
+    var promotionSavedDataColor = Parse.Object.extend("PromotionSaved");
+    var pinColor = new Parse.Query(promotionSavedDataColor);
+    
+    pinColor.equalTo("UserID", IdUsuario);
+    
+    pinColor.find({
+        success: function(results) {
+            for (var i = 0; i < results[0].attributes.PromotionID.length; i++){
+                //console.log(results[0].attributes.PromotionID)
+                for (z in results[0].attributes.PromotionID){
+                    console.log(results[0].attributes.PromotionID[z])
+                    var ColorPins = document.getElementById(results[0].attributes.PromotionID[z]).style;
+                    
+                                document.getElementById(results[0].attributes.PromotionID[z]).style.color="purple";
+                                               
+                    
+                };
+            };
+        },
+        error: function(error) {
+            // Error occureds
+            console.log(error);
+        }
+    });
+
+
 }
 
 function llamar(cell){

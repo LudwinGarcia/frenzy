@@ -167,7 +167,7 @@ angular.module('starter.controllers', ['ionic'])
       $timeout(function() {
       $scope.chats = AllPromotion.all($stateParams.salvadosId);
     }, 2000);
-    
+     
     //$scope.chats = AllFavorite.get($stateParams.superId);
     //$scope.chats = AllPromotion.all($stateParams.salvadosId);
     console.log("------------------------------------ en controler")

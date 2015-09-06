@@ -14,7 +14,7 @@
         </h1>
     </ion-header-bar>
     <!--**********  SALVED PAGE  **********-->
-    <ion-content>
+    <ion-content >
        <!--**********  MAIN BOXES  **********-->  
         <div class="row savedPageBoxStyle" ng-repeat="promotion in chats">
             <!--**********  IMAGE ESTABLISHMENT  **********-->  
@@ -37,7 +37,7 @@
             </div>
             <!--**********  PIN ICON  **********-->  
             <div class="col col-10 home">
-                <p class="savedPageIcon" id="{{promotion.PromotionId}}" onclick="changeColorPinSaved()" style="color:silver">
+                <p class="savedPageIcon" id="{{promotion.PromotionId}}" onclick="SalvadosSaveAndDelete(id)" style="color:purple">
                     W
                 </p>
             </div>
