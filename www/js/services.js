@@ -424,33 +424,20 @@ console.log("called Barra");
 /************************** final tamayo  **************************************************/
 
 /********************************************************/
-//i can call data the parse
-var query = new Parse.Query('AppCategory');
-//query limit hace la llamada de mas elementos
-query = query.limit(100);
-query.find({
-  success: function(results) {
-    // cycle through the results
-      
-    for ( x in results) {
-        
-          List_name.push(results[x].attributes.CategoryName)
 
-         name  = results[x].attributes.CategoryName
-
-    }
-  },
-  error: function(myObject, error) {
-    // Error occured
-    console.log( error );
-  }
-});
 
 /***************call parse promotion*********************************/
 var promotion = new Parse.Query('Promotion');
 var customer = new Parse.Query('Customer');
 var favorite = new Parse.Query('Favorite');
 var PromoSave = new Parse.Query('PromotionSaved')
+
+
+
+//i can call data the parse
+var query = new Parse.Query('AppCategory');
+//query limit hace la llamada de mas elementos
+
 
 //query limit hace la llamada de mas elementos
 //////////////////////////////////////////////////////////////////////////promotion
@@ -515,8 +502,64 @@ promotion.find({
     });
 
 
-/* ------------------------------------------------------*/
+/* ----------************************************************************************************************-----*/
+var CategoryListName = [];
+var CategoryListNameConteo = [];
+query = query.limit(100);
+query.find({
+  success: function(results) {
+    // cycle through the results
+    var PromotionS = Parse.Object.extend("Promotion");
+    var q = new Parse.Query(PromotionS);
+    
 
+    for ( x in results) {
+        
+          List_name.push(results[x].attributes.CategoryName)
+    
+            q.equalTo("CategoryApp", results[x].attributes.CategoryName);
+     
+            var pro = q.find({
+                success: function(results) {
+                    for (a in results){
+                        console.log(results[a].attributes.CategoryApp,"resultados")
+                        CategoryListNameConteo.push({cont:results[a].attributes.CategoryApp})
+                    }
+                    // console.log(CategoryListNameConteo, "Category cont    ")
+                },
+                error: function(error) {
+                    // Error occureds
+                    console.log(error);
+                }
+            });
+
+
+          CategoryListName.push({name: results[x].attributes.CategoryName,cont_promo:0})
+
+         name  = results[x].attributes.CategoryName
+      
+
+    }
+            pro.then(function(){
+                for (w in CategoryListName){
+                    for(s in CategoryListNameConteo){
+                        if(CategoryListName[w].name == CategoryListNameConteo[s].cont){
+                            console.log("lo encontro",CategoryListName[w].name)
+                            CategoryListName[w].cont_promo = 1
+                        }
+                    }
+                }
+            });
+    
+          
+      console.log(CategoryListName, "Category names")
+     // console.log(CategoryListNameConteo, "Category cont  zxzxc  ")
+  },
+  error: function(myObject, error) {
+    // Error occured
+    console.log( error );
+  }
+});
 /* Call GetPromotions function in Parse Cloud Code */
 Parse.Cloud.run('GetPromotions', {}, {
     success: function(result) {
@@ -702,7 +745,7 @@ function Heart(id){
 
 function viewFavorite(){
      AllFavorite = [];
-  favorite.each(function(results) {z
+  favorite.each(function(results) {
            
                 for(b in results.attributes.CustomerID){
                     if(results.attributes.UserID===IdUsuario){
@@ -756,34 +799,6 @@ function viewPromotion(){
     
 }
 
-function Colorpin(){
-    var promotionSavedDataColor = Parse.Object.extend("PromotionSaved");
-    var pinColor = new Parse.Query(promotionSavedDataColor);
-    
-    pinColor.equalTo("UserID", IdUsuario);
-    
-    pinColor.find({
-        success: function(results) {
-            for (var i = 0; i < results[0].attributes.PromotionID.length; i++){
-                //console.log(results[0].attributes.PromotionID)
-                for (z in results[0].attributes.PromotionID){
-                    console.log(results[0].attributes.PromotionID[z])
-                    var ColorPins = document.getElementById(results[0].attributes.PromotionID[z]).style;
-                    
-                                document.getElementById(results[0].attributes.PromotionID[z]).style.color="purple";
-                                               
-                    
-                };
-            };
-        },
-        error: function(error) {
-            // Error occureds
-            console.log(error);
-        }
-    });
-
-
-}
 
 function llamar(cell){
     a = cell.toString();
