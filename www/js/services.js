@@ -114,7 +114,8 @@ for (a in promociones) {
 }
     console.log(IdUsuario)
  // Some fake testing data
-  var categorys = [{
+  var categorys = CategoryListName
+      /*[{
     id: 0,
     name: List_name[0],
     cont_promo: C,
@@ -123,8 +124,7 @@ for (a in promociones) {
     direc: List_name[0],
     Facebook: IdUsuario,
     face: "si"
-
-  }, {
+}, {
     id: 1,
     name:  List_name[1],
     cont_promo: 'Hey, it\'s me....',
@@ -164,7 +164,7 @@ for (a in promociones) {
       color : "icon_otro",
       direc: List_name[4]
   }];
-
+*/
   return {
     all: function() {
       return categorys;
@@ -511,13 +511,9 @@ query.find({
     // cycle through the results
     var PromotionS = Parse.Object.extend("Promotion");
     var q = new Parse.Query(PromotionS);
-    
-
     for ( x in results) {
-        
-          List_name.push(results[x].attributes.CategoryName)
-    
-            q.equalTo("CategoryApp", results[x].attributes.CategoryName);
+        List_name.push(results[x].attributes.CategoryName)
+        q.equalTo("CategoryApp", results[x].attributes.CategoryName);
      
             var pro = q.find({
                 success: function(results) {
@@ -532,27 +528,24 @@ query.find({
                     console.log(error);
                 }
             });
-
-
-          CategoryListName.push({name: results[x].attributes.CategoryName,cont_promo:0})
-
+        CategoryListName.push({name: results[x].attributes.CategoryName,direc:results[x].attributes.CategoryName,cont_promo:0,icon: results[x].attributes.IconCategory,
+    color : results[x].attributes.ColorCategory})
          name  = results[x].attributes.CategoryName
-      
-
     }
-            pro.then(function(){
-                for (w in CategoryListName){
-                    for(s in CategoryListNameConteo){
-                        if(CategoryListName[w].name == CategoryListNameConteo[s].cont){
-                            console.log("lo encontro",CategoryListName[w].name)
-                            CategoryListName[w].cont_promo = 1
-                        }
+        pro.then(function(){
+            for (w in CategoryListName){
+                for(s in CategoryListNameConteo){
+                    if(CategoryListName[w].name == CategoryListNameConteo[s].cont){
+                        console.log("lo encontro",CategoryListName[w].name)
+                        CategoryListName[w].cont_promo = CategoryListName[w].cont_promo + 1
+                        console.log(    s, "Category names")
                     }
                 }
-            });
+            }
+        });
     
           
-      console.log(CategoryListName, "Category names")
+     
      // console.log(CategoryListNameConteo, "Category cont  zxzxc  ")
   },
   error: function(myObject, error) {
