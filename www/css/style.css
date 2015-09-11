@@ -1,0 +1,951 @@
+/**************************************************************/
+/********************  MEDIA QUERIES  *************************/
+@media only screen 
+and (min-device-width : 200px) and (max-device-width : 250px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: red;
+                        border-width: 3px;
+    }
+}
+/**********************/
+@media only screen 
+and (min-device-width : 251px) and (max-device-width : 300px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: blue;
+                        border-width: 3px;
+    }
+}
+/**********************/
+@media only screen 
+and (min-device-width : 301px) and (max-device-width : 350px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: orange;
+                        border-width: 3px;
+    }
+}
+/**********************/
+@media only screen 
+and (min-device-width : 351px) and (max-device-width : 400px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: skyblue;
+                        border-width: 3px;
+    }
+     .mainFrenzyTitle{
+        color:white;
+        margin-top:10px;
+    }
+}
+/**********************/
+@media only screen 
+and (min-device-width : 401px) and (max-device-width : 450px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: purple;
+                        border-width: 3px;
+    }
+}
+/**********************/
+@media only screen 
+and (min-device-width : 451px) and (max-device-width : 500px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: green;
+                        border-width: 3px;
+    }
+    .mainFrenzyTitle{
+        font-size:65px;
+        margin-top:5px;
+    }
+    
+ .backButtomStyle{
+    margin-top:10px;
+    font-size:25px;
+    margin-left:10px;
+    color:green;
+}
+}
+/**********************/
+@media only screen 
+and (min-device-width : 501px) and (max-device-width : 550px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: black;
+                        border-width: 3px;
+    }
+	.boxResponsiveFavorites {
+  height: calc(51vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    background-color:white;
+}
+}
+/**********************/
+@media only screen 
+and (min-device-width : 551px) and (max-device-width : 1000px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: grey;
+                        border-width: 3px;
+    }
+}
+/**********************/
+@media only screen 
+and (min-device-width : 1001px) and (max-device-width : 2000px) {
+    .bordeMediaQueri{   border-style: solid;
+                        border-color: pink;
+                        border-width: 3px;
+    }
+}
+
+/****************************************************************************/ 
+/**************************  TIPOGRAFY **************************************/
+@font-face{
+font-family:opensans;
+src: url(OpenSans-Regular.ttf);
+}
+/* */
+@font-face{
+font-family:letra;
+src: url(Bariol_Bold.otf);
+}
+/* */
+.open_sans{
+font-family:letra;
+}
+/* */
+@font-face{
+font-family:Iconos;
+src: url(BariolFrenzyIcons3.ttf);
+/* */
+}
+.home{
+font-family: Iconos;
+}
+/****************************************************************************/
+/*************************  TEXT CSS OVER FLOW  *****************************/
+.overFlowText{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+/*over flow with two lines */
+.ellipsify{
+    line-height:18px;
+    height: 32px;       /* 3x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    background:white;
+}
+.ellipsifyOffertsTwoLines{
+    line-height:18px;
+    height: 33px;       /* 2x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    background:white;
+}
+.ellipsifyThreeLines{
+    line-height:18px;
+    height: 57px;       /* 3x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    background:white;
+}
+/* Used to push down .dots. Can't use absolute positioning, since that
+   would stop the floating. Can't use relative positioning, since that
+   would cause floating in the wrong (namely: original) place. Can't 
+   change height of #dots, since it would have the full width, and
+   thus cause early wrapping on all lines. */
+.pre-dots{
+    float: right;
+    height: 20px;  /* 2x line height (one less than visible lines) */
+}
+.pre-dots-threeLines{
+    float: right;
+    height: 20px;  /* 2x line height (one less than visible lines) */
+}
+.pre-dots-threeLines-offerts{
+    float: right;
+    height: 28px;  /* 2x line height (one less than visible lines) */
+}
+.dots{
+    float: right; /* to make the text wrap around the dots */
+    clear: right;
+    color:#BDBDBD;
+    margin-right: 20px;/* to push us below (not next to) .pre-dots */
+}
+.dots-threeLines{
+    float: right; /* to make the text wrap around the dots */
+    clear: right;
+    color:#BDBDBD;
+    margin-right: 5px;/* to push us below (not next to) .pre-dots */
+}
+/* hides the dots if the text has *exactly* 3 lines */
+.hidedots1{
+    background: white;
+    width: 150px;
+    height: 18px;       /* line height */
+    position: absolute; /* otherwise, because of the width, it'll be wrapped */
+}
+/* hides the dots if the text has *less than* 3 lines */
+.hidedots2{
+    background: white; 
+    width: 150px;
+    height: 54px;       /* 3x line height, to ensure hiding even if empty */
+    position: absolute; /* ensures we're above the dots */
+}
+/****************************************************************************/
+/************************  RESPONSIVE DIVS  *********************************/
+[class*='relacion'] {
+}
+.relacion4-3 {height: calc(28vh *  1.33); }
+/****************************************************************************/
+/***************  CLASS TO CENTERED VERTICAL AND HORIZONTAL  ****************/
+.center{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+/****************************************************************************/
+/****************************  GENERALY CSS STYLE  **************************/
+/***** MAIN BAR COLOR STYLE *****/
+.bar.bar-positive{
+    border-color: #00BAB9  ;
+    background-color: #00BAB9  ;
+    border-style:none;
+    box-shadow: 0 0 5px #888888  ;
+    background-image: linear-gradient(0deg, #00BAB9  , #00BAB9   50%, transparent 50%);
+    color: #fff; 
+}
+.title{
+    color: white;
+    margin-top:3px;
+	font-weight: bolder;
+}
+  .bar.bar-positive.bar-footer{
+    background-image: linear-gradient(180deg, #00BAB9  , #00BAB9   50%, transparent 50%); 
+}
+/*****  BACK BUTTON STYLE  *****/
+.backButtonStyle{
+    margin-top:25px;
+    background-color: red;
+    height: 30px;
+   
+}
+/****************************************************************************/
+/**************************  INTRODUCTION PAGE FRENZY  **********************/
+.pageFrenzyColor{
+    background-color:#00BAB9;
+}
+.pageFrenzyLogoImage{
+    text-align: center;
+}
+.pageFrenzySubtitle{
+    border-style:none;
+}
+.pageFrenzyTextLegend{
+    color:white;
+    font-size:10px;
+}
+/****************************************************************************/
+/************************  PAGE LOGIN FACEBOOK  *****************************/
+.pageLoginFacebookColor{
+    background-color:#3F51B5;
+}
+.pageLoginFacebookButtonStyle{
+    height:10px;
+    width:200px;
+    box-shadow: 0.1px 0.1px 0.1px 0.3px #848484;
+}
+.pageLoginFacebookImage{
+    height:50px;
+    width:120px;
+    margin-top:-3px;
+}
+/****************************************************************************/
+/**************************  PAGE START DESING  *****************************/
+.mainFrenzyTitle{
+    font-size:65px;
+}
+.iconoMenu{ 
+    color:white;
+    text-align: center;
+    margin-top: 11px;
+    font-size: 35px;
+    padding-top: 19px;
+}
+.pageStartColWithNameCuponsPromotions{
+    margin-left:45px;
+}
+.pageStartCategoriesName{
+    margin-top:-15px;
+}
+.pageStartCuponsPromotions{
+    margin-top:-1px;
+}
+.pageStartCuponsPromotionsTitle{
+    font-size:13px;
+}
+.pageStartSeparationLine{
+    margin-top:5px;
+    height:0.1px;
+    color:#F1F2F2;
+    border-style:solid;
+}
+.icon_supermercado{
+    background-color:#00BAB9 ; 
+}
+.icon_restaurante{
+    background-color:#FF5252; 
+}
+.icon_moda{
+    background-color:#FFD922; 
+}
+.icon_entretenimiento{
+    background-color:#9C28B0;
+}
+.icon_electronico{
+    background-color:#3F51B5; 
+}
+.icon_otro{
+    background-color:#00DDC1; 
+}
+.imagen{
+    height: 175px;
+    width: 175px;
+}
+.pageStartIconsStyleGeneraly{
+    height: 50px;
+    width: 50px;
+    margin-top: -15px;
+    border-radius: 23px;
+}
+.icon_supermercado{
+    background-color:#00BAB9  ;
+}
+.icon_restaurante{
+    background-color:#FF5252 ;
+}
+.icon_moda{
+    background-color:#FFD922 ;
+}
+.icon_entretenimiento{
+    background-color:#9C28B0 ;
+}
+.icon_electronico{
+    background-color:#3F51B5 ;
+}
+.icon_otro{
+    background-color:#00DDC1 ;
+}
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 12px 10px;
+    border-color: transparent transparent #9C28B0 transparent;
+}
+.arrow-up-left{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 0 12px;
+    border-color: transparent transparent transparent #9c28b0;
+    margin-left: -5px;
+}
+.arrow-dow-left{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 12px 0 0;
+    border-color: #9c28b0 transparent transparent transparent;
+    margin-left: -5px;
+}
+.arrow-dow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 10px 0 10px;
+    border-color: #9C28B0 transparent transparent transparent;
+}
+.pageStartBoxPurple{
+    background-color:#9C28B0;
+    height:200px;
+    width:100%;
+    margin-top: -27px;
+    margin-bottom: -5px;
+}
+.pageStartBoxPurpleIcon{
+    padding-top: 60px;
+    font-size: 50px;
+    text-align: center;
+    color:#00DDC1;
+}
+.pageStartBoxPurpleTitle{
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;    
+}
+/****************************************************************************/
+/*****************************  FAVORITES PAGE  *****************************/
+.imagePageFavoritesStyle{
+    width:100%;
+}
+[class*='relacion'] {
+}
+.relacionFavoritesImage    {
+  height: calc(16vh *  3.1);
+}
+[class*='relacion'] {
+}
+.relacionFavorites    {
+    height: calc(7vh *  3.1);
+}
+.pageFavoritesTitleFrenzy{
+    font-size:65px;
+}
+.pageFavoritesBodyColor{
+    background-color:#F1F2F2;
+}
+.pageFavoritesOurFavorites{
+    color:white;
+    text-decoration:none;
+    text-align: center;
+}
+.pageFavoritesOurFavoritesTitle{
+    margin-top:-2px;
+    font-size:15px;
+}
+.pageFavoritesLineDecoration{
+    margin-top:-5px;
+    border-radius:3px;
+    border-style:none;    
+}
+.pageFavoritesYourFavorites{
+    color:white;
+    text-decoration:none;
+    text-align: center;
+}
+.pageFavoritesYourFavoritesTitle{
+    margin-top:23px;
+    color:#D8D8D8;
+    font-size:13px;
+}
+.pageFavoritesLineDecorationYourFavorites{
+    margin-top:-5px;
+    color:#D8D8D8;
+    background-color:#D8D8D8;
+    border-style:none;
+}
+.boxResponsiveFavorites {
+    height: calc(55vh *  1.33); /*height: calc(52vh *  1.33);*/
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    background-color:white;
+}
+.pageFavoritesBoxPriceLabel{
+    position:absolute;
+}
+.pageFavoritesEstablishmentLogo{
+    margin-top:-25px;
+}
+.pageFavoritesHrLineBox{
+    border:none;
+    background-color:black;
+    height:1px;	
+}
+.pageFavoritesActualPrice{
+    font-size:15px;
+}
+.pageFavoritesSavingTitle{
+    font-size:17px;
+    color:#E6E2E2;
+    margin-left:5px;
+}
+.pageFavoritesSavingPrice{
+    font-size:16px;
+    color:white;
+    font-weight:bold;
+}
+[class*='relacion'] {
+}
+.relacionImagePageFavorites{
+    height: calc(38vh *  1.33);
+}
+.logoEstablishment  {
+    height: 50px;
+    width: 50px;
+    margin-top:-65px;
+    margin-left: 10px;
+}
+.pageFavoritesCountOfferts{
+    font-size:14px;
+    color:black;
+    font-weight:bolder;
+    color:white;
+    margin-top:-5px;
+}
+.pageFavoritesCountOffertsTitle{
+    font-size:13px;
+    color:#BDBDBD; 
+}
+.pageFavoritesSecondRow{
+    background-color:#00BAB9;
+    color:white;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top:-25px;
+}
+.pageFavoritesDescriptionTitle{
+    font-size:20px;
+    margin-left:10px;
+	padding-top:3%;
+}
+.pageFavoritesDescription{
+    font-size:13px;
+    margin-left:10px;
+    color:#BDBDBD;
+}
+.pageFavoritesBeforePrice{
+    font-size:13px;
+    margin-left:5px;
+    color:#A7A9AC;
+}
+.pageFavoritesIcons{
+    color:silver;
+    margin-left:10px;
+    margin-top:10px;
+}
+.pageFavoritesDivIcons{
+    background-color:white;
+}
+/****************************************************************************/
+/****************************  YOUR FAVORITES STYLE  ************************/
+.row-border {
+    border-width:thin;
+    border-color: #E6E7E8;
+    border-bottom-style: solid;
+}
+.pageOurFavoritesOurFavoritesTitle{
+    color:#D8D8D8;
+}
+.pageYourFavoritesLineDecoration{
+    background-color:#D8D8D8;
+}
+.pageYourFavoritesGreyLine{
+    background-color:#E6E7E8;
+    height:35px;
+}
+.pageYourFavoritesIconHeart{
+  
+    margin-left:10px;
+    font-size:27px;
+    color:#FF5252;
+}
+.pageYourFavoritesStablishmentName{
+    margin-left:15px;
+    font-size:15px;
+	color:black;
+}
+.pageYourFavoritesIconArrow{
+    margin-left:20px;
+	font-size:25px;
+	padding-top:25px;
+	color:#A7A9AC;
+}
+.pageYourFavoritesWhiteBox{
+    height:100px;
+}
+
+.pageYourFavoritesWhiteBoxTop{
+   margin-top:15px;
+}
+.pageYourFavoritesOffert{
+    font-size:13px;
+    font-weight: bold;
+}
+.pageYourFavoritesPriceOffert{
+    font-size:11px;
+    margin-top:-8px;
+}
+.pageYourFavoritesOffertDescription{  
+    font-size:11px;
+    color:#A4A4A4;
+    margin-top:-8px; 
+}
+.pageYourFavoritesIconPin{
+    color:silver;
+    margin-top:45px;
+    margin-left:25px;
+    font-size:30px;
+}
+/****************************************************************************/
+/*************************  PAGE SALVADOS DESING  ***************************/
+.savedPageBoxStyle  {
+    border-style:solid;
+    border-color:#E6E6E6;
+    border-bottom-width: 1px;
+    height: 100px;
+}
+.savedPageImage  {
+    height: 50px;
+    width: 55px;
+    margin-left:5px;
+    margin-top:13px;
+    border-style: solid;
+    border-color:#F1F2F2;
+    border-width: 1px;
+    border-radius:4px;
+}
+.savedPageIcon  {
+    font-size:30px;
+    margin-top:50px;
+    margin-left:-35px;
+}
+.savedPageTitleDescription  {
+    font-size:17px;
+    font-weight: bold;
+    width: 95%;
+    margin-top:12px;
+}
+.savedPageOffert    {
+    font-size:14px;
+    margin-top:-10px;
+}
+.savedPageDescription   {
+    font-size:12px;
+    color:#848484;
+    margin-top:-10px;
+    width: 85%;
+}
+.savedPageNoItemBlankSpace{
+    color:white;
+}
+.savedPageNoItemsIcon{
+    font-size: 70px;
+    margin-top:125px;;
+    text-align: center;
+    color:#9C28B0;
+}
+.savedPageNoItemsTitle{
+    font-size:25px;
+    margin-top:7%;
+    text-align: center;
+}
+.savedPageNoItemsDescription{
+    color:silver;
+    text-align: center;
+    margin-bottom: -3px;
+}
+/***************57175339 julio***************************************************/
+/*************************  DESIGN ESTABLISHMENTS  **************************/
+.backgroundCategories    {
+    background-color: #F1F2F2;
+}
+.categoriesBoxes    {
+    background-size: auto auto;
+    color: #212121 ;
+    width: 100%;
+    height: 185px;
+    box-shadow: 3px 3px 2px #BDBDBD ; 
+}
+.categoriesOffertsPrice{
+    color:white;
+    font-size:12px;
+	margin-left: -7px;
+}
+.categoriesOffertsTitle{
+    font-size:13px;
+    color:#78D9D8;
+}
+.categoriesAveragePrice{
+    color:white;
+    font-size:12px;
+    font-weight: bolder;
+	margin-left: -7px;
+}
+.categoriesAverageTitle{
+    font-size:12px;
+    color:#78D9D8;
+}
+.categoriesHeartIcon{
+    margin-top:20px;
+}
+.categoriesBoxesSupermarket {
+    background: linear-gradient(white 70%, #00BAB9 25%);
+    background: -webkit-linear-gradient(white 65%, #00BAB9 35%);
+    background: -o-linear-gradient(white 65%, #00BAB9 35%);
+}
+
+.categoriesBoxesRestaurant {
+    background: linear-gradient(white 70%, #FF5252 25%);
+    background: -webkit-linear-gradient(white 65%, #FF5252 35%);
+    background: -o-linear-gradient(white 65%, #FF5252 35%);
+}
+.categoriesBoxesFashion {
+    background: linear-gradient(white 70%, #FFD922 25%);
+    background: -webkit-linear-gradient(white 65%, #FFD922 35%);
+    background: -o-linear-gradient(white 65%, #FFD922 35%);
+}
+.categoriesBoxesEntertaiment {
+    background: linear-gradient(white 70%, #9C28B0 25%);
+    background: -webkit-linear-gradient(white 65%, #9C28B0 35%);
+    background: -o-linear-gradient(white 65%, #9C28B0 35%);
+}
+.categoriesBoxesElectronic {
+    background: linear-gradient(white 70%, #3F51B5 25%);
+    background: -webkit-linear-gradient(white 65%, #3F51B5 35%);
+    background: -o-linear-gradient(white 65%, #3F51B5 35%);
+}
+.imageCategoryBoxes   {
+    width: auto;
+    height: 110px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+/**********************************************************************/
+/***********************  PAGE OFFERTS STYLE  *************************/
+[class*='relacion'] {
+}
+.pageOffertsOffertsTitle{
+    color:white;
+    text-decoration:none;
+    text-align: center;
+}
+ .backButtomStyle{
+  	margin-left:-5px;
+	padding-top: 5px;
+	padding-left: 15px;
+    font-size:28px;
+    color:white;
+	width: 50px;
+}
+.popoverIcon    {
+    color:white;
+    background-color:#3F51B5;
+    border-radius: 22px;
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+    border-style:none;
+    box-shadow: 0px 3px 10px 1px grey;    
+}
+.pageOffertsPriceIcons{
+    margin-top:10px;
+}
+.boxResponsiveWithImage {
+    height: calc(43vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    margin-bottom:20px;
+}
+.imageOffertsAndCupons   {
+    width: 10px;
+}
+
+[class*='relacion'] {
+}
+.relacion4-3 {height: calc(20vh *  1.33); }
+.pageOffertsLinkOfferts {
+    color:white;
+    text-decoration:none;
+}
+[class*='relacion'] {
+}
+.boxResponsiveWithoutImage {
+    height: calc(17vh *  1.33);
+    width: 95%;
+    margin-left:10px;
+    margin-top:15px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    
+}
+.pageOffertsWithoutImageLabelTitle{
+    position:absolute;
+    margin-top:5px;
+}
+.imageOffertsAndCupons   {
+    width: 100%;
+}
+[class*='relacion'] {
+}
+.relacion4-3    {
+    height: calc(28vh *  1.33);
+}
+.labelOfferts   {
+    height: 75px;
+    width: 100px;
+    position:absolute;
+}
+.pageOffertsTitleOferts {
+    margin-left:22px;
+    margin-top:23px;
+}
+.pageOffertsHrLine  {
+    margin-top:-7px;
+    border-radius:3px;
+    border-color:#E6E6E6;
+}
+.pageOffertsPopoverSimbol   {
+    font-size:35px;
+    padding-top:4px;
+}
+.pageOffertsNameLabel   {
+    font-size:17px;
+    color:#D5D7DD;
+    margin-left:5px;
+}
+.pageOffertsPriceLabel  {
+    font-size:20px;
+    color:white;
+    font-weight:bold;
+    margin-left: -5px;
+    margin-top:-10px;
+}
+.pageOffertsTitleWithImage  {
+    font-size:20px;
+    margin-top:10px;
+    margin-left:10px;
+}
+.pageOffertsDescription {
+    font-size:14px;
+    margin-left:10px;
+    margin-top:-5px;
+    color:#BDBDBD;
+}
+.pageOffertsHrBox   {
+    border:none;
+    background-color:#F2F2F2;
+    height:1px;
+    margin-top:-5px;
+}
+.pageOffertsActualPrice {
+    font-size:23px;
+    margin-left:5px;
+}
+.pageOffertsBeforePrice {
+    font-size:12px;
+    color:#A7A9AC;
+}
+.pageOffertsShareIcon {
+    color:silver;
+    margin-left:5px;
+}
+.pageOffertsLikeIcon  {
+    margin-left:10px;
+}
+.pageOffertsTitleLabelWithoutImage   {
+    font-size:16px;
+    color:#D5D7DD;
+    margin-left: 3px;
+}
+.pageOffertsPriceLabelWithoutImage  {
+    font-size:16px;
+    color:white;
+    font-weight:bold;
+    margin-top:-10px;
+}
+.pageOffertsTitleDescriptionWithoutImage {
+    font-size:20px;
+    margin-top:5px;
+    margin-left:10px;
+}
+.pageOffertsDescriptionWithoutImage {
+    font-size:13px;
+    margin-left:10px;
+  
+    color:#BDBDBD;
+}
+.pageOffertsActualPriceWithoutImage {
+    font-size:15px;
+    margin-left:5px;
+}
+.pageOffertsBeforePriceWithoutImage {
+    font-size:12px;
+    margin-left:10px;
+    color:#A7A9AC ;
+}
+.pageOffertsIconWithoutImage    {
+    color:#A7A9AC;
+}
+.pageOffertsPopoverIconsDescrpition {
+    font-size:30px;
+}
+.secondPopoverTitle{
+    font-size:17px;
+    margin-left:55px;
+    font-weight: 900; 
+}
+.secondPopoverHr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.secondPopoverFacebookIcon{
+    height:30px;
+    width:30px;
+    margin-top:20px;
+    margin-left:15px;
+}
+.secondPopoverFacebookTitle{
+    margin-left:10px;
+    margin-top:-30px;
+    color:#A7A9AC; 
+}
+.secondPopoverMailIcon{
+    height:22px;
+    width:27px;
+    background-color:#FF5252;
+    margin-left:17px;
+    border-radius:3px;
+    font-size:19px;
+    color:white;
+    padding-top:3px;
+    padding-left:5px;
+    border-radius:3px;
+}
+.secondPopoverMailTitle{
+    margin-left:60px;
+    margin-top:-30px;
+    color:#A7A9AC ;
+}
+.pageOffertsBlanckDiv {
+	height: 25px;
+}

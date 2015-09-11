@@ -1,0 +1,250 @@
+<!--**********  STYLE FAVORITES PAGE  **********-->
+<style>
+.slider{
+    height: 92%;
+}
+	.icon ion-record{
+	color:red;
+	}
+.bar.bar-positive    {
+    box-shadow: 0 0 0px white;
+}
+hr{
+    margin-bottom:-10px;
+    font-weight:lighter;
+    height: 3px;
+    background-color: white;
+}
+</style>
+<!--**********  FAVORITES PAGE  **********-->
+<ion-view>
+    <!--**********  HEADER  ***********-->
+     <ion-header-bar align-title="center" class="bar-positive" style=" position:relative;">
+        
+         <h1 class="title home">
+            <!--**********  TITLE FRENZY PAGE START  **********-->
+            <p class="mainFrenzyTitle">
+                Z
+            </p>
+        </h1>
+               
+    </ion-header-bar>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row pageFavoritesSecondRow" style="height:35px;margin-top:0px;position:absolute; z-index:1;">
+            <!--**********  OFFERTS  **********-->
+            <div class="col col-50">
+                <a class="pageFavoritesOurFavorites" nav-transition="none" href="#/app/favoritos">
+                    <!--*****  TITLE AND FUNCITION OUR FAVORITES  *****-->
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" style="color:white;">
+                        Nuestros Favoritos
+                    </p>
+                    <!--**********  OUR FAVORITES LINE DECORATION  **********-->
+                    <hr  class="pageFavoritesLineDecoration" id="lineOffertsFunction" style="background-color:white;">
+                </a>
+            </div>
+            
+            
+             <div class="col col-50">
+                <a class="pageFavoritesYourFavorites" nav-transition="none" href="#/app/tusFavoritos"  >
+                    <!--**********  TITLE AND FUNCTION YOUR FAVORITES  **********-->
+                    <p class="pageFavoritesOurFavoritesTitle" id="cuponsFunction" style="color:#D8D8D8">
+                        Tus Favoritos
+                    </p>
+                    <!--**********  YOUR FAVORITES LINE DECORATION  **********-->
+                    <hr class="pageFavoritesLineDecoration pageFavoritesLineDecorationYourFavorites" id="lineCuponsFunction" style="background-color:#D8D8D8;">
+                </a>
+            </div>            
+        </div>                                  
+        
+        
+    <!--**********  BODY FAVORITES PAGE  ***********-->
+    <ion-content class="pageFavoritesBodyColor" ng-controller="AppCtrl" ng-app="ionicApp" animation="slide-left-right-ios7" scroll="false">       
+        <!--**********  SECOND TAB HEADER  **********-->
+		<div style="height:35px;"></div>
+        <!--**********  MAIN BODY  **********-->
+        <!--***********  SLIDER  ************-->
+  <!--************************************************************************************************************************************************************************-->
+       <style>
+			.nuevoDivContenedor{
+				margin-top:7%;
+				margin-left: 5%;
+		   		background-color:white;
+				width: 90%;
+				height: 82%;
+			 box-shadow: 3px 3px 2px #BDBDBD;
+		   		}
+		   .imagenEtiquetaMorada{
+		   		height: 75px;
+			   	width: 100px;
+			   	position:absolute;
+		   }
+		   .imagenCajaNueva{
+		   		width: 100%;
+			   	height:60%; 
+		   }
+		   .cajaTexto{
+		   		background-color: white;
+			   	border-style: solid;
+			   	border-bottom:1px solid #F1F2F2;
+		   }
+		</style>
+        <ion-slide-box>
+        <!--**********  SLIDER CONTENT  **********-->    
+            <ion-slide>
+            <!--**********  SLIDER BOXES  **********-->
+               <div class="nuevoDivContenedor">
+				    <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+                    <!--*****  PRICE LABEL OFFERTS  *****-->
+                    <div class="row pageFavoritesBoxPriceLabel">
+                        <div class="col col-25">
+                            <p class="pageFavoritesSavingTitle">
+                                Ahorra
+                            </p>
+                            <p class="pageFavoritesSavingPrice" style="margin-top:-10px;">
+                                Q.21.600
+                            </p>
+                        </div>
+                    </div>
+                    <!--*****  MAIN IMAGE FAVORITE PAGE  *****-->
+                    <img class="imagenCajaNueva" src="img/nissan.jpg" alt="nissan">
+                     <!--***** ESTABLISHMENT LOGO  *****-->
+                    <div class="pageFavoritesEstablishmentLogo" style="">
+                        <img class="logoEstablishment" src="img/logoNissan.png" alt="label">
+                        <spam class="pageFavoritesCountOfferts">
+                            +32
+                        </spam>
+                        <spam class="pageFavoritesCountOffertsTitle">
+                            ofertas
+                        </spam>
+                    </div>
+                    <!--**********  TITLE DESCRIPTION  **********-->
+                   <div style=" height:40%;">
+                       <div style="height:30%;">
+                       		<p class="pageFavoritesDescriptionTitle open_sans">
+                            Nissan March 1.6SV
+                        </p>                        
+                       </div>
+                        <!--**********  DESCRIPTION  **********-->
+                        <div class="ellipsify cajaTexto" style="height:37%; ">
+                           
+                            <div class="ellipsify">
+                            <div class="pre-dots"></div>
+                            <div class="dots">&hellip;</div>
+                            <p class="pageFavoritesDescription open_sans">
+                                15% de descuento en pollos piolindo de 2 lb o menos, unicamente en dia jueves hasta junio 2015tiene cuatro ruedas y es color gris con cuatro puertas y retrovisores y radio mp6
+                            </p>
+                            <span class="hidedots1"></span>
+                            <div class="hidedots2"></div>
+                        </div>   
+                           
+                        </div>
+                         
+                    <!--*****  DIV TO PRICE AND ICONS  *****-->
+                    <div class="row pageFavoritesDivIcons" style="height:33%;" >		
+                      
+                        <!--*****  ACTUAL PRICE  *****-->
+                        <div class="col col-33">
+                            <spam class="pageFavoritesActualPrice">
+                                Q.93.900
+                            </spam>
+                        </div>
+                        <!--*****   BEFORE PRICE  *****-->
+                        <div class="col col-33">
+                            <spam class="pageFavoritesBeforePrice">
+                                Q.115.500
+                            </spam>
+                        </div>
+                        <!--*****  ICONS  *****-->
+                        <div class="col col-33">
+                              <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
+                            O
+                        </spam> 
+                            <spam class="pageFavoritesIcons home" id="pinFavoritesWithoutImage" onclick="changeColorPinFavoritesWithoutImage()" style="color:silver"> W </spam>
+                        </div>   
+                    </div>                        
+                    </div>
+                    
+                 
+                    
+               </div>
+				
+            </ion-slide>   
+        </ion-slide-box>
+        <!--************************************************************************************************************************************************************************-->
+       <style>
+		   .popover{
+		   		align-content: center;
+			  	margin-right: 100px;
+		   }
+		   
+		</style>
+        <!--**********  SECOND POP OVER SHARE  **********-->
+        <script id="templates/popoverNew.html" type="text/ng-template">
+            <ion-popover-view style="height:150px; width:250px;">
+                <ion-content style="" >
+                    <!--***** MAIN CONTENT SECOND POPOVER *****-->
+                    <div class="secondPopoverTextAling" style="text-aling:center;">
+                        <spam class="secondPopoverTitle">Compartir Oferta</spam>
+                    </div>
+                    <hr class="secondPopoverHr">
+                    <div>
+                        <div>
+                            <img  class="secondPopoverFacebookIcon" src="img/facebookicon.png" alt="label">
+                            
+                             <a class="secondPopoverFacebookTitle" href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir); window.open('http://www.facebook.com/share.php?u=http://frenzy.com.gt/','_blank');" style="text-decoration:none;">Amigos de facebook</a>
+                        </div>
+                        <div style="margin-top:25px;" onclick="window.open('sms:?body=www.Frenzy.com', '_system');"> 
+                            <p class="home secondPopoverMailIcon">
+                                V
+                            </p>                            
+                            <a href="sms:&body=www.frenzy.com" style="text-decoration:none;">           
+                                <p class="secondPopoverMailTitle">
+                                    Enviar mensajes de texto
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-popover-view>
+        </script>
+    </ion-content>
+      <!--************************* FOOTHER  ******************************-->
+ <ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
+  <div class="row home">
+      <div class="col col-10"></div>
+      <!--************  ICONO FOOTER HOME  ******************-->
+      <div class="col col-25">
+          <a href="#/app/playlists" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>A</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER HEART  ******************-->
+      <div class="col col-25">
+          <a href="#/app/favoritos" style="color:#FF5252  ; text-decoration:none;" nav-transition="none">
+              <div>B</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER STAR  ******************-->
+      <div class="col col-25">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>W</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER TOOL  ******************-->
+      <div class="col col-25">
+          <a href="#/app/herramientas" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>D</div>
+          </a>
+      </div>
+      <!--*************************************************-->
+  </div>
+</ion-footer-bar>
+</ion-view>

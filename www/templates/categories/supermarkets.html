@@ -1,0 +1,88 @@
+<style>
+    .categoriesBoxesEnlineBlock{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+</style>
+<ion-view  view-title="Supermercado">   
+    <!--************  HEADER AND BACK BUTTON  <a href="#/app/playlists">***************-->
+        <ion-header-bar align-title="center" class="bar-positive">
+        <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
+        <h1 class="title" style="font-weight: bolder;">Supermercados</h1>
+    </ion-header-bar>
+    <!--**********  ESTABLISHMENTS  **********-->
+    <ion-content class="backgroundCategories"  nav-transition="none">             
+            <div class="col"> 
+                <!--*****  BOXES ENLINE BLOCK  *****-->
+                <div class="col col-50 categoriesBoxesEnlineBlock" ng-repeat="super in chats">
+                    <!--*****  BOXES DESIGN  *****-->
+                    <div class="categoriesBoxes categoriesBoxesSupermarket col col-100">
+                        <!--*****  IMAGE CATEGORY SUPERMARKETS  *****-->
+                        <!--*****  LINK ONLY FOR THE IMAGE  *****-->            
+                        <a href="#/app/ofertas/{{super.NameCategory}}" id = "{{super.NameCategory}}" onclick="Promotions(id)" >                 
+                            <img class="imageCategoryBoxes" ng-src="{{super.name}}" alt="image">
+                        </a>
+                        <div class="row">
+                            <!--*****  GREEN BOX FOR PROMOTIONS AND OFFERTS  *****-->   
+                            <div class="col col-80" style="margin-top:-5px;">
+                                <!--*****  OFFERTS COUNT  *****-->
+                                <spam class="categoriesOffertsPrice">
+                                    {{super.promo}}
+                                </spam>
+                                <!--***** OFFERTS NAME  *****-->
+                                <spam class="categoriesOffertsTitle">
+                                    ofertas
+                                </spam>
+                                <br>
+                                <!--*****  PROMOTIONS COUNT  *****-->
+                                <spam class="categoriesAveragePrice">
+                                    Q{{super.promedio}}
+                                </spam>
+                                <!--*****  PROMOTIONS NAME  *****-->
+                                <spam class="categoriesAverageTitle">
+                                    promedio
+                                </spam>
+                            </div>
+                            <!--*****  SECOND ROW TO HEART ICON  *****-->    
+                            <div class="col col-20 categoriesHeartIcon">
+                                <!--*****  HEART ICON  *****-->
+                                <div class="home" id="{{super.lastText}} {{super.NameCategory}}"  name = "{{super.NameCategory}}" onclick="changeColorHeart(id,id)" style="color:white">B</div>                         
+                            </div>
+                        </div>                             
+                    </div> 
+                </div>                 
+           </div>    
+    </ion-content>
+       <!--************************* FOOTHER  ******************************-->
+ <ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
+  <div class="row home">
+      <div class="col col-10"></div>
+      <!--************  ICONO FOOTER HOME  ******************-->
+      <div class="col col-25">
+          <a href="#/app/playlists" style="color:#00BAB9  ; text-decoration:none;" nav-transition="none">
+              <div>A</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER HEART  ******************-->
+      <div class="col col-25">
+          <a href="#/app/favoritos" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none" onclick="viewFavorite()">
+              <div>B</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER STAR  ******************-->
+      <div class="col col-25">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>W</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER TOOL  ******************-->
+      <div class="col col-25">
+          <a href="#/app/herramientas" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>D</div>
+          </a>
+      </div>
+      <!--*************************************************-->
+  </div>
+</ion-footer-bar>
+</ion-view>

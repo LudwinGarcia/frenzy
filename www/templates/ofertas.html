@@ -1,0 +1,286 @@
+<style>
+.bar.bar-positive    {
+    box-shadow: 0 0 0px white;
+}
+hr     {
+    margin-bottom:-10px;
+    font-weight:lighter;
+    height: 3px;
+    background-color: white;
+}
+</style>
+<!--**********  **********-->
+<ion-view>
+    <!--************  HEADER AND BACK BUTTON  ***************-->
+    <ion-header-bar align-title="center" class="bar-positive" style=" position:relative;">
+        <i class="icon ion-chevron-left backButtomStyle" onclick="goBack()"  nav-transition="none"></i>
+        <h1 class="title"  style="font-weight: bolder;">Supermercados</h1>
+    </ion-header-bar>
+    <!--*****  SECOND TAB HEADER  *****-->
+        <div class="row pageFavoritesSecondRow" style="height:35px;margin-top:0px;position:absolute; z-index:1;">
+            <!--**********  OFFERTS  **********-->
+            <div class="col col-50">
+                <a class="pageOffertsOffertsTitle"  >
+                    <!--*****  TITLE AND FUNCITION OFFERTS  *****-->
+                    <p class="pageFavoritesOurFavoritesTitle" id="offertsFunction" onclick="offerts()">
+                        Ofertas (21)
+                    </p>
+                    <!--**********  LINE DECORATION  **********-->
+                    <hr class="pageFavoritesLineDecoration" id="lineOffertsFunction">
+                </a>
+            </div>
+        </div>                                  
+<!--**********  ICON POPOVER  *********-->
+        <div ng-repeat="s in chats[1]">
+            <div class="row" style="margin-top:0px; position:absolute;  z-index:1;" id = "{{s.name}}" onclick="heartPopover(id)">
+                <div class="col col-66"></div>
+                <div class="col col-33">
+                     <button class="popoverIcon home" ng-click="popover.show($event)"  ng-controller="PopoverCtrl">
+                        <p class="pageOffertsPopoverSimbol" style="vertical-aling:middle;">
+                            N
+                        </p>
+                    </button>
+                </div>
+            </div>
+        </div>
+         
+	   
+    <!--**********  CONTENT  **********-->
+     <ion-content ng-controller="AppCtrl"  nav-transition="none">
+		 <div style="height:50px;"></div>
+                              <!--*****  SECOND TAB HEADER  *****-->
+                            
+        <!--**********  ICON POPOVER  *********-->
+       
+        <!--************  OFFERTS BODY WITH IMAGE **************-->
+        <div ng-repeat="super in chats[0] | filter: {nul : 'con'}"  >
+            <div class="boxResponsiveWithImage">
+                <!--*****  IMAGE LABEL OFFERTS  *****-->
+                <img class="labelOfferts" src="img/etiquetaOfertas.png" alt="label">
+                <!--*****  PRICE LABEL OFFERTS  *****-->
+                <div class="row" style="position:absolute;">
+                    <div class="col col-25">
+                        <p class="pageOffertsNameLabel">
+                            Ahorra 
+                        </p>
+                        <p class="pageOffertsPriceLabel">
+                            {{super.ahorro | currency: 'Q'}}
+                        </p>
+                    </div>
+                </div>            
+                <!--*****  IMAGE OFFERTS  *****--> 
+                <img class="imageOffertsAndCupons relacion4-3" ng-src="{{super.photo}}" alt="pollo">
+                <!--*****  NAME OF OFFERTS  *****-->
+                <p class="open_sans overFlowText pageOffertsTitleWithImage">
+                    {{super.name }} - {{super.presentation}}
+                </p>
+                <!--*****  OFFERTS DESCRIPTION  *****-->
+                <div class="ellipsify">
+                    <div class="pre-dots"></div>
+                    <div class="dots">&hellip;</div>
+                    <p class="pageFavoritesDescription open_sans">
+                        {{super.description}}
+                    </p>
+                    <span class="hidedots1"></span>
+                    <div class="hidedots2"></div>
+                </div>
+                <!--*****  DIVIDER LINE  *****-->
+                 <hr class="pageOffertsHrBox pageOffertsHrWithImage" style="height:7px;">
+                <!--*****  DIV TO PRICE AND ICONS  *****-->
+                <div class="row open_sans pageOffertsPriceIcons">
+                    <!--*****  ACTUAL PRICE  *****-->
+                    <div class="col col-33">
+                        <spam class="pageOffertsActualPrice">
+                            {{super.basePrice| currency: 'Q'}}
+                        </spam>
+                    </div>
+                    <!--*****   BEFORE PRICE  *****-->
+                    <div class="col col-33">
+                        <spam class="pageOffertsBeforePrice">
+                            Antes{{super.promotionalPrice | currency: 'Q'}}
+                        </spam>
+                    </div>
+                    <!--*****  ICONS  *****-->
+                    <div class="col col-33">
+                        <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
+                            O
+                        </spam>
+                        <spam class="home pageOffertsLikeIcon" id="{{super.ID}} {{super.IDpromotion}}" onclick="changeColorPinOfferts(id,id)" style="color:silver">
+                            W
+                        </spam>
+                    </div>   
+                </div>        
+            </div>
+        </div>
+        <!--************  OFFERTS BODY WITHOUT IMAGE **************-->
+        <div class = "withoutImage" ng-repeat="super in chats[0] | filter: {nul : 'sin'}">
+            <div class="boxResponsiveWithoutImage">
+            <!--*****  NAME OF OFFERTS  *****-->
+                <div class="row">
+                    <div class="col col-25">
+                        <div class="row pageOffertsWithoutImageLabelTitle">
+                            <!--*****  WITHOUT IMAGE LABEL TITLE  *****-->
+                            <div class="col col-20">
+                                <p class="pageOffertsTitleLabelWithoutImage">
+                                    Ahorra
+                                </p>
+                                <!--*****  WITHOUT IMAGE PRICE LABEL  *****-->
+                                <p class="pageOffertsPriceLabelWithoutImage">
+                                   {{super.ahorro | currency: 'Q'}}
+                                </p>
+                            </div>
+                        </div> 
+                        <!--*****  LABEL IMAGE  *****-->
+                        <img clas="offersLogo" src="img/logoOfertas.png" alt="image" style="height:75px; width:75px;">
+                    </div>
+                    <!--*****  DESCRIPTION BOX WITHOUT IMAGE  *****-->
+                    <div class="col col-75">
+                        <p class="open_sans pageOffertsTitleDescriptionWithoutImage overFlowText">
+                            {{super.name }} - {{super.presentation}}
+                        </p>
+                        <!--*****  OFFERTS DESCRIPTION  *****-->
+                        <div class="ellipsifyThreeLines">
+                            <div class="pre-dots-threeLines-offerts"></div>
+                            <div class="dots-threeLines">&hellip;</div>
+                            <p class="pageFavoritesDescription open_sans">
+                                {{super.description}}
+                            </p>
+                            <span class="hidedots1"></span>
+                            <div class="hidedots2"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--*****  DIVIDER LINE  *****-->
+                <hr class="pageOffertsHrBox">
+                <!--*****  DIV TO PRICE AND ICONS  *****-->
+                <div class="row open_sans pageOffertsPriceIcons">
+                    <!--*****  ACTUAL PRICE  *****-->
+                    <div class="col col-33">
+                        <spam class="pageOffertsActualPrice">
+                            {{super.basePrice| currency: 'Q'}}
+                        </spam>
+                    </div>
+                    <!--*****   BEFORE PRICE  *****-->
+                    <div class="col col-33">
+                        <spam class="pageOffertsBeforePrice">
+                            Antes{{super.promotionalPrice | currency: 'Q'}}
+                        </spam>
+                    </div>
+                    <!--*****  ICONS  *****-->
+                    <div class="col col-33">
+                        <spam class="home pageOffertsShareIcon" ng-click="popover.show($event)" ng-controller="PopoverNewCtrl">
+                            O
+                        </spam>
+                       <spam class="home pageOffertsLikeIcon" id="{{super.ID}} {{super.IDpromotion}}" onclick="changeColorPinOffertsWithoutImage(id,id)" style="color:silver">
+                            W
+                        </spam>
+                    </div>   
+                </div>
+            </div>
+        </div> 
+         
+				<div class="pageOffertsBlanckDiv"></div>
+    <div ng-repeat="super in chats[0]  | filter: {oferta : 'noHay'}">
+          <div class="open_sans boxbox">
+            <p class="savedPageNoItemBlankSpace">
+                f
+            </p>
+              <p class="home savedPageNoItemsIcon">f</p>
+            <p class="savedPageNoItemsTitle">
+                Uh-uH
+            </p>
+            <p class="savedPageNoItemsDescription">No tienes ningun elemento agregado a</p>
+            <p class="savedPageNoItemsDescription">esta lista. Agrega ofertas y cupones</p>
+            <p class="savedPageNoItemsDescription">para usarlos despues.</p>      
+          </div>
+      </div>
+        <!--*************  FIRST POPOVER CONTENT  ******************-->
+        <script id="templates/popover.html" type="text/ng-template" >
+            <ion-popover-view  class="firstPopoverStyle" style="height:170px; width:180px; margin-top:20px;">
+                <!--*****  FIRST POPOVER CONTENT  *****-->
+                <ion-content >
+                    <div class="list" ng-repeat="s in chats[1]">
+                        <a class="item " target="_blank" onclick="changeColorHeartFollow()" style="  text-align:right;
+    color:silver;">
+                            Seguir  
+                            <spam class="home pageOffertsPopoverIconsDescrpition" id="{{s.id}}" onclick="changeColorHeartFollow()" style="color:silver">
+                                B  
+                            </spam>
+                        </a>
+                        <a class="item" id = "{{s.cel}}" onclick="llamar(id)" target="_blank" style="text-align:right; color:silver;">
+                            Llamar
+                            <spam class="home pageOffertsPopoverIconsDescrpition">
+                                Q
+                            </spam>
+                        </a>
+                        <a class="item" id ="{{s.url}}" onclick="tiendaUrl(id)" target="_blank" style="text-align:right; color:silver;">
+                            Ir a pagina Web
+                            <spam class="home pageOffertsPopoverIconsDescrpition">
+                                R
+                            </spam>
+                        </a>
+                    </div>
+                </ion-content>
+            </ion-popover-view>
+        </script>
+        <!--**********  SECOND POP OVER SHARE  **********-->
+        <script id="templates/popoverNew.html" type="text/ng-template">
+            <ion-popover-view style="height:150px; width:250px;">
+                <ion-content>
+                    <!--***** MAIN CONTENT SECOND POPOVER *****-->
+                    <div class="secondPopoverTextAling" style="text-aling:center;">
+                        <spam class="secondPopoverTitle">Compartir Oferta</spam>
+                    </div>
+                    <hr class="secondPopoverHr">
+                    <div>
+                        <div>
+                            <img  class="secondPopoverFacebookIcon" src="img/facebookicon.png" alt="label">
+                            <a class="secondPopoverFacebookTitle" href="javascript:var dir=window.document.URL;var tit=window.document.title;var tit2=encodeURIComponent(tit);var dir2= encodeURIComponent(dir); window.open('http://www.facebook.com/share.php?u=http://frenzy.com.gt/','_blank');" style="text-decoration:none;">Amigos de facebook</a>
+                        </div>
+                      <div style="margin-top:25px;" onclick="window.open('sms:?body=www.Frenzy.com', '_system');"> 
+                            <p class="home secondPopoverMailIcon">
+                                V
+                            </p>                            
+                            <a href="sms:&body=www.frenzy.com" style="text-decoration:none;">           
+                                <p class="secondPopoverMailTitle">
+                                    Enviar mensajes de texto
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-popover-view>
+        </script>
+    </ion-content>
+        <!--************************* FOOTHER  ******************************-->
+ <ion-footer-bar align-title="left" class="bar-stable" style="background-color:#E6E7E8  ;border-style:none;">
+  <div class="row home">
+      <div class="col col-10"></div>
+      <!--************  ICONO FOOTER HOME  ******************-->
+      <div class="col col-25">
+          <a href="#/app/playlists" style="color:#00BAB9  ; text-decoration:none;" nav-transition="none">
+              <div>A</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER HEART  ******************-->
+      <div class="col col-25">
+          <a href="#/app/favoritos" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>B</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER STAR  ******************-->
+      <div class="col col-25">
+          <a href="#/app/salvados" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>W</div>
+          </a>
+      </div>
+      <!--************  ICONO FOOTER TOOL  ******************-->
+      <div class="col col-25">
+          <a href="#/app/herramientas" style="color:#A7A9AC  ; text-decoration:none;" nav-transition="none">
+              <div>D</div>
+          </a>
+      </div>
+      <!--*************************************************-->
+  </div>
+</ion-footer-bar>
+</ion-view>
